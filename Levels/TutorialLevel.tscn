@@ -1,0 +1,468 @@
+[gd_scene load_steps=54 format=3 uid="uid://dsg71oqw6g83w"]
+
+[ext_resource type="Script" path="res://Levels/tutorial_level.gd" id="1_utb5t"]
+[ext_resource type="Script" path="res://Levels/player.gd" id="2_662t4"]
+[ext_resource type="Texture2D" uid="uid://bbjeqikrgdi5p" path="res://Flipped.png" id="2_unhps"]
+[ext_resource type="Script" path="res://Levels/camera_2d.gd" id="3_887ot"]
+[ext_resource type="Script" path="res://Levels/area_2d.gd" id="4_3yg36"]
+[ext_resource type="Script" path="res://Levels/wall_right.gd" id="5_8txg2"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_fctiy"]
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_rhgho"]
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_hlsiq"]
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_wv1i2"]
+size = Vector2(20, 20)
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_lfwnx"]
+diffuse_texture = SubResource("PlaceholderTexture2D_rhgho")
+normal_texture = SubResource("PlaceholderTexture2D_hlsiq")
+specular_texture = SubResource("PlaceholderTexture2D_wv1i2")
+specular_color = Color(1, 0, 1, 1)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_eylw8"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_woybn"]
+size = Vector2(2, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rsv7j"]
+size = Vector2(1983, 18)
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_wt21q"]
+specular_color = Color(0.601408, 1, 0.46983, 1)
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_m7epn"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xk8ca"]
+size = Vector2(25.5, 22.5)
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_qh43l"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yebly"]
+size = Vector2(137.75, 35)
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_noibc"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_xatef"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_j6leu"]
+size = Vector2(34, 170)
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_5rro7"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ey188"]
+size = Vector2(24.5, 173.5)
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_6mn4f"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kr1vx"]
+size = Vector2(26.481, 173.961)
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_jteqp"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_suuom"]
+size = Vector2(98, 34)
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_xc7ee"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tfehg"]
+size = Vector2(43, 54)
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_jed85"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_b1s37"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_3cdla"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_0e430"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_vmjht"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_d8b5d"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_3i4bx"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_gs7qn"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_av27t"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_s6gh0"]
+size = Vector2(6253, 36)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wmgqc"]
+size = Vector2(509, 29)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_s8wna"]
+size = Vector2(1179, 20)
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_qr4n8"]
+friction = 0.7
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mbw5g"]
+size = Vector2(121, 109.5)
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_x3ter"]
+friction = 0.1
+bounce = 0.02
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_kfbpn"]
+radius = 37.8021
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ient5"]
+size = Vector2(91, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ryyy2"]
+size = Vector2(23, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ulc2g"]
+size = Vector2(53, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_83wxp"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2q3ao"]
+size = Vector2(73, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gvb32"]
+size = Vector2(12, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vprpv"]
+size = Vector2(83, 20)
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_utb5t")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(639, 522)
+scale = Vector2(1.03859, 0.863144)
+texture = ExtResource("2_unhps")
+flip_h = true
+metadata/_edit_lock_ = true
+
+[node name="Player" type="CharacterBody2D" parent="."]
+position = Vector2(1900, 618)
+script = ExtResource("2_662t4")
+
+[node name="Sprite2D" type="Sprite2D" parent="Player"]
+material = SubResource("CanvasItemMaterial_fctiy")
+scale = Vector2(20, 20)
+texture = SubResource("CanvasTexture_lfwnx")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
+shape = SubResource("RectangleShape2D_eylw8")
+debug_color = Color(0, 0.6, 0.701961, 1)
+
+[node name="Camera2D" type="Camera2D" parent="Player"]
+offset = Vector2(0, 40)
+limit_left = -20
+limit_top = 0
+limit_right = 1920
+limit_bottom = 1080
+position_smoothing_speed = 3.0
+drag_horizontal_enabled = true
+script = ExtResource("3_887ot")
+
+[node name="PushArea" type="Area2D" parent="Player"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player/PushArea"]
+position = Vector2(-11, 0)
+shape = SubResource("RectangleShape2D_woybn")
+
+[node name="Ground" type="StaticBody2D" parent="."]
+position = Vector2(573, 636)
+metadata/_edit_lock_ = true
+
+[node name="Table" type="CollisionShape2D" parent="Ground"]
+position = Vector2(417.5, 2)
+shape = SubResource("RectangleShape2D_rsv7j")
+debug_color = Color(0.993309, 0, 0.235246, 1)
+
+[node name="TableBG" type="Sprite2D" parent="Ground"]
+position = Vector2(421, 2.99999)
+scale = Vector2(1978, 20)
+texture = SubResource("CanvasTexture_wt21q")
+
+[node name="TeaLight" type="CollisionShape2D" parent="Ground"]
+material = SubResource("CanvasItemMaterial_m7epn")
+position = Vector2(488, -19)
+shape = SubResource("RectangleShape2D_xk8ca")
+debug_color = Color(0.54902, 0.560784, 0.164706, 1)
+
+[node name="Sprite2D" type="Sprite2D" parent="Ground/TeaLight"]
+position = Vector2(1.14441e-05, 0.499999)
+scale = Vector2(48, 23)
+texture = SubResource("CanvasTexture_qh43l")
+
+[node name="TeaLight2" type="CollisionShape2D" parent="Ground"]
+material = SubResource("CanvasItemMaterial_m7epn")
+position = Vector2(968, -20)
+shape = SubResource("RectangleShape2D_xk8ca")
+debug_color = Color(0.54902, 0.560784, 0.164706, 1)
+
+[node name="Sprite2D" type="Sprite2D" parent="Ground/TeaLight2"]
+position = Vector2(0.249982, 0.499999)
+scale = Vector2(25.9999, 23)
+texture = SubResource("CanvasTexture_qh43l")
+
+[node name="Books1" type="CollisionShape2D" parent="Ground"]
+position = Vector2(388.125, -25)
+shape = SubResource("RectangleShape2D_yebly")
+debug_color = Color(0.321569, 0.623529, 0, 1)
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="Ground/Books1"]
+position = Vector2(-0.125, -3.43323e-05)
+scale = Vector2(138, 36)
+texture = SubResource("CanvasTexture_noibc")
+
+[node name="Books2" type="CollisionShape2D" parent="Ground"]
+position = Vector2(375, -57)
+shape = SubResource("RectangleShape2D_yebly")
+debug_color = Color(0.321569, 0.623529, 0, 1)
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="Ground/Books2"]
+position = Vector2(1.90735e-05, 1.90735e-06)
+scale = Vector2(138, 36)
+texture = SubResource("CanvasTexture_xatef")
+
+[node name="TallBooks" type="CollisionShape2D" parent="Ground"]
+position = Vector2(265, -92)
+shape = SubResource("RectangleShape2D_j6leu")
+debug_color = Color(0, 0.6, 0.701961, 1)
+
+[node name="Sprite2D" type="Sprite2D" parent="Ground/TallBooks"]
+position = Vector2(-1.49995, 0)
+scale = Vector2(31, 170)
+texture = SubResource("CanvasTexture_5rro7")
+
+[node name="TallBookThinner" type="CollisionShape2D" parent="Ground"]
+position = Vector2(292, -94)
+shape = SubResource("RectangleShape2D_ey188")
+debug_color = Color(0, 0.576471, 0.670588, 1)
+
+[node name="Sprite2D" type="Sprite2D" parent="Ground/TallBookThinner"]
+position = Vector2(-2.76566e-05, 7.62939e-06)
+scale = Vector2(26.0001, 174)
+texture = SubResource("CanvasTexture_6mn4f")
+
+[node name="AngledBook" type="CollisionShape2D" parent="Ground"]
+position = Vector2(220, -95)
+rotation = -0.176278
+shape = SubResource("RectangleShape2D_kr1vx")
+debug_color = Color(0, 0.662745, 0.772549, 1)
+
+[node name="Sprite2D" type="Sprite2D" parent="Ground/AngledBook"]
+position = Vector2(-0.0213399, 0.222912)
+scale = Vector2(26.5387, 174.33)
+texture = SubResource("CanvasTexture_jteqp")
+
+[node name="StackBooks2" type="CollisionShape2D" parent="Ground"]
+position = Vector2(49.6, -25.7)
+shape = SubResource("RectangleShape2D_suuom")
+debug_color = Color(0.92549, 0, 0.670588, 1)
+
+[node name="Sprite2D" type="Sprite2D" parent="Ground/StackBooks2"]
+position = Vector2(-0.0999794, 0.700019)
+scale = Vector2(99, 36)
+texture = SubResource("CanvasTexture_xc7ee")
+
+[node name="SmallOwl" type="CollisionShape2D" parent="Ground"]
+position = Vector2(-191, -35)
+shape = SubResource("RectangleShape2D_tfehg")
+debug_color = Color(0.415686, 0.00392157, 0.898039, 1)
+
+[node name="Sprite2D" type="Sprite2D" parent="Ground/SmallOwl"]
+position = Vector2(-9.53674e-06, 0.999967)
+scale = Vector2(42, 56)
+texture = SubResource("CanvasTexture_jed85")
+
+[node name="Pot" type="CollisionPolygon2D" parent="Ground"]
+material = SubResource("CanvasItemMaterial_b1s37")
+position = Vector2(118.5, -0.399994)
+polygon = PackedVector2Array(24, -7, -9, -86, -7, -96, 7, -100, 29, -104, 49, -103, 70, -100, 86, -97, 86, -89, 81, -70, 68, -7, 63, -8, 54, -8, 41, -8)
+
+[node name="Sprite2D" type="Sprite2D" parent="Ground/Pot"]
+position = Vector2(40, -50.05)
+scale = Vector2(91, 101.1)
+texture = SubResource("CanvasTexture_3cdla")
+
+[node name="OpenBook" type="CollisionPolygon2D" parent="Ground"]
+material = SubResource("CanvasItemMaterial_0e430")
+position = Vector2(-98.4, -0.700012)
+polygon = PackedVector2Array(76, -28, 73, -33, 103, -51, 133, -67, 142, -73, 147, -78, 154, -79, 158, -76, 162, -70, 177, -62, 209, -43, 225, -35, 225, -30, 219, -32, 209, -35, 194, -39, 186, -44, 167, -54, 159, -58, 152, -62, 145, -55, 132, -51, 109, -44, 88, -34)
+
+[node name="Sprite2D" type="Sprite2D" parent="Ground/OpenBook"]
+position = Vector2(115.861, -52.7718)
+rotation = -0.47822
+scale = Vector2(92.5065, 6.12756)
+texture = SubResource("CanvasTexture_vmjht")
+
+[node name="Sprite2D2" type="Sprite2D" parent="Ground/OpenBook"]
+position = Vector2(184.891, -51.8606)
+rotation = -2.63196
+scale = Vector2(86.7244, 6.54835)
+texture = SubResource("CanvasTexture_vmjht")
+
+[node name="Plant" type="CollisionPolygon2D" parent="Ground"]
+position = Vector2(123.1, 3.60001)
+polygon = PackedVector2Array(20, -92, 16, -99, 15, -106, 17, -114, 21, -120, 23, -125, 22, -135, 21, -153, 22, -158, 18, -152, 14, -147, 12, -148, 13, -155, 15, -164, 18, -172, 25, -174, 28, -172, 26, -165, 23, -159, 23, -151, 23, -142, 24, -133, 27, -123, 31, -114, 35, -107, 40, -100, 41, -110, 41, -120, 39, -132, 39, -140, 42, -148, 43, -150, 46, -143, 49, -138, 49, -133, 48, -127, 48, -124, 51, -126, 57, -125, 66, -124, 69, -122, 63, -119, 58, -116, 51, -115, 45, -117, 44, -113, 44, -106, 45, -101, 45, -95, 43, -93, 36, -93, 35, -98, 31, -103, 28, -110, 25, -117, 23, -116, 25, -109, 25, -103, 24, -98)
+
+[node name="Sprite2D" type="Sprite2D" parent="Ground/Plant"]
+position = Vector2(22.9, -140.1)
+scale = Vector2(2.00001, 55)
+texture = SubResource("CanvasTexture_d8b5d")
+
+[node name="Sprite2D2" type="Sprite2D" parent="Ground/Plant"]
+position = Vector2(18.6193, -160.492)
+rotation = 0.363028
+scale = Vector2(-4.99426, 28.3549)
+texture = SubResource("CanvasTexture_3i4bx")
+
+[node name="Leaf" type="CollisionPolygon2D" parent="Ground"]
+position = Vector2(123.1, 3.60001)
+polygon = PackedVector2Array(28, -172, 32, -175, 36, -178, 43, -180, 47, -180, 54, -179, 62, -177, 69, -174, 71, -172, 68, -171, 62, -169, 56, -168, 48, -167, 40, -168, 34, -169)
+
+[node name="Sprite2D" type="Sprite2D" parent="Ground/Leaf"]
+position = Vector2(49.5413, -173.643)
+scale = Vector2(-40.8384, 10.6986)
+texture = SubResource("CanvasTexture_gs7qn")
+
+[node name="Floor" type="StaticBody2D" parent="Ground"]
+position = Vector2(-607.75, 497)
+
+[node name="Sprite2D2" type="Sprite2D" parent="Ground/Floor"]
+position = Vector2(-376.125, 0.25)
+scale = Vector2(5626.25, 36.5)
+texture = SubResource("CanvasTexture_av27t")
+
+[node name="FloorCol" type="CollisionShape2D" parent="Ground/Floor"]
+position = Vector2(-62.75, 1)
+shape = SubResource("RectangleShape2D_s6gh0")
+debug_color = Color(0, 0, 0.701961, 1)
+
+[node name="WallRight" type="Area2D" parent="."]
+position = Vector2(1274, 8)
+script = ExtResource("5_8txg2")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WallRight"]
+position = Vector2(859.5, 657)
+shape = SubResource("RectangleShape2D_wmgqc")
+
+[node name="Area2D" type="Area2D" parent="."]
+position = Vector2(-7, 663)
+script = ExtResource("4_3yg36")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-560.5, 0)
+shape = SubResource("RectangleShape2D_s8wna")
+
+[node name="TissueBoxMain" type="RigidBody2D" parent="."]
+mass = 0.35
+physics_material_override = SubResource("PhysicsMaterial_qr4n8")
+center_of_mass_mode = 1
+center_of_mass = Vector2(100, 100)
+can_sleep = false
+contact_monitor = true
+max_contacts_reported = 1
+linear_damp = 1.0
+
+[node name="TissueBox" type="CollisionShape2D" parent="TissueBoxMain"]
+position = Vector2(105, 574)
+shape = SubResource("RectangleShape2D_mbw5g")
+debug_color = Color(0.741176, 0.701961, 0, 1)
+
+[node name="Sprite2D" type="Sprite2D" parent="TissueBoxMain/TissueBox"]
+position = Vector2(7.62939e-06, 0.500008)
+scale = Vector2(122, 111)
+texture = SubResource("CanvasTexture_av27t")
+
+[node name="UI" type="CanvasLayer" parent="."]
+
+[node name="InstructionLabel" type="Label" parent="UI"]
+visible = false
+offset_right = 40.0
+offset_bottom = 23.0
+
+[node name="BallBody" type="RigidBody2D" parent="."]
+position = Vector2(-34, 1)
+mass = 0.2
+physics_material_override = SubResource("PhysicsMaterial_x3ter")
+can_sleep = false
+contact_monitor = true
+max_contacts_reported = 5
+
+[node name="Ball" type="CollisionShape2D" parent="BallBody"]
+position = Vector2(-160, 1078)
+shape = SubResource("CircleShape2D_kfbpn")
+debug_color = Color(0.545098, 0.403922, 1, 1)
+
+[node name="Sprite2D2" type="Sprite2D" parent="BallBody/Ball"]
+position = Vector2(1.3113e-06, -0.249998)
+scale = Vector2(74, -73.5)
+skew = -0.0296706
+texture = SubResource("CanvasTexture_av27t")
+
+[node name="Instruction 1" type="Area2D" parent="."]
+position = Vector2(1883, 638)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Instruction 1"]
+position = Vector2(0.5, 0)
+shape = SubResource("RectangleShape2D_ient5")
+
+[node name="Instruction2" type="Area2D" parent="."]
+position = Vector2(1663, 638)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Instruction2"]
+position = Vector2(1.5, 0)
+shape = SubResource("RectangleShape2D_ryyy2")
+
+[node name="Instruction3" type="Area2D" parent="."]
+position = Vector2(838, 468)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Instruction3"]
+position = Vector2(9.5, 0)
+shape = SubResource("RectangleShape2D_ulc2g")
+
+[node name="Instruction4" type="Area2D" parent="."]
+position = Vector2(811, 505)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Instruction4"]
+shape = SubResource("RectangleShape2D_83wxp")
+
+[node name="Instruction5" type="Area2D" parent="."]
+position = Vector2(345, 638)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Instruction5"]
+position = Vector2(-19.5, 0)
+shape = SubResource("RectangleShape2D_2q3ao")
+
+[node name="Instruction6" type="Area2D" parent="."]
+position = Vector2(156, 637)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Instruction6"]
+position = Vector2(-11, 0)
+shape = SubResource("RectangleShape2D_gvb32")
+
+[node name="Instruction7" type="Area2D" parent="."]
+position = Vector2(69, 638)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Instruction7"]
+position = Vector2(-4.5, 0)
+shape = SubResource("RectangleShape2D_vprpv")
+
+[connection signal="body_entered" from="WallRight" to="." method="_on_wall_right_body_entered"]
+[connection signal="body_entered" from="Instruction 1" to="." method="_on_instruction_1_body_entered"]
+[connection signal="body_exited" from="Instruction 1" to="." method="_on_instruction_1_body_exited"]
+[connection signal="body_entered" from="Instruction2" to="." method="_on_instruction_2_body_entered"]
+[connection signal="body_exited" from="Instruction2" to="." method="_on_instruction_2_body_exited"]
+[connection signal="body_entered" from="Instruction3" to="." method="_on_instruction_3_body_entered"]
+[connection signal="body_exited" from="Instruction3" to="." method="_on_instruction_3_body_exited"]
+[connection signal="body_entered" from="Instruction4" to="." method="_on_instruction_4_body_entered"]
+[connection signal="body_exited" from="Instruction4" to="." method="_on_instruction_4_body_exited"]
+[connection signal="body_entered" from="Instruction5" to="." method="_on_instruction_5_body_entered"]
+[connection signal="body_exited" from="Instruction5" to="." method="_on_instruction_5_body_exited"]
+[connection signal="body_entered" from="Instruction6" to="." method="_on_instruction_6_body_entered"]
+[connection signal="body_entered" from="Instruction7" to="." method="_on_instruction_7_body_entered"]

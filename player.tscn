@@ -1,0 +1,31 @@
+[gd_scene load_steps=5 format=3 uid="uid://ddajyl5yey82j"]
+
+[ext_resource type="Script" path="res://player.gd" id="1_tggdi"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_2rtdm"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8l33l"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_20mlp"]
+size = Vector2(1163, 20)
+
+[node name="Player" type="CharacterBody2D"]
+position = Vector2(1131, 621)
+script = ExtResource("1_tggdi")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = SubResource("CanvasTexture_2rtdm")
+region_enabled = true
+region_rect = Rect2(0, 0, 20, 20)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_8l33l")
+debug_color = Color(0.129412, 0.592157, 0.717647, 1)
+
+[node name="Ground" type="StaticBody2D" parent="."]
+position = Vector2(-1137, -611)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ground"]
+position = Vector2(580, 631)
+shape = SubResource("RectangleShape2D_20mlp")
+debug_color = Color(0.988235, 0, 0.317647, 1)

@@ -1,0 +1,44 @@
+[gd_scene load_steps=2 format=3 uid="uid://c5yfd4teof8c2"]
+
+[ext_resource type="Script" path="res://pause_menu.gd" id="1_le5kg"]
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_le5kg")
+
+[node name="Panel" type="VBoxContainer" parent="."]
+offset_left = -1.0
+offset_top = 1.0
+offset_right = 318.0
+offset_bottom = 362.0
+
+[node name="ResumeButton" type="Button" parent="Panel"]
+process_mode = 2
+custom_minimum_size = Vector2(300, 60)
+layout_mode = 2
+text = "Resume"
+
+[node name="SaveButton" type="Button" parent="Panel"]
+process_mode = 2
+custom_minimum_size = Vector2(300, 60)
+layout_mode = 2
+disabled = true
+text = "Save"
+
+[node name="SettingsButton" type="Button" parent="Panel"]
+process_mode = 2
+custom_minimum_size = Vector2(300, 60)
+layout_mode = 2
+disabled = true
+text = "Settings"
+
+[node name="MainMenuButton" type="Button" parent="Panel"]
+process_mode = 2
+custom_minimum_size = Vector2(300, 60)
+layout_mode = 2
+text = "Main Menu"
+
+[node name="RestartLevelButton" type="Button" parent="Panel"]
+process_mode = 2
+custom_minimum_size = Vector2(300, 60)
+layout_mode = 2
+text = "Restart Level"
