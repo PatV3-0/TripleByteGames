@@ -12,34 +12,37 @@ var string_instance: Node2D
 var fadeDur = 0.7
 
 func _ready() -> void:
-	fadeRect.color = Color(0, 0, 0, 1)  # Fully transparent black
+	fadeRect.color = Color(0, 0, 0, 1) 
 	fadeRect.visible = true
 	fade_in_from_black()
 	var player = $Player
 
-	var camera = player.get_node("Camera2D")
-	camera.offset = Vector2(0, 0)
+	print("Current camera: ", get_viewport().get_camera_2d())
+
+	var camera = $Player/Camera2D
+	print(camera)
+	camera.make_current()
+	camera.offset = Vector2(-10, 0)
 	camera.zoom = Vector2(1, 1)
+	print("Player global position: ", player.position)
+	print("Camera global position: ", camera.position)
+
 
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	pauseMenu = pauseMenuScene.instantiate()
 	$UI.add_child(pauseMenu)
 	pauseMenu.visible = false
 
-	# Place and add the handle block
 	handle_instance = handle_block_scene.instantiate()
 	handle_instance.position = Vector2(320, -20)
 	add_child(handle_instance)
 
-	# Set falling block and wall object references (these should already exist in the scene)
 	falling_block.attached_object = wall_object
 
-	# Place and add the string
 	string_instance = string_block_scene.instantiate()
 	string_instance.position = Vector2(340, -645)
 	add_child(string_instance)
 
-	# Connect string’s trigger to release the falling block
 	if string_instance.has_method("connect"):
 		string_instance.connect("string_pulled", _on_string_pulled)
 		
@@ -50,7 +53,6 @@ func fade_in_from_black():
 	tween.finished.connect(func():fadeRect.visible = false)
 
 func _on_string_pulled():
-	print("String pulled in tutorial level")
 	falling_block.release()
 
 func _unhandled_input(event):
@@ -73,9 +75,11 @@ func hidePauseMenu():
 
 func centerPauseMenu():
 	var windowSize = get_viewport().size
+	print(windowSize)
 	var pausePanel = pauseMenu.get_node("Panel")
 	var pausePanelSize = pausePanel.size
-	pausePanel.position = Vector2((windowSize.x - (pausePanelSize.x + 750)) / 2, (windowSize.y - (pausePanelSize.y + 300)) / 2)
+	pausePanel.position = Vector2((windowSize.x - (pausePanelSize.x + 740)) / 2, (windowSize.y - (pausePanelSize.y + 300)) / 2)
+	print(pausePanel.position)
 
 func _process(delta: float) -> void:
 	if pauseMenu.visible:
@@ -88,25 +92,21 @@ func _physics_process(delta: float) -> void:
 		var direction = player.facing_direction
 		var player_position = player.position
 
-		# Use the correct syntax for finding the box
 		var box = null
 		for body in $Player/PushArea.get_overlapping_bodies():
 			if body.name == "Plug" or body.name == "Vent":
 				box = body
 				break
 
-		if box and box is RigidBody2D:  # Ensure it's a RigidBody2D
-			if abs(player.position.x - box.position.x) < 200:  # Adjust 20 for your threshold
-				#print("Pushing...")
-				# Apply impulse to the tissue box
-				box.apply_impulse(Vector2(direction * 50, 0), box.position)  # Adjust strength
+		if box and box is RigidBody2D: 
+			if abs(player.position.x - box.position.x) < 200:  
+				box.apply_impulse(Vector2(direction * 50, 0), box.position)  
 				box.angular_velocity = 0
 			else:
-				# If player is not pressing P, or not close enough to box, stop moving
 				player.velocity.x = 0
 				
 	if player.pullModeActive:
-		var direction = -player.facing_direction  # Opposite direction of push
+		var direction = -player.facing_direction  
 		var player_position = player.position
 
 		var box = null
@@ -115,9 +115,9 @@ func _physics_process(delta: float) -> void:
 				box = body
 				break
 
-		if box and box is RigidBody2D:  # Ensure it's a RigidBody2D
-			if abs(player.position.x - box.position.x) < 200:  # Adjust 20 for your threshold
-				box.apply_impulse(Vector2(direction * 120, 0), box.position)  # Apply impulse instead of force
+		if box and box is RigidBody2D: 
+			if abs(player.position.x - box.position.x) < 200:  
+				box.apply_impulse(Vector2(direction * 120, 0), box.position) 
 				box.angular_velocity = 0
 			else:
 				player.velocity.x = 0
@@ -143,7 +143,6 @@ func transition_to_next_scene():
 	get_tree().current_scene = new_scene
 	await get_tree().create_timer(0.1).timeout
 	fadeRect.visible = false
-	print("loaded")
 
 	var new_player_spot = new_scene.get_node_or_null("PlayerSpawnPoint")
 	if new_player_spot:
@@ -155,3 +154,4 @@ func transition_to_next_scene():
 	var camera = player.get_node("Camera2D")
 	camera.offset = Vector2.ZERO
 	camera.zoom = Vector2(1, 1)
+	

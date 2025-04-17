@@ -10,9 +10,7 @@ var shake_timer = 0.0
 
 func _ready():
 	freeze_mode()
-	print(get_parent().name)  # Print the name of the parent to confirm it's correct
 	attached_object = get_parent().get_node("Plug")
-	print(attached_object)  # Check if attached_object is valid
 	area.body_entered.connect(self._on_body_entered)
 
 func freeze_mode():

@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=3 uid="uid://jo2bkp35hlyb"]
+[gd_scene load_steps=29 format=3 uid="uid://jo2bkp35hlyb"]
 
 [ext_resource type="Texture2D" uid="uid://b1270d44ei5x4" path="res://Screenshot 2025-04-17 102334.png" id="1_2gnd1"]
 [ext_resource type="Script" path="res://tutorial_pt_2.gd" id="1_20e61"]
@@ -30,7 +30,7 @@ size = Vector2(30, 31)
 size = Vector2(23.875, 20)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rkcvo"]
-size = Vector2(1371.5, 61)
+size = Vector2(2390.75, 61)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_2bkyi"]
 
@@ -65,6 +65,11 @@ size = Vector2(61, 55)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hnvf1"]
 size = Vector2(190, 103)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_84pph"]
+size = Vector2(11.7301, 751.765)
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_82qab"]
+
 [node name="Node2D" type="Node2D"]
 position = Vector2(657, 391)
 script = ExtResource("1_20e61")
@@ -76,7 +81,7 @@ scale = Vector2(0.815897, 0.815897)
 texture = ExtResource("1_2gnd1")
 
 [node name="Player" type="CharacterBody2D" parent="."]
-position = Vector2(-619, 240)
+position = Vector2(-1408, -412)
 script = ExtResource("2_hw1q2")
 
 [node name="Sprite2D" type="Sprite2D" parent="Player"]
@@ -92,9 +97,9 @@ debug_color = Color(0, 0.6, 0.701961, 1)
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 offset = Vector2(0, 40)
-limit_left = -20
+limit_left = -940
 limit_top = 0
-limit_right = 1920
+limit_right = 2000
 limit_bottom = 1080
 position_smoothing_speed = 3.0
 drag_horizontal_enabled = true
@@ -123,7 +128,7 @@ shape = SubResource("RectangleShape2D_xvv8s")
 [node name="Ground" type="StaticBody2D" parent="."]
 
 [node name="Floor" type="CollisionShape2D" parent="Ground"]
-position = Vector2(2, 279)
+position = Vector2(-507.625, 279)
 shape = SubResource("RectangleShape2D_rkcvo")
 debug_color = Color(0.780392, 0.027451, 0.109804, 1)
 
@@ -238,7 +243,6 @@ one_way_collision_margin = 30.0
 [node name="UI" type="CanvasLayer" parent="."]
 
 [node name="InstructionLabel" type="Label" parent="UI"]
-visible = false
 offset_right = 40.0
 offset_bottom = 23.0
 
@@ -269,7 +273,7 @@ shape = SubResource("RectangleShape2D_rteqs")
 position = Vector2(-137, 118)
 physics_material_override = SubResource("PhysicsMaterial_fqjng")
 center_of_mass_mode = 1
-center_of_mass = Vector2(-5, 0)
+center_of_mass = Vector2(-50, 0)
 script = ExtResource("6_w0tjy")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Plug"]
@@ -294,3 +298,26 @@ position = Vector2(-205, -383)
 position = Vector2(85, 44.5)
 shape = SubResource("RectangleShape2D_hnvf1")
 debug_color = Color(0.899432, 0.000175388, 0.765811, 0.42)
+
+[node name="Broom" type="RigidBody2D" parent="."]
+position = Vector2(-1171, 98)
+rotation = -0.502695
+disable_mode = 1
+gravity_scale = 0.0
+center_of_mass_mode = 1
+center_of_mass = Vector2(1, 0)
+contact_monitor = true
+max_contacts_reported = 5
+angular_damp = 0.1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Broom"]
+position = Vector2(-4.12061, -193.35)
+shape = SubResource("RectangleShape2D_84pph")
+
+[node name="Sprite2D" type="Sprite2D" parent="Broom"]
+position = Vector2(-4.25, -192.389)
+scale = Vector2(9.5, 750.78)
+texture = SubResource("CanvasTexture_82qab")
+
+[node name="PlayerSpawnPoint" type="Node2D" parent="."]
+position = Vector2(-1333, -399)

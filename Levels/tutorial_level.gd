@@ -8,11 +8,14 @@ var fadeDur = 0.7
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:	
-	fadeRect.color.a = 0
-	fadeRect.visible = false
+	fadeRect.color = Color(0, 0, 0, 1) 
+	fadeRect.visible = true
+	fade_in_from_black()
 	var camera = $Player/Camera2D
 	camera.offset.x = -2000
-	slide_camera_to_offset(Vector2(100, 0), 5)
+	camera.zoom = Vector2(1.5,1.5)
+	slide_camera_to_offset(Vector2(100, 0), 0.1)
+	fade_in_from_black()
 	
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	pauseMenu = pauseMenuScene.instantiate()
@@ -23,9 +26,15 @@ func _ready() -> void:
 	$TissueBoxMain.connect("body_entered", Callable(self, "_on_TissueBox_body_entered"))
 	$Broom.connect("body_entered", Callable(self, "_on_broom_body_entered"))
 	
-	transition_to_next_scene()
+	#transition_to_next_scene()
 
-
+func fade_in_from_black():
+	var fadeDuration = fadeDur * 3
+	fadeRect.visible = true
+	var tween = get_tree().create_tween()
+	tween.tween_property(fadeRect, "color", Color(0, 0, 0, 0), fadeDuration)
+	tween.finished.connect(func():fadeRect.visible = false)
+	
 func _unhandled_input(event):
 	if event.is_action_pressed("ui_cancel"):
 		if not pauseMenu.visible:
@@ -76,7 +85,7 @@ func _physics_process(delta: float) -> void:
 			if abs(player.position.x - box.position.x) < 200:  # Adjust 20 for your threshold
 				#print("Pushing...")
 				# Apply impulse to the tissue box
-				box.apply_force(Vector2(direction * 120, 0), box.position)  # Adjust strength
+				box.apply_force(Vector2(direction * 350, 0), box.position)  # Adjust strength
 				box.angular_velocity = 0
 			else:
 				# If player is not pressing P, or not close enough to box, stop moving
@@ -93,7 +102,7 @@ func _on_TissueBox_body_entered(body):
 		var ball = $BallBody
 		ball.angular_velocity = 0
 		if ball and ball is RigidBody2D:
-			ball.apply_impulse(Vector2(direction * 100, 0))
+			ball.apply_impulse(Vector2(direction * 10, 0))
 			
 @warning_ignore("unused_parameter")
 func show_instruction_once(id: String, text: String, pause_duration: float) -> void:
@@ -121,6 +130,7 @@ func slide_camera_to_offset(target_offset: Vector2, duration: float) -> void:
 		time += get_process_delta_time()
 		var t = time / duration
 		camera.offset = start_offset.lerp(target_offset, t)
+		camera.zoom = Vector2(1,1)
 		await get_tree().create_timer(0.0).timeout
 
 
@@ -199,10 +209,9 @@ func transition_to_next_scene():
 	if new_player_spot:
 		player.global_position = new_player_spot.global_position
 	else:
-		player.global_position = Vector2(100, 100)
+		player.global_position = Vector2(-1909, -425)
 
 	new_scene.add_child(player)
-		# Reset camera position
 	var camera = player.get_node("Camera2D")
 	camera.offset = Vector2.ZERO
 	camera.zoom = Vector2(1, 1)
