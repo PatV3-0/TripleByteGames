@@ -8,6 +8,7 @@ var SaveManager = preload("res://Scripts/SaveManager.gd")
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 	$VBoxContainer.custom_minimum_size = Vector2(500, 400)
 	var windowSize = get_viewport().size
 	#print(windowSize)
@@ -20,6 +21,8 @@ func _ready():
 	
 func onStartButton():
 	var tutorialScene = preload("res://Levels/TutorialLevel.tscn")
+	#temp load to pt2 of tutorial
+	#var tutorialScene = preload("res://Levels/TutorialPt2.tscn")
 	get_tree().change_scene_to_packed(tutorialScene)
 	#saveSlotsPanel.show()
 	

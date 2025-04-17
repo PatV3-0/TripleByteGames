@@ -1,0 +1,134 @@
+[gd_scene load_steps=8 format=3 uid="uid://jo2bkp35hlyb"]
+
+[ext_resource type="Texture2D" uid="uid://b1270d44ei5x4" path="res://Screenshot 2025-04-17 102334.png" id="1_2gnd1"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rkcvo"]
+size = Vector2(1371.5, 61)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_2bkyi"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wa4d0"]
+size = Vector2(125, 27)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yf6ki"]
+size = Vector2(89, 23)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vyvnm"]
+size = Vector2(84, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_21w0r"]
+size = Vector2(20, 98)
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-0.999939, 4)
+scale = Vector2(0.815897, 0.815897)
+texture = ExtResource("1_2gnd1")
+metadata/_edit_lock_ = true
+
+[node name="Ground" type="StaticBody2D" parent="."]
+
+[node name="Floor" type="CollisionShape2D" parent="Ground"]
+position = Vector2(2, 279)
+shape = SubResource("RectangleShape2D_rkcvo")
+debug_color = Color(0.780392, 0.027451, 0.109804, 1)
+
+[node name="Fireplace" type="CollisionPolygon2D" parent="Ground"]
+polygon = PackedVector2Array(599, 130, 547, 129, 535, 143, 516, 127, 454, 129, 427, 211, 426, 223, 426, 236, 422, 240, 412, 244, 401, 244, 385, 244, 376, 240, 377, 226, 383, 213, 397, 206, 405, 201, 415, 190, 422, 173, 430, 149, 435, 128, 388, 132, 385, 120, 361, 123, 388, 92, 393, 78, 392, 68, 390, 53, 385, 39, 375, 22, 367, 7, 358, -7, 356, -18, 353, -34, 351, -47, 349, -70, 341, -71, 341, -77, 355, -91, 483, -94, 467, -340, 466, -352, 469, -361, 473, -369, 480, -376, 488, -383, 498, -386, 508, -387, 515, -388, 524, -388, 526, -382, 526, -376, 526, -369, 523, -363, 521, -359, 515, -354, 511, -358, 505, -358, 502, -354, 502, -347, 524, -94, 592, -97)
+
+[node name="Basket" type="CollisionPolygon2D" parent="Ground"]
+polygon = PackedVector2Array(380, 116, 382, 232, 378, 240, 369, 242, 346, 243, 280, 243, 270, 242, 263, 237, 261, 227, 262, 113, 271, 117, 282, 121, 293, 124, 300, 124, 309, 124, 325, 124, 337, 123, 351, 121, 364, 119)
+
+[node name="WoolPile" type="StaticBody2D" parent="Ground"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ground/WoolPile"]
+position = Vector2(275, 117)
+shape = SubResource("CircleShape2D_2bkyi")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Ground/WoolPile"]
+position = Vector2(370, 114)
+shape = SubResource("CircleShape2D_2bkyi")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Ground/WoolPile"]
+position = Vector2(348, 116)
+shape = SubResource("CircleShape2D_2bkyi")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="Ground/WoolPile"]
+position = Vector2(330, 116)
+shape = SubResource("CircleShape2D_2bkyi")
+
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="Ground/WoolPile"]
+position = Vector2(293, 116)
+shape = SubResource("CircleShape2D_2bkyi")
+
+[node name="CollisionShape2D6" type="CollisionShape2D" parent="Ground/WoolPile"]
+position = Vector2(311, 117)
+shape = SubResource("CircleShape2D_2bkyi")
+
+[node name="CollisionShape2D7" type="CollisionShape2D" parent="Ground/WoolPile"]
+position = Vector2(296, 90)
+shape = SubResource("CircleShape2D_2bkyi")
+
+[node name="CollisionShape2D13" type="CollisionShape2D" parent="Ground/WoolPile"]
+position = Vector2(371, 97)
+shape = SubResource("CircleShape2D_2bkyi")
+
+[node name="CollisionShape2D14" type="CollisionShape2D" parent="Ground/WoolPile"]
+position = Vector2(339, 75)
+shape = SubResource("CircleShape2D_2bkyi")
+
+[node name="CollisionShape2D15" type="CollisionShape2D" parent="Ground/WoolPile"]
+position = Vector2(320, 76)
+shape = SubResource("CircleShape2D_2bkyi")
+
+[node name="CollisionShape2D16" type="CollisionShape2D" parent="Ground/WoolPile"]
+position = Vector2(347, 89)
+shape = SubResource("CircleShape2D_2bkyi")
+
+[node name="CollisionShape2D17" type="CollisionShape2D" parent="Ground/WoolPile"]
+position = Vector2(330, 88)
+shape = SubResource("CircleShape2D_2bkyi")
+
+[node name="CollisionShape2D18" type="CollisionShape2D" parent="Ground/WoolPile"]
+position = Vector2(312, 89)
+shape = SubResource("CircleShape2D_2bkyi")
+
+[node name="CollisionShape2D8" type="CollisionShape2D" parent="Ground/WoolPile"]
+position = Vector2(357, 102)
+shape = SubResource("CircleShape2D_2bkyi")
+
+[node name="CollisionShape2D9" type="CollisionShape2D" parent="Ground/WoolPile"]
+position = Vector2(338, 102)
+shape = SubResource("CircleShape2D_2bkyi")
+
+[node name="CollisionShape2D10" type="CollisionShape2D" parent="Ground/WoolPile"]
+position = Vector2(321, 103)
+shape = SubResource("CircleShape2D_2bkyi")
+
+[node name="CollisionShape2D11" type="CollisionShape2D" parent="Ground/WoolPile"]
+position = Vector2(304, 103)
+shape = SubResource("CircleShape2D_2bkyi")
+
+[node name="CollisionShape2D12" type="CollisionShape2D" parent="Ground/WoolPile"]
+position = Vector2(285, 104)
+shape = SubResource("CircleShape2D_2bkyi")
+
+[node name="Stack of games" type="StaticBody2D" parent="Ground"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ground/Stack of games"]
+position = Vector2(203, 231)
+shape = SubResource("RectangleShape2D_wa4d0")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Ground/Stack of games"]
+position = Vector2(215.5, 206.5)
+shape = SubResource("RectangleShape2D_yf6ki")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Ground/Stack of games"]
+position = Vector2(219, 186)
+shape = SubResource("RectangleShape2D_vyvnm")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="Ground/Stack of games"]
+position = Vector2(140, 204)
+rotation = 0.693787
+shape = SubResource("RectangleShape2D_21w0r")

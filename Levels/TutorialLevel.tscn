@@ -1,4 +1,4 @@
-[gd_scene load_steps=54 format=3 uid="uid://dsg71oqw6g83w"]
+[gd_scene load_steps=58 format=3 uid="uid://dsg71oqw6g83w"]
 
 [ext_resource type="Script" path="res://Levels/tutorial_level.gd" id="1_utb5t"]
 [ext_resource type="Script" path="res://Levels/player.gd" id="2_662t4"]
@@ -9,17 +9,17 @@
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_fctiy"]
 
-[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_rhgho"]
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_rvuby"]
 
-[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_hlsiq"]
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_us63x"]
 
-[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_wv1i2"]
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_pigqj"]
 size = Vector2(20, 20)
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_lfwnx"]
-diffuse_texture = SubResource("PlaceholderTexture2D_rhgho")
-normal_texture = SubResource("PlaceholderTexture2D_hlsiq")
-specular_texture = SubResource("PlaceholderTexture2D_wv1i2")
+diffuse_texture = SubResource("PlaceholderTexture2D_rvuby")
+normal_texture = SubResource("PlaceholderTexture2D_us63x")
+specular_texture = SubResource("PlaceholderTexture2D_pigqj")
 specular_color = Color(1, 0, 1, 1)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_eylw8"]
@@ -108,7 +108,7 @@ friction = 0.1
 bounce = 0.02
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_kfbpn"]
-radius = 37.8021
+radius = 27.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ient5"]
 size = Vector2(91, 20)
@@ -129,6 +129,17 @@ size = Vector2(12, 20)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vprpv"]
 size = Vector2(83, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_woghs"]
+size = Vector2(10.0374, 691.469)
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_4xd5e"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jxr47"]
+size = Vector2(96.5, 495)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0oilc"]
+size = Vector2(1342.5, 16)
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_utb5t")
@@ -386,6 +397,14 @@ visible = false
 offset_right = 40.0
 offset_bottom = 23.0
 
+[node name="ColorRect" type="ColorRect" parent="UI"]
+offset_left = -1673.0
+offset_top = -257.0
+offset_right = 2588.0
+offset_bottom = 1596.0
+color = Color(0, 0, 0, 1)
+metadata/_edit_use_anchors_ = true
+
 [node name="BallBody" type="RigidBody2D" parent="."]
 position = Vector2(-34, 1)
 mass = 0.2
@@ -395,15 +414,18 @@ contact_monitor = true
 max_contacts_reported = 5
 
 [node name="Ball" type="CollisionShape2D" parent="BallBody"]
-position = Vector2(-160, 1078)
+position = Vector2(-160, 1089)
 shape = SubResource("CircleShape2D_kfbpn")
 debug_color = Color(0.545098, 0.403922, 1, 1)
 
 [node name="Sprite2D2" type="Sprite2D" parent="BallBody/Ball"]
-position = Vector2(1.3113e-06, -0.249998)
-scale = Vector2(74, -73.5)
+visible = false
+position = Vector2(-36, 37)
+scale = Vector2(75.226, -75.033)
 skew = -0.0296706
 texture = SubResource("CanvasTexture_av27t")
+region_enabled = true
+region_filter_clip_enabled = true
 
 [node name="Instruction 1" type="Area2D" parent="."]
 position = Vector2(1883, 638)
@@ -453,6 +475,38 @@ position = Vector2(69, 638)
 position = Vector2(-4.5, 0)
 shape = SubResource("RectangleShape2D_vprpv")
 
+[node name="Broom" type="RigidBody2D" parent="."]
+position = Vector2(-399, 980)
+rotation = 0.0123637
+center_of_mass_mode = 1
+center_of_mass = Vector2(1, 0)
+contact_monitor = true
+max_contacts_reported = 5
+angular_damp = 0.1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Broom"]
+position = Vector2(-3.27417, -163.202)
+shape = SubResource("RectangleShape2D_woghs")
+
+[node name="Sprite2D" type="Sprite2D" parent="Broom"]
+position = Vector2(-4.25, -159.202)
+scale = Vector2(9.5, 684.405)
+texture = SubResource("CanvasTexture_4xd5e")
+
+[node name="Area2D2" type="Area2D" parent="."]
+position = Vector2(-376, 891)
+
+[node name="Stopper" type="CollisionShape2D" parent="Area2D2"]
+position = Vector2(-125, 3)
+shape = SubResource("RectangleShape2D_jxr47")
+
+[node name="Fade" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Fade"]
+position = Vector2(-603, 826)
+shape = SubResource("RectangleShape2D_0oilc")
+debug_color = Color(0.997286, 0, 0.169278, 0.42)
+
 [connection signal="body_entered" from="WallRight" to="." method="_on_wall_right_body_entered"]
 [connection signal="body_entered" from="Instruction 1" to="." method="_on_instruction_1_body_entered"]
 [connection signal="body_exited" from="Instruction 1" to="." method="_on_instruction_1_body_exited"]
@@ -466,3 +520,5 @@ shape = SubResource("RectangleShape2D_vprpv")
 [connection signal="body_exited" from="Instruction5" to="." method="_on_instruction_5_body_exited"]
 [connection signal="body_entered" from="Instruction6" to="." method="_on_instruction_6_body_entered"]
 [connection signal="body_entered" from="Instruction7" to="." method="_on_instruction_7_body_entered"]
+[connection signal="area_entered" from="Fade" to="." method="_on_fade_area_entered"]
+[connection signal="body_entered" from="Fade" to="." method="_on_fade_body_entered"]
