@@ -12,10 +12,13 @@ var string_instance: Node2D
 var fadeDur = 0.7
 
 func _ready() -> void:
+	$Player.facing_direction = 1
 	fadeRect.color = Color(0, 0, 0, 1) 
 	fadeRect.visible = true
 	fade_in_from_black()
 	var player = $Player
+	$Player.flip_collision_polygon($Player/CollisionPolygon2D, true)  # Horizontal flip
+	$Player/CollisionPolygon2D.position.x += 10
 
 	print("Current camera: ", get_viewport().get_camera_2d())
 
@@ -117,7 +120,7 @@ func _physics_process(delta: float) -> void:
 
 		if box and box is RigidBody2D: 
 			if abs(player.position.x - box.position.x) < 200:  
-				box.apply_impulse(Vector2(direction * 120, 0), box.position) 
+				box.apply_impulse(Vector2(direction * 60, 0), box.position) 
 				box.angular_velocity = 0
 			else:
 				player.velocity.x = 0

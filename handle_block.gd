@@ -38,7 +38,9 @@ func _process(delta):
 func _finalize_block():
 	collider.disabled = false
 	area.queue_free()
-	
+
 	if player_ref:
-		player_ref.set_physics_process(true)
+		# Slightly offset down so they're no longer inside the collider
+		player_ref.global_position.y += 10
+		player_ref.release_from_handle()
 		player_ref = null

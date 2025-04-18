@@ -25,8 +25,9 @@ func _ready() -> void:
 	$Area2D.connect("boxPushed", Callable(self, "onBoxFell"))
 	$TissueBoxMain.connect("body_entered", Callable(self, "_on_TissueBox_body_entered"))
 	$Broom.connect("body_entered", Callable(self, "_on_broom_body_entered"))
+	$Player.flip_collision_polygon($Player/CollisionPolygon2D, true)  # Horizontal flip
 	
-	#transition_to_next_scene()
+	transition_to_next_scene()
 
 func fade_in_from_black():
 	var fadeDuration = fadeDur * 3

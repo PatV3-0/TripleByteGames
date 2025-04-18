@@ -4,14 +4,46 @@ extends CharacterBody2D
 @export var airborne : float = 0.6
 @export var jump_force : float = 550.0  # Jump force
 @export var gravity : float = 1200.0  # Gravity force
+var previous_facing_direction: int = -1  # Start with same default as facing_direction
 
 var pushModeActive: bool = false
 var pullModeActive: bool = false
 var facing_direction: int = -1
 var object_being_pulled: RigidBody2D = null  # Track object being pulled
 
+func release_from_handle():
+	velocity.y = 150  # Give a little downward boost
+	set_physics_process(true)
+	
+func flip_collision_polygon(polygon: CollisionPolygon2D, horizontal: bool = true):
+	var new_polygon := []
+	for point in polygon.polygon:
+		var flipped_point = point
+		if horizontal:
+			flipped_point.x *= -1
+		else:
+			flipped_point.y *= -1
+		new_polygon.append(flipped_point)
+	polygon.polygon = new_polygon
+
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
+	# Flip the sprite based on direction
+	var sprite = $Sprite2D  # Change this path if your sprite is named differently
+	sprite.flip_h = facing_direction > 0
+	if facing_direction != previous_facing_direction:
+		flip_collision_polygon($CollisionPolygon2D)
+		if facing_direction == 1 and previous_facing_direction == -1:
+			print($CollisionPolygon2D.position)
+			$CollisionPolygon2D.position.x -= 10
+			print($CollisionPolygon2D.position)
+			
+		if facing_direction == -1 and previous_facing_direction == 1:
+			print($CollisionPolygon2D.position)
+			$CollisionPolygon2D.position.x += 10
+			print($CollisionPolygon2D.position)
+		previous_facing_direction = facing_direction
+
 	# Update gravity and apply it to the velocity.y
 	velocity.y += gravity * delta
 	

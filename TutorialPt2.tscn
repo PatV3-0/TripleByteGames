@@ -1,33 +1,18 @@
-[gd_scene load_steps=29 format=3 uid="uid://jo2bkp35hlyb"]
+[gd_scene load_steps=25 format=3 uid="uid://jo2bkp35hlyb"]
 
 [ext_resource type="Texture2D" uid="uid://b1270d44ei5x4" path="res://Screenshot 2025-04-17 102334.png" id="1_2gnd1"]
 [ext_resource type="Script" path="res://tutorial_pt_2.gd" id="1_20e61"]
 [ext_resource type="Script" path="res://Levels/player.gd" id="2_hw1q2"]
 [ext_resource type="Script" path="res://Levels/camera_2d.gd" id="3_28tkb"]
+[ext_resource type="Texture2D" uid="uid://bh8ghunruw18k" path="res://grandma side view (1).png" id="4_85jnk"]
 [ext_resource type="Script" path="res://vent.gd" id="5_4qmcj"]
 [ext_resource type="Script" path="res://plug.gd" id="6_w0tjy"]
 [ext_resource type="Script" path="res://hole.gd" id="7_a4qo5"]
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_l5t26"]
 
-[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_rhgho"]
-
-[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_hlsiq"]
-
-[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_wv1i2"]
-size = Vector2(20, 20)
-
-[sub_resource type="CanvasTexture" id="CanvasTexture_00vnj"]
-diffuse_texture = SubResource("PlaceholderTexture2D_rhgho")
-normal_texture = SubResource("PlaceholderTexture2D_hlsiq")
-specular_texture = SubResource("PlaceholderTexture2D_wv1i2")
-specular_color = Color(1, 0, 1, 1)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_u3shn"]
-size = Vector2(30, 31)
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xvv8s"]
-size = Vector2(23.875, 20)
+size = Vector2(17.9063, 20)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rkcvo"]
 size = Vector2(2390.75, 61)
@@ -86,14 +71,13 @@ script = ExtResource("2_hw1q2")
 
 [node name="Sprite2D" type="Sprite2D" parent="Player"]
 material = SubResource("CanvasItemMaterial_l5t26")
-position = Vector2(5, -5.49999)
-scale = Vector2(30, 31)
-texture = SubResource("CanvasTexture_00vnj")
+position = Vector2(5, -17)
+scale = Vector2(0.3, 0.311)
+texture = ExtResource("4_85jnk")
+flip_h = true
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
-position = Vector2(5, -5.5)
-shape = SubResource("RectangleShape2D_u3shn")
-debug_color = Color(0, 0.6, 0.701961, 1)
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Player"]
+polygon = PackedVector2Array(6, 9, 6, 8, 6, 7, 6, 6, 6, 4, 1, 3, -3, 1, -7, -2, -4, -5, -2, -7, 0, -8, 1, -9, 2, -11, 3, -13, 4, -15, 3, -16, 1, -17, 0, -17, -2, -17, -5, -18, -7, -19, -10, -20, -11, -23, -12, -24, -13, -25, -13, -27, -12, -28, -11, -29, -11, -30, -11, -31, -10, -32, -10, -33, -10, -35, -9, -36, -7, -37, -6, -38, -6, -40, -5, -41, -2, -42, 0, -41, 1, -41, 2, -42, 4, -43, 6, -43, 8, -42, 9, -40, 10, -39, 11, -38, 12, -36, 12, -34, 11, -33, 12, -32, 11, -31, 10, -31, 12, -30, 15, -28, 16, -26, 17, -24, 18, -24, 19, -24, 19, -23, 19, -22, 18, -21, 18, -20, 18, -19, 17, -19, 17, -18, 17, -17, 16, -16, 14, -15, 12, -14, 13, -13, 15, -12, 16, -11, 17, -10, 17, -8, 16, -7, 16, -6, 17, -3, 17, 0, 17, 4, 15, 4, 13, 5, 10, 5, 9, 5, 8, 5, 8, 6, 9, 7, 10, 8, 11, 8, 11, 8, 11, 9, 10, 9, 9, 9, 8, 9, 7, 8)
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 offset = Vector2(0, 40)
@@ -112,7 +96,7 @@ position = Vector2(22, 0)
 shape = SubResource("RectangleShape2D_xvv8s")
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Player/PushArea"]
-position = Vector2(-13, 0)
+position = Vector2(-12.0313, 0)
 shape = SubResource("RectangleShape2D_xvv8s")
 
 [node name="PullArea" type="Area2D" parent="Player"]
@@ -122,7 +106,7 @@ position = Vector2(22, 0)
 shape = SubResource("RectangleShape2D_xvv8s")
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Player/PullArea"]
-position = Vector2(-13.0625, 0)
+position = Vector2(-11.0469, 0)
 shape = SubResource("RectangleShape2D_xvv8s")
 
 [node name="Ground" type="StaticBody2D" parent="."]
@@ -241,6 +225,7 @@ shape = SubResource("RectangleShape2D_21w0r")
 one_way_collision_margin = 30.0
 
 [node name="UI" type="CanvasLayer" parent="."]
+visible = false
 
 [node name="InstructionLabel" type="Label" parent="UI"]
 offset_right = 40.0
