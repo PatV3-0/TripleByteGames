@@ -8,13 +8,15 @@ var fadeDur = 0.7
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:	
+	$Background.play()
 	fadeRect.color = Color(0, 0, 0, 1) 
 	fadeRect.visible = true
 	fade_in_from_black()
 	var camera = $Player/Camera2D
 	camera.offset.x = -2000
+	camera.offset.y = -2000
 	camera.zoom = Vector2(1.5,1.5)
-	slide_camera_to_offset(Vector2(100, 0), 0.1)
+	slide_camera_to_offset(Vector2(100, 30), 0.1)
 	fade_in_from_black()
 	
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
@@ -27,7 +29,7 @@ func _ready() -> void:
 	$Broom.connect("body_entered", Callable(self, "_on_broom_body_entered"))
 	$Player.flip_collision_polygon($Player/CollisionPolygon2D, true)  # Horizontal flip
 	
-	transition_to_next_scene()
+	#transition_to_next_scene()
 
 func fade_in_from_black():
 	var fadeDuration = fadeDur * 3
@@ -59,10 +61,12 @@ func centerPauseMenu():
 	var windowSize = get_viewport().size
 	var pausePanel = pauseMenu.get_node("Panel")
 	var pausePanelSize = pausePanel.size
-	pausePanel.position = Vector2((windowSize.x - (pausePanelSize.x + 750)) / 2, (windowSize.y - (pausePanelSize.y + 300)) / 2)
+	pausePanel.position = Vector2((windowSize.x - (pausePanelSize.x + 400)) / 2, (windowSize.y - (pausePanelSize.y + 300)) / 2)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
+	if $Background and not $Background.playing:
+		$Background.play()
 	if pauseMenu.visible:
 		centerPauseMenu()
 	
@@ -137,7 +141,7 @@ func slide_camera_to_offset(target_offset: Vector2, duration: float) -> void:
 
 func _on_instruction_1_body_entered(body: Node2D) -> void:
 	if body.name == "Player":
-		$UI/InstructionLabel.text = "Use the 'a' key to move left.\nAnd the 'd' key to move right."
+		$UI/InstructionLabel.text = "Use the 'a' key to move left. And the 'd' key to move right."
 		$UI/InstructionLabel.visible = true
 
 func _on_instruction_1_body_exited(body: Node2D) -> void:
@@ -146,7 +150,7 @@ func _on_instruction_1_body_exited(body: Node2D) -> void:
 
 func _on_instruction_2_body_entered(body: Node2D) -> void:
 	if body.name == "Player":
-		slide_camera_to_offset(Vector2(-100, 0), 1)
+		slide_camera_to_offset(Vector2(-100, 50), 1)
 		show_instruction_once("instr_2", "Press spacebar to jump", 1.0)
 
 func _on_instruction_3_body_entered(body: Node2D) -> void:
@@ -159,7 +163,7 @@ func _on_instruction_4_body_entered(body: Node2D) -> void:
 
 func _on_instruction_5_body_entered(body: Node2D) -> void:
 	if body.name == "Player":
-		show_instruction_once("instr_5", "Some objects can be moved. Press and hold 'p' to push an object.", 1.0)
+		show_instruction_once("instr_5", "Some objects can be moved. Press and hold left click to push an object.", 1.0)
 		
 func _on_instruction_6_body_entered(body: Node2D) -> void:
 	if body.name == "Player":
@@ -167,7 +171,7 @@ func _on_instruction_6_body_entered(body: Node2D) -> void:
 
 func _on_instruction_7_body_entered(body: Node2D) -> void:
 	if body.name == "Player":
-		show_instruction_once("instr_7", "Now, let gravity do its thing...", 0.7)
+		show_instruction_once("instr_7", "You can pull objects by clicking the right mouse button. This will be useful later...", 1.1)
 
 func _on_broom_body_entered(body: Node2D) -> void:
 	if body.name == "BallBody":
@@ -200,6 +204,7 @@ func transition_to_next_scene():
 
 	get_tree().root.add_child(new_scene)
 	get_tree().current_scene.call_deferred("free")
+	$Background.stop()
 	get_tree().current_scene = new_scene
 
 	await get_tree().create_timer(0.1).timeout

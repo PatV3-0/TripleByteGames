@@ -12,6 +12,7 @@ var string_instance: Node2D
 var fadeDur = 0.7
 
 func _ready() -> void:
+	$Background.play()
 	$Player.facing_direction = 1
 	fadeRect.color = Color(0, 0, 0, 1) 
 	fadeRect.visible = true
@@ -20,16 +21,11 @@ func _ready() -> void:
 	$Player.flip_collision_polygon($Player/CollisionPolygon2D, true)  # Horizontal flip
 	$Player/CollisionPolygon2D.position.x += 10
 
-	print("Current camera: ", get_viewport().get_camera_2d())
-
 	var camera = $Player/Camera2D
 	print(camera)
 	camera.make_current()
-	camera.offset = Vector2(-10, 0)
+	camera.offset = Vector2(-10, 20)
 	camera.zoom = Vector2(1, 1)
-	print("Player global position: ", player.position)
-	print("Camera global position: ", camera.position)
-
 
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	pauseMenu = pauseMenuScene.instantiate()
@@ -75,16 +71,25 @@ func hidePauseMenu():
 	get_tree().paused = false
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	pauseMenu.visible = false
+	
+func _on_instruction_1_body_entered(body: Node2D) -> void:
+	if body.name == "Player":
+		$UI/InstructionLabel.text = "You can pull objects by clicking the right mouse button. This will be useful as you progress..."
+		$UI/InstructionLabel.visible = true
+
+func _on_instruction_1_body_exited(body: Node2D) -> void:
+	if body.name == "Player":
+		$UI/InstructionLabel.visible = false
 
 func centerPauseMenu():
 	var windowSize = get_viewport().size
-	print(windowSize)
 	var pausePanel = pauseMenu.get_node("Panel")
 	var pausePanelSize = pausePanel.size
-	pausePanel.position = Vector2((windowSize.x - (pausePanelSize.x + 740)) / 2, (windowSize.y - (pausePanelSize.y + 300)) / 2)
-	print(pausePanel.position)
+	pausePanel.position = Vector2((windowSize.x - (pausePanelSize.x + 400)) / 2, (windowSize.y - (pausePanelSize.y + 300)) / 2)
 
 func _process(delta: float) -> void:
+	if $Background and not $Background.playing:
+		$Background.play()
 	if pauseMenu.visible:
 		centerPauseMenu()
 		
@@ -143,6 +148,7 @@ func transition_to_next_scene():
 	var new_scene = new_scene_packed.instantiate()
 	get_tree().root.add_child(new_scene)
 	get_tree().current_scene.call_deferred("free")
+	$Background.stop()
 	get_tree().current_scene = new_scene
 	await get_tree().create_timer(0.1).timeout
 	fadeRect.visible = false

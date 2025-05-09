@@ -1,6 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://ddajyl5yey82j"]
+[gd_scene load_steps=6 format=3 uid="uid://ddajyl5yey82j"]
 
 [ext_resource type="Script" path="res://player.gd" id="1_tggdi"]
+[ext_resource type="AudioStream" uid="uid://b1lqwlsl5ivuq" path="res://Sounds/jump.wav" id="2_df52b"]
+[ext_resource type="AudioStream" uid="uid://bdgv05078jl1y" path="res://Sounds/boxSound.wav" id="3_o2nkf"]
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_2rtdm"]
 
@@ -26,3 +28,9 @@ position = Vector2(-1137, -611)
 position = Vector2(580, 631)
 shape = SubResource("RectangleShape2D_20mlp")
 debug_color = Color(0.988235, 0, 0.317647, 1)
+
+[node name="JumpSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("2_df52b")
+
+[node name="PushPullSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_o2nkf")

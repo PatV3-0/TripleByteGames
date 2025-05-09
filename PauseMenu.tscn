@@ -1,9 +1,15 @@
-[gd_scene load_steps=2 format=3 uid="uid://c5yfd4teof8c2"]
+[gd_scene load_steps=3 format=3 uid="uid://c5yfd4teof8c2"]
 
 [ext_resource type="Script" path="res://pause_menu.gd" id="1_le5kg"]
+[ext_resource type="Texture2D" uid="uid://dwxc1xbrqcbx4" path="res://book.png" id="2_pnmo7"]
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_le5kg")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(592, 293)
+scale = Vector2(0.775, 0.775)
+texture = ExtResource("2_pnmo7")
 
 [node name="Panel" type="VBoxContainer" parent="."]
 offset_left = -1.0

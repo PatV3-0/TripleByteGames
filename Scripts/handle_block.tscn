@@ -1,6 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://dbaccd8vo664f"]
+[gd_scene load_steps=5 format=3 uid="uid://dbaccd8vo664f"]
 
 [ext_resource type="Script" path="res://handle_block.gd" id="1_icsom"]
+[ext_resource type="Texture2D" uid="uid://dhp66id34ghlc" path="res://handle.png" id="2_iq1tf"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vio2n"]
 size = Vector2(53, 8)
@@ -23,3 +24,8 @@ debug_color = Color(0.305882, 0.0156863, 0.486275, 1)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
 position = Vector2(17.5, -6)
 shape = SubResource("RectangleShape2D_orwn1")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(18, -6)
+scale = Vector2(0.131481, 0.0985185)
+texture = ExtResource("2_iq1tf")

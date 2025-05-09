@@ -8,6 +8,7 @@ var SaveManager = preload("res://Scripts/SaveManager.gd")
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	$Background2.play()
 	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 	$VBoxContainer.custom_minimum_size = Vector2(500, 400)
 	var windowSize = get_viewport().size
@@ -23,6 +24,7 @@ func onStartButton():
 	var tutorialScene = preload("res://Levels/TutorialLevel.tscn")
 	#temp load to pt2 of tutorial
 	#var tutorialScene = preload("res://Levels/TutorialPt2.tscn")
+	$Background2.stop()
 	get_tree().change_scene_to_packed(tutorialScene)
 	#saveSlotsPanel.show()
 	
@@ -51,4 +53,5 @@ func showLevelSelection(saves):
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	pass
+	if $Background2 and not $Background2.playing:
+		$Background2.play()

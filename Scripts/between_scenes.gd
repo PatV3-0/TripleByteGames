@@ -6,11 +6,12 @@ var pauseMenu = null
 var fadeDur = 0.7
 
 func _ready() -> void:
+	$Sound.play()
 	$Label.text = "Part I\nThe Walls"
 	fadeRect.color = Color(0, 0, 0, 1)  # Fully transparent black
 	fadeRect.visible = true
 	fade_in_from_black()
-	await get_tree().create_timer(6.5).timeout
+	await get_tree().create_timer(5.5).timeout
 	start_fade_to_black()
 	
 	

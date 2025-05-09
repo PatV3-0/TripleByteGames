@@ -53,6 +53,17 @@ func _process(delta: float) -> void:
 		
 	pushModeActive = Input.is_action_pressed("toggle_push")
 	pullModeActive = Input.is_action_pressed("toggle_pull")
+	
+	if pushModeActive and not $PushPullSound.playing:
+		$PushPullSound.play()
+	elif not pushModeActive and $PushPullSound.playing:
+		$PushPullSound.stop()
+
+	if pullModeActive and not $PushPullSound.playing:
+		#print("Play pull")
+		$PushPullSound.play()
+	elif not pullModeActive and $PushPullSound.playing:
+		$PushPullSound.stop()
 
 	if not pushModeActive and not pullModeActive:
 		# Check for player movement (left and right)
@@ -105,6 +116,8 @@ func _process(delta: float) -> void:
 	# Jumping mechanic (only allow jumping when on the floor)
 	if Input.is_action_just_pressed("ui_accept") and is_on_floor():
 		velocity.y = -jump_force  # Apply jump force
+		$JumpSound.pitch_scale = randf_range(0.9, 1.1)
+		$JumpSound.play()
 
 # Detect the object to be pulled (example: when colliding with a specific object)
 func _on_pullable_body_entered(body: Node2D) -> void:

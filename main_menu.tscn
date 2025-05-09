@@ -1,6 +1,8 @@
-[gd_scene load_steps=2 format=3 uid="uid://cvmw7goxw0qv0"]
+[gd_scene load_steps=4 format=3 uid="uid://cvmw7goxw0qv0"]
 
 [ext_resource type="Script" path="res://main_menu.gd" id="1_t6xlw"]
+[ext_resource type="Texture2D" uid="uid://6pinluu71vi3" path="res://Menu.png" id="2_xotok"]
+[ext_resource type="AudioStream" uid="uid://jg2ps61b5rc7" path="res://Sounds/IntroOuttro.wav" id="3_le0su"]
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -11,7 +13,12 @@ script = ExtResource("1_t6xlw")
 layout_mode = 0
 offset_right = 1154.0
 offset_bottom = 645.0
-color = Color(0, 0.300844, 0.301014, 1)
+color = Color(0.565701, 0.350928, 0.164634, 1)
+
+[node name="Sprite2D" type="Sprite2D" parent="Background"]
+position = Vector2(599, 438)
+scale = Vector2(1.10162, 1.10162)
+texture = ExtResource("2_xotok")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 0
@@ -85,3 +92,8 @@ offset_bottom = 23.0
 layout_mode = 0
 offset_right = 8.0
 offset_bottom = 8.0
+
+[node name="Background2" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_le0su")
+volume_db = -20.0
+autoplay = true
