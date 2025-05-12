@@ -103,10 +103,10 @@ func _process(delta: float) -> void:
 			
 		elif Input.is_action_pressed("ui_right"):
 			velocity.x = -currentSpeed * 0.5
-			facing_direction = 1
+			facing_direction = -1
 		elif Input.is_action_pressed("ui_left"):
 			velocity.x = currentSpeed * 0.5
-			facing_direction = -1
+			facing_direction = 1
 		else:
 			velocity.x = 0
 

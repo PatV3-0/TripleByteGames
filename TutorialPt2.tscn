@@ -1,4 +1,4 @@
-[gd_scene load_steps=37 format=3 uid="uid://jo2bkp35hlyb"]
+[gd_scene load_steps=36 format=3 uid="uid://jo2bkp35hlyb"]
 
 [ext_resource type="Script" path="res://tutorial_pt_2.gd" id="1_20e61"]
 [ext_resource type="Script" path="res://Levels/player.gd" id="2_hw1q2"]
@@ -31,8 +31,6 @@ size = Vector2(17.9063, 20)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rkcvo"]
 size = Vector2(2390.75, 61)
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_2bkyi"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wa4d0"]
 size = Vector2(137.771, 31.236)
@@ -172,77 +170,8 @@ texture = ExtResource("8_1gvvv")
 
 [node name="WoolPile" type="StaticBody2D" parent="Ground"]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Ground/WoolPile"]
-position = Vector2(269, 133)
-shape = SubResource("CircleShape2D_2bkyi")
-
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="Ground/WoolPile"]
-position = Vector2(366, 133)
-shape = SubResource("CircleShape2D_2bkyi")
-
-[node name="CollisionShape2D3" type="CollisionShape2D" parent="Ground/WoolPile"]
-position = Vector2(344, 135)
-shape = SubResource("CircleShape2D_2bkyi")
-
-[node name="CollisionShape2D4" type="CollisionShape2D" parent="Ground/WoolPile"]
-position = Vector2(326, 135)
-shape = SubResource("CircleShape2D_2bkyi")
-
-[node name="CollisionShape2D5" type="CollisionShape2D" parent="Ground/WoolPile"]
-position = Vector2(289, 135)
-shape = SubResource("CircleShape2D_2bkyi")
-
-[node name="CollisionShape2D6" type="CollisionShape2D" parent="Ground/WoolPile"]
-position = Vector2(307, 136)
-shape = SubResource("CircleShape2D_2bkyi")
-
-[node name="CollisionShape2D7" type="CollisionShape2D" parent="Ground/WoolPile"]
-position = Vector2(298, 109)
-shape = SubResource("CircleShape2D_2bkyi")
-
-[node name="CollisionShape2D13" type="CollisionShape2D" parent="Ground/WoolPile"]
-position = Vector2(367, 116)
-shape = SubResource("CircleShape2D_2bkyi")
-
-[node name="CollisionShape2D14" type="CollisionShape2D" parent="Ground/WoolPile"]
-position = Vector2(355, 114)
-shape = SubResource("CircleShape2D_2bkyi")
-
-[node name="CollisionShape2D15" type="CollisionShape2D" parent="Ground/WoolPile"]
-position = Vector2(316, 95)
-shape = SubResource("CircleShape2D_2bkyi")
-
-[node name="CollisionShape2D16" type="CollisionShape2D" parent="Ground/WoolPile"]
-position = Vector2(341, 104)
-shape = SubResource("CircleShape2D_2bkyi")
-
-[node name="CollisionShape2D17" type="CollisionShape2D" parent="Ground/WoolPile"]
-position = Vector2(326, 107)
-shape = SubResource("CircleShape2D_2bkyi")
-
-[node name="CollisionShape2D18" type="CollisionShape2D" parent="Ground/WoolPile"]
-position = Vector2(308, 108)
-shape = SubResource("CircleShape2D_2bkyi")
-
-[node name="CollisionShape2D8" type="CollisionShape2D" parent="Ground/WoolPile"]
-position = Vector2(353, 121)
-shape = SubResource("CircleShape2D_2bkyi")
-
-[node name="CollisionShape2D9" type="CollisionShape2D" parent="Ground/WoolPile"]
-position = Vector2(334, 121)
-shape = SubResource("CircleShape2D_2bkyi")
-
-[node name="CollisionShape2D10" type="CollisionShape2D" parent="Ground/WoolPile"]
-position = Vector2(317, 122)
-shape = SubResource("CircleShape2D_2bkyi")
-
-[node name="CollisionShape2D11" type="CollisionShape2D" parent="Ground/WoolPile"]
-position = Vector2(300, 122)
-shape = SubResource("CircleShape2D_2bkyi")
-
-[node name="CollisionShape2D12" type="CollisionShape2D" parent="Ground/WoolPile"]
-position = Vector2(283, 119)
-shape = SubResource("CircleShape2D_2bkyi")
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Ground/WoolPile"]
+polygon = PackedVector2Array(259, 131, 259, 130, 261, 127, 263, 125, 266, 124, 269, 123, 270, 122, 271, 119, 273, 115, 276, 112, 279, 111, 281, 110, 284, 110, 286, 110, 286, 107, 288, 104, 290, 102, 292, 101, 294, 99, 296, 98, 299, 98, 301, 98, 304, 99, 304, 97, 304, 94, 305, 92, 307, 89, 309, 87, 312, 86, 316, 85, 321, 86, 324, 88, 326, 90, 328, 92, 328, 95, 329, 98, 331, 96, 334, 95, 339, 94, 344, 95, 348, 97, 350, 100, 352, 102, 356, 103, 359, 104, 362, 107, 365, 109, 365, 112, 365, 116, 371, 117, 374, 119, 375, 122, 377, 125, 377, 128, 375, 130, 355, 134, 326, 137, 289, 136)
 
 [node name="Stack of games" type="StaticBody2D" parent="Ground"]
 scale = Vector2(0.98332, 1.01601)

@@ -13,8 +13,8 @@ func _ready() -> void:
 	fadeRect.visible = true
 	fade_in_from_black()
 	var camera = $Player/Camera2D
-	camera.offset.x = -2000
-	camera.offset.y = -2000
+	camera.offset.x = 0
+	camera.offset.y = 0
 	camera.zoom = Vector2(1.5,1.5)
 	slide_camera_to_offset(Vector2(100, 30), 0.1)
 	fade_in_from_black()
@@ -71,6 +71,7 @@ func _process(delta: float) -> void:
 		centerPauseMenu()
 	
 func _physics_process(delta: float) -> void:
+	print($Broom.linear_velocity.y)
 	var player = $Player
 	if player.pushModeActive:
 		var direction = player.facing_direction
@@ -90,16 +91,16 @@ func _physics_process(delta: float) -> void:
 			if abs(player.position.x - box.position.x) < 200:  # Adjust 20 for your threshold
 				#print("Pushing...")
 				# Apply impulse to the tissue box
-				box.apply_force(Vector2(direction * 350, 0), box.position)  # Adjust strength
-				box.angular_velocity = 0
+				box.apply_force(Vector2(direction * 350, 0), box.get_center_of_mass())  # Adjust strength
+				#box.angular_velocity = 0
 			else:
 				# If player is not pressing P, or not close enough to box, stop moving
 				player.velocity.x = 0
 				
 func onBoxFell():
 	var camera = $Player/Camera2D
-	camera.zoom = Vector2(0.6,0.6)
-	camera.offset.x = -1200
+	camera.zoom = Vector2(0.7,0.7)
+	camera.offset.x = -800
 	
 func _on_TissueBox_body_entered(body):
 	if body.name == "BallBody":
@@ -107,7 +108,7 @@ func _on_TissueBox_body_entered(body):
 		var ball = $BallBody
 		ball.angular_velocity = 0
 		if ball and ball is RigidBody2D:
-			ball.apply_impulse(Vector2(direction * 10, 0))
+			ball.apply_impulse(Vector2(direction * 30, 0))
 			
 @warning_ignore("unused_parameter")
 func show_instruction_once(id: String, text: String, pause_duration: float) -> void:
@@ -150,7 +151,7 @@ func _on_instruction_1_body_exited(body: Node2D) -> void:
 
 func _on_instruction_2_body_entered(body: Node2D) -> void:
 	if body.name == "Player":
-		slide_camera_to_offset(Vector2(-100, 50), 1)
+		slide_camera_to_offset(Vector2(-40, 30), 1)
 		show_instruction_once("instr_2", "Press spacebar to jump", 1.0)
 
 func _on_instruction_3_body_entered(body: Node2D) -> void:
@@ -169,13 +170,11 @@ func _on_instruction_6_body_entered(body: Node2D) -> void:
 	if body.name == "Player":
 		show_instruction_once("instr_6", "Keep pushing!", 0.5)
 
-func _on_instruction_7_body_entered(body: Node2D) -> void:
-	if body.name == "Player":
-		show_instruction_once("instr_7", "You can pull objects by clicking the right mouse button. This will be useful later...", 1.1)
-
 func _on_broom_body_entered(body: Node2D) -> void:
 	if body.name == "BallBody":
-		lock_broomstick()
+		#$Broom/CollisionShape2D2.disabled = true
+		$Broom.apply_impulse(Vector2.ZERO, Vector2(0,1400))
+		#lock_broomstick()
 		stop_ball(body)
 		deactivate_deathzone()
 		
@@ -185,10 +184,10 @@ func deactivate_deathzone() -> void:
 func stop_ball(ball: RigidBody2D):
 	ball.call_deferred("set_linear_velocity", Vector2.ZERO)
 	ball.call_deferred("set_angular_velocity", 0)
-	ball.call_deferred("set_physics_process", false)
+	#ball.call_deferred("set_physics_process", false)
 
 func lock_broomstick():
-	await get_tree().create_timer(6.5).timeout
+	await get_tree().create_timer(20.5).timeout
 	var broom = $Broom
 	broom.call_deferred("set_linear_velocity", Vector2.ZERO)
 	broom.call_deferred("set_angular_velocity", 0)
