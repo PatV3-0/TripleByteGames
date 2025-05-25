@@ -240,7 +240,6 @@ texture = SubResource("CanvasTexture_6mn4f")
 [node name="AngledBook" type="CollisionShape2D" parent="Ground"]
 position = Vector2(436.75, -70)
 rotation = -0.261799
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_kr1vx")
 debug_color = Color(0, 0.662745, 0.772549, 1)
 

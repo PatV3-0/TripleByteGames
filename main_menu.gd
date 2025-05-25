@@ -21,7 +21,7 @@ func _ready():
 	aboutPanel.hide()
 	
 func onStartButton():
-	var tutorialScene = preload("res://Levels/TutorialLevel.tscn")
+	var tutorialScene = preload("res://miniGame.tscn")
 	#temp load to pt2 of tutorial
 	#var tutorialScene = preload("res://Levels/TutorialPt2.tscn")
 	$Background2.stop()
@@ -52,6 +52,6 @@ func showLevelSelection(saves):
 	print("Available saves:", saves)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	if $Background2 and not $Background2.playing:
 		$Background2.play()

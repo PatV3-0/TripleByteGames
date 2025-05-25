@@ -11,6 +11,11 @@ var pullModeActive: bool = false
 var facing_direction: int = -1
 var object_being_pulled: RigidBody2D = null  # Track object being pulled
 
+func _ready() -> void:
+	$"..../PullBox/PullArea".connect("body_entered", Callable(self, "_on_pullable_body_entered"))
+	$"..../PullBox/PullArea".connect("body_exited", Callable(self, "_on_pullable_body_exited"))
+
+
 func release_from_handle():
 	velocity.y = 150  # Give a little downward boost
 	set_physics_process(true)
@@ -27,7 +32,7 @@ func flip_collision_polygon(polygon: CollisionPolygon2D, horizontal: bool = true
 	polygon.polygon = new_polygon
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
+func _physics_process(delta: float) -> void:
 	# Flip the sprite based on direction
 	var sprite = $Sprite2D  # Change this path if your sprite is named differently
 	sprite.flip_h = facing_direction > 0
@@ -96,8 +101,11 @@ func _process(delta: float) -> void:
 			var direction = facing_direction  # Determine the direction based on the player's facing direction
 			
 			# Apply the pulling force to the object (make sure object_being_pulled is a RigidBody2D)
-			object_being_pulled.apply_impulse(Vector2(direction * pull_force, 0), object_being_pulled.position)
-			
+			var pull_target_x = position.x - (facing_direction * 16)  # Stay behind player
+			var current_x = object_being_pulled.position.x
+			var diff = pull_target_x - current_x
+			object_being_pulled.linear_velocity.x = diff * 10  # Smooth pull
+
 			# Reduce the player's speed while pulling the object
 			velocity.x = currentSpeed * 0.25  # Slower while pulling the object
 			
