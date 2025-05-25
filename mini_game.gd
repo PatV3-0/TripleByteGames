@@ -23,11 +23,11 @@ var p_pressed = false
 var o_pressed = false
 
 func _ready() -> void:
-	#var stream = $Background
-	#if stream is AudioStreamWAV:
-		#stream.set_loop(true)
+	var stream = $Background
+	if stream is AudioStreamWAV:
+		stream.set_loop(true)
 		
-	#$Background.play()
+	$Background.play()
 	# Start with spacebar hidden
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	spacebar_sprite.visible = false
@@ -62,8 +62,8 @@ func centerPauseMenu():
 	pausePanel.position = (adj - pausePanelSize) / 2
 
 func _process(_delta: float) -> void:
-	#if $Background and not $Background.playing:
-		#$Background.play()
+	if $Background and not $Background.playing:
+		$Background.play()
 	
 	if not a_pressed and Input.is_action_just_pressed("ui_left"):
 		a_pressed = true

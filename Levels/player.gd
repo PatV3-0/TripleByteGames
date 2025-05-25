@@ -33,7 +33,7 @@ func flip_collision_polygon(polygon: CollisionPolygon2D, horizontal: bool = true
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta: float) -> void:
-	# Flip the sprite based on direction
+		# Flip the sprite based on direction
 	var sprite = $Sprite2D  # Change this path if your sprite is named differently
 	sprite.flip_h = facing_direction > 0
 	if facing_direction != previous_facing_direction:
@@ -83,6 +83,7 @@ func _physics_process(delta: float) -> void:
 	
 	if pushModeActive:
 		# Check if the player is colliding with a wall or pushing a box
+		$Sprite2D.play("pushPull")
 		if is_on_wall():
 			velocity.x *= 0.5  # Reduce speed when colliding and pushing against wall
 		elif Input.is_action_pressed("ui_right"):
@@ -96,6 +97,7 @@ func _physics_process(delta: float) -> void:
 			
 	elif pullModeActive:
 		# Pulling reduces speed but assumes something is being dragged behind
+		$Sprite2D.play("pushPull")
 		if object_being_pulled:
 			var pull_force = 150  # The strength of the pull force
 			var direction = facing_direction  # Determine the direction based on the player's facing direction
@@ -117,7 +119,7 @@ func _physics_process(delta: float) -> void:
 			facing_direction = 1
 		else:
 			velocity.x = 0
-
+			
 	# Move the player and apply gravity
 	move_and_slide()
 

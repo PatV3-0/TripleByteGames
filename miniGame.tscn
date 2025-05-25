@@ -1,4 +1,4 @@
-[gd_scene load_steps=115 format=3 uid="uid://pb8gto2tawqj"]
+[gd_scene load_steps=116 format=3 uid="uid://pb8gto2tawqj"]
 
 [ext_resource type="Script" path="res://mini_game.gd" id="1_4wdgk"]
 [ext_resource type="Script" path="res://player.gd" id="1_nbqls"]
@@ -67,6 +67,7 @@
 [ext_resource type="Texture2D" uid="uid://5jxx33q7oxvn" path="res://FixedShelf.png" id="43_4wqms"]
 [ext_resource type="Script" path="res://portal_3.gd" id="49_yapac"]
 [ext_resource type="Script" path="res://portal_4.gd" id="51_2wqq0"]
+[ext_resource type="Texture2D" uid="uid://djx4ewmkkyqv1" path="res://idle 1 14.PNG" id="53_3ry4u"]
 [ext_resource type="AudioStream" uid="uid://b8h76imysnphk" path="res://Sounds/VeryGentle.wav" id="53_srh12"]
 [ext_resource type="Texture2D" uid="uid://bpex1pk4gy33v" path="res://O1.png" id="61_gm3g1"]
 [ext_resource type="Texture2D" uid="uid://rdtvvsakum7i" path="res://PullT.png" id="63_i1gt3"]
@@ -213,6 +214,9 @@ animations = [{
 "frames": [{
 "duration": 1.0,
 "texture": ExtResource("16_40c44")
+}, {
+"duration": 1.0,
+"texture": ExtResource("53_3ry4u")
 }],
 "loop": true,
 "name": &"default",
@@ -262,10 +266,13 @@ animations = [{
 "frames": [{
 "duration": 1.0,
 "texture": ExtResource("16_40c44")
+}, {
+"duration": 1.0,
+"texture": ExtResource("53_3ry4u")
 }],
 "loop": true,
 "name": &"default",
-"speed": 5.0
+"speed": 4.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -311,6 +318,9 @@ animations = [{
 "frames": [{
 "duration": 1.0,
 "texture": ExtResource("16_40c44")
+}, {
+"duration": 1.0,
+"texture": ExtResource("53_3ry4u")
 }],
 "loop": true,
 "name": &"default",
@@ -360,6 +370,9 @@ animations = [{
 "frames": [{
 "duration": 1.0,
 "texture": ExtResource("16_40c44")
+}, {
+"duration": 1.0,
+"texture": ExtResource("53_3ry4u")
 }],
 "loop": true,
 "name": &"default",
@@ -409,6 +422,9 @@ animations = [{
 "frames": [{
 "duration": 1.0,
 "texture": ExtResource("16_40c44")
+}, {
+"duration": 1.0,
+"texture": ExtResource("53_3ry4u")
 }],
 "loop": true,
 "name": &"default",
@@ -512,179 +528,179 @@ position = Vector2(-3175.5, 7)
 shape = SubResource("RectangleShape2D_jgv6s")
 
 [node name="Sprite2D14" type="Sprite2D" parent="Ground/Floor"]
-z_index = -1
-position = Vector2(4067.5, -2866)
+z_index = -2
+position = Vector2(4067.5, -2850)
 scale = Vector2(2.32121, 2.32121)
 texture = ExtResource("14_m7gyj")
 
 [node name="Sprite2D13" type="Sprite2D" parent="Ground/Floor"]
-z_index = -1
-position = Vector2(4067.5, -2626)
+z_index = -2
+position = Vector2(4067.5, -2610)
 scale = Vector2(2.32121, 2.32121)
 texture = ExtResource("14_m7gyj")
 
 [node name="Sprite2D12" type="Sprite2D" parent="Ground/Floor"]
-z_index = -1
-position = Vector2(4067.5, -2391)
+z_index = -2
+position = Vector2(4067.5, -2375)
 scale = Vector2(2.32121, 2.32121)
 texture = ExtResource("14_m7gyj")
 
 [node name="Sprite2D11" type="Sprite2D" parent="Ground/Floor"]
-z_index = -1
-position = Vector2(4067.5, -2151)
+z_index = -2
+position = Vector2(4067.5, -2135)
 scale = Vector2(2.32121, 2.32121)
 texture = ExtResource("14_m7gyj")
 
 [node name="Sprite2D6" type="Sprite2D" parent="Ground/Floor"]
-z_index = -1
-position = Vector2(4067.5, -1916)
+z_index = -2
+position = Vector2(4067.5, -1900)
 scale = Vector2(2.32121, 2.32121)
 texture = ExtResource("14_m7gyj")
 
 [node name="Sprite2D4" type="Sprite2D" parent="Ground/Floor"]
-z_index = -1
-position = Vector2(4067.5, -1673)
+z_index = -2
+position = Vector2(4067.5, -1657)
 scale = Vector2(2.32121, 2.32121)
 texture = ExtResource("14_m7gyj")
 
 [node name="Sprite2D5" type="Sprite2D" parent="Ground/Floor"]
-z_index = -1
-position = Vector2(4067.5, -1435)
+z_index = -2
+position = Vector2(4067.5, -1419)
 scale = Vector2(2.32121, 2.32121)
 texture = ExtResource("14_m7gyj")
 
 [node name="Sprite2D" type="Sprite2D" parent="Ground/Floor"]
-z_index = -1
-position = Vector2(4067.5, -1195)
+z_index = -2
+position = Vector2(4067.5, -1179)
 scale = Vector2(2.32121, 2.32121)
 texture = ExtResource("14_m7gyj")
 
 [node name="Sprite2D16" type="Sprite2D" parent="Ground/Floor"]
-z_index = -1
-position = Vector2(-1588.24, -3084)
+z_index = -2
+position = Vector2(-1588.24, -3068)
 scale = Vector2(3.00964, 2.95)
 texture = ExtResource("14_ria5d")
 flip_h = true
 
 [node name="Sprite2D17" type="Sprite2D" parent="Ground/Floor"]
-z_index = -1
-position = Vector2(-1583.24, -2841)
+z_index = -2
+position = Vector2(-1583.24, -2825)
 scale = Vector2(3.00964, 2.95)
 texture = ExtResource("14_ria5d")
 flip_h = true
 
 [node name="Sprite2D18" type="Sprite2D" parent="Ground/Floor"]
-z_index = -1
-position = Vector2(-1583.24, -2595)
+z_index = -2
+position = Vector2(-1583.24, -2579)
 scale = Vector2(3.00964, 2.95)
 texture = ExtResource("14_ria5d")
 flip_h = true
 
 [node name="Sprite2D15" type="Sprite2D" parent="Ground/Floor"]
-z_index = -1
-position = Vector2(-1584.5, -2348)
+z_index = -2
+position = Vector2(-1584.5, -2332)
 scale = Vector2(3.00964, 2.95)
 texture = ExtResource("14_ria5d")
 flip_h = true
 
 [node name="Sprite2D8" type="Sprite2D" parent="Ground/Floor"]
-z_index = -1
-position = Vector2(-1579.5, -2105)
+z_index = -2
+position = Vector2(-1579.5, -2089)
 scale = Vector2(3.00964, 2.95)
 texture = ExtResource("14_ria5d")
 flip_h = true
 
 [node name="Sprite2D7" type="Sprite2D" parent="Ground/Floor"]
-z_index = -1
-position = Vector2(-1579.5, -1859)
+z_index = -2
+position = Vector2(-1579.5, -1843)
 scale = Vector2(3.00964, 2.95)
 texture = ExtResource("14_ria5d")
 flip_h = true
 
 [node name="Sprite2D2" type="Sprite2D" parent="Ground/Floor"]
-z_index = -1
-position = Vector2(-1578.5, -1611)
+z_index = -2
+position = Vector2(-1578.5, -1595)
 scale = Vector2(3.00964, 2.95)
 texture = ExtResource("14_ria5d")
 flip_h = true
 
 [node name="Sprite2D10" type="Sprite2D" parent="Ground/Floor"]
-z_index = -1
-position = Vector2(-7488.43, -1885.02)
+z_index = -2
+position = Vector2(-7488.43, -1869.02)
 scale = Vector2(3.22612, 3.00738)
 texture = ExtResource("14_ria5d")
 flip_h = true
 
 [node name="Sprite2D9" type="Sprite2D" parent="Ground/Floor"]
-z_index = -1
-position = Vector2(-7491.43, -1632.02)
+z_index = -2
+position = Vector2(-7491.43, -1616.02)
 scale = Vector2(3.22612, 3.00738)
 texture = ExtResource("14_ria5d")
 flip_h = true
 
 [node name="Sprite2D3" type="Sprite2D" parent="Ground/Floor"]
-z_index = -1
-position = Vector2(-7493.43, -1630.02)
+z_index = -2
+position = Vector2(-7493.43, -1614.02)
 scale = Vector2(3.22612, 3.00738)
 texture = ExtResource("15_dxaop")
 flip_h = true
 
 [node name="FloorSprites5" type="Sprite2D" parent="Ground/Floor"]
 z_index = -1
-position = Vector2(3613, -55)
+position = Vector2(3613, -39)
 scale = Vector2(2.0026, 2)
 texture = ExtResource("12_umwm5")
 
 [node name="FloorSprites" type="Sprite2D" parent="Ground/Floor"]
 z_index = -1
-position = Vector2(7451.5, -55)
+position = Vector2(7451.5, -39)
 scale = Vector2(2.0026, 2)
 texture = ExtResource("12_umwm5")
 flip_h = true
 
 [node name="FloorSprites2" type="Sprite2D" parent="Ground/Floor"]
 z_index = -1
-position = Vector2(-225.5, -55)
+position = Vector2(-225.5, -39)
 scale = Vector2(2, 2)
 texture = ExtResource("12_umwm5")
 flip_h = true
 
 [node name="FloorSprites3" type="Sprite2D" parent="Ground/Floor"]
 z_index = -1
-position = Vector2(-4062.5, -55)
+position = Vector2(-4062.5, -39)
 scale = Vector2(2, 2)
 texture = ExtResource("12_umwm5")
 
 [node name="FloorSprites4" type="Sprite2D" parent="Ground/Floor"]
 z_index = -1
-position = Vector2(-7892.5, -56)
+position = Vector2(-7892.5, -40)
 scale = Vector2(2, 2)
 texture = ExtResource("12_umwm5")
 flip_h = true
 
 [node name="FloorSprites6" type="Sprite2D" parent="Ground/Floor"]
 z_index = -1
-position = Vector2(2895, 89)
+position = Vector2(2895, 105)
 scale = Vector2(2.0026, 2)
 texture = ExtResource("12_umwm5")
 
 [node name="FloorSprites7" type="Sprite2D" parent="Ground/Floor"]
-z_index = -2
-position = Vector2(6733.5, 89)
+z_index = -1
+position = Vector2(6733.5, 105)
 scale = Vector2(2.0026, 2)
 texture = ExtResource("12_umwm5")
 flip_h = true
 
 [node name="FloorSprites8" type="Sprite2D" parent="Ground/Floor"]
 z_index = -1
-position = Vector2(-943.5, 89)
+position = Vector2(-943.5, 105)
 scale = Vector2(2, 2)
 texture = ExtResource("12_umwm5")
 flip_h = true
 
 [node name="FloorSprites9" type="Sprite2D" parent="Ground/Floor"]
 z_index = -1
-position = Vector2(-4780.5, 89)
+position = Vector2(-4780.5, 105)
 scale = Vector2(2, 2)
 texture = ExtResource("12_umwm5")
 
@@ -1163,7 +1179,7 @@ rotation = -0.686609
 scale = Vector2(0.536795, 0.23871)
 skew = 0.625839
 sprite_frames = SubResource("SpriteFrames_mhx3r")
-animation = &"poof"
+frame_progress = 0.133238
 
 [node name="Portal1" type="Area2D" parent="."]
 script = ExtResource("21_83rke")
@@ -1178,6 +1194,7 @@ shape = SubResource("CircleShape2D_j8ghy")
 position = Vector2(-6, -2)
 scale = Vector2(0.4, 0.4)
 sprite_frames = SubResource("SpriteFrames_w1n5h")
+frame_progress = 0.754079
 
 [node name="PKey" type="Sprite2D" parent="."]
 position = Vector2(-1152, 66)
@@ -1198,6 +1215,7 @@ shape = SubResource("CircleShape2D_urq7o")
 position = Vector2(11, 5)
 scale = Vector2(0.639205, 0.639205)
 sprite_frames = SubResource("SpriteFrames_c88gg")
+frame_progress = 0.956172
 
 [node name="Portal3" type="Area2D" parent="."]
 position = Vector2(-3712, 196)
@@ -1213,7 +1231,7 @@ shape = SubResource("CircleShape2D_knjfp")
 position = Vector2(-77.9999, -63)
 scale = Vector2(0.43287, 0.428817)
 sprite_frames = SubResource("SpriteFrames_y77gu")
-animation = &"poof"
+frame_progress = 0.796696
 
 [node name="Portal4" type="Area2D" parent="."]
 position = Vector2(-6465, -618)
@@ -1228,6 +1246,7 @@ shape = SubResource("CircleShape2D_8p6tp")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Portal4"]
 position = Vector2(23, -205)
 sprite_frames = SubResource("SpriteFrames_angps")
+frame_progress = 0.23151
 
 [node name="Portal5" type="Area2D" parent="."]
 position = Vector2(-4761, -869)
@@ -1244,6 +1263,7 @@ shape = SubResource("CircleShape2D_8p6tp")
 position = Vector2(23, -205)
 scale = Vector2(0.8, 0.8)
 sprite_frames = SubResource("SpriteFrames_angps")
+frame_progress = 0.924488
 
 [node name="Portal6" type="Area2D" parent="."]
 position = Vector2(-2659, -1091)
@@ -1260,6 +1280,7 @@ shape = SubResource("CircleShape2D_8p6tp")
 position = Vector2(23, -205)
 scale = Vector2(0.8, 0.8)
 sprite_frames = SubResource("SpriteFrames_angps")
+frame_progress = 0.673632
 
 [node name="Background" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("53_srh12")

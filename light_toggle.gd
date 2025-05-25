@@ -21,6 +21,8 @@ func _on_body_entered(body: Node2D) -> void:
 
 func _reparent_player():
 	if player:
+		var sprite = player.get_node("Sprite2D")
+		sprite.stop()
 		var global_pos = player.global_position
 		# Remove from current parent first
 		var original_parent = player.get_parent()
@@ -33,17 +35,17 @@ func _reparent_player():
 		wrapper.add_child(player)
 		# Restore player's global position
 		player.global_position = global_pos
-		print("Completed")
+		#print("Completed")
 
 func _start_descent():
-	print("Before tween - pos:", $Sprite2D2.position)
+	#print("Before tween - pos:", $Sprite2D2.position)
 	var tween = create_tween()
 	tween.tween_property(self, "position:y", -2104.5, drop_duration).set_trans(Tween.TRANS_SINE)
 	tween.tween_property($Sprite2D, "position:y", 98.3311, drop_duration).set_trans(Tween.TRANS_SINE)
 	tween.tween_property($Sprite2D2, "position:y", -826.97, drop_duration).set_trans(Tween.TRANS_SINE)
 	tween.tween_callback(Callable(self, "_fade_to_black"))
 	await tween.finished
-	print("After tween - pos:", $Sprite2D2.position)
+	#print("After tween - pos:", $Sprite2D2.position)
 
 func _fade_to_black():
 	var fade_rect = $"../CanvasLayer/ColorRect"
