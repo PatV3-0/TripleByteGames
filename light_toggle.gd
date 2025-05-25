@@ -14,9 +14,8 @@ func _on_body_entered(body: Node2D) -> void:
 		activated = true
 		player = body
 		player.call_deferred("freeze")
-
+		$AudioStreamPlayer.play()
 		call_deferred("_reparent_player")
-		await get_tree().create_timer(0.2).timeout
 		_start_descent()
 
 func _reparent_player():
@@ -50,8 +49,18 @@ func _start_descent():
 func _fade_to_black():
 	var fade_rect = $"../CanvasLayer/ColorRect"
 	fade_rect.visible = true
+	
 	var tween = create_tween()
 	tween.tween_property(fade_rect, "modulate:a", 1.0, 1.0)
+	await tween.finished
+
+	var new_scene_packed = load("res://main_menu.tscn")
+	var new_scene = new_scene_packed.instantiate()
+	get_tree().root.add_child(new_scene)
+	get_tree().current_scene.call_deferred("free")
+	get_tree().current_scene = new_scene
+	await get_tree().create_timer(0.5).timeout
+	print("loaded")
 
 #func _process(delta):
 	#print("Sprite2D global position:", $Sprite2D.global_position)

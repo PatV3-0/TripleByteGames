@@ -14,5 +14,6 @@ func _on_body_entered(body):
 		collision_shape.set_deferred("disabled", true)
 
 		sprite.play("poof")
+		$"../PortalPoof".play()
 		await sprite.animation_finished
 		hide()

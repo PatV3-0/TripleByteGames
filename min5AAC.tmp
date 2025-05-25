@@ -1,4 +1,4 @@
-[gd_scene load_steps=122 format=3 uid="uid://pb8gto2tawqj"]
+[gd_scene load_steps=117 format=3 uid="uid://pb8gto2tawqj"]
 
 [ext_resource type="Script" path="res://mini_game.gd" id="1_4wdgk"]
 [ext_resource type="Script" path="res://player.gd" id="1_nbqls"]
@@ -29,7 +29,6 @@
 [ext_resource type="Texture2D" uid="uid://0wj7ohnsyqt6" path="res://Spiral updated.png" id="16_40c44"]
 [ext_resource type="Texture2D" uid="uid://bnkvqvr1sss34" path="res://highlightBox.png" id="16_74sjq"]
 [ext_resource type="Texture2D" uid="uid://bed8h31oineoh" path="res://Box1.png" id="16_akp3p"]
-[ext_resource type="AudioStream" uid="uid://ins2fxowijwh" path="res://Sounds/walk.wav" id="16_f8enx"]
 [ext_resource type="Script" path="res://portal.gd" id="16_o1w4r"]
 [ext_resource type="Script" path="res://high_jump.gd" id="17_fepft"]
 [ext_resource type="Script" path="res://area_2d.gd" id="18_ryu88"]
@@ -76,10 +75,6 @@
 [ext_resource type="Texture2D" uid="uid://cr53m2ekep8sq" path="res://PullT1.png" id="64_byu4a"]
 [ext_resource type="Texture2D" uid="uid://7ftexb0m78l1" path="res://pullstring.png" id="69_cftnj"]
 [ext_resource type="Script" path="res://light_toggle.gd" id="69_myjpa"]
-[ext_resource type="AudioStream" uid="uid://b1lqwlsl5ivuq" path="res://Sounds/jump.wav" id="76_sa8qt"]
-[ext_resource type="AudioStream" uid="uid://bdgv05078jl1y" path="res://Sounds/boxSound.wav" id="77_edd4b"]
-[ext_resource type="AudioStream" uid="uid://bkrnt3uicl4p" path="res://Sounds/light.wav" id="78_q401f"]
-[ext_resource type="AudioStream" uid="uid://icpj48hy2u2t" path="res://Sounds/poof.wav" id="78_sgarg"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xspq5"]
 size = Vector2(93.4416, 167.212)
@@ -532,7 +527,7 @@ shape = SubResource("RectangleShape2D_xspq5")
 position = Vector2(16.769, 30.5354)
 scale = Vector2(0.602273, 0.602273)
 sprite_frames = SubResource("SpriteFrames_0xin4")
-animation = &"walk"
+animation = &"pushPull"
 
 [node name="Camera2D" type="Camera2D" parent="CharacterBody2D"]
 position = Vector2(16.7689, 30.5354)
@@ -540,19 +535,6 @@ scale = Vector2(0.602273, 0.602273)
 offset = Vector2(0, -170)
 drag_horizontal_enabled = true
 drag_vertical_enabled = true
-
-[node name="JumpSound" type="AudioStreamPlayer" parent="CharacterBody2D"]
-stream = ExtResource("76_sa8qt")
-volume_db = -35.0
-
-[node name="PushPullSound" type="AudioStreamPlayer" parent="CharacterBody2D"]
-stream = ExtResource("77_edd4b")
-volume_db = -30.0
-
-[node name="Walking" type="AudioStreamPlayer" parent="CharacterBody2D"]
-stream = ExtResource("16_f8enx")
-volume_db = -30.0
-pitch_scale = 2.33
 
 [node name="Ground" type="StaticBody2D" parent="."]
 position = Vector2(565, 311)
@@ -1319,7 +1301,6 @@ frame_progress = 0.673632
 
 [node name="Background" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("53_srh12")
-volume_db = -10.0
 
 [node name="OKey" type="Sprite2D" parent="."]
 visible = false
@@ -1354,10 +1335,6 @@ position = Vector2(-11.8092, -829.97)
 texture = ExtResource("69_cftnj")
 flip_v = true
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="LightToggle"]
-stream = ExtResource("78_q401f")
-volume_db = -10.0
-
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
@@ -1374,7 +1351,3 @@ offset_right = 25.0
 offset_bottom = -155.0
 color = Color(0, 0, 0, 1)
 metadata/_edit_use_anchors_ = true
-
-[node name="PortalPoof" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("78_sgarg")
-volume_db = -20.0

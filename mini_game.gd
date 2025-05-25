@@ -28,7 +28,7 @@ func _ready() -> void:
 		stream.set_loop(true)
 		
 	$Background.play()
-	# Start with spacebar hidden
+	#Start with spacebar hidden
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	spacebar_sprite.visible = false
 	pauseMenu = pauseMenuScene.instantiate()
