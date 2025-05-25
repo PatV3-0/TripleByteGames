@@ -1,4 +1,4 @@
-[gd_scene load_steps=116 format=3 uid="uid://pb8gto2tawqj"]
+[gd_scene load_steps=117 format=3 uid="uid://pb8gto2tawqj"]
 
 [ext_resource type="Script" path="res://mini_game.gd" id="1_4wdgk"]
 [ext_resource type="Script" path="res://player.gd" id="1_nbqls"]
@@ -69,6 +69,7 @@
 [ext_resource type="Script" path="res://portal_4.gd" id="51_2wqq0"]
 [ext_resource type="Texture2D" uid="uid://djx4ewmkkyqv1" path="res://idle 1 14.PNG" id="53_3ry4u"]
 [ext_resource type="AudioStream" uid="uid://b8h76imysnphk" path="res://Sounds/VeryGentle.wav" id="53_srh12"]
+[ext_resource type="Texture2D" uid="uid://vf50b25fhdm3" path="res://idle 1 15.PNG" id="54_cqsu1"]
 [ext_resource type="Texture2D" uid="uid://bpex1pk4gy33v" path="res://O1.png" id="61_gm3g1"]
 [ext_resource type="Texture2D" uid="uid://rdtvvsakum7i" path="res://PullT.png" id="63_i1gt3"]
 [ext_resource type="Texture2D" uid="uid://cr53m2ekep8sq" path="res://PullT1.png" id="64_byu4a"]
@@ -217,6 +218,9 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": ExtResource("53_3ry4u")
+}, {
+"duration": 1.0,
+"texture": ExtResource("54_cqsu1")
 }],
 "loop": true,
 "name": &"default",
@@ -269,6 +273,9 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": ExtResource("53_3ry4u")
+}, {
+"duration": 1.0,
+"texture": ExtResource("54_cqsu1")
 }],
 "loop": true,
 "name": &"default",
@@ -321,6 +328,9 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": ExtResource("53_3ry4u")
+}, {
+"duration": 1.0,
+"texture": ExtResource("54_cqsu1")
 }],
 "loop": true,
 "name": &"default",
@@ -373,6 +383,9 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": ExtResource("53_3ry4u")
+}, {
+"duration": 1.0,
+"texture": ExtResource("54_cqsu1")
 }],
 "loop": true,
 "name": &"default",
@@ -425,6 +438,9 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": ExtResource("53_3ry4u")
+}, {
+"duration": 1.0,
+"texture": ExtResource("54_cqsu1")
 }],
 "loop": true,
 "name": &"default",
@@ -1179,7 +1195,8 @@ rotation = -0.686609
 scale = Vector2(0.536795, 0.23871)
 skew = 0.625839
 sprite_frames = SubResource("SpriteFrames_mhx3r")
-frame_progress = 0.133238
+frame = 1
+frame_progress = 0.702936
 
 [node name="Portal1" type="Area2D" parent="."]
 script = ExtResource("21_83rke")
@@ -1311,7 +1328,6 @@ shape = SubResource("CapsuleShape2D_uban1")
 
 [node name="Sprite2D" type="Sprite2D" parent="LightToggle"]
 position = Vector2(-11.8093, 95.3311)
-scale = Vector2(1, 1)
 texture = ExtResource("69_cftnj")
 
 [node name="Sprite2D2" type="Sprite2D" parent="LightToggle"]

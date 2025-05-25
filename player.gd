@@ -37,7 +37,7 @@ func _on_pullable_body_changed(in_range: bool, body: Node):
 func _on_pushable_body_changed(in_range: bool, body: Node):
 	if body == self:
 		can_push = in_range
-		push_target = $"../Ground/CollsionShape2D9" if in_range else null
+		push_target = $"../Ground/CollisionShape2D9" if in_range else null
 		if not in_range and pushing:
 			pushing = false
 			$Sprite2D.stop()
@@ -50,13 +50,16 @@ func _physics_process(delta: float) -> void:
 	if not is_on_floor():
 		current_speed *= air_control_multiplier
 
+	var moving_left = Input.is_action_pressed("ui_left")
+	var moving_right = Input.is_action_pressed("ui_right")
+
 	# Basic horizontal movement input if not pulling or pushing
 	if not pulling and not pushing:
-		if Input.is_action_pressed("ui_right"):
+		if moving_right:
 			velocity.x = current_speed
 			$Sprite2D.flip_h = true
 			$CollisionPolygon2D.scale.x = -0.5
-		elif Input.is_action_pressed("ui_left"):
+		elif moving_left:
 			velocity.x = -current_speed
 			$Sprite2D.flip_h = false
 			$CollisionPolygon2D.scale.x = 0.5
@@ -70,21 +73,10 @@ func _physics_process(delta: float) -> void:
 		$Sprite2D.play("jump")
 		$Sprite2D.frame = 0
 
-	move_and_slide()
-
-	# Handle jump animation frames
-	if jumping:
-		if not is_on_floor():
-			$Sprite2D.frame = 1
-		else:
-			$Sprite2D.frame = 2
-			jumping = false
-
-	# Pulling logic
+	# Pulling logic (unchanged)
 	if can_pull and pull_target and Input.is_action_pressed("toggle_pull"):
 		var pull_distance = pull_target.global_position.distance_to(global_position)
 		if pull_distance > 30:
-			pulling = true
 			pulling = true
 			pull_target.apply_central_impulse((global_position - pull_target.global_position).normalized() * 50)
 		else:
@@ -97,21 +89,43 @@ func _physics_process(delta: float) -> void:
 	# Pushing logic
 	var pushing_now = false
 	if can_push and push_target and Input.is_action_pressed("toggle_push"):
-		var moving = Input.is_action_pressed("ui_left") or Input.is_action_pressed("ui_right")
-		if moving:
+		if moving_left or moving_right:
 			pushing_now = true
 			if not $Sprite2D.is_playing() or $Sprite2D.animation != "pushPull":
 				$Sprite2D.play("pushPull")
 
-			var direction = 1 if global_position.x < push_target.global_position.x else -1
-			push_target.apply_central_impulse(Vector2(direction * 100, 0))
+			var direction = 1 if moving_right else -1
+			
+			# Set player velocity to push speed in that direction (move player)
+			velocity.x = direction * current_speed * 0.8  # Slightly slower than normal speed
+
+			# Apply a consistent force to the box in the same direction
+			var push_force_magnitude = 5000  # Stronger force for smooth pushing
+			var push_force = Vector2(direction * push_force_magnitude, 0)
+			push_target.apply_central_impulse(push_force * delta)  # Impulse scaled by delta
+
+			# Flip sprite properly
+			$Sprite2D.flip_h = direction > 0
+			$CollisionPolygon2D.scale.x = -0.5 if direction > 0 else 0.5
+
 		else:
 			pushing_now = false
 
 	if pushing and not pushing_now:
 		if $Sprite2D.is_playing() and $Sprite2D.animation == "pushPull":
 			$Sprite2D.stop()
+
 	pushing = pushing_now
+
+	move_and_slide()
+
+	# Handle jump animation frames
+	if jumping:
+		if not is_on_floor():
+			$Sprite2D.frame = 1
+		else:
+			$Sprite2D.frame = 2
+			jumping = false
 
 	# Animation handling if not pulling or pushing
 	if is_on_floor() and not jumping and not pulling and not pushing:
@@ -119,6 +133,7 @@ func _physics_process(delta: float) -> void:
 			$Sprite2D.play("walk")
 		else:
 			$Sprite2D.stop()
+
 
 func grow(offset):
 	if grow_count >= MAX_GROWTH:
