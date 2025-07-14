@@ -2,24 +2,58 @@ extends Node2D
 
 var pauseMenu = null
 @onready var pauseMenuScene = preload("res://Scenes/PauseMenu.tscn")
+@onready var fade_rect = $"FadeLayer2/FadeRect"
 @onready var ui_layer = $UILayer  
 
-var a_pressed = false
-var d_pressed = false
+@export var p_green_texture : Texture2D
+@export var o_green_texture : Texture2D
+
+@onready var p_key_sprite = $PKey
+@onready var o_key_sprite = $OKey
+
 var tutorial_done = false
 var p_pressed = false
 var o_pressed = false
+var hide_timer_started = false
 
 func _ready() -> void:
 	var stream = $Background
 	if stream is AudioStreamWAV:
 		stream.set_loop(true)
-		
+
 	$Background.play()
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+
 	pauseMenu = pauseMenuScene.instantiate()
 	ui_layer.add_child(pauseMenu)  
 	pauseMenu.visible = false
+	
+	if fade_rect:
+		fade_rect.color.a = 1.0
+		var tween = get_tree().create_tween()
+		tween.tween_property(fade_rect, "color:a", 0.0, 1.5).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_OUT)
+
+func _input(event):
+	if event.is_action_pressed("toggle_push") and not p_pressed:
+		p_pressed = true
+		if p_key_sprite and p_green_texture:
+			p_key_sprite.texture = p_green_texture
+		start_hide_timer()
+
+	if event.is_action_pressed("toggle_pull") and not o_pressed:
+		o_pressed = true
+		if o_key_sprite and o_green_texture:
+			o_key_sprite.texture = o_green_texture
+		start_hide_timer()
+
+func start_hide_timer():
+	if not hide_timer_started:
+		hide_timer_started = true
+		await get_tree().create_timer(1.0).timeout
+		if p_key_sprite:
+			p_key_sprite.visible = false
+		if o_key_sprite:
+			o_key_sprite.visible = false
 
 func _unhandled_input(event):
 	if event.is_action_pressed("ui_cancel"):
@@ -46,12 +80,7 @@ func centerPauseMenu():
 	var offset = Vector2(-400,-300)
 	var adj = windowSize + offset
 	pausePanel.position = (adj - pausePanelSize) / 2
-	print(pausePanel.position)
 
 func _process(_delta: float) -> void:
 	if $Background and not $Background.playing:
 		$Background.play()
-
-
-func _on_hole_body_entered(body: Node2D) -> void:
-	pass # Replace with function body.

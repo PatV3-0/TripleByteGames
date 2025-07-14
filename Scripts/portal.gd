@@ -1,7 +1,7 @@
 extends Area2D
 
 @onready var collision_shape = $CollisionShape2D
-@onready var sprite = $CollisionShape2D/Sprite2D
+@onready var sprite = $AnimatedSprite2D
 
 @export var trigger_tutorial_on_growth: bool = false
 @export var tutorial_area: Area2D  # Drag your tutorial Area2D here if needed
@@ -10,6 +10,8 @@ func _ready():
 	connect("body_entered", Callable(self, "_on_body_entered"))
 
 func _on_body_entered(body):
+	sprite.visible = true
+	sprite.play("pop")
 	if body.is_in_group("Player"):
 		var grew = false
 		if body.has_method("grow"):

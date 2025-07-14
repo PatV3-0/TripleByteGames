@@ -1,4 +1,4 @@
-[gd_scene load_steps=78 format=3 uid="uid://cxvd84y1wcrt3"]
+[gd_scene load_steps=89 format=3 uid="uid://cxvd84y1wcrt3"]
 
 [ext_resource type="Script" path="res://Scripts/character_body_2d.gd" id="1_3lcfs"]
 [ext_resource type="Script" path="res://Scripts/tutorial_scene.gd" id="1_22m25"]
@@ -38,13 +38,26 @@
 [ext_resource type="Texture2D" uid="uid://dllfecsqklnjf" path="res://Assets/Sprites/Tutorials/Spill1.png" id="21_2i4b6"]
 [ext_resource type="Texture2D" uid="uid://bn6mi2e1o685b" path="res://Assets/Sprites/Tutorials/Spill2.png" id="22_5dhql"]
 [ext_resource type="Texture2D" uid="uid://cvh813shthtln" path="res://Assets/Sprites/Tutorials/Spill3.png" id="23_igv3g"]
+[ext_resource type="Texture2D" uid="uid://cfjref1cifkab" path="res://Assets/Temp-Portal/image1.png" id="25_bdu14"]
 [ext_resource type="Texture2D" uid="uid://7dg6i1jdrvu8" path="res://Assets/Sprites/Tutorials/Bed1.png" id="26_d0dnk"]
+[ext_resource type="Texture2D" uid="uid://dom4wg6kdpahq" path="res://Assets/Temp-Portal/image2.png" id="26_rb6bh"]
 [ext_resource type="Texture2D" uid="uid://hcbqfblwqic3" path="res://Assets/Sprites/Tutorials/Bed2.png" id="27_kmvl7"]
+[ext_resource type="Texture2D" uid="uid://bmdj30shawok" path="res://Assets/Temp-Portal/image3.png" id="27_v5wyk"]
+[ext_resource type="Texture2D" uid="uid://b4ys7wt82s1e1" path="res://Assets/Temp-Portal/image4.png" id="28_erxhl"]
 [ext_resource type="Texture2D" uid="uid://ds1igef8vn8v2" path="res://Assets/Sprites/Tutorials/Bed3.png" id="28_ufubc"]
+[ext_resource type="Texture2D" uid="uid://b7i5hplxnhtv5" path="res://Assets/Temp-Portal/image5.png" id="29_3rhmq"]
 [ext_resource type="Script" path="res://Scripts/grow_tut.gd" id="29_igly4"]
 [ext_resource type="Texture2D" uid="uid://nmg5s1taplv2" path="res://Assets/Sprites/Tutorials/Grow1.png" id="30_a6nqu"]
+[ext_resource type="Texture2D" uid="uid://dixttu37ckw5h" path="res://Assets/Temp-Portal/image8.png" id="30_jj2rm"]
 [ext_resource type="Script" path="res://Scripts/fade_out.gd" id="31_8l0nc"]
+[ext_resource type="Texture2D" uid="uid://co725l84xa766" path="res://Assets/Temp-Portal/image6.png" id="31_y0ecu"]
 [ext_resource type="Texture2D" uid="uid://b5xqjf6niqdpw" path="res://Assets/Sprites/Tutorials/Grow2.png" id="31_ye6qf"]
+[ext_resource type="Texture2D" uid="uid://ghnrmu1v6dwp" path="res://Assets/Temp-Portal/image7.png" id="32_4hu70"]
+
+[sub_resource type="Gradient" id="Gradient_b110b"]
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_ylnem"]
+gradient = SubResource("Gradient_b110b")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_b1rkv"]
 size = Vector2(13, 25.2)
@@ -196,6 +209,52 @@ size = Vector2(50, 29)
 [sub_resource type="CircleShape2D" id="CircleShape2D_qf1fo"]
 radius = 20.5183
 
+[sub_resource type="SpriteFrames" id="SpriteFrames_aq74a"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("25_bdu14")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_rb6bh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("27_v5wyk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("28_erxhl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("29_3rhmq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("28_erxhl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("27_v5wyk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_rb6bh")
+}],
+"loop": true,
+"name": &"Swirl",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("30_jj2rm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("31_y0ecu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("32_4hu70")
+}],
+"loop": true,
+"name": &"pop",
+"speed": 3.0
+}]
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rmosr"]
 size = Vector2(168.333, 20)
 
@@ -297,6 +356,11 @@ script = ExtResource("1_22m25")
 a_green_texture = ExtResource("2_k3fu8")
 d_green_texture = ExtResource("3_yrxd1")
 space_green_texture = ExtResource("4_dfx10")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(960.833, 357.583)
+scale = Vector2(11.8477, 716.167)
+texture = SubResource("GradientTexture1D_ylnem")
 
 [node name="CharacterBody2D" type="CharacterBody2D" parent="." groups=["Player"]]
 position = Vector2(78.8667, 475.833)
@@ -494,6 +558,14 @@ position = Vector2(355.667, 371)
 shape = SubResource("CircleShape2D_qf1fo")
 debug_color = Color(0, 0.643036, 0.307285, 0.42)
 
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Portal"]
+position = Vector2(359.333, 380)
+scale = Vector2(0.0979167, 0.0955947)
+sprite_frames = SubResource("SpriteFrames_aq74a")
+animation = &"pop"
+frame = 2
+frame_progress = 1.0
+
 [node name="Background" type="AudioStreamPlayer2D" parent="."]
 position = Vector2(0, 1)
 stream = ExtResource("7_e286j")
@@ -612,11 +684,17 @@ debug_color = Color(0.411765, 0.407843, 0.172549, 1)
 [node name="FadeLayer" type="CanvasLayer" parent="."]
 
 [node name="FadeRect" type="ColorRect" parent="FadeLayer"]
+anchors_preset = -1
+anchor_left = 0.483507
+anchor_top = 1.6358
+anchor_right = -0.530382
+anchor_bottom = -1.93981
 offset_left = -2232.0
 offset_top = -1068.0
 offset_right = 8057.0
 offset_bottom = 3427.0
 mouse_filter = 2
 color = Color(0, 0, 0, 0)
+metadata/_edit_use_anchors_ = true
 
 [connection signal="body_entered" from="FadeOut" to="CharacterBody2D" method="_on_fade_out_body_entered"]

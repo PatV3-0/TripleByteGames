@@ -3,6 +3,7 @@ extends Node2D
 var pauseMenu = null
 @onready var pauseMenuScene = preload("res://Scenes/PauseMenu.tscn")
 @onready var ui_layer = $UILayer  
+@onready var portalSprite = $"Portal/AnimatedSprite2D"
 
 @onready var a_key_sprite = $AKey
 @onready var d_key_sprite = $DKey
@@ -23,6 +24,7 @@ func _ready() -> void:
 	if stream is AudioStreamWAV:
 		stream.set_loop(true)
 		
+	portalSprite.play("Swirl")
 	$Background.play()
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	spacebar_sprite.visible = false

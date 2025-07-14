@@ -1,8 +1,10 @@
-[gd_scene load_steps=52 format=3 uid="uid://dgx04jl33om3w"]
+[gd_scene load_steps=58 format=3 uid="uid://dgx04jl33om3w"]
 
 [ext_resource type="Script" path="res://Scripts/character_body_2d.gd" id="1_a08j2"]
 [ext_resource type="Script" path="res://Scripts/tutorial_part_2.gd" id="1_on0m7"]
+[ext_resource type="Texture2D" uid="uid://b15o10do4itfg" path="res://Assets/Sprites/Tutorials/PK2.png" id="2_eoav8"]
 [ext_resource type="Texture2D" uid="uid://dreig70jokor0" path="res://Assets/Sprites/Character/Gjump (3).png" id="3_ehknu"]
+[ext_resource type="Texture2D" uid="uid://bahrq6c3cwnnk" path="res://Assets/Sprites/Tutorials/O2.png" id="3_qhy3r"]
 [ext_resource type="AudioStream" uid="uid://c3iu4fh2kf3kk" path="res://Assets/Sound/jump.wav" id="3_v712t"]
 [ext_resource type="AudioStream" uid="uid://cm8n17onir64w" path="res://Assets/Sound/boxSound.wav" id="4_iprbb"]
 [ext_resource type="Texture2D" uid="uid://bop8j7py8orur" path="res://Assets/Sprites/Character/Gjump (2).png" id="4_voki2"]
@@ -26,6 +28,8 @@
 [ext_resource type="Script" path="res://Scripts/tut_layer.gd" id="24_5dx7j"]
 [ext_resource type="Texture2D" uid="uid://c0b1yrv7ue73n" path="res://Assets/Sprites/Tutorials/Space.png" id="25_na48w"]
 [ext_resource type="Script" path="res://Scripts/highlight.gd" id="26_6seu8"]
+[ext_resource type="Texture2D" uid="uid://b3007s8rl8ump" path="res://Assets/Sprites/Tutorials/PK1.png" id="27_4vilt"]
+[ext_resource type="Texture2D" uid="uid://bndq0jtjon5ay" path="res://Assets/Sprites/Tutorials/O1.png" id="28_qbmbg"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_asjyo"]
 size = Vector2(13, 25.2)
@@ -172,7 +176,7 @@ size = Vector2(478, 491.5)
 size = Vector2(101, 1204)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ywdqv"]
-size = Vector2(23, 37)
+size = Vector2(38.6667, 39.8333)
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_iesax"]
 friction = 2.0
@@ -180,11 +184,16 @@ friction = 2.0
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7cc7p"]
 size = Vector2(38.75, 38)
 
+[sub_resource type="Gradient" id="Gradient_0keqb"]
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_u8kx8"]
+gradient = SubResource("Gradient_0keqb")
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xal51"]
 size = Vector2(38.8889, 38)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_oj3ev"]
-size = Vector2(10, 286)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fnu48"]
+size = Vector2(526, 20)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_d1hw3"]
 animations = [{
@@ -197,12 +206,14 @@ animations = [{
 "speed": 3.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_fnu48"]
-size = Vector2(236, 20)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_oj3ev"]
+size = Vector2(10, 286)
 
 [node name="TutPart2" type="Node2D"]
 scale = Vector2(3, 3)
 script = ExtResource("1_on0m7")
+p_green_texture = ExtResource("2_eoav8")
+o_green_texture = ExtResource("3_qhy3r")
 
 [node name="CharacterBody2D" type="CharacterBody2D" parent="." groups=["Player"]]
 position = Vector2(78.8667, 475.833)
@@ -218,7 +229,7 @@ position = Vector2(1.39999, -3)
 rotation = -0.000699009
 scale = Vector2(0.015, 0.015)
 sprite_frames = SubResource("SpriteFrames_iocu8")
-animation = &"walk"
+animation = &"pushPull"
 offset = Vector2(95, 39)
 flip_h = true
 
@@ -367,7 +378,7 @@ shape = SubResource("RectangleShape2D_xtuf5")
 script = ExtResource("21_n0mxo")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hole"]
-position = Vector2(415, 472)
+position = Vector2(414.333, 470.583)
 shape = SubResource("RectangleShape2D_ywdqv")
 debug_color = Color(0.687756, 0.387991, 0.0984149, 0.42)
 
@@ -383,6 +394,12 @@ scale = Vector2(3, 3)
 shape = SubResource("RectangleShape2D_7cc7p")
 debug_color = Color(0.143349, 0.519412, 1, 0.42)
 
+[node name="Sprite2D" type="Sprite2D" parent="Pushable/CollisionShape2D"]
+visible = false
+position = Vector2(-0.0555618, -0.38888)
+scale = Vector2(0.155816, 38.7778)
+texture = SubResource("GradientTexture1D_u8kx8")
+
 [node name="Area2D" type="Area2D" parent="Pushable"]
 script = ExtResource("7_1qcp5")
 
@@ -391,11 +408,26 @@ position = Vector2(1, 1)
 scale = Vector2(3, 3)
 shape = SubResource("RectangleShape2D_xal51")
 
+[node name="Highlight" type="Area2D" parent="Pushable"]
+position = Vector2(-414, -470)
+script = ExtResource("26_6seu8")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Pushable/Highlight"]
+position = Vector2(412, 537.333)
+shape = SubResource("RectangleShape2D_fnu48")
+debug_color = Color(0.956871, 0.119971, 0.43239, 0.42)
+
 [node name="UILayer" type="CanvasLayer" parent="."]
 
 [node name="Background" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("7_lndga")
 volume_db = 8.0
+
+[node name="Tut1" type="AnimatedSprite2D" parent="."]
+visible = false
+position = Vector2(282.333, 374)
+scale = Vector2(0.123765, 0.123765)
+sprite_frames = SubResource("SpriteFrames_d1hw3")
 
 [node name="TutLayer" type="Area2D" parent="."]
 script = ExtResource("24_5dx7j")
@@ -405,17 +437,39 @@ position = Vector2(279.333, 366.667)
 shape = SubResource("RectangleShape2D_oj3ev")
 debug_color = Color(0.510884, 0.573227, 0.206706, 0.42)
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="TutLayer"]
-position = Vector2(282.333, 374)
-scale = Vector2(0.123765, 0.123765)
-sprite_frames = SubResource("SpriteFrames_d1hw3")
+[node name="FadeLayer" type="CanvasLayer" parent="."]
 
-[node name="Highlight" type="Area2D" parent="."]
-script = ExtResource("26_6seu8")
+[node name="FadeRect" type="ColorRect" parent="FadeLayer"]
+offset_left = -2232.0
+offset_top = -1068.0
+offset_right = 8057.0
+offset_bottom = 3427.0
+mouse_filter = 2
+color = Color(0, 0, 0, 0)
+metadata/_edit_use_anchors_ = true
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Highlight"]
-position = Vector2(414.333, 500.333)
-shape = SubResource("RectangleShape2D_fnu48")
-debug_color = Color(0.956871, 0.119971, 0.43239, 0.42)
+[node name="PKey" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(405.333, 432.333)
+scale = Vector2(0.02, 0.02)
+texture = ExtResource("27_4vilt")
 
-[connection signal="body_entered" from="Hole" to="." method="_on_hole_body_entered"]
+[node name="OKey" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(423.667, 432)
+scale = Vector2(0.02, 0.02)
+texture = ExtResource("28_qbmbg")
+
+[node name="FadeLayer2" type="CanvasLayer" parent="."]
+
+[node name="FadeRect" type="ColorRect" parent="FadeLayer2"]
+offset_left = -2232.0
+offset_top = -1068.0
+offset_right = 8057.0
+offset_bottom = 3427.0
+mouse_filter = 2
+color = Color(0, 0, 0, 1)
+metadata/_edit_use_anchors_ = true
+
+[connection signal="body_entered" from="Hole" to="Hole" method="_on_body_entered"]
+[connection signal="body_exited" from="Hole" to="Hole" method="_on_body_exited"]

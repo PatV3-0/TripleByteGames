@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-signal death_finished
+#signal death_finished
 
 @export var speed : float = 300.0
 @export var jump_force : float = 600.0
@@ -10,7 +10,7 @@ signal death_finished
 @onready var jump_sound = $JumpSound
 @onready var push_pull_sound = $PushPullSound
 @onready var walking_sound = $Walking
-@onready var fade_rect = get_tree().get_root().get_node("TutorialScene/FadeLayer/FadeRect")
+@onready var fade_rect = $"../FadeLayer/FadeRect"
 
 var jumping = false
 var in_air = false
@@ -110,21 +110,21 @@ func _physics_process(delta: float) -> void:
 	if can_push and push_target and Input.is_action_pressed("toggle_push"):
 		if moving_left or moving_right:
 			pushing_now = true
-			if not $Sprite2D.is_playing() or $Sprite2D.animation != "pushPull":
+
+			# Only play once if it's not already playing
+			if !$Sprite2D.is_playing() or $Sprite2D.animation != "pushPull":
 				$Sprite2D.play("pushPull")
 				if not push_pull_sound.playing:
 					push_pull_sound.play()
 
 			var direction = 1 if moving_right else -1
-			velocity.x = direction * current_speed * 2
-			var push_force_magnitude = 1100
+			velocity.x = direction * current_speed * 2  # this controls player speed
+			var push_force_magnitude = 2200  # increase this for stronger object push
 			var push_force = Vector2(direction * push_force_magnitude, 0)
 			push_target.apply_force(push_force, Vector2.ZERO)
-
-			#$Sprite2D.flip_h = direction > 0
-			#$CollisionPolygon2D.scale.x = -0.5 if direction > 0 else 0.5
 	else:
 		pushing_now = false
+
 
 	if pushing and not pushing_now:
 		if $Sprite2D.is_playing() and $Sprite2D.animation == "pushPull":
@@ -178,6 +178,7 @@ func _on_death_animation_finished():
 	emit_signal("death_finished")
 
 func update_camera_zoom(optional_offset := 105.0):
+	print(optional_offset)
 	var cam = $Camera2D
 	if cam:
 		var target_zoom = Vector2(1.0, 1.0) / (1.0 + 0.2 * grow_count)
