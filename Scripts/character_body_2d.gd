@@ -1,33 +1,56 @@
 extends CharacterBody2D
 
 #signal death_finished
+signal fade_out_triggered
 
 @export var speed : float = 300.0
 @export var jump_force : float = 600.0
 @export var gravity : float = 1200.0
-@export var air_control_multiplier : float = 1.2  # Faster air control
+@export var air_control_multiplier : float = 1.0
+@export var launch_strength: Vector2 = Vector2(0, -1000) # Upwards in 2D
 
 @onready var jump_sound = $JumpSound
 @onready var push_pull_sound = $PushPullSound
 @onready var walking_sound = $Walking
 @onready var fade_rect = $"../FadeLayer/FadeRect"
+@onready var fade = $"../FadeLayer"
+@onready var fade_zone = $"../FadeOut"
+@onready var tutLabel = $TutLabel
 
 var jumping = false
 var in_air = false
 var grow_count = 0
-const MAX_GROWTH = 1
-
+var shrink_count = 0
+const MAX_GROWTH = 3
+const MAX_SHRINK = 3
 var can_pull: bool = false
 var pull_target: RigidBody2D = null
 var pulling: bool = false
-
 var can_push: bool = false
 var push_target: RigidBody2D = null
 var pushing: bool = false
 
 func _ready():
-	#hello 
-	print(".")
+	print(pull_target)
+	if fade_zone:
+		fade_zone.body_entered.connect(_on_fade_out_body_entered)
+	hide_tutorial_text()
+	hide_tutorial()
+
+func show_tutorial():
+	var lab = $AnimatedSprite2D
+	lab.play("expand")
+	
+func hide_tutorial():
+	var lab = $AnimatedSprite2D
+	lab.play("retract")
+
+func show_tutorial_text(text: String):
+	tutLabel.text = text
+	tutLabel.visible = true
+
+func hide_tutorial_text():
+	tutLabel.visible = false	
 
 func freeze():
 	set_physics_process(false)
@@ -57,12 +80,12 @@ func _physics_process(delta: float) -> void:
 		if moving_right:
 			velocity.x = current_speed
 			$Sprite2D.flip_h = true
-			$Sprite2D.offset.x = 95
+			#$Sprite2D.offset.x = 95
 			$CollisionShape2D.scale.x = 1
 		elif moving_left:
 			velocity.x = -current_speed
 			$Sprite2D.flip_h = false
-			$Sprite2D.offset.x = -65
+			#$Sprite2D.offset.x = -65
 			$CollisionShape2D.scale.x = -1
 		else:
 			velocity.x = 0
@@ -82,50 +105,88 @@ func _physics_process(delta: float) -> void:
 	# Pull logic
 	var pulling_now = false
 	if can_pull and pull_target and Input.is_action_pressed("toggle_pull"):
-		if moving_left or moving_right:
-			pulling_now = true
-			var direction = 1 if moving_right else -1
-			velocity.x = direction * current_speed * 0.8
-			if not $Sprite2D.is_playing() or $Sprite2D.animation != "pushPull":
-				$Sprite2D.play("pushPull")
-				if not push_pull_sound.playing:
-					push_pull_sound.play()
-
-			$Sprite2D.flip_h = direction < 0
-			$CollisionShape2D.scale.x = -0.5 if direction > 0 else 0.5
-			var pull_direction = (global_position - pull_target.global_position).normalized()
-			var pull_force_magnitude = 800
-			pull_target.apply_central_impulse(pull_direction * pull_force_magnitude)
+		pulling_now = true
+		
+		pull_target.sleeping = false
+		print(pull_target.position)
+		
+		# Calculate direction vector from object to player
+		var pull_vector = Vector2(global_position.x - pull_target.global_position.x, 0)
+		var pull_distance = pull_vector.length()
+		if pull_distance > 0:
+			var pull_dir = pull_vector.normalized()
+			var pull_strength = clamp(300 * pull_distance, 0, 500) # scale by distance but cap
+			pull_target.apply_central_impulse(pull_dir * pull_strength)
+		
+		# Handle player input for possible movement while pulling
+		var player_input = 0
+		if moving_left:
+			velocity.x = -current_speed * 0.6
+		elif moving_right:
+			velocity.x = current_speed * 0.6
+		else:
+			velocity.x = 0
+		
+		# Play pull animation and sound
+		if $Sprite2D.animation != "pushPull":
+			$Sprite2D.play("pushPull")
+			if not push_pull_sound.playing:
+				push_pull_sound.play()
+				
+		# Flip sprite and scale collision shape based on direction
+		$Sprite2D.flip_h = pull_vector.x < 0
+		$CollisionShape2D.scale.x = 0.5 * sign(pull_vector.x)
 	else:
 		pulling_now = false
 
+	# Stop pull effects if pulling has just ended
 	if pulling and not pulling_now:
-		if $Sprite2D.is_playing() and $Sprite2D.animation == "pushPull":
+		if $Sprite2D.animation == "pushPull":
 			$Sprite2D.stop()
 		push_pull_sound.stop()
+
 	pulling = pulling_now
 
 	# Push logic
 	var pushing_now = false
 	if can_push and push_target and Input.is_action_pressed("toggle_push"):
-		if moving_left or moving_right:
-			pushing_now = true
+		pushing_now = true
 
-			# Only play once if it's not already playing
-			if !$Sprite2D.is_playing() or $Sprite2D.animation != "pushPull":
-				$Sprite2D.play("pushPull")
-				if not push_pull_sound.playing:
-					push_pull_sound.play()
+		if !$Sprite2D.is_playing() or $Sprite2D.animation != "pushPull":
+			$Sprite2D.play("pushPull")
+			if not push_pull_sound.playing:
+				push_pull_sound.play()
 
-			var direction = 1 if moving_right else -1
-			velocity.x = direction * current_speed * 2  # this controls player speed
-			var push_force_magnitude = 2200  # increase this for stronger object push
-			var push_force = Vector2(direction * push_force_magnitude, 0)
-			push_target.apply_force(push_force, Vector2.ZERO)
+		var direction = 1 if moving_right else -1
+		velocity.x = direction * current_speed * 0.8
+		var push_force_magnitude = 1200
+		var push_force = Vector2(direction * push_force_magnitude, 0)
+		push_target.apply_force(push_force, Vector2.ZERO)
+
+		var push_area = push_target.get_node_or_null("Area2D")
+		var push_obj = push_target.get_node_or_null("CollisionShape2D")
+		var push_sprite2 = push_obj.get_node_or_null("Sprite2D")
+		var push_sprite = push_area.get_node_or_null("Sprite2D")
+		if push_sprite:
+			var skew_amount = 0.04
+			var shift_amount = 6
+			push_sprite.skew = skew_amount
+			push_sprite2.skew = skew_amount
+			push_sprite.offset.x = shift_amount * direction
+			push_sprite2.offset.x = shift_amount * direction
 	else:
 		pushing_now = false
-
-
+		if push_target:
+			var push_area = push_target.get_node_or_null("Area2D")
+			var push_obj = push_target.get_node_or_null("CollisionShape2D")
+			var push_sprite2 = push_obj.get_node_or_null("Sprite2D")
+			var push_sprite = push_area.get_node_or_null("Sprite2D")
+			if push_sprite:
+				push_sprite.skew = 0
+				push_sprite2.skew = 0
+				push_sprite.offset.x = 0
+				push_sprite2.offset.x = 0
+				
 	if pushing and not pushing_now:
 		if $Sprite2D.is_playing() and $Sprite2D.animation == "pushPull":
 			$Sprite2D.stop()
@@ -165,6 +226,20 @@ func grow(offset):
 	update_camera_zoom(offset)
 	return true  # Successfully grew
 	
+func shrink(offset):
+	print("Shrinking")
+	if grow_count >= MAX_SHRINK:
+		print("Max shrink reached")
+		return false  # Player cannot grow further
+	
+	print("Smaller")
+	scale *= 0.8
+	jump_force = 330
+	speed -= 150
+	shrink_count += 1
+	update_camera_zoom(offset)
+	return true  # Successfully grew
+	
 func play_death():
 	if $Sprite2D and "death" in $Sprite2D.sprite_frames.get_animation_names():
 		$Sprite2D.play("death")
@@ -178,17 +253,21 @@ func _on_death_animation_finished():
 	emit_signal("death_finished")
 
 func update_camera_zoom(optional_offset := 105.0):
-	print(optional_offset)
+	#print(optional_offset)
+	var label = $Label
 	var cam = $Camera2D
 	if cam:
 		var target_zoom = Vector2(1.0, 1.0) / (1.0 + 0.2 * grow_count)
 		var tween = get_tree().create_tween()
 		tween.tween_property(cam, "zoom", target_zoom, 0.5).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_OUT)
-
+		label.scale *= 1.5
+		label.position.y += 10
 
 func _on_fade_out_body_entered(body: Node2D) -> void:
+	print("Fade Out found")
 	if body.is_in_group("Player"):
-		transition_to_next_scene("res://Scenes/TutorialPart2.tscn")
+		print("Calling transition")
+		emit_signal("fade_out_triggered")
 		
 
 func transition_to_next_scene(next_scene_path: String):
@@ -196,3 +275,8 @@ func transition_to_next_scene(next_scene_path: String):
 	tween.tween_property(fade_rect, "color:a", 1.0, 1.5).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_IN_OUT)
 	await tween.finished
 	get_tree().change_scene_to_file(next_scene_path)
+
+func _on_mushroom_launch_body_entered(body: Node2D) -> void:
+	if body.is_in_group("Player"):
+		print("Launch!")
+		body.velocity = launch_strength

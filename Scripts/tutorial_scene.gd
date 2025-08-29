@@ -3,7 +3,8 @@ extends Node2D
 var pauseMenu = null
 @onready var pauseMenuScene = preload("res://Scenes/PauseMenu.tscn")
 @onready var ui_layer = $UILayer  
-@onready var portalSprite = $"Portal/AnimatedSprite2D"
+@onready var portalSprite1 = $"Portal/Violet"
+@onready var portalSprite2 = $"Portal/Purple"
 
 @onready var a_key_sprite = $AKey
 @onready var d_key_sprite = $DKey
@@ -12,6 +13,7 @@ var pauseMenu = null
 @export var a_green_texture : Texture2D
 @export var d_green_texture : Texture2D
 @export var space_green_texture : Texture2D
+@export var next_scene_path: String = "res://Scenes/TutorialPart2.tscn"
 
 var a_pressed = false
 var d_pressed = false
@@ -20,11 +22,13 @@ var p_pressed = false
 var o_pressed = false
 
 func _ready() -> void:
+	$CharacterBody2D.fade_out_triggered.connect(_on_player_fade_out_triggered)
 	var stream = $Background
 	if stream is AudioStreamWAV:
 		stream.set_loop(true)
 		
-	portalSprite.play("Swirl")
+	portalSprite1.play("Swirl")
+	portalSprite2.play("Swirl")
 	$Background.play()
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	spacebar_sprite.visible = false
@@ -43,7 +47,7 @@ func showPauseMenu():
 	get_tree().paused = true
 	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 	pauseMenu.visible = true
-	centerPauseMenu()
+	#centerPauseMenu()
 
 func hidePauseMenu():
 	get_tree().paused = false
@@ -57,7 +61,7 @@ func centerPauseMenu():
 	var offset = Vector2(-400,-300)
 	var adj = windowSize + offset
 	pausePanel.position = (adj - pausePanelSize) / 2
-	print(pausePanel.position)
+	#print(pausePanel.position)
 
 func _process(_delta: float) -> void:
 	if $Background and not $Background.playing:
@@ -83,3 +87,11 @@ func _process(_delta: float) -> void:
 		tutorial_done = true
 		await get_tree().create_timer(0.5).timeout
 		spacebar_sprite.visible = false
+		
+func _on_player_fade_out_triggered():
+	# Handle the fade + scene change here
+	var fade_rect = $FadeLayer/FadeRect
+	var tween = create_tween()
+	tween.tween_property(fade_rect, "color:a", 1.0, 1.5).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_IN_OUT)
+	await tween.finished
+	get_tree().change_scene_to_file(next_scene_path)

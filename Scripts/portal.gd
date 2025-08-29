@@ -1,18 +1,25 @@
 extends Area2D
 
 @onready var collision_shape = $CollisionShape2D
-@onready var sprite = $AnimatedSprite2D
+#@onready var sprite = $Purple
+#@onready var sprite2 = $Violet
 
 @export var trigger_tutorial_on_growth: bool = false
 @export var tutorial_area: Area2D  # Drag your tutorial Area2D here if needed
 
 func _ready():
+	#print(sprite)
 	connect("body_entered", Callable(self, "_on_body_entered"))
+	#if sprite and sprite.has_signal("animation_finished"):
+		#sprite.animation_finished.connect(_on_animation_finished)
+
+var pending_hide := false
 
 func _on_body_entered(body):
-	sprite.visible = true
-	sprite.play("pop")
 	if body.is_in_group("Player"):
+		#sprite.play("Pop")
+		#sprite2.play("Pop")
+
 		var grew = false
 		if body.has_method("grow"):
 			grew = body.grow(105)
@@ -23,4 +30,8 @@ func _on_body_entered(body):
 				tutorial_area._on_body_entered(body)
 
 		collision_shape.set_deferred("disabled", true)
+		pending_hide = true
+		
+func _on_animation_finished():
+	if pending_hide:
 		hide()

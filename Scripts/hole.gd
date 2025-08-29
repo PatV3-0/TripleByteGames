@@ -1,6 +1,6 @@
 extends Area2D
 
-@export var next_scene_path: String = "res://Scenes/main_menu.tscn"
+@export var next_scene_path: String = "res://Scenes/Walls1.tscn"
 @onready var fade_rect = $"../FadeLayer/FadeRect"
 
 var player_inside: Node = null

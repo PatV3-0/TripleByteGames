@@ -2,44 +2,39 @@ extends Control
 
 @onready var startButton = $VBoxContainer/StartGameButton
 @onready var quitButton = $VBoxContainer/ExitButton
+@onready var settingsButton = $VBoxContainer/SettingsButton
+@onready var aboutButton = $VBoxContainer/AboutButton
+@onready var savesButton = $VBoxContainer/ContinueGameButton
+var SaveManager = preload("res://Scripts/SaveManager.gd")
+
 @onready var saveSlotsPanel = $SaveSlotsPanel
 @onready var aboutPanel = $AboutPanel
-var SaveManager = preload("res://Scripts/SaveManager.gd")
+@onready var settingsPanel = $SettingsPanel
+
+@onready var musicPlayer = $BackgroundSound
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	$BackgroundSound.play()
 	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
-	
-	$VBoxContainer.custom_minimum_size = Vector2(600, 800)
-	
-	var window_size = get_viewport().size
-	var sprite_texture_size = $Background/Sprite2D.texture.get_size()
-
-	# Scale the sprite to nearly fill the screen, maintaining aspect ratio
-	var scale_x = window_size.x / sprite_texture_size.x
-	var scale_y = window_size.y / sprite_texture_size.y
-	var scale = min(scale_x, scale_y) * 2
-
-	$Background/Sprite2D.scale = Vector2(scale, scale)
-	$Background/Sprite2D.centered = true
-	$Background/Sprite2D.position = window_size / 2
-	
-	var horizontal_offset = 40
-	var vertical_offset = 200 
-	$Background/Sprite2D.position = Vector2(window_size) / 2 + Vector2(horizontal_offset, vertical_offset)
-	
-	# Center the VBoxContainer on the Sprite2D
-	$VBoxContainer.position = $Background/Sprite2D.position - Vector2(640, 600) / 2
-	
-	#Button Logic
+		
+	# Button Logic
 	startButton.pressed.connect(onStartButton)
 	quitButton.pressed.connect(onExit)
+	settingsButton.pressed.connect(onSettingsButton)
+	aboutButton.pressed.connect(onAboutButton)
+	savesButton.pressed.connect(loadSaveData)
+	
+	$SettingsPanel/BackButton.pressed.connect(onSettingsBack)
+	$AboutPanel/BackButton.pressed.connect(onAboutBack)
+	$SaveSlotsPanel/BackButton.pressed.connect(onSavesBack)
+	
 	saveSlotsPanel.hide()
+	settingsPanel.hide()
 	aboutPanel.hide()
 	
 func onStartButton():
-	var tutorialScene = preload("res://Scenes/tutorial_scene.tscn")
+	var tutorialScene = preload("res://Scenes/Cutscene1.tscn")
 	#temp load to pt2 of tutorial
 	#var tutorialScene = preload("res://Levels/TutorialPt2.tscn")
 	$BackgroundSound.stop()
@@ -53,6 +48,7 @@ func onExit():
 	get_tree().quit()
 	
 func loadSaveData():
+	saveSlotsPanel.show()
 	var saveManager = SaveManager.new()
 	var data = {
 		"playerName": "Patt", 
@@ -60,7 +56,7 @@ func loadSaveData():
 		"timestamp": Time.get_datetime_string_from_system()
 	}
 	saveManager.saveGame(1, data)
-	var availableSaves = saveManager.get_available_saves()
+	var availableSaves = saveManager.getAvailableSaves()
 	if availableSaves.is_empty():
 		print("No saves found")
 	else:
@@ -73,3 +69,29 @@ func showLevelSelection(saves):
 func _process(_delta: float) -> void:
 	if $BackgroundSound and not $BackgroundSound.playing:
 		$BackgroundSound.play()
+
+func onSettingsButton():
+	$VBoxContainer.hide()
+	settingsPanel.show()
+
+func onSettingsBack():
+	settingsPanel.hide()
+	$VBoxContainer.show()
+	
+func onSavesBack():
+	saveSlotsPanel.hide()
+	$VBoxContainer.show()
+
+func toggleMusic():
+	if musicPlayer.playing:
+		musicPlayer.stop()
+	else:
+		musicPlayer.play()
+		
+func onAboutButton():
+	$VBoxContainer.hide()
+	aboutPanel.show()
+
+func onAboutBack():
+	aboutPanel.hide()
+	$VBoxContainer.show()

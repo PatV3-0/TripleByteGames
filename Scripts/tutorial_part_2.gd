@@ -66,7 +66,7 @@ func showPauseMenu():
 	get_tree().paused = true
 	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 	pauseMenu.visible = true
-	centerPauseMenu()
+	#centerPauseMenu()
 
 func hidePauseMenu():
 	get_tree().paused = false

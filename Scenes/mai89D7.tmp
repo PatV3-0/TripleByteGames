@@ -1,0 +1,149 @@
+[gd_scene load_steps=4 format=3 uid="uid://bicj2omvqqwau"]
+
+[ext_resource type="Texture2D" uid="uid://dvto4eav8ybvt" path="res://Assets/Menus/Menu.png" id="1_ppwih"]
+[ext_resource type="Script" path="res://Scripts/main_menu.gd" id="1_si1k2"]
+[ext_resource type="AudioStream" uid="uid://d2r42mnkmuqin" path="res://Assets/Sound/IntroOuttro.wav" id="3_m5adj"]
+
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_si1k2")
+
+[node name="Background" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 1154.0
+offset_bottom = 645.0
+color = Color(0.588875, 0.395409, 0.129861, 1)
+
+[node name="Sprite2D" type="Sprite2D" parent="Background"]
+position = Vector2(599, 438)
+scale = Vector2(1.102, 1.116)
+texture = ExtResource("1_ppwih")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_right = 300.0
+offset_bottom = 316.0
+
+[node name="StartGameButton" type="Button" parent="VBoxContainer"]
+custom_minimum_size = Vector2(300, 60)
+layout_mode = 2
+text = "Start
+"
+
+[node name="ContinueGameButton" type="Button" parent="VBoxContainer"]
+custom_minimum_size = Vector2(300, 60)
+layout_mode = 2
+text = "Load Game"
+
+[node name="SettingsButton" type="Button" parent="VBoxContainer"]
+custom_minimum_size = Vector2(300, 60)
+layout_mode = 2
+text = "Settings
+"
+
+[node name="AboutButton" type="Button" parent="VBoxContainer"]
+custom_minimum_size = Vector2(300, 60)
+layout_mode = 2
+text = "About"
+
+[node name="ExitButton" type="Button" parent="VBoxContainer"]
+custom_minimum_size = Vector2(300, 60)
+layout_mode = 2
+text = "Quit"
+
+[node name="SaveSlotsPanel" type="Panel" parent="."]
+modulate = Color(0.999547, 0.435753, 0.98742, 1)
+layout_mode = 0
+offset_right = 447.0
+offset_bottom = 578.0
+
+[node name="Label" type="Label" parent="SaveSlotsPanel"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+text = "SaveSlots Panel"
+
+[node name="Slot1" type="Button" parent="SaveSlotsPanel"]
+layout_mode = 0
+offset_right = 8.0
+offset_bottom = 8.0
+
+[node name="Slot2" type="Button" parent="SaveSlotsPanel"]
+layout_mode = 0
+offset_right = 8.0
+offset_bottom = 8.0
+
+[node name="Slot3" type="Button" parent="SaveSlotsPanel"]
+layout_mode = 0
+offset_right = 8.0
+offset_bottom = 8.0
+
+[node name="AboutPanel" type="Panel" parent="."]
+modulate = Color(0, 0.804175, 0.804175, 1)
+layout_mode = 0
+offset_right = 452.0
+offset_bottom = 578.0
+
+[node name="Label" type="Label" parent="AboutPanel"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+text = "About Panel
+"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="AboutPanel"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Label2" type="Label" parent="AboutPanel"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+
+[node name="BackButton" type="Button" parent="AboutPanel"]
+layout_mode = 0
+offset_right = 8.0
+offset_bottom = 8.0
+
+[node name="SettingsPanel" type="Panel" parent="."]
+modulate = Color(0.770081, 0.770081, 0, 1)
+layout_mode = 0
+offset_right = 449.0
+offset_bottom = 580.0
+
+[node name="Label" type="Label" parent="SettingsPanel"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+text = "Settings Panel
+"
+
+[node name="MusicToggleButton" type="Button" parent="SettingsPanel"]
+layout_mode = 0
+offset_right = 8.0
+offset_bottom = 8.0
+
+[node name="SoundToggleButton" type="Button" parent="SettingsPanel"]
+layout_mode = 0
+offset_right = 8.0
+offset_bottom = 8.0
+
+[node name="BackButton" type="Button" parent="SettingsPanel"]
+layout_mode = 0
+offset_right = 8.0
+offset_bottom = 8.0
+
+[node name="BackgroundSound" type="AudioStreamPlayer2D" parent="."]
+visible = false
+stream = ExtResource("3_m5adj")
+volume_db = -20.0
+autoplay = true

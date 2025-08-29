@@ -1,8 +1,19 @@
-[gd_scene load_steps=4 format=3 uid="uid://bicj2omvqqwau"]
+[gd_scene load_steps=15 format=3 uid="uid://bicj2omvqqwau"]
 
-[ext_resource type="Texture2D" uid="uid://dvto4eav8ybvt" path="res://Assets/Menus/Menu.png" id="1_ppwih"]
 [ext_resource type="Script" path="res://Scripts/main_menu.gd" id="1_si1k2"]
+[ext_resource type="Texture2D" uid="uid://b7c0eq88k0usj" path="res://Assets/Background/Untitled 90.png" id="2_18eo4"]
+[ext_resource type="Texture2D" uid="uid://x4tjj7i30de4" path="res://Assets/Menus/ExtendedSignPost.png" id="2_tjks0"]
+[ext_resource type="Texture2D" uid="uid://ddpwc1gwcqjh5" path="res://Assets/Menus/Buttons/Start.png" id="3_ak0uf"]
 [ext_resource type="AudioStream" uid="uid://d2r42mnkmuqin" path="res://Assets/Sound/IntroOuttro.wav" id="3_m5adj"]
+[ext_resource type="Texture2D" uid="uid://cjem8c126mxqg" path="res://Assets/Menus/Buttons/StartHover.png" id="4_iwq6n"]
+[ext_resource type="Texture2D" uid="uid://bwekocaa8bbbq" path="res://Assets/Menus/Buttons/LoadGame.png" id="5_h54j5"]
+[ext_resource type="Texture2D" uid="uid://drwbdd3xjqttr" path="res://Assets/Menus/Buttons/Settings.png" id="5_s7hs6"]
+[ext_resource type="Texture2D" uid="uid://b3nsvnhrc2l3v" path="res://Assets/Menus/Buttons/LoadGameHover.png" id="6_jgk56"]
+[ext_resource type="Texture2D" uid="uid://c7le14ud6r6fs" path="res://Assets/Menus/Buttons/SettingsHover.png" id="6_s7duf"]
+[ext_resource type="Texture2D" uid="uid://ume4ns75pvfe" path="res://Assets/Menus/Buttons/Quit.png" id="7_cxgkv"]
+[ext_resource type="Texture2D" uid="uid://cjukrdjtwt6k0" path="res://Assets/Menus/Buttons/QuitHover.png" id="8_h3dt3"]
+[ext_resource type="Texture2D" uid="uid://clc7tjhpipvdr" path="res://Assets/Menus/Buttons/About.png" id="9_334he"]
+[ext_resource type="Texture2D" uid="uid://bpxaosggeqg5q" path="res://Assets/Menus/Buttons/AboutHover.png" id="10_ixm80"]
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -11,6 +22,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+scale = Vector2(0.5, 0.5)
 script = ExtResource("1_si1k2")
 
 [node name="Background" type="ColorRect" parent="."]
@@ -18,51 +30,81 @@ layout_mode = 1
 anchors_preset = -1
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_right = 1154.0
-offset_bottom = 645.0
+offset_left = -18.0
+offset_right = 1172.0
+offset_bottom = 664.0
 color = Color(0.588875, 0.395409, 0.129861, 1)
 
+[node name="Sprite2D2" type="Sprite2D" parent="Background"]
+position = Vector2(1510.2, 471.559)
+scale = Vector2(1.68818, 1.68818)
+texture = ExtResource("2_18eo4")
+
 [node name="Sprite2D" type="Sprite2D" parent="Background"]
-position = Vector2(599, 438)
-scale = Vector2(1.102, 1.116)
-texture = ExtResource("1_ppwih")
+position = Vector2(769.999, 738)
+scale = Vector2(0.867361, 0.867361)
+texture = ExtResource("2_tjks0")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 0
-offset_right = 300.0
-offset_bottom = 316.0
+offset_left = 648.0
+offset_top = 418.0
+offset_right = 1165.0
+offset_bottom = 1290.0
+rotation = -0.0349066
+scale = Vector2(0.8, 0.8)
+theme_override_constants/separation = -40
 
-[node name="StartGameButton" type="Button" parent="VBoxContainer"]
+[node name="StartGameButton" type="TextureButton" parent="VBoxContainer"]
 custom_minimum_size = Vector2(300, 60)
 layout_mode = 2
-text = "Start
-"
+texture_normal = ExtResource("3_ak0uf")
+texture_pressed = ExtResource("4_iwq6n")
+texture_hover = ExtResource("4_iwq6n")
 
-[node name="ContinueGameButton" type="Button" parent="VBoxContainer"]
+[node name="ContinueGameButton" type="TextureButton" parent="VBoxContainer"]
 custom_minimum_size = Vector2(300, 60)
 layout_mode = 2
-text = "Load Game"
+texture_normal = ExtResource("5_h54j5")
+texture_pressed = ExtResource("6_jgk56")
+texture_hover = ExtResource("6_jgk56")
 
-[node name="SettingsButton" type="Button" parent="VBoxContainer"]
+[node name="SettingsButton" type="TextureButton" parent="VBoxContainer"]
 custom_minimum_size = Vector2(300, 60)
 layout_mode = 2
-text = "Settings
-"
+texture_normal = ExtResource("5_s7hs6")
+texture_pressed = ExtResource("6_s7duf")
+texture_hover = ExtResource("6_s7duf")
 
-[node name="AboutButton" type="Button" parent="VBoxContainer"]
+[node name="AboutButton" type="TextureButton" parent="VBoxContainer"]
 custom_minimum_size = Vector2(300, 60)
 layout_mode = 2
-text = "About"
+texture_normal = ExtResource("9_334he")
+texture_pressed = ExtResource("10_ixm80")
+texture_hover = ExtResource("10_ixm80")
 
-[node name="ExitButton" type="Button" parent="VBoxContainer"]
+[node name="ExitButton" type="TextureButton" parent="VBoxContainer"]
 custom_minimum_size = Vector2(300, 60)
 layout_mode = 2
-text = "Quit"
+size_flags_stretch_ratio = 2.0
+texture_normal = ExtResource("7_cxgkv")
+texture_pressed = ExtResource("8_h3dt3")
+texture_hover = ExtResource("8_h3dt3")
 
 [node name="SaveSlotsPanel" type="Panel" parent="."]
+visible = false
+modulate = Color(0.999547, 0.435753, 0.98742, 1)
+layout_mode = 0
+offset_left = 615.0
+offset_top = 445.0
+offset_right = 1062.0
+offset_bottom = 1098.0
+
+[node name="Label" type="Label" parent="SaveSlotsPanel"]
 layout_mode = 0
 offset_right = 40.0
-offset_bottom = 40.0
+offset_bottom = 23.0
+text = "SaveSlots Panel"
 
 [node name="Slot1" type="Button" parent="SaveSlotsPanel"]
 layout_mode = 0
@@ -79,22 +121,78 @@ layout_mode = 0
 offset_right = 8.0
 offset_bottom = 8.0
 
+[node name="BackButton" type="Button" parent="SaveSlotsPanel"]
+layout_mode = 0
+offset_right = 8.0
+offset_bottom = 8.0
+text = "Back"
+
 [node name="AboutPanel" type="Panel" parent="."]
+visible = false
+modulate = Color(0, 0.804175, 0.804175, 1)
+layout_mode = 0
+offset_left = 296.0
+offset_top = 158.0
+offset_right = 2059.0
+offset_bottom = 1194.0
+
+[node name="Label" type="Label" parent="AboutPanel"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+text = "About Panel
+"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="AboutPanel"]
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="Info" type="Label" parent="AboutPanel"]
+[node name="Label2" type="Label" parent="AboutPanel"]
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 23.0
 
-[node name="CloseButton" type="Button" parent="AboutPanel"]
+[node name="BackButton" type="Button" parent="AboutPanel"]
+layout_mode = 0
+offset_right = 8.0
+offset_bottom = 8.0
+text = "Back"
+
+[node name="SettingsPanel" type="Panel" parent="."]
+visible = false
+modulate = Color(0.770081, 0.770081, 0, 1)
+layout_mode = 0
+offset_left = 615.0
+offset_top = 475.0
+offset_right = 1064.0
+offset_bottom = 1055.0
+
+[node name="Label" type="Label" parent="SettingsPanel"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+text = "Settings Panel
+"
+
+[node name="MusicToggleButton" type="Button" parent="SettingsPanel"]
 layout_mode = 0
 offset_right = 8.0
 offset_bottom = 8.0
 
+[node name="SoundToggleButton" type="Button" parent="SettingsPanel"]
+layout_mode = 0
+offset_right = 8.0
+offset_bottom = 8.0
+
+[node name="BackButton" type="Button" parent="SettingsPanel"]
+layout_mode = 0
+offset_right = 8.0
+offset_bottom = 8.0
+text = "Back"
+
 [node name="BackgroundSound" type="AudioStreamPlayer2D" parent="."]
+visible = false
 stream = ExtResource("3_m5adj")
 volume_db = -20.0
 autoplay = true
