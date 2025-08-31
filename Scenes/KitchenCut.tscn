@@ -1,9 +1,10 @@
-[gd_scene load_steps=47 format=3 uid="uid://bdb66oeqaei7d"]
+[gd_scene load_steps=58 format=3 uid="uid://bdb66oeqaei7d"]
 
 [ext_resource type="Script" path="res://Scripts/kitchen_cut.gd" id="1_mfoaj"]
 [ext_resource type="Script" path="res://Scripts/character_body_2d.gd" id="2_orm1t"]
 [ext_resource type="Texture2D" uid="uid://cy4hm4tq5nmir" path="res://Assets/Background/Untitled 92.png" id="2_vhhum"]
 [ext_resource type="Texture2D" uid="uid://dreig70jokor0" path="res://Assets/Sprites/Character/Gjump (3).png" id="3_pgxps"]
+[ext_resource type="Texture2D" uid="uid://cdi47y8m6tqdn" path="res://Assets/Interactables/Untitled 55.PNG" id="3_xtpt7"]
 [ext_resource type="Texture2D" uid="uid://bop8j7py8orur" path="res://Assets/Sprites/Character/Gjump (2).png" id="4_6f0bf"]
 [ext_resource type="Texture2D" uid="uid://byypnkjc87sdb" path="res://Assets/Sprites/Character/Gjump (6).png" id="5_m7wb6"]
 [ext_resource type="Texture2D" uid="uid://c12k2h2j8vdjt" path="res://Assets/Sprites/Character/Gjump (5).png" id="6_cvjfq"]
@@ -30,6 +31,14 @@
 [ext_resource type="Script" path="res://Scripts/fade_out.gd" id="27_q3hxr"]
 [ext_resource type="Script" path="res://Scripts/area_2d.gd" id="29_yx7xk"]
 [ext_resource type="Script" path="res://Scripts/highlight1.gd" id="30_0e4d0"]
+[ext_resource type="Script" path="res://Scripts/tutorial_canvas1.gd" id="32_3hnwe"]
+[ext_resource type="Texture2D" uid="uid://cnbl2133psakv" path="res://Assets/Menus/SpeechbarLighter5.png" id="33_xogwu"]
+[ext_resource type="Texture2D" uid="uid://cay0c273362pd" path="res://Assets/Menus/SpeechbarLighter6.png" id="34_ftlxu"]
+[ext_resource type="Texture2D" uid="uid://e0b2aiq41mcl" path="res://Assets/Menus/SpeechbarLighter7.png" id="35_n1wou"]
+[ext_resource type="Texture2D" uid="uid://blm0prikln4h1" path="res://Assets/Menus/SpeechbarLighter8.png" id="36_1mi86"]
+[ext_resource type="Texture2D" uid="uid://bicu3c3rbd1rn" path="res://Assets/Menus/SpeechbarLighter9.png" id="37_gb2q2"]
+[ext_resource type="Texture2D" uid="uid://srercerjo0jg" path="res://Assets/Tutorial assets/1.png" id="38_fpuc8"]
+[ext_resource type="Texture2D" uid="uid://1x876ycnlyv7" path="res://Assets/Tutorial assets/3.png" id="39_emuj7"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ptbwa"]
 size = Vector2(147.5, 20)
@@ -216,13 +225,115 @@ size = Vector2(37.6363, 98.3333)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4q6nc"]
 size = Vector2(407, 5.39423)
 
+[sub_resource type="SpriteFrames" id="SpriteFrames_km8r3"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("21_xj086")
+}],
+"loop": false,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("21_xj086")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_60qs0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_afwgb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_dsju2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("33_xogwu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("34_ftlxu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("35_n1wou")
+}, {
+"duration": 1.0,
+"texture": ExtResource("36_1mi86")
+}, {
+"duration": 1.0,
+"texture": ExtResource("37_gb2q2")
+}],
+"loop": false,
+"name": &"expand",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("37_gb2q2")
+}],
+"loop": false,
+"name": &"hover",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("37_gb2q2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("36_1mi86")
+}, {
+"duration": 1.0,
+"texture": ExtResource("35_n1wou")
+}, {
+"duration": 1.0,
+"texture": ExtResource("34_ftlxu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("33_xogwu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_dsju2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_afwgb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_60qs0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_xj086")
+}],
+"loop": false,
+"name": &"retract",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_w014m"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("38_fpuc8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("39_emuj7")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_mfoaj")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(-717, 852)
+position = Vector2(-718, 849)
 scale = Vector2(1.13965, 1.13965)
 texture = ExtResource("2_vhhum")
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+position = Vector2(1039, 302)
+scale = Vector2(0.83269, 0.83269)
+texture = ExtResource("3_xtpt7")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 
@@ -281,11 +392,13 @@ scale = Vector2(512.167, 28.7501)
 texture = SubResource("PlaceholderTexture2D_5unqw")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CharacterBody2D"]
+visible = false
 position = Vector2(-230.831, 77.7885)
 scale = Vector2(0.229, 0.229)
 sprite_frames = SubResource("SpriteFrames_jxcpi")
 
 [node name="TutLabel" type="Label" parent="CharacterBody2D"]
+visible = false
 offset_left = -212.497
 offset_top = 67.788
 offset_right = -172.497
@@ -375,6 +488,37 @@ script = ExtResource("30_0e4d0")
 position = Vector2(339.5, 530.03)
 shape = SubResource("RectangleShape2D_4q6nc")
 debug_color = Color(0.956871, 0.119971, 0.43239, 0.42)
+
+[node name="TutorialCanvas" type="CanvasLayer" parent="."]
+script = ExtResource("32_3hnwe")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="TutorialCanvas"]
+position = Vector2(268.5, 181.1)
+scale = Vector2(0.397911, 0.471736)
+sprite_frames = SubResource("SpriteFrames_km8r3")
+animation = &"retract"
+
+[node name="TutLabel" type="Label" parent="TutorialCanvas"]
+anchors_preset = -1
+anchor_left = -0.451389
+anchor_top = 1.62037
+anchor_right = 0.506944
+anchor_bottom = 1.66975
+offset_left = 384.0
+offset_top = -902.0
+offset_right = 426.0
+offset_bottom = -879.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 30
+vertical_alignment = 1
+autowrap_mode = 2
+justification_flags = 162
+metadata/_edit_use_anchors_ = true
+
+[node name="Text" type="AnimatedSprite2D" parent="TutorialCanvas"]
+position = Vector2(-177.2, 971)
+sprite_frames = SubResource("SpriteFrames_w014m")
 
 [node name="Background" type="AudioStreamPlayer2D" parent="."]
 volume_db = 8.0

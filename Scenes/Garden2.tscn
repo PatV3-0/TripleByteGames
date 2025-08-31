@@ -1,9 +1,10 @@
-[gd_scene load_steps=64 format=3 uid="uid://brot5iffhvc1r"]
+[gd_scene load_steps=81 format=3 uid="uid://brot5iffhvc1r"]
 
 [ext_resource type="Texture2D" uid="uid://q0qcqrnvth6f" path="res://garden2.jpg" id="1_at63v"]
 [ext_resource type="Script" path="res://Scripts/garden_2.gd" id="1_iu0cq"]
 [ext_resource type="Script" path="res://Scripts/character_body_2d.gd" id="2_24upp"]
 [ext_resource type="Texture2D" uid="uid://dreig70jokor0" path="res://Assets/Sprites/Character/Gjump (3).png" id="3_1d6s2"]
+[ext_resource type="Texture2D" uid="uid://cmq1vhmr7erlq" path="res://Assets/Background/Untitled 99.png" id="3_evbah"]
 [ext_resource type="Texture2D" uid="uid://bop8j7py8orur" path="res://Assets/Sprites/Character/Gjump (2).png" id="4_3npvo"]
 [ext_resource type="Texture2D" uid="uid://byypnkjc87sdb" path="res://Assets/Sprites/Character/Gjump (6).png" id="5_tifev"]
 [ext_resource type="Texture2D" uid="uid://c12k2h2j8vdjt" path="res://Assets/Sprites/Character/Gjump (5).png" id="6_70ifu"]
@@ -32,6 +33,19 @@
 [ext_resource type="Script" path="res://Scripts/mushroom_deactivation.gd" id="29_0qxgc"]
 [ext_resource type="Script" path="res://Scripts/area_2d.gd" id="31_sukvl"]
 [ext_resource type="Script" path="res://Scripts/highlight1.gd" id="32_eqmn2"]
+[ext_resource type="Script" path="res://Scripts/tutorial_canvas1.gd" id="34_sfdm8"]
+[ext_resource type="Texture2D" uid="uid://cnbl2133psakv" path="res://Assets/Menus/SpeechbarLighter5.png" id="35_yt7yj"]
+[ext_resource type="Texture2D" uid="uid://cay0c273362pd" path="res://Assets/Menus/SpeechbarLighter6.png" id="36_5l553"]
+[ext_resource type="Texture2D" uid="uid://e0b2aiq41mcl" path="res://Assets/Menus/SpeechbarLighter7.png" id="37_s51hb"]
+[ext_resource type="Texture2D" uid="uid://blm0prikln4h1" path="res://Assets/Menus/SpeechbarLighter8.png" id="38_1wb7d"]
+[ext_resource type="Texture2D" uid="uid://bicu3c3rbd1rn" path="res://Assets/Menus/SpeechbarLighter9.png" id="39_ufkcm"]
+[ext_resource type="Texture2D" uid="uid://srercerjo0jg" path="res://Assets/Tutorial assets/1.png" id="40_qnqjk"]
+[ext_resource type="Texture2D" uid="uid://1x876ycnlyv7" path="res://Assets/Tutorial assets/3.png" id="41_0nlt1"]
+[ext_resource type="Script" path="res://Scripts/ingredient1.gd" id="42_8pylm"]
+[ext_resource type="Texture2D" uid="uid://nkmvddm2gdg8" path="res://Assets/Menus/torn-paper.png" id="43_6uwp1"]
+[ext_resource type="Texture2D" uid="uid://bk0wv2eltfmhf" path="res://Assets/Menus/JB-paper.png" id="44_1x8ol"]
+[ext_resource type="Texture2D" uid="uid://cxa22mpaau64e" path="res://Assets/Menus/Unfolded.png" id="44_8wbrq"]
+[ext_resource type="Texture2D" uid="uid://cmxg6tmnx6tq5" path="res://Assets/Menus/Jewel-Beetle.png" id="45_7atof"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_an12d"]
 size = Vector2(1563, 130)
@@ -40,7 +54,7 @@ size = Vector2(1563, 130)
 size = Vector2(28.75, 39)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hbf3g"]
-size = Vector2(2709, 20)
+size = Vector2(4137, 20)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_uay0r"]
 size = Vector2(28, 39)
@@ -267,6 +281,106 @@ size = Vector2(20, 33.6667)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_j5bar"]
 size = Vector2(159, 5.39423)
 
+[sub_resource type="SpriteFrames" id="SpriteFrames_6st8w"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("21_6vvie")
+}],
+"loop": false,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("21_6vvie")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_4h3ou")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_4joj8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_8a0ie")
+}, {
+"duration": 1.0,
+"texture": ExtResource("35_yt7yj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("36_5l553")
+}, {
+"duration": 1.0,
+"texture": ExtResource("37_s51hb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("38_1wb7d")
+}, {
+"duration": 1.0,
+"texture": ExtResource("39_ufkcm")
+}],
+"loop": false,
+"name": &"expand",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("39_ufkcm")
+}],
+"loop": false,
+"name": &"hover",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("39_ufkcm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("38_1wb7d")
+}, {
+"duration": 1.0,
+"texture": ExtResource("37_s51hb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("36_5l553")
+}, {
+"duration": 1.0,
+"texture": ExtResource("35_yt7yj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_8a0ie")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_4joj8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_4h3ou")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_6vvie")
+}],
+"loop": false,
+"name": &"retract",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_cdraf"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("40_qnqjk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("41_0nlt1")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mri3u"]
+size = Vector2(53, 65)
+
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_iu0cq")
 
@@ -274,6 +388,16 @@ script = ExtResource("1_iu0cq")
 visible = false
 position = Vector2(922, 264)
 texture = ExtResource("1_at63v")
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+position = Vector2(105, 205)
+scale = Vector2(1.33125, 1.33125)
+texture = ExtResource("3_evbah")
+
+[node name="Sprite2D3" type="Sprite2D" parent="."]
+position = Vector2(2800.17, 204.625)
+scale = Vector2(1.33024, 1.33024)
+texture = ExtResource("3_evbah")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 
@@ -286,7 +410,7 @@ position = Vector2(-76, 628)
 shape = SubResource("RectangleShape2D_s17ju")
 
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(888.5, 658)
+position = Vector2(822.5, 658)
 shape = SubResource("RectangleShape2D_hbf3g")
 
 [node name="CollisionShape2D4" type="CollisionShape2D" parent="StaticBody2D"]
@@ -448,11 +572,13 @@ scale = Vector2(512.167, 28.7501)
 texture = SubResource("PlaceholderTexture2D_btfvc")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CharacterBody2D"]
+visible = false
 position = Vector2(-230.748, 103.121)
 scale = Vector2(0.229, 0.229)
 sprite_frames = SubResource("SpriteFrames_pvagq")
 
 [node name="TutLabel" type="Label" parent="CharacterBody2D"]
+visible = false
 offset_left = -212.414
 offset_top = 93.121
 offset_right = -172.414
@@ -560,8 +686,85 @@ position = Vector2(326.5, 530.03)
 shape = SubResource("RectangleShape2D_j5bar")
 debug_color = Color(0.956871, 0.119971, 0.43239, 0.42)
 
+[node name="TutorialCanvas" type="CanvasLayer" parent="."]
+script = ExtResource("34_sfdm8")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="TutorialCanvas"]
+position = Vector2(268.5, 181.1)
+scale = Vector2(0.397911, 0.471736)
+sprite_frames = SubResource("SpriteFrames_6st8w")
+animation = &"retract"
+
+[node name="TutLabel" type="Label" parent="TutorialCanvas"]
+anchors_preset = -1
+anchor_left = -0.451389
+anchor_top = 1.62037
+anchor_right = 0.506944
+anchor_bottom = 1.66975
+offset_left = 384.0
+offset_top = -902.0
+offset_right = 426.0
+offset_bottom = -879.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 30
+vertical_alignment = 1
+autowrap_mode = 2
+justification_flags = 162
+metadata/_edit_use_anchors_ = true
+
+[node name="Text" type="AnimatedSprite2D" parent="TutorialCanvas"]
+position = Vector2(-177.2, 971)
+sprite_frames = SubResource("SpriteFrames_cdraf")
+
 [node name="Background" type="AudioStreamPlayer2D" parent="."]
 volume_db = 8.0
 max_distance = 1000.0
+
+[node name="Ingredient" type="Area2D" parent="."]
+position = Vector2(1012, -140)
+script = ExtResource("42_8pylm")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ingredient"]
+position = Vector2(75.5, 611)
+shape = SubResource("RectangleShape2D_mri3u")
+debug_color = Color(0.511734, 0.57743, 0, 0.42)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Sprite2D4" type="Sprite2D" parent="CanvasLayer"]
+visible = false
+position = Vector2(149, 131)
+scale = Vector2(0.261249, 0.261249)
+texture = ExtResource("43_6uwp1")
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+visible = false
+offset_right = 267.0
+offset_bottom = 267.0
+metadata/_edit_use_anchors_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer"]
+position = Vector2(151, 129)
+scale = Vector2(0.520833, 0.520833)
+texture = ExtResource("44_1x8ol")
+
+[node name="CanvasLayer2" type="CanvasLayer" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer2"]
+position = Vector2(134.25, 133.663)
+scale = Vector2(0.487963, 0.316219)
+texture = ExtResource("44_8wbrq")
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer2"]
+visible = false
+offset_right = 267.0
+offset_bottom = 267.0
+metadata/_edit_use_anchors_ = true
+
+[node name="Sprite2D2" type="Sprite2D" parent="CanvasLayer2"]
+position = Vector2(138.694, 96.5)
+scale = Vector2(0.611111, 0.611111)
+texture = ExtResource("45_7atof")
 
 [node name="UILayer" type="CanvasLayer" parent="."]

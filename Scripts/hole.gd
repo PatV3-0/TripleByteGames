@@ -4,36 +4,23 @@ extends Area2D
 @onready var fade_rect = $"../FadeLayer/FadeRect"
 
 var player_inside: Node = null
-var still_time := 0.0
-const STILL_THRESHOLD := 1.0
-const STAND_STILL_EPSILON := 1.0  # how much movement counts as "still"
-
-var last_player_pos := Vector2.ZERO
 var transitioning := false
 
-func _physics_process(delta: float) -> void:
+func _physics_process(_delta: float) -> void:
 	if player_inside and not transitioning:
-		var current_pos = player_inside.global_position
-		if current_pos.distance_to(last_player_pos) <= STAND_STILL_EPSILON:
-			still_time += delta
-			if still_time >= STILL_THRESHOLD:
-				transitioning = true
-				transition_to_next_scene()
-		else:
-			still_time = 0.0
-		last_player_pos = current_pos
+		# Wait for player to press W (or your "enter_door" action)
+		if Input.is_action_just_pressed("enter_door"):
+			transitioning = true
+			transition_to_next_scene()
 
 func _on_body_entered(body: Node) -> void:
 	if body.is_in_group("Player"):
 		player_inside = body
-		last_player_pos = body.global_position
-		still_time = 0.0
 		transitioning = false
 
 func _on_body_exited(body: Node) -> void:
 	if body == player_inside:
 		player_inside = null
-		still_time = 0.0
 		transitioning = false
 
 func transition_to_next_scene():

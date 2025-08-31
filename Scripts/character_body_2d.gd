@@ -2,6 +2,7 @@ extends CharacterBody2D
 
 #signal death_finished
 signal fade_out_triggered
+signal fade_back_triggered
 
 @export var speed : float = 300.0
 @export var jump_force : float = 600.0
@@ -15,7 +16,8 @@ signal fade_out_triggered
 @onready var fade_rect = $"../FadeLayer/FadeRect"
 @onready var fade = $"../FadeLayer"
 @onready var fade_zone = $"../FadeOut"
-@onready var tutLabel = $TutLabel
+@onready var fade_back = $"../FadeOut2"
+@onready var tutorial_ui = null
 
 var jumping = false
 var in_air = false
@@ -34,23 +36,31 @@ func _ready():
 	print(pull_target)
 	if fade_zone:
 		fade_zone.body_entered.connect(_on_fade_out_body_entered)
-	hide_tutorial_text()
-	hide_tutorial()
+	
+	if fade_back:	
+		fade_back.body_entered.connect(_on_fade_out_2_body_entered)
+	
+	tutorial_ui = get_tree().get_current_scene().get_node_or_null("TutorialCanvas")
+	if tutorial_ui == null:
+		print("TutorialCanvas not found!")
+	else:
+		await get_tree().process_frame
+		print(tutorial_ui)
+		tutorial_ui.visible = true
+		tutorial_ui.hide_tutorial_text()
+		tutorial_ui.hide_tutorial()
 
 func show_tutorial():
-	var lab = $AnimatedSprite2D
-	lab.play("expand")
-	
+	tutorial_ui.show_tutorial()
+
 func hide_tutorial():
-	var lab = $AnimatedSprite2D
-	lab.play("retract")
+	tutorial_ui.hide_tutorial()
 
 func show_tutorial_text(text: String):
-	tutLabel.text = text
-	tutLabel.visible = true
+	tutorial_ui.show_tutorial_text(text)
 
 func hide_tutorial_text():
-	tutLabel.visible = false	
+	tutorial_ui.hide_tutorial_text()
 
 func freeze():
 	set_physics_process(false)
@@ -60,6 +70,9 @@ func freeze():
 
 func _physics_process(delta: float) -> void:
 	velocity.y += gravity * delta
+	
+	if tutorial_ui:
+		tutorial_ui.follow_player(global_position)
 
 	var current_speed = speed
 	if not is_on_floor():
@@ -223,7 +236,7 @@ func grow(offset):
 	jump_force += 270
 	speed += 150
 	grow_count += 1
-	update_camera_zoom(offset)
+	update_camera_zoom()
 	return true  # Successfully grew
 	
 func shrink(offset):
@@ -237,7 +250,7 @@ func shrink(offset):
 	jump_force = 330
 	speed -= 150
 	shrink_count += 1
-	update_camera_zoom(offset)
+	update_camera_zoom()
 	return true  # Successfully grew
 	
 func play_death():
@@ -252,16 +265,16 @@ func play_death():
 func _on_death_animation_finished():
 	emit_signal("death_finished")
 
-func update_camera_zoom(optional_offset := 105.0):
-	#print(optional_offset)
-	var label = $Label
+func update_camera_zoom():
 	var cam = $Camera2D
 	if cam:
-		var target_zoom = Vector2(1.0, 1.0) / (1.0 + 0.2 * grow_count)
+		# Base zoom factor (1,1 is normal)
+		var base_zoom = Vector2(1, 1)
+		# If the player shrinks (scale < 1), we want the camera to zoom in (smaller zoom value)
+		# If the player grows (scale > 1), the camera zooms out
+		var target_zoom = base_zoom / scale  # scale is a Vector2; works for uniform scaling
 		var tween = get_tree().create_tween()
 		tween.tween_property(cam, "zoom", target_zoom, 0.5).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_OUT)
-		label.scale *= 1.5
-		label.position.y += 10
 
 func _on_fade_out_body_entered(body: Node2D) -> void:
 	print("Fade Out found")
@@ -280,3 +293,9 @@ func _on_mushroom_launch_body_entered(body: Node2D) -> void:
 	if body.is_in_group("Player"):
 		print("Launch!")
 		body.velocity = launch_strength
+
+func _on_fade_out_2_body_entered(body: Node2D) -> void:
+	print("Fade Back found")
+	if body.is_in_group("Player"):
+		print("Calling backwards")
+		emit_signal("fade_back_triggered")

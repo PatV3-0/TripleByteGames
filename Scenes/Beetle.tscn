@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://csy8yhjpcrlg8"]
+
+[ext_resource type="Script" path="res://Scripts/rigid_body_2d.gd" id="1_7h4wx"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_1y848"]
+friction = 0.1
+bounce = 0.5
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_phs3k"]
+radius = 17.1172
+
+[node name="Node2D" type="RigidBody2D"]
+mass = 0.1
+physics_material_override = SubResource("PhysicsMaterial_1y848")
+can_sleep = false
+freeze_mode = 1
+constant_force = Vector2(25, 0)
+script = ExtResource("1_7h4wx")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_phs3k")
+debug_color = Color(0.932919, 0.259359, 0, 0.42)

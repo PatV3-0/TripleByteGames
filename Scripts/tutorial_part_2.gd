@@ -11,6 +11,10 @@ var pauseMenu = null
 @onready var p_key_sprite = $PKey
 @onready var o_key_sprite = $OKey
 
+@export var w_green_texture: Texture2D
+@onready var w_key_sprite = $WKey
+var w_pressed = false
+
 var tutorial_done = false
 var p_pressed = false
 var o_pressed = false
@@ -24,6 +28,8 @@ func _ready() -> void:
 	$Background.play()
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 
+	var tutorial_area = $Area2D
+	tutorial_area.connect("show_w_key", Callable(self, "_on_show_w_key"))
 	pauseMenu = pauseMenuScene.instantiate()
 	ui_layer.add_child(pauseMenu)  
 	pauseMenu.visible = false
@@ -45,6 +51,12 @@ func _input(event):
 		if o_key_sprite and o_green_texture:
 			o_key_sprite.texture = o_green_texture
 		start_hide_timer()
+		
+	if event.is_action_pressed("enter_door") and not w_pressed:
+		w_pressed = true
+		if w_key_sprite and w_green_texture:
+			w_key_sprite.texture = w_green_texture
+		start_hide_timer()
 
 func start_hide_timer():
 	if not hide_timer_started:
@@ -54,6 +66,8 @@ func start_hide_timer():
 			p_key_sprite.visible = false
 		if o_key_sprite:
 			o_key_sprite.visible = false
+		if w_key_sprite:
+			w_key_sprite.visible = false
 
 func _unhandled_input(event):
 	if event.is_action_pressed("ui_cancel"):
@@ -84,3 +98,8 @@ func centerPauseMenu():
 func _process(_delta: float) -> void:
 	if $Background and not $Background.playing:
 		$Background.play()
+
+func _on_show_w_key():
+	if w_key_sprite and w_green_texture:
+		w_key_sprite.texture = w_green_texture
+		w_key_sprite.visible = true

@@ -4,6 +4,7 @@ extends Node2D
 var pauseMenu = null
 @onready var pauseMenuScene = preload("res://Scenes/PauseMenu.tscn")
 @onready var ui_layer = $UILayer  
+@onready var steamwall = preload("res://Scenes/SteamWall.tscn")
 #@onready var portalSprite1 = $"Portal/Violet"
 #@onready var portalSprite2 = $"Portal/Purple"
 
@@ -12,6 +13,13 @@ func _ready() -> void:
 	var stream = $Background
 	if stream is AudioStreamWAV:
 		stream.set_loop(true)
+		
+	var timer = Timer.new()
+	timer.wait_time = 8.0  # every 8 seconds
+	timer.autostart = true
+	timer.one_shot = false
+	add_child(timer)
+	timer.timeout.connect(_on_spawn_steam_wall)
 		
 	#portalSprite1.play("Swirl")
 	#portalSprite2.play("Swirl")
@@ -61,3 +69,8 @@ func centerPauseMenu():
 	pausePanel.position = (adj - pausePanelSize) / 2
 	#print(pausePanel.position)
 	
+func _on_spawn_steam_wall():
+	print("Spawning")
+	var steam = steamwall.instantiate()
+	steam.position = Vector2(363.5, 511)
+	add_child(steam)

@@ -1,4 +1,4 @@
-[gd_scene load_steps=81 format=3 uid="uid://drq3m40mvk8jp"]
+[gd_scene load_steps=91 format=3 uid="uid://drq3m40mvk8jp"]
 
 [ext_resource type="Script" path="res://Scripts/kitchen_1.gd" id="1_3weli"]
 [ext_resource type="Script" path="res://Scripts/character_body_2d.gd" id="2_jx67a"]
@@ -31,6 +31,14 @@
 [ext_resource type="Script" path="res://Scripts/fade_out.gd" id="28_pkudu"]
 [ext_resource type="Script" path="res://Scripts/area_2d.gd" id="30_0whpj"]
 [ext_resource type="Script" path="res://Scripts/highlight1.gd" id="31_htl0w"]
+[ext_resource type="Script" path="res://Scripts/tutorial_canvas1.gd" id="32_hx58h"]
+[ext_resource type="Texture2D" uid="uid://cnbl2133psakv" path="res://Assets/Menus/SpeechbarLighter5.png" id="33_6wwrj"]
+[ext_resource type="Texture2D" uid="uid://cay0c273362pd" path="res://Assets/Menus/SpeechbarLighter6.png" id="34_hle5i"]
+[ext_resource type="Texture2D" uid="uid://e0b2aiq41mcl" path="res://Assets/Menus/SpeechbarLighter7.png" id="35_2ahwd"]
+[ext_resource type="Texture2D" uid="uid://blm0prikln4h1" path="res://Assets/Menus/SpeechbarLighter8.png" id="36_vpqx5"]
+[ext_resource type="Texture2D" uid="uid://bicu3c3rbd1rn" path="res://Assets/Menus/SpeechbarLighter9.png" id="37_13puh"]
+[ext_resource type="Texture2D" uid="uid://srercerjo0jg" path="res://Assets/Tutorial assets/1.png" id="38_4dpb3"]
+[ext_resource type="Texture2D" uid="uid://1x876ycnlyv7" path="res://Assets/Tutorial assets/3.png" id="39_ouqhe"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rgd02"]
 size = Vector2(26, 1640.5)
@@ -314,6 +322,103 @@ size = Vector2(16.697, 19.3333)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6n02w"]
 size = Vector2(142.727, 5.39423)
 
+[sub_resource type="SpriteFrames" id="SpriteFrames_ero62"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("21_etvbh")
+}],
+"loop": false,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("21_etvbh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_h21ha")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_dyk1l")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_1fqwv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("33_6wwrj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("34_hle5i")
+}, {
+"duration": 1.0,
+"texture": ExtResource("35_2ahwd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("36_vpqx5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("37_13puh")
+}],
+"loop": false,
+"name": &"expand",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("37_13puh")
+}],
+"loop": false,
+"name": &"hover",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("37_13puh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("36_vpqx5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("35_2ahwd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("34_hle5i")
+}, {
+"duration": 1.0,
+"texture": ExtResource("33_6wwrj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_1fqwv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_dyk1l")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_h21ha")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_etvbh")
+}],
+"loop": false,
+"name": &"retract",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_apd7w"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("38_4dpb3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("39_ouqhe")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_3weli")
 
@@ -493,11 +598,13 @@ scale = Vector2(512.167, 28.7501)
 texture = SubResource("PlaceholderTexture2D_6dhdi")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CharacterBody2D"]
+visible = false
 position = Vector2(-230.748, 103.121)
 scale = Vector2(0.229, 0.229)
 sprite_frames = SubResource("SpriteFrames_u1fuc")
 
 [node name="TutLabel" type="Label" parent="CharacterBody2D"]
+visible = false
 offset_left = -212.414
 offset_top = 93.121
 offset_right = -172.414
@@ -655,5 +762,36 @@ debug_color = Color(0.956871, 0.119971, 0.43239, 0.42)
 [node name="Background" type="AudioStreamPlayer2D" parent="."]
 volume_db = 8.0
 max_distance = 1000.0
+
+[node name="TutorialCanvas" type="CanvasLayer" parent="."]
+script = ExtResource("32_hx58h")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="TutorialCanvas"]
+position = Vector2(268.5, 181.1)
+scale = Vector2(0.397911, 0.471736)
+sprite_frames = SubResource("SpriteFrames_ero62")
+animation = &"retract"
+
+[node name="TutLabel" type="Label" parent="TutorialCanvas"]
+anchors_preset = -1
+anchor_left = -0.451389
+anchor_top = 1.62037
+anchor_right = 0.506944
+anchor_bottom = 1.66975
+offset_left = 384.0
+offset_top = -902.0
+offset_right = 426.0
+offset_bottom = -879.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 30
+vertical_alignment = 1
+autowrap_mode = 2
+justification_flags = 162
+metadata/_edit_use_anchors_ = true
+
+[node name="Text" type="AnimatedSprite2D" parent="TutorialCanvas"]
+position = Vector2(-177.2, 971)
+sprite_frames = SubResource("SpriteFrames_apd7w")
 
 [node name="UILayer" type="CanvasLayer" parent="."]

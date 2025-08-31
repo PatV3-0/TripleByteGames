@@ -11,11 +11,13 @@ func _on_body_entered(body):
 			bod.show_tutorial()
 			await get_tree().create_timer(1.0).timeout
 			bod.show_tutorial_text("Oh! Jameson's bed!")
-			await get_tree().create_timer(6.0).timeout
+			await get_tree().create_timer(4.0).timeout
 			bod.show_tutorial_text("That'll soften the fall quite nicely.")
-			await get_tree().create_timer(6.0).timeout
+			await get_tree().create_timer(5.0).timeout
 			bod.show_tutorial_text("Once I'm big, I ought to reward him with some tuna.")
-			await get_tree().create_timer(6.0).timeout
+			await get_tree().create_timer(5.5).timeout
+			bod.show_tutorial_text("")
+			await get_tree().create_timer(0.5).timeout
 			bod.hide_tutorial_text()
-			await get_tree().create_timer(1.0).timeout
+			await get_tree().create_timer(0.5).timeout
 			bod.hide_tutorial()

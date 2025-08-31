@@ -1,4 +1,4 @@
-[gd_scene load_steps=72 format=3 uid="uid://duvfb6prmpxpu"]
+[gd_scene load_steps=90 format=3 uid="uid://duvfb6prmpxpu"]
 
 [ext_resource type="Script" path="res://Scripts/kitchen_2.gd" id="1_4in3w"]
 [ext_resource type="Texture2D" uid="uid://v6njha2nnja4" path="res://Assets/Background/Untitled 93.png" id="2_erwe7"]
@@ -30,6 +30,20 @@
 [ext_resource type="Script" path="res://Scripts/portal.gd" id="25_wifyc"]
 [ext_resource type="Script" path="res://Scripts/shrink_portal.gd" id="26_rnq5f"]
 [ext_resource type="Script" path="res://Scripts/fade_out.gd" id="27_e3m51"]
+[ext_resource type="Script" path="res://Scripts/tutorial_canvas1.gd" id="31_wqkyw"]
+[ext_resource type="Texture2D" uid="uid://cnbl2133psakv" path="res://Assets/Menus/SpeechbarLighter5.png" id="32_e077c"]
+[ext_resource type="Texture2D" uid="uid://cay0c273362pd" path="res://Assets/Menus/SpeechbarLighter6.png" id="33_rnuui"]
+[ext_resource type="Texture2D" uid="uid://e0b2aiq41mcl" path="res://Assets/Menus/SpeechbarLighter7.png" id="34_1dij8"]
+[ext_resource type="Texture2D" uid="uid://blm0prikln4h1" path="res://Assets/Menus/SpeechbarLighter8.png" id="35_yf2l0"]
+[ext_resource type="Texture2D" uid="uid://bicu3c3rbd1rn" path="res://Assets/Menus/SpeechbarLighter9.png" id="36_8e7cg"]
+[ext_resource type="Texture2D" uid="uid://srercerjo0jg" path="res://Assets/Tutorial assets/1.png" id="37_jetq8"]
+[ext_resource type="Texture2D" uid="uid://1x876ycnlyv7" path="res://Assets/Tutorial assets/3.png" id="38_efv0f"]
+[ext_resource type="Script" path="res://Scripts/ingredient1.gd" id="39_cbs2x"]
+[ext_resource type="Script" path="res://Scripts/tutorial_salt.gd" id="40_dhuft"]
+[ext_resource type="Texture2D" uid="uid://cxa22mpaau64e" path="res://Assets/Menus/Unfolded.png" id="41_5ihk4"]
+[ext_resource type="Texture2D" uid="uid://o1lj7wqwqnij" path="res://Assets/Menus/HC-paper.png" id="41_lapyt"]
+[ext_resource type="Texture2D" uid="uid://nkmvddm2gdg8" path="res://Assets/Menus/torn-paper.png" id="41_v5jm2"]
+[ext_resource type="Texture2D" uid="uid://dox0elb1ap3v3" path="res://Assets/Menus/Morning-Glory.png" id="43_gfk8d"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6kbt8"]
 size = Vector2(360.25, 16)
@@ -292,6 +306,109 @@ radius = 15.0333
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bx0os"]
 size = Vector2(5.66663, 510.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ax7nc"]
+size = Vector2(53, 65)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8xbkb"]
+size = Vector2(3, 128.5)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_l4xye"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("21_sh1qr")
+}],
+"loop": false,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("21_sh1qr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_kxcwc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_ktqaf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_6y0iw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("32_e077c")
+}, {
+"duration": 1.0,
+"texture": ExtResource("33_rnuui")
+}, {
+"duration": 1.0,
+"texture": ExtResource("34_1dij8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("35_yf2l0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("36_8e7cg")
+}],
+"loop": false,
+"name": &"expand",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("36_8e7cg")
+}],
+"loop": false,
+"name": &"hover",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("36_8e7cg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("35_yf2l0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("34_1dij8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("33_rnuui")
+}, {
+"duration": 1.0,
+"texture": ExtResource("32_e077c")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_6y0iw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_ktqaf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_kxcwc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_sh1qr")
+}],
+"loop": false,
+"name": &"retract",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_7hgcl"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("37_jetq8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("38_efv0f")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_4in3w")
@@ -604,11 +721,13 @@ scale = Vector2(512.167, 28.7501)
 texture = SubResource("PlaceholderTexture2D_w28ed")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CharacterBody2D"]
+visible = false
 position = Vector2(-230.748, 103.121)
 scale = Vector2(0.229, 0.229)
 sprite_frames = SubResource("SpriteFrames_rxmd6")
 
 [node name="TutLabel" type="Label" parent="CharacterBody2D"]
+visible = false
 offset_left = -212.414
 offset_top = 93.121
 offset_right = -172.414
@@ -677,7 +796,6 @@ shape = SubResource("RectangleShape2D_bx0os")
 debug_color = Color(0.411765, 0.407843, 0.172549, 1)
 
 [node name="FadeLayer" type="CanvasLayer" parent="."]
-visible = false
 
 [node name="FadeRect" type="ColorRect" parent="FadeLayer"]
 anchors_preset = -1
@@ -693,8 +811,96 @@ mouse_filter = 2
 color = Color(0, 0, 0, 0)
 metadata/_edit_use_anchors_ = true
 
+[node name="Ingredient" type="Area2D" parent="."]
+position = Vector2(659, -366)
+script = ExtResource("39_cbs2x")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ingredient"]
+position = Vector2(75.5, 611)
+shape = SubResource("RectangleShape2D_ax7nc")
+debug_color = Color(0.511734, 0.57743, 0, 0.42)
+
+[node name="Tutorial1" type="Area2D" parent="." node_paths=PackedStringArray("bod")]
+position = Vector2(709, -367)
+script = ExtResource("40_dhuft")
+bod = NodePath("../CharacterBody2D")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Tutorial1"]
+position = Vector2(-9.5, 426.583)
+shape = SubResource("RectangleShape2D_8xbkb")
+debug_color = Color(0.57197, 0.555292, 0, 0.42)
+
+[node name="TutorialCanvas" type="CanvasLayer" parent="."]
+visible = false
+script = ExtResource("31_wqkyw")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="TutorialCanvas"]
+position = Vector2(268.5, 181.1)
+scale = Vector2(0.397911, 0.471736)
+sprite_frames = SubResource("SpriteFrames_l4xye")
+animation = &"retract"
+
+[node name="TutLabel" type="Label" parent="TutorialCanvas"]
+anchors_preset = -1
+anchor_left = -0.451389
+anchor_top = 1.62037
+anchor_right = 0.506944
+anchor_bottom = 1.66975
+offset_left = 384.0
+offset_top = -902.0
+offset_right = 426.0
+offset_bottom = -879.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 30
+vertical_alignment = 1
+autowrap_mode = 2
+justification_flags = 162
+metadata/_edit_use_anchors_ = true
+
+[node name="Text" type="AnimatedSprite2D" parent="TutorialCanvas"]
+position = Vector2(-177.2, 971)
+sprite_frames = SubResource("SpriteFrames_7hgcl")
+
 [node name="Background" type="AudioStreamPlayer2D" parent="."]
 volume_db = 8.0
 max_distance = 1000.0
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Sprite2D4" type="Sprite2D" parent="CanvasLayer"]
+visible = false
+position = Vector2(149, 131)
+scale = Vector2(0.261249, 0.261249)
+texture = ExtResource("41_v5jm2")
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+visible = false
+offset_right = 267.0
+offset_bottom = 267.0
+metadata/_edit_use_anchors_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer"]
+position = Vector2(145, 124)
+scale = Vector2(0.565217, 0.565217)
+texture = ExtResource("41_lapyt")
+
+[node name="CanvasLayer2" type="CanvasLayer" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer2"]
+position = Vector2(134.25, 133.663)
+scale = Vector2(0.487963, 0.316219)
+texture = ExtResource("41_5ihk4")
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer2"]
+visible = false
+offset_right = 267.0
+offset_bottom = 267.0
+metadata/_edit_use_anchors_ = true
+
+[node name="Sprite2D2" type="Sprite2D" parent="CanvasLayer2"]
+position = Vector2(137.222, 96)
+scale = Vector2(0.407407, 0.407407)
+texture = ExtResource("43_gfk8d")
 
 [node name="UILayer" type="CanvasLayer" parent="."]

@@ -9,7 +9,7 @@ func _ready():
 	connect("body_entered", Callable(self, "_on_body_entered"))
 
 func _on_body_entered(body):
-	if body is CharacterBody2D and body.is_on_floor():
+	if body is CharacterBody2D:
 		
 		var death_zones = get_tree().get_nodes_in_group(deactivate_group_name)
 		for dz in death_zones:
