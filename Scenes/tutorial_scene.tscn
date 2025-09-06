@@ -89,6 +89,7 @@
 [ext_resource type="Texture2D" uid="uid://srercerjo0jg" path="res://Assets/Tutorial assets/1.png" id="82_0fo2e"]
 [ext_resource type="Script" path="res://Scripts/tutorial_canvas1.gd" id="82_pt6cx"]
 [ext_resource type="Texture2D" uid="uid://1x876ycnlyv7" path="res://Assets/Tutorial assets/3.png" id="83_74lfy"]
+[ext_resource type="Texture2D" uid="uid://81vpbbt7xjmo" path="res://Assets/Placeholders/shrinkwisp.png" id="90_p3bqw"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rwsn1"]
 size = Vector2(3471.33, 20)
@@ -470,8 +471,6 @@ size = Vector2(5.66663, 322.167)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_2pl4v"]
 radius = 15.0333
-
-[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_rl4gt"]
 
 [node name="TutorialScene" type="Node2D"]
 position = Vector2(-230, 120)
@@ -1021,10 +1020,10 @@ anchor_left = -0.530382
 anchor_top = -1.93981
 anchor_right = -0.530382
 anchor_bottom = -1.93981
-offset_left = -2166.0
-offset_top = -1086.0
-offset_right = 8123.0
-offset_bottom = 3409.0
+offset_left = -2224.0
+offset_top = -1059.0
+offset_right = 8065.0
+offset_bottom = 3436.0
 mouse_filter = 2
 color = Color(0, 0, 0, 0)
 metadata/_edit_use_anchors_ = true
@@ -1038,8 +1037,8 @@ shape = SubResource("CircleShape2D_2pl4v")
 debug_color = Color(0.748797, 0.455883, 0.179411, 0.42)
 
 [node name="Sprite2D" type="Sprite2D" parent="ShrinkPortal"]
-position = Vector2(-2.74181e-06, -0.0003438)
-scale = Vector2(30, 29.3333)
-texture = SubResource("PlaceholderTexture2D_rl4gt")
+position = Vector2(1.33333, -2.66698)
+scale = Vector2(0.733661, 0.732391)
+texture = ExtResource("90_p3bqw")
 
 [connection signal="body_entered" from="FadeOut" to="CharacterBody2D" method="_on_fade_out_body_entered"]

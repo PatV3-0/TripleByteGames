@@ -1,4 +1,4 @@
-[gd_scene load_steps=58 format=3 uid="uid://bdb66oeqaei7d"]
+[gd_scene load_steps=59 format=3 uid="uid://bdb66oeqaei7d"]
 
 [ext_resource type="Script" path="res://Scripts/kitchen_cut.gd" id="1_mfoaj"]
 [ext_resource type="Script" path="res://Scripts/character_body_2d.gd" id="2_orm1t"]
@@ -29,6 +29,7 @@
 [ext_resource type="Script" path="res://Scripts/portal.gd" id="25_jx8rd"]
 [ext_resource type="Script" path="res://Scripts/death_zone.gd" id="26_1qkr4"]
 [ext_resource type="Script" path="res://Scripts/fade_out.gd" id="27_q3hxr"]
+[ext_resource type="Texture2D" uid="uid://ca1cms2y3p3co" path="res://Assets/Placeholders/growwisp.png" id="28_eg02w"]
 [ext_resource type="Script" path="res://Scripts/area_2d.gd" id="29_yx7xk"]
 [ext_resource type="Script" path="res://Scripts/highlight1.gd" id="30_0e4d0"]
 [ext_resource type="Script" path="res://Scripts/tutorial_canvas1.gd" id="32_3hnwe"]
@@ -413,6 +414,11 @@ script = ExtResource("25_jx8rd")
 position = Vector2(3, 5)
 shape = SubResource("CircleShape2D_jpghs")
 debug_color = Color(0.52549, 0.239216, 0.862745, 0.419608)
+
+[node name="Sprite2D" type="Sprite2D" parent="GrowPortal1"]
+position = Vector2(4.00003, 5)
+scale = Vector2(0.77451, 0.664384)
+texture = ExtResource("28_eg02w")
 
 [node name="DeathZone" type="Area2D" parent="." groups=["DeathZones"]]
 position = Vector2(2073, 209)

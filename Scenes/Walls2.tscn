@@ -1,4 +1,4 @@
-[gd_scene load_steps=93 format=3 uid="uid://bbgxpud6segme"]
+[gd_scene load_steps=94 format=3 uid="uid://bbgxpud6segme"]
 
 [ext_resource type="Script" path="res://Scripts/walls_2.gd" id="1_b1sgd"]
 [ext_resource type="Texture2D" uid="uid://cd312uojm511g" path="res://Assets/Background/Untitled 91.png" id="2_in8h3"]
@@ -33,6 +33,7 @@
 [ext_resource type="Texture2D" uid="uid://cvutlp1cgta8b" path="res://Assets/Sprites/Character/walk-stop.png" id="15_osb0i"]
 [ext_resource type="Texture2D" uid="uid://cpjbtyxusic6r" path="res://Assets/Sprites/Character/walk-2.png" id="16_8s1e0"]
 [ext_resource type="Texture2D" uid="uid://dyg15lcss7s5k" path="res://Assets/Sprites/Character/walk_1.png" id="17_f7v60"]
+[ext_resource type="Texture2D" uid="uid://ca1cms2y3p3co" path="res://Assets/Placeholders/growwisp.png" id="18_0g262"]
 [ext_resource type="AudioStream" uid="uid://c3iu4fh2kf3kk" path="res://Assets/Sound/jump.wav" id="19_anhjh"]
 [ext_resource type="AudioStream" uid="uid://cm8n17onir64w" path="res://Assets/Sound/boxSound.wav" id="20_gj1hp"]
 [ext_resource type="AudioStream" uid="uid://dydis8421b2ou" path="res://Assets/Sound/walk.wav" id="21_30ke1"]
@@ -667,6 +668,11 @@ position = Vector2(3, -3)
 shape = SubResource("CircleShape2D_e15s8")
 debug_color = Color(0.52549, 0.239216, 0.862745, 0.419608)
 
+[node name="Sprite2D" type="Sprite2D" parent="GrowPortal1"]
+position = Vector2(3.50002, -6)
+scale = Vector2(0.79902, 0.691781)
+texture = ExtResource("18_0g262")
+
 [node name="GrowPortal2" type="Area2D" parent="."]
 position = Vector2(653.5, 548)
 script = ExtResource("2_lbqil")
@@ -675,6 +681,11 @@ script = ExtResource("2_lbqil")
 position = Vector2(-4, -5)
 shape = SubResource("CircleShape2D_amrjt")
 debug_color = Color(0.52549, 0.239216, 0.862745, 0.419608)
+
+[node name="Sprite2D" type="Sprite2D" parent="GrowPortal2/CollisionShape2D"]
+position = Vector2(1.50002, 0.999972)
+scale = Vector2(0.708112, 0.54919)
+texture = ExtResource("18_0g262")
 
 [node name="Hole" type="Area2D" parent="."]
 position = Vector2(-998, -1248)
@@ -875,7 +886,6 @@ shape = SubResource("RectangleShape2D_kb8oo")
 debug_color = Color(0.143349, 0.519412, 1, 0.42)
 
 [node name="Sprite2D" type="Sprite2D" parent="Pushable3/CollisionShape2D"]
-visible = false
 position = Vector2(-0.0246361, -0.0243223)
 scale = Vector2(13.3333, 13.2241)
 texture = SubResource("PlaceholderTexture2D_l6eyy")
@@ -884,6 +894,7 @@ texture = SubResource("PlaceholderTexture2D_l6eyy")
 script = ExtResource("29_8ghbs")
 
 [node name="Sprite2D" type="Sprite2D" parent="Pushable3/Area2D"]
+visible = false
 position = Vector2(-39.091, 40)
 scale = Vector2(36.3637, 36.3636)
 texture = SubResource("PlaceholderTexture2D_cjudh")

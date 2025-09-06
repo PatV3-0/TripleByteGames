@@ -1,6 +1,5 @@
 [gd_scene load_steps=51 format=3 uid="uid://dgf7o3kb8qq1j"]
 
-[ext_resource type="Texture2D" uid="uid://dh3ds2jxjobn6" path="res://stairs.jpg" id="1_fbqtp"]
 [ext_resource type="Script" path="res://Scripts/stairs.gd" id="1_xa0l1"]
 [ext_resource type="PackedScene" uid="uid://csy8yhjpcrlg8" path="res://Scenes/Beetle.tscn" id="2_qyl28"]
 [ext_resource type="Script" path="res://Scripts/character_body_2d.gd" id="2_yjm3s"]
@@ -38,6 +37,8 @@
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wuhrc"]
 size = Vector2(377, 18.5)
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_k5tk6"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6tq4y"]
 size = Vector2(2102, 20)
@@ -319,7 +320,6 @@ beetle_scene = ExtResource("2_qyl28")
 visible = false
 position = Vector2(419, -13)
 scale = Vector2(1.3375, 1.64583)
-texture = ExtResource("1_fbqtp")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 
@@ -327,25 +327,61 @@ texture = ExtResource("1_fbqtp")
 position = Vector2(231, 410)
 shape = SubResource("RectangleShape2D_wuhrc")
 
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D/CollisionShape2D"]
+position = Vector2(-836.255, 83.0774)
+scale = Vector2(376.214, 22.6818)
+texture = SubResource("PlaceholderTexture2D_k5tk6")
+offset = Vector2(2.22253, -3.81003)
+
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D"]
 position = Vector2(79, 282)
 shape = SubResource("RectangleShape2D_wuhrc")
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D/CollisionShape2D2"]
+position = Vector2(-823.618, 63.799)
+scale = Vector2(371.324, 17.1597)
+texture = SubResource("PlaceholderTexture2D_k5tk6")
+offset = Vector2(2.22253, -3.81003)
 
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="StaticBody2D"]
 position = Vector2(-108, 141)
 shape = SubResource("RectangleShape2D_wuhrc")
 
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D/CollisionShape2D3"]
+position = Vector2(-823.618, 63.799)
+scale = Vector2(371.324, 17.1597)
+texture = SubResource("PlaceholderTexture2D_k5tk6")
+offset = Vector2(2.22253, -3.81003)
+
 [node name="CollisionShape2D4" type="CollisionShape2D" parent="StaticBody2D"]
 position = Vector2(-258, 0)
 shape = SubResource("RectangleShape2D_wuhrc")
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D/CollisionShape2D4"]
+position = Vector2(-823.618, 63.799)
+scale = Vector2(371.324, 17.1597)
+texture = SubResource("PlaceholderTexture2D_k5tk6")
+offset = Vector2(2.22253, -3.81003)
 
 [node name="CollisionShape2D5" type="CollisionShape2D" parent="StaticBody2D"]
 position = Vector2(-378.5, -139)
 shape = SubResource("RectangleShape2D_wuhrc")
 
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D/CollisionShape2D5"]
+position = Vector2(-823.618, 63.799)
+scale = Vector2(371.324, 17.1597)
+texture = SubResource("PlaceholderTexture2D_k5tk6")
+offset = Vector2(2.22253, -3.81003)
+
 [node name="CollisionShape2D6" type="CollisionShape2D" parent="StaticBody2D"]
 position = Vector2(-1374, -282)
 shape = SubResource("RectangleShape2D_6tq4y")
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D/CollisionShape2D6"]
+position = Vector2(-2088.26, 82.3737)
+scale = Vector2(1151.94, 20.9586)
+texture = SubResource("PlaceholderTexture2D_k5tk6")
+offset = Vector2(2.22253, -3.81003)
 
 [node name="CollisionShape2D83" type="CollisionShape2D" parent="StaticBody2D"]
 position = Vector2(1122.5, 595.515)
@@ -359,9 +395,21 @@ shape = SubResource("RectangleShape2D_1itoj")
 position = Vector2(2166, 524.515)
 shape = SubResource("RectangleShape2D_s2ue8")
 
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D/CollisionShape2D96"]
+position = Vector2(-2800, 1727.71)
+scale = Vector2(1064.01, 489.376)
+texture = SubResource("PlaceholderTexture2D_k5tk6")
+offset = Vector2(2.22253, -3.81003)
+
 [node name="CollisionShape2D97" type="CollisionShape2D" parent="StaticBody2D"]
 position = Vector2(-528.25, 525.258)
 shape = SubResource("RectangleShape2D_hw8br")
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D/CollisionShape2D97"]
+position = Vector2(-6681.4, 647.742)
+scale = Vector2(3066.79, 153.057)
+texture = SubResource("PlaceholderTexture2D_k5tk6")
+offset = Vector2(2.22253, -3.81003)
 
 [node name="CollisionPolygon2D43" type="CollisionShape2D" parent="StaticBody2D"]
 position = Vector2(1514.5, 337.515)

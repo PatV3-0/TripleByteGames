@@ -1,6 +1,6 @@
 extends Node2D
 
-@export var next_scene_path: String = "res://Scenes/Garden2.tscn"
+@export var next_scene_path: String = "res://Scenes/Garden2.2.tscn"
 var pauseMenu = null
 @onready var pauseMenuScene = preload("res://Scenes/PauseMenu.tscn")
 @onready var ui_layer = $UILayer  

@@ -40,6 +40,7 @@ func _on_player_fade_out_triggered():
 	var tween = create_tween()
 	tween.tween_property(fade_rect, "color:a", 1.0, 0.5).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_IN_OUT)
 	await tween.finished
+	print("switching")
 	get_tree().change_scene_to_file(next_scene_path)	
 
 func _unhandled_input(event):

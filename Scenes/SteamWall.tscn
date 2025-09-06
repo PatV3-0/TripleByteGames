@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://sihs4fi0p0gj"]
+[gd_scene load_steps=4 format=3 uid="uid://sihs4fi0p0gj"]
 
 [ext_resource type="Script" path="res://Scripts/steam_wall.gd" id="1_a7xbt"]
+[ext_resource type="Texture2D" uid="uid://boljcqial8nyl" path="res://Assets/Placeholders/wall of steam.png" id="2_nsc2p"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_m7gkh"]
 size = Vector2(243, 415)
@@ -16,3 +17,9 @@ script = ExtResource("1_a7xbt")
 position = Vector2(111.5, 197.5)
 shape = SubResource("RectangleShape2D_m7gkh")
 debug_color = Color(0.946535, 0.232599, 0, 0.42)
+
+[node name="Sprite2D" type="Sprite2D" parent="Area2D/CollisionShape2D"]
+position = Vector2(-2.50141, 4.74946)
+scale = Vector2(0.675545, 1.50904)
+texture = ExtResource("2_nsc2p")
+offset = Vector2(2.22253, -3.81003)

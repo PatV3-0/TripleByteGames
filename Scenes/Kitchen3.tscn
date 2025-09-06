@@ -1,4 +1,4 @@
-[gd_scene load_steps=76 format=3 uid="uid://bt4cdbkr6qe2n"]
+[gd_scene load_steps=78 format=3 uid="uid://bt4cdbkr6qe2n"]
 
 [ext_resource type="Script" path="res://Scenes/kitchen_3.gd" id="1_k4qw0"]
 [ext_resource type="Texture2D" uid="uid://b3p05wkj6axuq" path="res://Assets/Background/Untitled 97.png" id="2_er1oh"]
@@ -33,8 +33,10 @@
 [ext_resource type="Texture2D" uid="uid://b23akb18jrfgm" path="res://Assets/Sprites/Character/push_strain_breathe_in-2.png" id="16_sijvi"]
 [ext_resource type="Texture2D" uid="uid://jsttnhfnypr" path="res://Assets/Sprites/Character/push_strain_breathe_out-2.png" id="17_5aa4c"]
 [ext_resource type="Texture2D" uid="uid://cvutlp1cgta8b" path="res://Assets/Sprites/Character/walk-stop.png" id="18_7gfmf"]
+[ext_resource type="Texture2D" uid="uid://ca1cms2y3p3co" path="res://Assets/Placeholders/growwisp.png" id="19_a8acj"]
 [ext_resource type="Texture2D" uid="uid://cpjbtyxusic6r" path="res://Assets/Sprites/Character/walk-2.png" id="19_kve58"]
 [ext_resource type="Texture2D" uid="uid://dyg15lcss7s5k" path="res://Assets/Sprites/Character/walk_1.png" id="20_wberx"]
+[ext_resource type="Texture2D" uid="uid://81vpbbt7xjmo" path="res://Assets/Placeholders/shrinkwisp.png" id="21_4cwny"]
 [ext_resource type="AudioStream" uid="uid://c3iu4fh2kf3kk" path="res://Assets/Sound/jump.wav" id="21_djkik"]
 [ext_resource type="AudioStream" uid="uid://cm8n17onir64w" path="res://Assets/Sound/boxSound.wav" id="22_q08i7"]
 [ext_resource type="AudioStream" uid="uid://dydis8421b2ou" path="res://Assets/Sound/walk.wav" id="23_bnkjs"]
@@ -613,6 +615,11 @@ shape = SubResource("RectangleShape2D_h7gcy")
 position = Vector2(2542, 437)
 shape = SubResource("RectangleShape2D_14863")
 
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D/CollisionShape2D22"]
+position = Vector2(-1.49991, -4.37498)
+scale = Vector2(0.350001, 0.382575)
+texture = ExtResource("13_fhrte")
+
 [node name="Sprite2D13" type="Sprite2D" parent="StaticBody2D"]
 position = Vector2(2929.89, 421.229)
 rotation = -3.14159
@@ -631,7 +638,7 @@ scale = Vector2(1, 0.69)
 polygon = PackedVector2Array(-34, 15.942, -33, 5.79712, -32, -7.24637, -29, -17.3913, -26, -24.6377, -22, -26.0869, -19, -28.9855, -16, -30.4348, -11, -31.884, 5, -31.884, 12, -31.884, 17, -31.884, 19, -28.9855, 22, -27.5362, 25, -26.0869, 28, -18.8406, 31, -10.1449, 32, -1.44925, 33, 7.2464, 33, 18.8406, 34, 34.7826, -34, 40.5797, -34, 30.4348)
 
 [node name="Sprite2D16" type="Sprite2D" parent="StaticBody2D"]
-position = Vector2(1350, 287)
+position = Vector2(1352, 286)
 scale = Vector2(2.50362, 2.56717)
 texture = ExtResource("16_8u4hr")
 
@@ -660,6 +667,11 @@ position = Vector2(3, 5)
 shape = SubResource("CircleShape2D_6nk6j")
 debug_color = Color(0.52549, 0.239216, 0.862745, 0.419608)
 
+[node name="Sprite2D" type="Sprite2D" parent="GrowPortal1/CollisionShape2D"]
+position = Vector2(1.99998, -2.00006)
+scale = Vector2(1.44115, 1.23972)
+texture = ExtResource("19_a8acj")
+
 [node name="ShrinkPortal" type="Area2D" parent="."]
 position = Vector2(1433, 135)
 script = ExtResource("4_3ck8j")
@@ -667,6 +679,11 @@ script = ExtResource("4_3ck8j")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ShrinkPortal"]
 shape = SubResource("CircleShape2D_v3p4c")
 debug_color = Color(0.748797, 0.455883, 0.179411, 0.42)
+
+[node name="Sprite2D" type="Sprite2D" parent="ShrinkPortal/CollisionShape2D"]
+position = Vector2(4.00004, -2)
+scale = Vector2(1.37252, 1.14789)
+texture = ExtResource("21_4cwny")
 
 [node name="GrowPortal2" type="Area2D" parent="."]
 position = Vector2(2778, 328)
@@ -676,6 +693,11 @@ script = ExtResource("3_ox0bq")
 position = Vector2(3, 5)
 shape = SubResource("CircleShape2D_6nk6j")
 debug_color = Color(0.52549, 0.239216, 0.862745, 0.419608)
+
+[node name="Sprite2D" type="Sprite2D" parent="GrowPortal2/CollisionShape2D"]
+position = Vector2(4.99988, -1.90735e-06)
+scale = Vector2(1.60291, 1.20205)
+texture = ExtResource("19_a8acj")
 
 [node name="CharacterBody2D" type="CharacterBody2D" parent="." groups=["Player"]]
 position = Vector2(106, 262)

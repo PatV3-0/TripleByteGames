@@ -1,15 +1,23 @@
-[gd_scene load_steps=67 format=3 uid="uid://bd6xyhu0p2ne"]
+[gd_scene load_steps=78 format=3 uid="uid://bd6xyhu0p2ne"]
 
 [ext_resource type="Script" path="res://Scripts/garden_1.gd" id="1_k1ame"]
 [ext_resource type="Texture2D" uid="uid://cmq1vhmr7erlq" path="res://Assets/Background/Untitled 99.png" id="2_4s7k6"]
 [ext_resource type="Script" path="res://Scripts/character_body_2d.gd" id="2_bd08l"]
+[ext_resource type="Texture2D" uid="uid://61pv6nfgrdcu" path="res://Assets/Placeholders/windowthingy.png" id="3_55pld"]
 [ext_resource type="Texture2D" uid="uid://dreig70jokor0" path="res://Assets/Sprites/Character/Gjump (3).png" id="3_dvmxe"]
+[ext_resource type="Texture2D" uid="uid://cfapnmaonwr55" path="res://Assets/Placeholders/windowplanterbox.png" id="4_kofir"]
 [ext_resource type="Texture2D" uid="uid://bop8j7py8orur" path="res://Assets/Sprites/Character/Gjump (2).png" id="4_udhvr"]
+[ext_resource type="Texture2D" uid="uid://ciwmbb87mn82e" path="res://Assets/Placeholders/plant1.png" id="5_765dg"]
 [ext_resource type="Texture2D" uid="uid://byypnkjc87sdb" path="res://Assets/Sprites/Character/Gjump (6).png" id="5_x81p8"]
 [ext_resource type="Texture2D" uid="uid://c12k2h2j8vdjt" path="res://Assets/Sprites/Character/Gjump (5).png" id="6_hcxwi"]
+[ext_resource type="Texture2D" uid="uid://dbuo5e8oi75y5" path="res://Assets/Placeholders/plant2.png" id="6_wx02u"]
 [ext_resource type="Texture2D" uid="uid://dytxwri855i1v" path="res://Assets/Sprites/Character/Gjump (1).png" id="7_1yca5"]
+[ext_resource type="Texture2D" uid="uid://dpg4b83fucoht" path="res://Assets/Placeholders/mushroom1.png" id="7_gg6kc"]
 [ext_resource type="Texture2D" uid="uid://cd0ymrrfi02vh" path="res://Assets/Sprites/Character/push-1.png" id="8_1a3v5"]
+[ext_resource type="Texture2D" uid="uid://bseukkxww6685" path="res://Assets/Trellies.png" id="8_b1uj1"]
 [ext_resource type="Texture2D" uid="uid://d112q6ipvg3ur" path="res://Assets/Sprites/Character/push_3.png" id="9_iy0h4"]
+[ext_resource type="Texture2D" uid="uid://d1e7628hadom6" path="res://Assets/Placeholders/bucket.png" id="9_nb1f4"]
+[ext_resource type="Texture2D" uid="uid://dlgmhymmtnj5x" path="res://Assets/Placeholders/gardenbox.png" id="10_4r2w0"]
 [ext_resource type="Texture2D" uid="uid://heuqru2dosrk" path="res://Assets/Sprites/Character/push_2.png" id="10_sm2o1"]
 [ext_resource type="Texture2D" uid="uid://brikmqy8ntt4f" path="res://Assets/Sprites/Character/push_strain_breathe_in-1.png" id="11_c52g2"]
 [ext_resource type="Texture2D" uid="uid://dktlv8fcbb4lf" path="res://Assets/Sprites/Character/push_strain_breathe_out-1.png" id="12_qqwbg"]
@@ -34,13 +42,16 @@
 [ext_resource type="Texture2D" uid="uid://e0b2aiq41mcl" path="res://Assets/Menus/SpeechbarLighter7.png" id="32_c0ebr"]
 [ext_resource type="Texture2D" uid="uid://blm0prikln4h1" path="res://Assets/Menus/SpeechbarLighter8.png" id="33_bovck"]
 [ext_resource type="Texture2D" uid="uid://bicu3c3rbd1rn" path="res://Assets/Menus/SpeechbarLighter9.png" id="34_hy6qa"]
+[ext_resource type="Texture2D" path="res://Assets/Placeholders/Grow & Shrink assets/shrinkwisp.png" id="35_4kvhc"]
 [ext_resource type="Texture2D" uid="uid://srercerjo0jg" path="res://Assets/Tutorial assets/1.png" id="35_67euq"]
 [ext_resource type="Texture2D" uid="uid://1x876ycnlyv7" path="res://Assets/Tutorial assets/3.png" id="36_gfcxj"]
+[ext_resource type="Texture2D" uid="uid://cwvudphlmqmxu" path="res://Assets/Placeholders/mushroom2.png" id="37_c5qkx"]
 [ext_resource type="Script" path="res://Scripts/ingredient1.gd" id="37_s6dpw"]
 [ext_resource type="Texture2D" uid="uid://nkmvddm2gdg8" path="res://Assets/Menus/torn-paper.png" id="38_1d7t3"]
 [ext_resource type="Texture2D" uid="uid://cxa22mpaau64e" path="res://Assets/Menus/Unfolded.png" id="39_38h8w"]
 [ext_resource type="Texture2D" uid="uid://bde2keawpfur0" path="res://Assets/Menus/MG-paper.png" id="39_q3sc0"]
 [ext_resource type="Texture2D" uid="uid://ct68pe56liar4" path="res://Assets/Menus/Himalayan-cyrstal.png" id="40_1ub16"]
+[ext_resource type="Texture2D" uid="uid://cawepachxw88q" path="res://Assets/Placeholders/Morning Glory.png" id="48_0cvgs"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4cgmb"]
 size = Vector2(354.5, 273.5)
@@ -361,13 +372,33 @@ texture = ExtResource("2_4s7k6")
 position = Vector2(-56.75, 632.25)
 shape = SubResource("RectangleShape2D_4cgmb")
 
+[node name="Sprite2D2" type="Sprite2D" parent="StaticBody2D/CollisionShape2D"]
+position = Vector2(-773.25, -173.25)
+scale = Vector2(6.68721, 8.18314)
+texture = ExtResource("3_55pld")
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D/CollisionShape2D"]
+position = Vector2(-6.25, 2.75002)
+scale = Vector2(2.10546, 1.90543)
+texture = ExtResource("3_55pld")
+
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D"]
 position = Vector2(252.5, 630.5)
 shape = SubResource("RectangleShape2D_7wi7w")
 
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D/CollisionShape2D2"]
+position = Vector2(-0.499997, -0.499973)
+scale = Vector2(1.96249, 1.77437)
+texture = ExtResource("4_kofir")
+
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
 position = Vector2(252.5, 630.5)
 polygon = PackedVector2Array(-122.5, -102.5, -113.5, -102.5, -107.5, -101.5, -101.5, -99.5, -97.5, -95.5, -94.5, -90.5, -92.5, -83.5, -102.5, -83.5, -109.5, -86.5, -116.5, -90.5, -122.5, -95.5)
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D/CollisionPolygon2D"]
+position = Vector2(-85.5, -85.5)
+scale = Vector2(1.60317, 1.46456)
+texture = ExtResource("5_765dg")
 
 [node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="StaticBody2D"]
 polygon = PackedVector2Array(153, 543, 160, 537, 167, 534, 175, 533, 185, 533, 196, 535, 204, 539, 198, 544, 189, 547, 180, 547, 170, 547, 160, 546)
@@ -375,8 +406,19 @@ polygon = PackedVector2Array(153, 543, 160, 537, 167, 534, 175, 533, 185, 533, 1
 [node name="CollisionPolygon2D3" type="CollisionPolygon2D" parent="StaticBody2D"]
 polygon = PackedVector2Array(237, 558, 237, 543, 239, 533, 243, 524, 249, 515, 257, 508, 269, 498, 277, 495, 285, 494, 278, 498, 271, 502, 264, 508, 256, 514, 250, 521, 246, 526, 243, 535, 241, 542, 240, 549, 240, 558, 249, 558, 249, 549, 250, 535, 257, 522, 264, 515, 271, 509, 277, 503, 279, 490, 278, 482, 270, 477, 261, 474, 271, 474, 278, 477, 281, 481, 283, 486, 283, 491, 282, 500, 281, 509, 275, 513, 267, 518, 260, 526, 257, 533, 255, 540, 255, 547, 255, 558, 260, 558, 259, 548, 259, 539, 261, 532, 266, 528, 273, 526, 280, 527, 285, 529, 287, 533, 288, 539, 283, 536, 278, 532, 270, 531, 263, 535, 262, 540, 261, 547, 264, 559, 264, 562, 236, 564)
 
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D/CollisionPolygon2D3"]
+position = Vector2(261, 520)
+scale = Vector2(-1.61671, 1.67039)
+texture = ExtResource("6_wx02u")
+flip_h = true
+
 [node name="CollisionPolygon2D4" type="CollisionPolygon2D" parent="StaticBody2D"]
 polygon = PackedVector2Array(329, 519, 330, 528, 331, 535, 330, 542, 327, 550, 324, 555, 318, 560, 357, 560, 352, 556, 349, 551, 345, 544, 344, 537, 344, 530, 344, 522, 346, 517)
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D/CollisionPolygon2D4"]
+position = Vector2(335, 521)
+scale = Vector2(1.67568, 2.04532)
+texture = ExtResource("7_gg6kc")
 
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="StaticBody2D"]
 position = Vector2(339, 511)
@@ -395,6 +437,12 @@ shape = SubResource("CircleShape2D_e11ma")
 
 [node name="CollisionPolygon2D5" type="CollisionPolygon2D" parent="StaticBody2D"]
 polygon = PackedVector2Array(566, 208, 574, 205, 584, 202, 595, 200, 607, 199, 619, 200, 625, 202, 629, 205, 632, 208, 632, 212, 630, 216, 625, 219, 616, 221, 605, 222, 593, 222, 584, 221, 577, 218, 571, 214)
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D/CollisionPolygon2D5"]
+show_behind_parent = true
+position = Vector2(611, 531)
+scale = Vector2(0.862956, 0.862956)
+texture = ExtResource("8_b1uj1")
 
 [node name="CollisionPolygon2D6" type="CollisionPolygon2D" parent="StaticBody2D"]
 polygon = PackedVector2Array(685, 237, 694, 233, 703, 230, 713, 228, 724, 228, 736, 228, 744, 229, 751, 231, 757, 234, 764, 237, 761, 238, 755, 241, 750, 245, 739, 247, 726, 249, 711, 249, 698, 248, 690, 247, 685, 244)
@@ -519,6 +567,11 @@ shape = SubResource("CircleShape2D_jhpau")
 position = Vector2(-16.2, 0.299988)
 polygon = PackedVector2Array(381, 878, 407, 949, 481, 949, 497, 878)
 
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D/CollisionPolygon2D44"]
+position = Vector2(442.2, 909.7)
+scale = Vector2(-0.815751, 0.925127)
+texture = ExtResource("9_nb1f4")
+
 [node name="CollisionShape2D7" type="CollisionShape2D" parent="StaticBody2D"]
 position = Vector2(659.5, 959)
 shape = SubResource("RectangleShape2D_vtb37")
@@ -530,6 +583,11 @@ shape = SubResource("RectangleShape2D_1iyly")
 [node name="CollisionShape2D9" type="CollisionShape2D" parent="StaticBody2D"]
 position = Vector2(1340, 839)
 shape = SubResource("RectangleShape2D_0ihal")
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D/CollisionShape2D9"]
+position = Vector2(904, 7.99999)
+scale = Vector2(2.34926, 2.34926)
+texture = ExtResource("10_4r2w0")
 
 [node name="CollisionShape2D12" type="CollisionShape2D" parent="StaticBody2D"]
 position = Vector2(1145, 931)
@@ -619,6 +677,11 @@ script = ExtResource("25_5how1")
 shape = SubResource("CircleShape2D_js1dh")
 debug_color = Color(0.748797, 0.455883, 0.179411, 0.42)
 
+[node name="Sprite2D" type="Sprite2D" parent="ShrinkPortal2/CollisionShape2D"]
+position = Vector2(-1.37008, -2.53522)
+scale = Vector2(-0.698659, 0.533225)
+texture = ExtResource("35_4kvhc")
+
 [node name="DeathZone" type="Area2D" parent="." groups=["DeathZones"]]
 position = Vector2(1703, 284)
 script = ExtResource("26_6vato")
@@ -645,6 +708,11 @@ position = Vector2(24, 21)
 scale = Vector2(1, 0.4)
 shape = SubResource("CircleShape2D_p1ntw")
 debug_color = Color(0.666293, 0.511325, 0, 0.42)
+
+[node name="Sprite2D" type="Sprite2D" parent="MushroomLaunch2/CollisionShape2D"]
+position = Vector2(-3.50162, 20)
+scale = Vector2(-1.78488, 4.09834)
+texture = ExtResource("37_c5qkx")
 
 [node name="FadeOut" type="Area2D" parent="."]
 position = Vector2(-487, 84)
@@ -714,6 +782,11 @@ script = ExtResource("37_s6dpw")
 position = Vector2(75.5, 611)
 shape = SubResource("RectangleShape2D_x6rbn")
 debug_color = Color(0.511734, 0.57743, 0, 0.42)
+
+[node name="Sprite2D" type="Sprite2D" parent="Ingredient/CollisionShape2D"]
+position = Vector2(0.499985, -4)
+scale = Vector2(0.231551, 0.231551)
+texture = ExtResource("48_0cvgs")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
