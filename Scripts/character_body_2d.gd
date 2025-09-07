@@ -5,10 +5,25 @@ signal fade_out_triggered
 signal fade_back_triggered
 
 @export var speed : float = 300.0
-@export var jump_force : float = 600.0
-@export var gravity : float = 1200.0
+@export var jump_force : float = 400.0
+@export var gravity : float = 1000.0
 @export var air_control_multiplier : float = 1.0
 @export var launch_strength: Vector2 = Vector2(0, -1000) # Upwards in 2D
+
+var base_scale: Vector2
+var base_speed: float
+var base_jump_force: float
+
+var jumping = false
+
+var can_pull: bool = false
+var pull_target: RigidBody2D = null
+var pulling: bool = false
+var pull_force = 200
+
+var can_push: bool = false
+var push_target: RigidBody2D = null
+var pushing: bool = false
 
 @onready var jump_sound = $JumpSound
 @onready var push_pull_sound = $PushPullSound
@@ -19,21 +34,20 @@ signal fade_back_triggered
 @onready var fade_back = $"../FadeOut2"
 @onready var tutorial_ui = null
 
-var jumping = false
-var in_air = false
-var grow_count = 0
-var shrink_count = 0
-const MAX_GROWTH = 3
-const MAX_SHRINK = 3
-var can_pull: bool = false
-var pull_target: RigidBody2D = null
-var pulling: bool = false
-var can_push: bool = false
-var push_target: RigidBody2D = null
-var pushing: bool = false
 
 func _ready():
-	print(pull_target)
+	#print(pull_target)
+	base_scale = scale
+	base_jump_force = jump_force
+	base_speed = speed
+	pulling = false
+	pushing = false
+	can_pull = false
+	can_push = false
+	$Sprite2D.stop()
+	$Sprite2D.play("idle")
+	$Sprite2D.animation_finished.connect(_on_land_finish)
+	
 	if fade_zone:
 		fade_zone.body_entered.connect(_on_fade_out_body_entered)
 	
@@ -62,11 +76,11 @@ func show_tutorial_text(text: String):
 func hide_tutorial_text():
 	tutorial_ui.hide_tutorial_text()
 
-func freeze():
-	set_physics_process(false)
-	set_process(false)
-	if has_node("CollisionShape2D"):
-		$CollisionShape2D.disabled = true
+#func freeze():
+	#set_physics_process(false)
+	#set_process(false)
+	#if has_node("CollisionShape2D"):
+		#$CollisionShape2D.disabled = true
 
 func _physics_process(delta: float) -> void:
 	velocity.y += gravity * delta
@@ -88,37 +102,45 @@ func _physics_process(delta: float) -> void:
 	else:
 		if walking_sound.playing:
 			walking_sound.stop()
-
+			
+	
+		
 	if not pulling and not pushing:
 		if moving_right:
 			velocity.x = current_speed
 			$Sprite2D.flip_h = true
-			#$Sprite2D.offset.x = 95
 			$CollisionShape2D.scale.x = 1
+			if not jumping:
+				$Sprite2D.play("walk")
 		elif moving_left:
 			velocity.x = -current_speed
 			$Sprite2D.flip_h = false
-			#$Sprite2D.offset.x = -65
 			$CollisionShape2D.scale.x = -1
+			if not jumping:
+				$Sprite2D.play("walk")
 		else:
 			velocity.x = 0
+			if not jumping:
+				$Sprite2D.play("idle")
 
 	# Jump input
 	if Input.is_action_just_pressed("ui_accept") and is_on_floor():
-		$Sprite2D.frame = 0  # Pre-jump
-		await get_tree().process_frame
 		velocity.y = -jump_force
 		jumping = true
-		in_air = true
-		$Sprite2D.play("jump")
-		$Sprite2D.frame = 1  # Push-off
+		$Sprite2D.frame = 0  # Pre-jump
+		$Sprite2D.play("jump_start")
+		#await get_tree().process_frame
+		#$Sprite2D.play("jump_start")
+		#$Sprite2D.frame = 1  # Push-off
 		jump_sound.pitch_scale = randf_range(0.9, 1.1)
 		jump_sound.play()
 
 	# Pull logic
-	var pulling_now = false
-	if can_pull and pull_target and Input.is_action_pressed("toggle_pull"):
-		pulling_now = true
+	#If you can pull and there is an object and button is being pressed
+	#And not currently pulling
+	#var pulling_now = false
+	if can_pull and (not pulling) and pull_target and Input.is_action_pressed("toggle_pull"):
+		#pulling_now = true
 		
 		pull_target.sleeping = false
 		print(pull_target.position)
@@ -128,7 +150,7 @@ func _physics_process(delta: float) -> void:
 		var pull_distance = pull_vector.length()
 		if pull_distance > 0:
 			var pull_dir = pull_vector.normalized()
-			var pull_strength = clamp(300 * pull_distance, 0, 500) # scale by distance but cap
+			var pull_strength = clamp(pull_force * pull_distance, 0, 500) # scale by distance but cap
 			pull_target.apply_central_impulse(pull_dir * pull_strength)
 		
 		# Handle player input for possible movement while pulling
@@ -150,15 +172,13 @@ func _physics_process(delta: float) -> void:
 		$Sprite2D.flip_h = pull_vector.x < 0
 		$CollisionShape2D.scale.x = 0.5 * sign(pull_vector.x)
 	else:
-		pulling_now = false
+		pulling = false
 
 	# Stop pull effects if pulling has just ended
-	if pulling and not pulling_now:
+	if pulling:
 		if $Sprite2D.animation == "pushPull":
 			$Sprite2D.stop()
 		push_pull_sound.stop()
-
-	pulling = pulling_now
 
 	# Push logic
 	var pushing_now = false
@@ -218,39 +238,26 @@ func _physics_process(delta: float) -> void:
 				if $Sprite2D.animation != "jump_fall":
 					$Sprite2D.play("jump_fall")
 		else:
-			if in_air:
-				$Sprite2D.play("land")
-				in_air = false
-				jumping = false
-	if is_on_floor() and not jumping and not pulling and not pushing:
-		if velocity.x != 0:
-			$Sprite2D.play("walk")
-		else:
-			$Sprite2D.stop()
-
+			$Sprite2D.play("land")
+		
+func _on_land_finish():
+	if $Sprite2D.animation == "land":
+		jumping = false
 func grow(offset):
-	if grow_count >= MAX_GROWTH:
-		return false  # Player cannot grow further
 	
-	scale *= 1.1
-	jump_force += 270
-	speed += 150
-	grow_count += 1
-	update_camera_zoom()
+	scale = base_scale * 1.5 
+	jump_force = base_jump_force + 300 
+	speed = base_speed -100
+	
+	#update_camera_zoom()
 	return true  # Successfully grew
 	
-func shrink(offset):
-	print("Shrinking")
-	if grow_count >= MAX_SHRINK:
-		print("Max shrink reached")
-		return false  # Player cannot grow further
-	
-	print("Smaller")
-	scale *= 0.8
-	jump_force = 330
-	speed -= 150
-	shrink_count += 1
-	update_camera_zoom()
+func shrink(offset):		
+	scale = base_scale
+	jump_force = base_jump_force
+	speed = base_speed 
+	#update_camera_zoom()
+		
 	return true  # Successfully grew
 	
 func play_death():

@@ -1,12 +1,14 @@
-[gd_scene load_steps=81 format=3 uid="uid://dgx04jl33om3w"]
+[gd_scene load_steps=83 format=3 uid="uid://dgx04jl33om3w"]
 
 [ext_resource type="Script" path="res://Scripts/character_body_2d.gd" id="1_a08j2"]
 [ext_resource type="Script" path="res://Scripts/tutorial_part_2.gd" id="1_on0m7"]
 [ext_resource type="Texture2D" uid="uid://b15o10do4itfg" path="res://Assets/Sprites/Tutorials/PK2.png" id="2_eoav8"]
+[ext_resource type="Texture2D" uid="uid://dreig70jokor0" path="res://Assets/Sprites/Character/Gjump (3).png" id="3_ehknu"]
 [ext_resource type="Texture2D" uid="uid://bahrq6c3cwnnk" path="res://Assets/Sprites/Tutorials/O2.png" id="3_qhy3r"]
 [ext_resource type="AudioStream" uid="uid://c3iu4fh2kf3kk" path="res://Assets/Sound/jump.wav" id="3_v712t"]
 [ext_resource type="Texture2D" uid="uid://d4mctcy5pc502" path="res://Assets/Background/Untitled 50.PNG" id="4_ffqj7"]
 [ext_resource type="AudioStream" uid="uid://cm8n17onir64w" path="res://Assets/Sound/boxSound.wav" id="4_iprbb"]
+[ext_resource type="Texture2D" uid="uid://bop8j7py8orur" path="res://Assets/Sprites/Character/Gjump (2).png" id="4_voki2"]
 [ext_resource type="Texture2D" uid="uid://ddjefsqvm7nq2" path="res://Assets/Sprites/Tutorials/W2.png" id="4_weo4r"]
 [ext_resource type="Texture2D" uid="uid://byypnkjc87sdb" path="res://Assets/Sprites/Character/Gjump (6).png" id="5_2ve7i"]
 [ext_resource type="AudioStream" uid="uid://dydis8421b2ou" path="res://Assets/Sound/walk.wav" id="5_naxcs"]
@@ -106,7 +108,7 @@ size = Vector2(526, 20)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_asjyo"]
 size = Vector2(13, 25.2)
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_xgdro"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_iocu8"]
 animations = [{
 "frames": [{
 "duration": 2.0,
@@ -149,6 +151,12 @@ animations = [{
 "frames": [{
 "duration": 1.0,
 "texture": ExtResource("26_h0cu0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_voki2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_ehknu")
 }],
 "loop": false,
 "name": &"land",
@@ -625,8 +633,8 @@ shape = SubResource("RectangleShape2D_asjyo")
 position = Vector2(1.39999, -3)
 rotation = -0.000699009
 scale = Vector2(0.015, 0.015)
-sprite_frames = SubResource("SpriteFrames_xgdro")
-animation = &"land"
+sprite_frames = SubResource("SpriteFrames_iocu8")
+animation = &"jump_rise"
 offset = Vector2(95, 39)
 flip_h = true
 

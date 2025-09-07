@@ -417,6 +417,12 @@ animations = [{
 "frames": [{
 "duration": 1.0,
 "texture": ExtResource("59_3fje4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_t26n6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_68owm")
 }],
 "loop": false,
 "name": &"land",

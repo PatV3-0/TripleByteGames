@@ -1,4 +1,4 @@
-[gd_scene load_steps=133 format=3 uid="uid://cxvd84y1wcrt3"]
+[gd_scene load_steps=127 format=3 uid="uid://cxvd84y1wcrt3"]
 
 [ext_resource type="Script" path="res://Scripts/character_body_2d.gd" id="1_3lcfs"]
 [ext_resource type="Script" path="res://Scripts/tutorial_scene.gd" id="1_22m25"]
@@ -74,11 +74,6 @@
 [ext_resource type="Texture2D" uid="uid://bct7i7t454wcc" path="res://Assets/Sprites/Portal/PortalPurple (4).png" id="33_sr3yf"]
 [ext_resource type="Texture2D" uid="uid://ckk0sfrjk1vqj" path="res://Assets/Sprites/Portal/PortalPurple (5).png" id="34_dkqwg"]
 [ext_resource type="Texture2D" uid="uid://di0p8u82vq7bt" path="res://Assets/Interactables/idle 1 42.PNG" id="39_5cojk"]
-[ext_resource type="Texture2D" uid="uid://ch1intxq0cr18" path="res://Assets/Sprites/Character/idle 1.png" id="53_6o28y"]
-[ext_resource type="Texture2D" uid="uid://emqo2h4ltk2n" path="res://Assets/Sprites/Character/idle-2.png" id="54_lt4aj"]
-[ext_resource type="Texture2D" uid="uid://bv5vca3wykfry" path="res://Assets/Sprites/Character/Gjump (1.1).png" id="56_2cfre"]
-[ext_resource type="Texture2D" uid="uid://dyy7bp757jofl" path="res://Assets/Sprites/Character/Gjump (0).png" id="58_mx66s"]
-[ext_resource type="Texture2D" uid="uid://dhl4ey5414ddw" path="res://Assets/Sprites/Character/Gjump (2.1).png" id="59_3fje4"]
 [ext_resource type="Texture2D" uid="uid://c2ntm40saxfwm" path="res://Assets/Menus/SpeechbarLighter1.png" id="61_v6x7j"]
 [ext_resource type="Texture2D" uid="uid://d33vnxb146pwg" path="res://Assets/Menus/SpeechbarLighter2.png" id="62_0vsht"]
 [ext_resource type="Texture2D" uid="uid://cnbl2133psakv" path="res://Assets/Menus/SpeechbarLighter5.png" id="63_bwhie"]
@@ -218,7 +213,7 @@ animations = [{
 }],
 "loop": false,
 "name": &"expand",
-"speed": 8.0
+"speed": 5.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -258,7 +253,7 @@ animations = [{
 }],
 "loop": false,
 "name": &"retract",
-"speed": 8.0
+"speed": 5.0
 }]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_m8djq"]
@@ -354,124 +349,6 @@ animations = [{
 }],
 "loop": true,
 "name": &"pushPull",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("7_1y7i5")
-}, {
-"duration": 1.0,
-"texture": ExtResource("8_jytm7")
-}, {
-"duration": 1.0,
-"texture": ExtResource("9_iejxv")
-}, {
-"duration": 1.0,
-"texture": ExtResource("8_jytm7")
-}],
-"loop": true,
-"name": &"walk",
-"speed": 5.0
-}]
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_aku7b"]
-animations = [{
-"frames": [{
-"duration": 2.0,
-"texture": ExtResource("53_6o28y")
-}, {
-"duration": 4.0,
-"texture": ExtResource("54_lt4aj")
-}],
-"loop": true,
-"name": &"idle",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("9_r8bns")
-}],
-"loop": false,
-"name": &"jump_fall",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("56_2cfre")
-}, {
-"duration": 4.0,
-"texture": ExtResource("8_57op4")
-}],
-"loop": false,
-"name": &"jump_rise",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("58_mx66s")
-}],
-"loop": false,
-"name": &"jump_start",
-"speed": 2.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("59_3fje4")
-}],
-"loop": false,
-"name": &"land",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 2.0,
-"texture": ExtResource("12_3i0w0")
-}, {
-"duration": 2.0,
-"texture": ExtResource("13_bbjxi")
-}, {
-"duration": 2.0,
-"texture": ExtResource("12_3i0w0")
-}, {
-"duration": 2.0,
-"texture": ExtResource("13_bbjxi")
-}, {
-"duration": 2.0,
-"texture": ExtResource("14_3f4s6")
-}, {
-"duration": 2.0,
-"texture": ExtResource("16_crgjb")
-}, {
-"duration": 1.0,
-"texture": ExtResource("17_ogcfb")
-}, {
-"duration": 2.0,
-"texture": ExtResource("15_woxs2")
-}, {
-"duration": 2.0,
-"texture": ExtResource("14_3f4s6")
-}, {
-"duration": 2.0,
-"texture": ExtResource("16_crgjb")
-}, {
-"duration": 1.0,
-"texture": ExtResource("17_ogcfb")
-}, {
-"duration": 2.0,
-"texture": ExtResource("15_woxs2")
-}],
-"loop": true,
-"name": &"pushPull",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("11_8x8ml")
-}, {
-"duration": 1.0,
-"texture": ExtResource("13_bbjxi")
-}],
-"loop": true,
-"name": &"start_push",
 "speed": 5.0
 }, {
 "frames": [{
@@ -621,7 +498,7 @@ scale = Vector2(0.7048, 0.7048)
 texture = ExtResource("9_wwy6r")
 
 [node name="Sprite2D7" type="Sprite2D" parent="."]
-position = Vector2(2, 248)
+position = Vector2(1470.67, 197.333)
 rotation = 0.0107859
 scale = Vector2(1.0033, 1.0033)
 texture = ExtResource("6_m14r6")
@@ -639,7 +516,6 @@ scale = Vector2(0.811391, 0.811391)
 texture = ExtResource("8_spja3")
 
 [node name="Sprite2D6" type="Sprite2D" parent="."]
-visible = false
 position = Vector2(608.667, -21.3333)
 scale = Vector2(0.620493, 0.620493)
 texture = ExtResource("9_jb32i")
@@ -687,7 +563,6 @@ shape = SubResource("RectangleShape2D_1hr6t")
 debug_color = Color(0.912828, 0.291844, 0.0548205, 0.42)
 
 [node name="Sprite2D2" type="Sprite2D" parent="TableBody"]
-visible = false
 modulate = Color(1, 1, 1, 0.760784)
 position = Vector2(-336.885, -19.2931)
 scale = Vector2(1, 1.07492)
@@ -876,7 +751,7 @@ animation = &"Pop"
 position = Vector2(359.333, 380)
 scale = Vector2(0.0979167, 0.0955947)
 sprite_frames = SubResource("SpriteFrames_aq74a")
-animation = &"Swirl"
+animation = &"Pop"
 
 [node name="Background" type="AudioStreamPlayer2D" parent="."]
 position = Vector2(0, 1)
@@ -953,29 +828,24 @@ shape = SubResource("RectangleShape2D_rmosr")
 position = Vector2(78.8667, 475.833)
 scale = Vector2(1.5, 1.5)
 script = ExtResource("1_3lcfs")
+speed = null
+jump_force = null
+gravity = null
+air_control_multiplier = null
+launch_strength = null
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
 visible = false
 position = Vector2(1.39999, -3)
 shape = SubResource("RectangleShape2D_b1rkv")
 
-[node name="Sprite2D_old" type="AnimatedSprite2D" parent="CharacterBody2D"]
-visible = false
+[node name="Sprite2D" type="AnimatedSprite2D" parent="CharacterBody2D"]
 position = Vector2(76.0765, -63.1262)
 rotation = -0.000699009
 scale = Vector2(0.015, 0.015)
 sprite_frames = SubResource("SpriteFrames_itgp3")
-animation = &"jump"
+animation = &"walk"
 offset = Vector2(-4886.23, 4043.93)
-flip_h = true
-
-[node name="Sprite2D" type="AnimatedSprite2D" parent="CharacterBody2D"]
-position = Vector2(1.39999, -3)
-rotation = -0.000699009
-scale = Vector2(0.015, 0.015)
-sprite_frames = SubResource("SpriteFrames_aku7b")
-animation = &"land"
-offset = Vector2(95, 39)
 flip_h = true
 
 [node name="Camera2D" type="Camera2D" parent="CharacterBody2D"]
@@ -1005,7 +875,6 @@ visible = false
 position = Vector2(-184.66, 124.577)
 scale = Vector2(0.229125, 0.229125)
 sprite_frames = SubResource("SpriteFrames_yxoql")
-animation = &"retract"
 
 [node name="TutLabel" type="Label" parent="CharacterBody2D"]
 visible = false
@@ -1151,15 +1020,14 @@ debug_color = Color(0.411765, 0.407843, 0.172549, 1)
 [node name="FadeLayer" type="CanvasLayer" parent="."]
 
 [node name="FadeRect" type="ColorRect" parent="FadeLayer"]
-visible = false
 anchors_preset = -1
 anchor_left = -0.530382
 anchor_top = -1.93981
 anchor_right = -0.530382
 anchor_bottom = -1.93981
-offset_left = -2455.0
+offset_left = -2224.0
 offset_top = -1059.0
-offset_right = 7834.0
+offset_right = 8065.0
 offset_bottom = 3436.0
 mouse_filter = 2
 color = Color(0, 0, 0, 0)
