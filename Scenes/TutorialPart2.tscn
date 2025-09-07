@@ -1,14 +1,12 @@
-[gd_scene load_steps=79 format=3 uid="uid://dgx04jl33om3w"]
+[gd_scene load_steps=81 format=3 uid="uid://dgx04jl33om3w"]
 
 [ext_resource type="Script" path="res://Scripts/character_body_2d.gd" id="1_a08j2"]
 [ext_resource type="Script" path="res://Scripts/tutorial_part_2.gd" id="1_on0m7"]
 [ext_resource type="Texture2D" uid="uid://b15o10do4itfg" path="res://Assets/Sprites/Tutorials/PK2.png" id="2_eoav8"]
-[ext_resource type="Texture2D" uid="uid://dreig70jokor0" path="res://Assets/Sprites/Character/Gjump (3).png" id="3_ehknu"]
 [ext_resource type="Texture2D" uid="uid://bahrq6c3cwnnk" path="res://Assets/Sprites/Tutorials/O2.png" id="3_qhy3r"]
 [ext_resource type="AudioStream" uid="uid://c3iu4fh2kf3kk" path="res://Assets/Sound/jump.wav" id="3_v712t"]
 [ext_resource type="Texture2D" uid="uid://d4mctcy5pc502" path="res://Assets/Background/Untitled 50.PNG" id="4_ffqj7"]
 [ext_resource type="AudioStream" uid="uid://cm8n17onir64w" path="res://Assets/Sound/boxSound.wav" id="4_iprbb"]
-[ext_resource type="Texture2D" uid="uid://bop8j7py8orur" path="res://Assets/Sprites/Character/Gjump (2).png" id="4_voki2"]
 [ext_resource type="Texture2D" uid="uid://ddjefsqvm7nq2" path="res://Assets/Sprites/Tutorials/W2.png" id="4_weo4r"]
 [ext_resource type="Texture2D" uid="uid://byypnkjc87sdb" path="res://Assets/Sprites/Character/Gjump (6).png" id="5_2ve7i"]
 [ext_resource type="AudioStream" uid="uid://dydis8421b2ou" path="res://Assets/Sound/walk.wav" id="5_naxcs"]
@@ -16,7 +14,6 @@
 [ext_resource type="Texture2D" uid="uid://c12k2h2j8vdjt" path="res://Assets/Sprites/Character/Gjump (5).png" id="6_7dydt"]
 [ext_resource type="Texture2D" uid="uid://dy26qsmor8as1" path="res://Assets/Background/Untitled 83.png" id="6_xwrf3"]
 [ext_resource type="Script" path="res://Scripts/area_2d.gd" id="7_1qcp5"]
-[ext_resource type="Texture2D" uid="uid://dytxwri855i1v" path="res://Assets/Sprites/Character/Gjump (1).png" id="7_ewdld"]
 [ext_resource type="Texture2D" uid="uid://cel1vf16j5fvi" path="res://Assets/Interactables/Untitled 51.PNG" id="7_k70k0"]
 [ext_resource type="AudioStream" uid="uid://b6doo86qtq6g6" path="res://Assets/Sound/VeryGentle.wav" id="7_lndga"]
 [ext_resource type="Texture2D" uid="uid://brm0qxxd31vp8" path="res://Assets/Interactables/tall-plant.png" id="8_4315k"]
@@ -34,11 +31,16 @@
 [ext_resource type="Texture2D" uid="uid://cvutlp1cgta8b" path="res://Assets/Sprites/Character/walk-stop.png" id="15_q4frm"]
 [ext_resource type="Texture2D" uid="uid://cpjbtyxusic6r" path="res://Assets/Sprites/Character/walk-2.png" id="16_l30oj"]
 [ext_resource type="Texture2D" uid="uid://dyg15lcss7s5k" path="res://Assets/Sprites/Character/walk_1.png" id="17_nnkhe"]
+[ext_resource type="Texture2D" path="res://Assets/Sprites/Character/idle 1.png" id="19_xn2rm"]
+[ext_resource type="Texture2D" path="res://Assets/Sprites/Character/idle-2.png" id="20_0kv2c"]
 [ext_resource type="Script" path="res://Scripts/hole.gd" id="21_n0mxo"]
+[ext_resource type="Texture2D" uid="uid://bv5vca3wykfry" path="res://Assets/Sprites/Character/Gjump (1.1).png" id="22_tmkd1"]
 [ext_resource type="Texture2D" uid="uid://7r8vhqjlcfrt" path="res://Assets/Tutorial assets/Tutorial assets/basket.png" id="23_jgc3d"]
 [ext_resource type="Script" path="res://Scripts/tut_layer.gd" id="24_5dx7j"]
+[ext_resource type="Texture2D" uid="uid://dyy7bp757jofl" path="res://Assets/Sprites/Character/Gjump (0).png" id="24_lls4h"]
 [ext_resource type="Texture2D" uid="uid://c0b1yrv7ue73n" path="res://Assets/Sprites/Tutorials/Space.png" id="25_na48w"]
 [ext_resource type="Script" path="res://Scripts/highlight.gd" id="26_6seu8"]
+[ext_resource type="Texture2D" uid="uid://dhl4ey5414ddw" path="res://Assets/Sprites/Character/Gjump (2.1).png" id="26_h0cu0"]
 [ext_resource type="Texture2D" uid="uid://b3007s8rl8ump" path="res://Assets/Sprites/Tutorials/PK1.png" id="27_4vilt"]
 [ext_resource type="Texture2D" uid="uid://bndq0jtjon5ay" path="res://Assets/Sprites/Tutorials/O1.png" id="28_qbmbg"]
 [ext_resource type="Texture2D" uid="uid://c2ntm40saxfwm" path="res://Assets/Menus/SpeechbarLighter1.png" id="35_q1x5c"]
@@ -104,23 +106,20 @@ size = Vector2(526, 20)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_asjyo"]
 size = Vector2(13, 25.2)
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_iocu8"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_xgdro"]
 animations = [{
 "frames": [{
-"duration": 1.0,
-"texture": ExtResource("3_ehknu")
+"duration": 2.0,
+"texture": ExtResource("19_xn2rm")
 }, {
-"duration": 1.0,
-"texture": ExtResource("4_voki2")
+"duration": 4.0,
+"texture": ExtResource("20_0kv2c")
 }],
-"loop": false,
-"name": &"jump",
+"loop": true,
+"name": &"idle",
 "speed": 5.0
 }, {
 "frames": [{
-"duration": 1.0,
-"texture": ExtResource("5_2ve7i")
-}, {
 "duration": 1.0,
 "texture": ExtResource("6_7dydt")
 }],
@@ -130,10 +129,10 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("4_voki2")
+"texture": ExtResource("22_tmkd1")
 }, {
-"duration": 1.0,
-"texture": ExtResource("3_ehknu")
+"duration": 4.0,
+"texture": ExtResource("5_2ve7i")
 }],
 "loop": false,
 "name": &"jump_rise",
@@ -141,42 +140,70 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("5_2ve7i")
+"texture": ExtResource("24_lls4h")
+}],
+"loop": false,
+"name": &"jump_start",
+"speed": 2.0
 }, {
+"frames": [{
 "duration": 1.0,
-"texture": ExtResource("7_ewdld")
+"texture": ExtResource("26_h0cu0")
 }],
 "loop": false,
 "name": &"land",
 "speed": 5.0
 }, {
 "frames": [{
+"duration": 2.0,
+"texture": ExtResource("9_bi0jp")
+}, {
+"duration": 2.0,
+"texture": ExtResource("10_t5p5y")
+}, {
+"duration": 2.0,
+"texture": ExtResource("9_bi0jp")
+}, {
+"duration": 2.0,
+"texture": ExtResource("10_t5p5y")
+}, {
+"duration": 2.0,
+"texture": ExtResource("11_w88b0")
+}, {
+"duration": 2.0,
+"texture": ExtResource("13_ut3nm")
+}, {
+"duration": 2.0,
+"texture": ExtResource("14_b0c07")
+}, {
+"duration": 2.0,
+"texture": ExtResource("12_n1vgq")
+}, {
+"duration": 2.0,
+"texture": ExtResource("11_w88b0")
+}, {
+"duration": 2.0,
+"texture": ExtResource("13_ut3nm")
+}, {
+"duration": 2.0,
+"texture": ExtResource("14_b0c07")
+}, {
+"duration": 2.0,
+"texture": ExtResource("12_n1vgq")
+}],
+"loop": true,
+"name": &"pushPull",
+"speed": 4.0
+}, {
+"frames": [{
 "duration": 1.0,
 "texture": ExtResource("8_amdmj")
 }, {
 "duration": 1.0,
-"texture": ExtResource("9_bi0jp")
-}, {
-"duration": 1.0,
 "texture": ExtResource("10_t5p5y")
-}, {
-"duration": 1.0,
-"texture": ExtResource("11_w88b0")
-}, {
-"duration": 1.0,
-"texture": ExtResource("12_n1vgq")
-}, {
-"duration": 1.0,
-"texture": ExtResource("13_ut3nm")
-}, {
-"duration": 1.0,
-"texture": ExtResource("14_b0c07")
-}, {
-"duration": 1.0,
-"texture": ExtResource("9_bi0jp")
 }],
 "loop": true,
-"name": &"pushPull",
+"name": &"start_push",
 "speed": 5.0
 }, {
 "frames": [{
@@ -445,7 +472,7 @@ scale = Vector2(0.886082, 0.737077)
 texture = ExtResource("23_jgc3d")
 
 [node name="BoxSprite" type="Sprite2D" parent="Floor"]
-position = Vector2(739.667, 342.666)
+position = Vector2(877.5, 302)
 scale = Vector2(1.25961, 1.57869)
 texture = ExtResource("7_k70k0")
 
@@ -598,7 +625,7 @@ shape = SubResource("RectangleShape2D_asjyo")
 position = Vector2(1.39999, -3)
 rotation = -0.000699009
 scale = Vector2(0.015, 0.015)
-sprite_frames = SubResource("SpriteFrames_iocu8")
+sprite_frames = SubResource("SpriteFrames_xgdro")
 animation = &"pushPull"
 offset = Vector2(95, 39)
 flip_h = true
@@ -626,6 +653,7 @@ visible = false
 position = Vector2(-103.244, 29.4448)
 scale = Vector2(0.229, 0.229)
 sprite_frames = SubResource("SpriteFrames_vf8s0")
+animation = &"retract"
 
 [node name="TutLabel" type="Label" parent="CharacterBody2D"]
 visible = false
@@ -692,6 +720,7 @@ debug_color = Color(0.510884, 0.573227, 0.206706, 0.42)
 [node name="FadeLayer" type="CanvasLayer" parent="."]
 
 [node name="FadeRect" type="ColorRect" parent="FadeLayer"]
+visible = false
 offset_left = -2232.0
 offset_top = -1068.0
 offset_right = 8057.0
@@ -721,6 +750,7 @@ texture = ExtResource("53_rpqk6")
 [node name="FadeLayer2" type="CanvasLayer" parent="."]
 
 [node name="FadeRect" type="ColorRect" parent="FadeLayer2"]
+visible = false
 offset_left = -2232.0
 offset_top = -1068.0
 offset_right = 8057.0
