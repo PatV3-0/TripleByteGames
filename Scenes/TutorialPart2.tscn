@@ -162,10 +162,10 @@ animations = [{
 "texture": ExtResource("10_t5p5y")
 }, {
 "duration": 2.0,
-"texture": ExtResource("9_bi0jp")
+"texture": ExtResource("11_w88b0")
 }, {
 "duration": 2.0,
-"texture": ExtResource("10_t5p5y")
+"texture": ExtResource("13_ut3nm")
 }, {
 "duration": 2.0,
 "texture": ExtResource("11_w88b0")
@@ -173,19 +173,7 @@ animations = [{
 "duration": 2.0,
 "texture": ExtResource("13_ut3nm")
 }, {
-"duration": 1.0,
-"texture": ExtResource("14_b0c07")
-}, {
 "duration": 2.0,
-"texture": ExtResource("12_n1vgq")
-}, {
-"duration": 2.0,
-"texture": ExtResource("11_w88b0")
-}, {
-"duration": 2.0,
-"texture": ExtResource("13_ut3nm")
-}, {
-"duration": 1.0,
 "texture": ExtResource("14_b0c07")
 }, {
 "duration": 2.0,
@@ -472,7 +460,7 @@ scale = Vector2(0.886082, 0.737077)
 texture = ExtResource("23_jgc3d")
 
 [node name="BoxSprite" type="Sprite2D" parent="Floor"]
-position = Vector2(739.667, 342.666)
+position = Vector2(877.5, 302)
 scale = Vector2(1.25961, 1.57869)
 texture = ExtResource("7_k70k0")
 
@@ -626,7 +614,8 @@ position = Vector2(1.39999, -3)
 rotation = -0.000699009
 scale = Vector2(0.015, 0.015)
 sprite_frames = SubResource("SpriteFrames_xgdro")
-animation = &"land"
+animation = &"pushPull"
+frame_progress = 0.842078
 offset = Vector2(95, 39)
 flip_h = true
 
@@ -653,6 +642,7 @@ visible = false
 position = Vector2(-103.244, 29.4448)
 scale = Vector2(0.229, 0.229)
 sprite_frames = SubResource("SpriteFrames_vf8s0")
+animation = &"retract"
 
 [node name="TutLabel" type="Label" parent="CharacterBody2D"]
 visible = false

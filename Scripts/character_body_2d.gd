@@ -42,8 +42,6 @@ func _ready():
 	base_speed = speed
 	pulling = false
 	pushing = false
-	can_pull = false
-	can_push = false
 	$Sprite2D.stop()
 	$Sprite2D.play("idle")
 	$Sprite2D.animation_finished.connect(_on_land_finish)
@@ -84,6 +82,8 @@ func hide_tutorial_text():
 
 func _physics_process(delta: float) -> void:
 	velocity.y += gravity * delta
+	var pulling_now = false
+	var pushing_now = false
 	
 	if tutorial_ui:
 		tutorial_ui.follow_player(global_position)
@@ -105,22 +105,22 @@ func _physics_process(delta: float) -> void:
 			
 	
 		
-	if not pulling and not pushing:
+	if not pulling and not pushing and not pulling_now and not pushing_now:
 		if moving_right:
 			velocity.x = current_speed
 			$Sprite2D.flip_h = true
 			$CollisionShape2D.scale.x = 1
-			if not jumping:
+			if not jumping and $Sprite2D.animation != "walk":
 				$Sprite2D.play("walk")
 		elif moving_left:
 			velocity.x = -current_speed
 			$Sprite2D.flip_h = false
 			$CollisionShape2D.scale.x = -1
-			if not jumping:
+			if not jumping and $Sprite2D.animation != "walk":
 				$Sprite2D.play("walk")
 		else:
 			velocity.x = 0
-			if not jumping:
+			if not jumping and $Sprite2D.animation != "idle":
 				$Sprite2D.play("idle")
 
 	# Jump input
@@ -128,9 +128,9 @@ func _physics_process(delta: float) -> void:
 		velocity.y = -jump_force
 		jumping = true
 		$Sprite2D.frame = 0  # Pre-jump
-		$Sprite2D.play("jump_start")
+		if $Sprite2D.animation != "jump_start":
+			$Sprite2D.play("jump_start")
 		#await get_tree().process_frame
-		#$Sprite2D.play("jump_start")
 		#$Sprite2D.frame = 1  # Push-off
 		jump_sound.pitch_scale = randf_range(0.9, 1.1)
 		jump_sound.play()
@@ -138,12 +138,11 @@ func _physics_process(delta: float) -> void:
 	# Pull logic
 	#If you can pull and there is an object and button is being pressed
 	#And not currently pulling
-	#var pulling_now = false
-	if can_pull and (not pulling) and pull_target and Input.is_action_pressed("toggle_pull"):
-		#pulling_now = true
+	if can_pull and pull_target and Input.is_action_pressed("toggle_pull"):
+		pulling_now = true
 		
 		pull_target.sleeping = false
-		print(pull_target.position)
+		#print(pull_target.position)
 		
 		# Calculate direction vector from object to player
 		var pull_vector = Vector2(global_position.x - pull_target.global_position.x, 0)
@@ -156,9 +155,9 @@ func _physics_process(delta: float) -> void:
 		# Handle player input for possible movement while pulling
 		var player_input = 0
 		if moving_left:
-			velocity.x = -current_speed * 0.6
+			velocity.x = -speed * 0.6
 		elif moving_right:
-			velocity.x = current_speed * 0.6
+			velocity.x = speed * 0.6
 		else:
 			velocity.x = 0
 		
@@ -179,9 +178,8 @@ func _physics_process(delta: float) -> void:
 		if $Sprite2D.animation == "pushPull":
 			$Sprite2D.stop()
 		push_pull_sound.stop()
-
+	pulling = pulling_now
 	# Push logic
-	var pushing_now = false
 	if can_push and push_target and Input.is_action_pressed("toggle_push"):
 		pushing_now = true
 
@@ -191,7 +189,8 @@ func _physics_process(delta: float) -> void:
 				push_pull_sound.play()
 
 		var direction = 1 if moving_right else -1
-		velocity.x = direction * current_speed * 0.8
+		#velocity.x = direction * current_speed * 0.8
+		velocity.x = direction * speed * 0.8
 		var push_force_magnitude = 1200
 		var push_force = Vector2(direction * push_force_magnitude, 0)
 		push_target.apply_force(push_force, Vector2.ZERO)
@@ -238,7 +237,8 @@ func _physics_process(delta: float) -> void:
 				if $Sprite2D.animation != "jump_fall":
 					$Sprite2D.play("jump_fall")
 		else:
-			$Sprite2D.play("land")
+			if $Sprite2D.animation != "land":
+				$Sprite2D.play("land")
 		
 func _on_land_finish():
 	if $Sprite2D.animation == "land":
