@@ -20,6 +20,7 @@ var can_pull: bool = false
 var pull_target: RigidBody2D = null
 var pulling: bool = false
 var pull_force = 200
+var push_force = 200
 
 var can_push: bool = false
 var push_target: RigidBody2D = null
@@ -44,7 +45,7 @@ func _ready():
 	pushing = false
 	$Sprite2D.stop()
 	$Sprite2D.play("idle")
-	$Sprite2D.animation_finished.connect(_on_land_finish)
+	$Sprite2D.animation_finished.connect(_on_animation_finish)
 	
 	if fade_zone:
 		fade_zone.body_entered.connect(_on_fade_out_body_entered)
@@ -81,31 +82,150 @@ func hide_tutorial_text():
 		#$CollisionShape2D.disabled = true
 
 func _physics_process(delta: float) -> void:
-	velocity.y += gravity * delta
-	var pulling_now = false
-	var pushing_now = false
-	
+	#var pulling_now = false
+	#var pushing_now = false
 	if tutorial_ui:
 		tutorial_ui.follow_player(global_position)
 
+	velocity.y += gravity * delta
 	var current_speed = speed
 	if not is_on_floor():
 		current_speed *= air_control_multiplier
-
+	
 	var moving_left = Input.is_action_pressed("ui_left")
 	var moving_right = Input.is_action_pressed("ui_right")
+	var jump_pressed = Input.is_action_just_pressed("ui_accept")
+	var push_press = Input.is_action_pressed("toggle_push")
+	var pull_press = Input.is_action_pressed("toggle_pull")
 
-	var should_play_walk_sound = is_on_floor() and not jumping and abs(velocity.x) > 0
-	if should_play_walk_sound:
-		if not walking_sound.playing:
-			walking_sound.play()
-	else:
-		if walking_sound.playing:
-			walking_sound.stop()
+	if pull_press and can_pull and pull_target and not pulling and not jumping:
+		#Begin Pulling
+		pull_target.sleeping = false
+		print(pull_target.position)
+		var pull_vector = Vector2(global_position.x - pull_target.global_position.x, 0)
+		var pull_distance = pull_vector.length()
+		#Move Object
+		if pull_distance > 0:
+			var pull_dir = pull_vector.normalized()
+			var pull_strength = clamp(pull_force * pull_distance, 0, 500) #Grasp It Firmly
+			pull_target.apply_central_impulse(pull_dir * pull_strength)
+		##Position Player	
+		if moving_left:
+			velocity.x = -speed * 0.6
+		elif moving_right:
+			velocity.x = speed * 0.6
+		else:
+			velocity.x = 0
+		$Sprite2D.flip_h = pull_vector.x < 0
+		#Play Animation
+		if $Sprite2D.animation != "pull":
+			$Sprite2D.play("pull")
+			if not push_pull_sound.playing:
+				push_pull_sound.play()
+		pulling = true
+		$CollisionShape2D.scale.x = 0.5 * sign(pull_vector.x)
+	elif pull_press and can_pull and pull_target and pulling and not jumping:
+		#Recalculate Direction
+		var pull_vector = Vector2(global_position.x - pull_target.global_position.x, 0)
+		var pull_distance = pull_vector.length()
+		#Move Object
+		if pull_distance > 0:
+			var pull_dir = pull_vector.normalized()
+			var pull_strength = clamp(pull_force * pull_distance, 0, 500) #Grasp It Firmly
+			pull_target.apply_central_impulse(pull_dir * pull_strength)
 			
-	
+		if moving_left:
+			velocity.x = -speed * 0.6
+		elif moving_right:
+			velocity.x = speed * 0.6
+		else:
+			velocity.x = 0
+		$Sprite2D.flip_h = pull_vector.x < 0
+	elif not pull_press and pulling:
+		#Currently pulling but stopped pushing button
+		pulling = false
+		if $Sprite2D.animation == "pull":
+			$Sprite2D.stop()
+		push_pull_sound.stop()
+	elif push_press and can_push and push_target and not pushing and not jumping:
+		#Get Object
+		var push_vector = push_target.global_position - global_position
+		var push_dir = sign(push_vector.x)
 		
-	if not pulling and not pushing and not pulling_now and not pushing_now:
+		if (moving_right and push_dir > 0) or (moving_left and push_dir < 0):
+			velocity.x = push_dir * speed * 0.8
+		else:
+			velocity.x = 0
+			
+		var push_force_magnitude = 1200
+		var push_force = Vector2(push_dir * push_force_magnitude, 0)
+		push_target.apply_force(push_force, Vector2.ZERO)
+		
+		#Visual Offset
+		var push_area = push_target.get_node_or_null("Area2D")
+		var push_obj = push_target.get_node_or_null("CollisionShape2D")
+		var push_sprite2 = push_obj.get_node_or_null("Sprite2D")
+		var push_sprite = push_area.get_node_or_null("Sprite2D")
+		if push_sprite:
+			var skew_amount = 0.04
+			var shift_amount = 6
+			push_sprite.skew = skew_amount
+			push_sprite2.skew = skew_amount
+			push_sprite.offset.x = shift_amount * push_dir
+			push_sprite2.offset.x = shift_amount * push_dir
+	
+		# Play Animation
+		if $Sprite2D.animation != "push":
+			$Sprite2D.play("push")
+			if not push_pull_sound.playing:
+				push_pull_sound.play()
+		
+		pushing = true
+			
+	elif push_press and can_push and push_target and pushing and not jumping:
+		# Continue pushing
+		var push_vector = push_target.global_position - global_position
+		var push_dir = sign(push_vector.x)
+		
+		if (moving_right and push_dir > 0) or (moving_left and push_dir < 0):
+			velocity.x = push_dir * speed * 0.8
+		else:
+			velocity.x = 0
+			
+		var push_force_magnitude = 1200
+		var push_force = Vector2(push_dir * push_force_magnitude, 0)
+		push_target.apply_force(push_force, Vector2.ZERO)
+
+		var push_area = push_target.get_node_or_null("Area2D")
+		var push_obj = push_target.get_node_or_null("CollisionShape2D")
+		var push_sprite2 = push_obj.get_node_or_null("Sprite2D")
+		var push_sprite = push_area.get_node_or_null("Sprite2D")
+		if push_sprite:
+			var skew_amount = 0.04
+			var shift_amount = 6
+			push_sprite.skew = skew_amount
+			push_sprite2.skew = skew_amount
+			push_sprite.offset.x = shift_amount * push_dir
+			push_sprite2.offset.x = shift_amount * push_dir
+	
+	elif not push_press and pushing:
+		# Released push
+		pushing = false
+		if $Sprite2D.animation == "push":
+			$Sprite2D.stop()
+		push_pull_sound.stop()
+		if push_target:
+			var push_area = push_target.get_node_or_null("Area2D")
+			var push_obj = push_target.get_node_or_null("CollisionShape2D")
+			var push_sprite2 = push_obj.get_node_or_null("Sprite2D")
+			var push_sprite = push_area.get_node_or_null("Sprite2D")
+			if push_sprite:
+				push_sprite.skew = 0
+				push_sprite2.skew = 0
+				push_sprite.offset.x = 0
+				push_sprite2.offset.x = 0
+		
+	elif not pulling and not pushing:
 		if moving_right:
 			velocity.x = current_speed
 			$Sprite2D.flip_h = true
@@ -124,7 +244,7 @@ func _physics_process(delta: float) -> void:
 				$Sprite2D.play("idle")
 
 	# Jump input
-	if Input.is_action_just_pressed("ui_accept") and is_on_floor():
+	if jump_pressed and is_on_floor() and not pushing and not pulling:
 		velocity.y = -jump_force
 		jumping = true
 		$Sprite2D.frame = 0  # Pre-jump
@@ -135,100 +255,10 @@ func _physics_process(delta: float) -> void:
 		jump_sound.pitch_scale = randf_range(0.9, 1.1)
 		jump_sound.play()
 
-	# Pull logic
-	#If you can pull and there is an object and button is being pressed
-	#And not currently pulling
-	if can_pull and pull_target and Input.is_action_pressed("toggle_pull"):
-		pulling_now = true
-		
-		pull_target.sleeping = false
-		#print(pull_target.position)
-		
-		# Calculate direction vector from object to player
-		var pull_vector = Vector2(global_position.x - pull_target.global_position.x, 0)
-		var pull_distance = pull_vector.length()
-		if pull_distance > 0:
-			var pull_dir = pull_vector.normalized()
-			var pull_strength = clamp(pull_force * pull_distance, 0, 500) # scale by distance but cap
-			pull_target.apply_central_impulse(pull_dir * pull_strength)
-		
-		# Handle player input for possible movement while pulling
-		var player_input = 0
-		if moving_left:
-			velocity.x = -speed * 0.6
-		elif moving_right:
-			velocity.x = speed * 0.6
-		else:
-			velocity.x = 0
-		
-		# Play pull animation and sound
-		if $Sprite2D.animation != "pushPull":
-			$Sprite2D.play("pushPull")
-			if not push_pull_sound.playing:
-				push_pull_sound.play()
-				
-		# Flip sprite and scale collision shape based on direction
-		$Sprite2D.flip_h = pull_vector.x < 0
-		$CollisionShape2D.scale.x = 0.5 * sign(pull_vector.x)
-	else:
-		pulling = false
-
-	# Stop pull effects if pulling has just ended
-	if pulling:
-		if $Sprite2D.animation == "pushPull":
-			$Sprite2D.stop()
-		push_pull_sound.stop()
-	pulling = pulling_now
-	# Push logic
-	if can_push and push_target and Input.is_action_pressed("toggle_push"):
-		pushing_now = true
-
-		if !$Sprite2D.is_playing() or $Sprite2D.animation != "pushPull":
-			$Sprite2D.play("pushPull")
-			if not push_pull_sound.playing:
-				push_pull_sound.play()
-
-		var direction = 1 if moving_right else -1
-		#velocity.x = direction * current_speed * 0.8
-		velocity.x = direction * speed * 0.8
-		var push_force_magnitude = 1200
-		var push_force = Vector2(direction * push_force_magnitude, 0)
-		push_target.apply_force(push_force, Vector2.ZERO)
-
-		var push_area = push_target.get_node_or_null("Area2D")
-		var push_obj = push_target.get_node_or_null("CollisionShape2D")
-		var push_sprite2 = push_obj.get_node_or_null("Sprite2D")
-		var push_sprite = push_area.get_node_or_null("Sprite2D")
-		if push_sprite:
-			var skew_amount = 0.04
-			var shift_amount = 6
-			push_sprite.skew = skew_amount
-			push_sprite2.skew = skew_amount
-			push_sprite.offset.x = shift_amount * direction
-			push_sprite2.offset.x = shift_amount * direction
-	else:
-		pushing_now = false
-		if push_target:
-			var push_area = push_target.get_node_or_null("Area2D")
-			var push_obj = push_target.get_node_or_null("CollisionShape2D")
-			var push_sprite2 = push_obj.get_node_or_null("Sprite2D")
-			var push_sprite = push_area.get_node_or_null("Sprite2D")
-			if push_sprite:
-				push_sprite.skew = 0
-				push_sprite2.skew = 0
-				push_sprite.offset.x = 0
-				push_sprite2.offset.x = 0
-				
-	if pushing and not pushing_now:
-		if $Sprite2D.is_playing() and $Sprite2D.animation == "pushPull":
-			$Sprite2D.stop()
-		push_pull_sound.stop()
-	pushing = pushing_now
-
 	move_and_slide()
 
 	# Jump animation handling
-	if jumping:
+	if jumping and not pushing and not pulling:
 		if not is_on_floor():
 			if velocity.y < -50:
 				if $Sprite2D.animation != "jump_rise":
@@ -240,9 +270,27 @@ func _physics_process(delta: float) -> void:
 			if $Sprite2D.animation != "land":
 				$Sprite2D.play("land")
 		
-func _on_land_finish():
+	##Sounds
+	if is_on_floor() and not jumping and abs(velocity.x) > 0:
+		if not walking_sound.playing:
+			walking_sound.play()
+	else:
+		if walking_sound.playing:
+			walking_sound.stop()
+			
+	
+		
+func _on_animation_finish():
 	if $Sprite2D.animation == "land":
 		jumping = false
+	if $Sprite2D.animation == "pull":
+		if pulling:
+			$Sprite2D.play("pull")
+		
+	if $Sprite2D.animation == "push":
+		if pushing:
+			$Sprite2D.play("push")
+	
 func grow(offset):
 	
 	scale = base_scale * 1.5 
