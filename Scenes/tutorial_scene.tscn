@@ -1,4 +1,4 @@
-[gd_scene load_steps=133 format=3 uid="uid://cxvd84y1wcrt3"]
+[gd_scene load_steps=134 format=3 uid="uid://cxvd84y1wcrt3"]
 
 [ext_resource type="Script" path="res://Scripts/character_body_2d.gd" id="1_3lcfs"]
 [ext_resource type="Script" path="res://Scripts/tutorial_scene.gd" id="1_22m25"]
@@ -11,20 +11,16 @@
 [ext_resource type="Texture2D" uid="uid://dy26qsmor8as1" path="res://Assets/Background/Untitled 83.png" id="5_oo2xg"]
 [ext_resource type="Texture2D" uid="uid://wtlriu13ih1o" path="res://Assets/Interactables/floor-lamp.png" id="6_m14r6"]
 [ext_resource type="Texture2D" uid="uid://cvutlp1cgta8b" path="res://Assets/Sprites/Character/walk-stop.png" id="7_1y7i5"]
-[ext_resource type="Texture2D" uid="uid://dreig70jokor0" path="res://Assets/Sprites/Character/Gjump (3).png" id="7_68owm"]
 [ext_resource type="AudioStream" uid="uid://b6doo86qtq6g6" path="res://Assets/Sound/VeryGentle.wav" id="7_e286j"]
 [ext_resource type="Script" path="res://Scripts/portal.gd" id="7_gx4qd"]
 [ext_resource type="Texture2D" uid="uid://cwqf3884jrrx7" path="res://Assets/Interactables/snek-plant.png" id="7_ml4um"]
 [ext_resource type="Texture2D" uid="uid://byypnkjc87sdb" path="res://Assets/Sprites/Character/Gjump (6).png" id="8_57op4"]
 [ext_resource type="Texture2D" uid="uid://cpjbtyxusic6r" path="res://Assets/Sprites/Character/walk-2.png" id="8_jytm7"]
 [ext_resource type="Texture2D" uid="uid://s107jcrsshda" path="res://Assets/Interactables/couch.png" id="8_spja3"]
-[ext_resource type="Texture2D" uid="uid://bop8j7py8orur" path="res://Assets/Sprites/Character/Gjump (2).png" id="8_t26n6"]
 [ext_resource type="Texture2D" uid="uid://dyg15lcss7s5k" path="res://Assets/Sprites/Character/walk_1.png" id="9_iejxv"]
 [ext_resource type="Texture2D" uid="uid://15toxdd1sr23" path="res://Assets/Tutorial assets/Tutorial assets/lamp1.png" id="9_jb32i"]
 [ext_resource type="Texture2D" uid="uid://c12k2h2j8vdjt" path="res://Assets/Sprites/Character/Gjump (5).png" id="9_r8bns"]
 [ext_resource type="Texture2D" uid="uid://gpwdlp85xgwf" path="res://Assets/Interactables/side-table-w-plant.png" id="9_wwy6r"]
-[ext_resource type="Texture2D" uid="uid://dytxwri855i1v" path="res://Assets/Sprites/Character/Gjump (1).png" id="10_40rre"]
-[ext_resource type="Texture2D" uid="uid://cd0ymrrfi02vh" path="res://Assets/Sprites/Character/push-1.png" id="11_8x8ml"]
 [ext_resource type="Texture2D" uid="uid://cp4qrw217eavw" path="res://Assets/Interactables/table.png" id="11_q0tvs"]
 [ext_resource type="Texture2D" uid="uid://d112q6ipvg3ur" path="res://Assets/Sprites/Character/push_3.png" id="12_3i0w0"]
 [ext_resource type="Texture2D" uid="uid://dapi0ojhgfxh8" path="res://Assets/Interactables/idle 1 45.PNG" id="12_e4iwl"]
@@ -79,14 +75,20 @@
 [ext_resource type="Texture2D" uid="uid://bv5vca3wykfry" path="res://Assets/Sprites/Character/Gjump (1.1).png" id="56_2cfre"]
 [ext_resource type="Texture2D" uid="uid://dyy7bp757jofl" path="res://Assets/Sprites/Character/Gjump (0).png" id="58_mx66s"]
 [ext_resource type="Texture2D" uid="uid://dhl4ey5414ddw" path="res://Assets/Sprites/Character/Gjump (2.1).png" id="59_3fje4"]
+[ext_resource type="Texture2D" uid="uid://uv7p712dwm1x" path="res://Assets/Sprites/Character/pull1.png" id="60_7oys1"]
+[ext_resource type="Texture2D" uid="uid://qeqb7yadg5ns" path="res://Assets/Sprites/Character/pull2.png" id="61_2y28e"]
 [ext_resource type="Texture2D" uid="uid://c2ntm40saxfwm" path="res://Assets/Menus/SpeechbarLighter1.png" id="61_v6x7j"]
 [ext_resource type="Texture2D" uid="uid://d33vnxb146pwg" path="res://Assets/Menus/SpeechbarLighter2.png" id="62_0vsht"]
+[ext_resource type="Texture2D" uid="uid://ygego3qxiycn" path="res://Assets/Sprites/Character/pull3.png" id="62_qyu14"]
+[ext_resource type="Texture2D" uid="uid://eabpv0wv1gws" path="res://Assets/Sprites/Character/pull3.5.png" id="63_4x8xy"]
 [ext_resource type="Texture2D" uid="uid://cnbl2133psakv" path="res://Assets/Menus/SpeechbarLighter5.png" id="63_bwhie"]
 [ext_resource type="Texture2D" uid="uid://hdqf7n8ve8xb" path="res://Assets/Menus/SpeechbarLighter3.png" id="63_o0cew"]
 [ext_resource type="Texture2D" uid="uid://c5rkurno2ws1q" path="res://Assets/Interactables/pot-plant.png" id="63_odir0"]
 [ext_resource type="Texture2D" uid="uid://cay0c273362pd" path="res://Assets/Menus/SpeechbarLighter6.png" id="64_6a3jv"]
 [ext_resource type="Texture2D" uid="uid://lxblcan0e0gl" path="res://Assets/Menus/SpeechbarLighter4.png" id="64_n3at4"]
+[ext_resource type="Texture2D" uid="uid://cosrv7kcfja2h" path="res://Assets/Sprites/Character/pull4.png" id="64_utcbk"]
 [ext_resource type="Texture2D" uid="uid://e0b2aiq41mcl" path="res://Assets/Menus/SpeechbarLighter7.png" id="65_5lxoe"]
+[ext_resource type="Texture2D" uid="uid://bvotkbnkinptd" path="res://Assets/Sprites/Character/pull5.png" id="65_ma2dp"]
 [ext_resource type="Texture2D" uid="uid://dorvtviw5nr6h" path="res://Assets/Interactables/tea-cup.png" id="65_ohs1f"]
 [ext_resource type="Texture2D" uid="uid://blm0prikln4h1" path="res://Assets/Menus/SpeechbarLighter8.png" id="66_xt3hs"]
 [ext_resource type="Texture2D" uid="uid://bicu3c3rbd1rn" path="res://Assets/Menus/SpeechbarLighter9.png" id="67_w4vhv"]
@@ -281,7 +283,7 @@ size = Vector2(179.646, 20)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_b1rkv"]
 size = Vector2(13, 25.2)
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_vkuit"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_ecnqw"]
 animations = [{
 "frames": [{
 "duration": 2.0,
@@ -331,11 +333,34 @@ animations = [{
 }, {
 "frames": [{
 "duration": 2.0,
-"texture": ExtResource("12_3i0w0")
+"texture": ExtResource("60_7oys1")
 }, {
 "duration": 2.0,
-"texture": ExtResource("13_bbjxi")
+"texture": ExtResource("61_2y28e")
 }, {
+"duration": 2.0,
+"texture": ExtResource("62_qyu14")
+}, {
+"duration": 2.0,
+"texture": ExtResource("63_4x8xy")
+}, {
+"duration": 2.0,
+"texture": ExtResource("62_qyu14")
+}, {
+"duration": 2.0,
+"texture": ExtResource("63_4x8xy")
+}, {
+"duration": 2.0,
+"texture": ExtResource("64_utcbk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("65_ma2dp")
+}],
+"loop": false,
+"name": &"pull",
+"speed": 5.0
+}, {
+"frames": [{
 "duration": 2.0,
 "texture": ExtResource("12_3i0w0")
 }, {
@@ -348,130 +373,20 @@ animations = [{
 "duration": 2.0,
 "texture": ExtResource("16_crgjb")
 }, {
-"duration": 1.0,
-"texture": ExtResource("17_ogcfb")
-}, {
-"duration": 2.0,
-"texture": ExtResource("15_woxs2")
-}, {
 "duration": 2.0,
 "texture": ExtResource("14_3f4s6")
 }, {
 "duration": 2.0,
 "texture": ExtResource("16_crgjb")
 }, {
-"duration": 1.0,
+"duration": 2.0,
 "texture": ExtResource("17_ogcfb")
 }, {
 "duration": 2.0,
 "texture": ExtResource("15_woxs2")
 }],
-"loop": true,
-"name": &"pushPull",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("11_8x8ml")
-}, {
-"duration": 1.0,
-"texture": ExtResource("13_bbjxi")
-}],
-"loop": true,
-"name": &"start_push",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("7_1y7i5")
-}, {
-"duration": 1.0,
-"texture": ExtResource("8_jytm7")
-}, {
-"duration": 1.0,
-"texture": ExtResource("9_iejxv")
-}, {
-"duration": 1.0,
-"texture": ExtResource("8_jytm7")
-}],
-"loop": true,
-"name": &"walk",
-"speed": 5.0
-}]
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_itgp3"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("7_68owm")
-}, {
-"duration": 1.0,
-"texture": ExtResource("8_t26n6")
-}],
 "loop": false,
-"name": &"jump",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("8_57op4")
-}, {
-"duration": 1.0,
-"texture": ExtResource("9_r8bns")
-}],
-"loop": false,
-"name": &"jump_fall",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("8_t26n6")
-}, {
-"duration": 1.0,
-"texture": ExtResource("7_68owm")
-}],
-"loop": false,
-"name": &"jump_rise",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("8_57op4")
-}, {
-"duration": 1.0,
-"texture": ExtResource("10_40rre")
-}],
-"loop": false,
-"name": &"land",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("11_8x8ml")
-}, {
-"duration": 1.0,
-"texture": ExtResource("12_3i0w0")
-}, {
-"duration": 1.0,
-"texture": ExtResource("13_bbjxi")
-}, {
-"duration": 1.0,
-"texture": ExtResource("14_3f4s6")
-}, {
-"duration": 1.0,
-"texture": ExtResource("15_woxs2")
-}, {
-"duration": 1.0,
-"texture": ExtResource("16_crgjb")
-}, {
-"duration": 1.0,
-"texture": ExtResource("17_ogcfb")
-}, {
-"duration": 1.0,
-"texture": ExtResource("12_3i0w0")
-}],
-"loop": true,
-"name": &"pushPull",
+"name": &"push",
 "speed": 5.0
 }, {
 "frames": [{
@@ -603,15 +518,16 @@ a_green_texture = ExtResource("2_k3fu8")
 d_green_texture = ExtResource("3_yrxd1")
 space_green_texture = ExtResource("4_dfx10")
 
-[node name="Sprite2D2" type="Sprite2D" parent="."]
-position = Vector2(2866.66, 463)
-scale = Vector2(1.13, 1.09679)
-texture = ExtResource("5_oo2xg")
-
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(654, 454.667)
 scale = Vector2(1.13845, 1.13845)
 texture = ExtResource("5_oo2xg")
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+position = Vector2(2632.67, 463.333)
+scale = Vector2(1.13, 1.09679)
+texture = ExtResource("5_oo2xg")
+flip_h = true
 
 [node name="Sprite2D5" type="Sprite2D" parent="."]
 modulate = Color(0.834614, 0.834614, 0.834614, 1)
@@ -959,28 +875,18 @@ visible = false
 position = Vector2(1.39999, -3)
 shape = SubResource("RectangleShape2D_b1rkv")
 
+[node name="Camera2D" type="Camera2D" parent="CharacterBody2D"]
+offset = Vector2(0, -100)
+zoom = Vector2(1.2, 1.2)
+
 [node name="Sprite2D" type="AnimatedSprite2D" parent="CharacterBody2D"]
 position = Vector2(1.39999, -3)
 rotation = -0.000699009
 scale = Vector2(0.015, 0.015)
-sprite_frames = SubResource("SpriteFrames_vkuit")
-animation = &"idle"
+sprite_frames = SubResource("SpriteFrames_ecnqw")
+animation = &"push"
 offset = Vector2(95, 39)
 flip_h = true
-
-[node name="Sprite2D_old" type="AnimatedSprite2D" parent="CharacterBody2D"]
-visible = false
-position = Vector2(76.0765, -63.1262)
-rotation = -0.000699009
-scale = Vector2(0.015, 0.015)
-sprite_frames = SubResource("SpriteFrames_itgp3")
-animation = &"jump"
-offset = Vector2(-4886.23, 4043.93)
-flip_h = true
-
-[node name="Camera2D" type="Camera2D" parent="CharacterBody2D"]
-offset = Vector2(0, -100)
-zoom = Vector2(1.2, 1.2)
 
 [node name="JumpSound" type="AudioStreamPlayer2D" parent="CharacterBody2D"]
 stream = ExtResource("2_7aa3q")
@@ -1149,16 +1055,15 @@ debug_color = Color(0.411765, 0.407843, 0.172549, 1)
 [node name="FadeLayer" type="CanvasLayer" parent="."]
 
 [node name="FadeRect" type="ColorRect" parent="FadeLayer"]
-visible = false
 anchors_preset = -1
 anchor_left = -0.530382
 anchor_top = -1.93981
 anchor_right = -0.530382
 anchor_bottom = -1.93981
-offset_left = -2455.0
-offset_top = -1059.0
-offset_right = 7834.0
-offset_bottom = 3436.0
+offset_left = -2406.0
+offset_top = -1000.0
+offset_right = 7883.0
+offset_bottom = 3495.0
 mouse_filter = 2
 color = Color(0, 0, 0, 0)
 metadata/_edit_use_anchors_ = true

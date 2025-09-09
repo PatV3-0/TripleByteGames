@@ -1,4 +1,4 @@
-[gd_scene load_steps=81 format=3 uid="uid://dgx04jl33om3w"]
+[gd_scene load_steps=86 format=3 uid="uid://dgx04jl33om3w"]
 
 [ext_resource type="Script" path="res://Scripts/character_body_2d.gd" id="1_a08j2"]
 [ext_resource type="Script" path="res://Scripts/tutorial_part_2.gd" id="1_on0m7"]
@@ -17,7 +17,6 @@
 [ext_resource type="Texture2D" uid="uid://cel1vf16j5fvi" path="res://Assets/Interactables/Untitled 51.PNG" id="7_k70k0"]
 [ext_resource type="AudioStream" uid="uid://b6doo86qtq6g6" path="res://Assets/Sound/VeryGentle.wav" id="7_lndga"]
 [ext_resource type="Texture2D" uid="uid://brm0qxxd31vp8" path="res://Assets/Interactables/tall-plant.png" id="8_4315k"]
-[ext_resource type="Texture2D" uid="uid://cd0ymrrfi02vh" path="res://Assets/Sprites/Character/push-1.png" id="8_amdmj"]
 [ext_resource type="Texture2D" uid="uid://cdi47y8m6tqdn" path="res://Assets/Interactables/Untitled 55.PNG" id="8_f1s1k"]
 [ext_resource type="Texture2D" uid="uid://d112q6ipvg3ur" path="res://Assets/Sprites/Character/push_3.png" id="9_bi0jp"]
 [ext_resource type="Texture2D" uid="uid://dv1c5qcdbv81f" path="res://Assets/Interactables/drawer.png" id="10_rxhbo"]
@@ -39,10 +38,16 @@
 [ext_resource type="Script" path="res://Scripts/tut_layer.gd" id="24_5dx7j"]
 [ext_resource type="Texture2D" uid="uid://dyy7bp757jofl" path="res://Assets/Sprites/Character/Gjump (0).png" id="24_lls4h"]
 [ext_resource type="Texture2D" uid="uid://c0b1yrv7ue73n" path="res://Assets/Sprites/Tutorials/Space.png" id="25_na48w"]
+[ext_resource type="Texture2D" uid="uid://uv7p712dwm1x" path="res://Assets/Sprites/Character/pull1.png" id="26_4hx6d"]
 [ext_resource type="Script" path="res://Scripts/highlight.gd" id="26_6seu8"]
 [ext_resource type="Texture2D" uid="uid://dhl4ey5414ddw" path="res://Assets/Sprites/Character/Gjump (2.1).png" id="26_h0cu0"]
 [ext_resource type="Texture2D" uid="uid://b3007s8rl8ump" path="res://Assets/Sprites/Tutorials/PK1.png" id="27_4vilt"]
+[ext_resource type="Texture2D" uid="uid://qeqb7yadg5ns" path="res://Assets/Sprites/Character/pull2.png" id="27_ej3r6"]
+[ext_resource type="Texture2D" uid="uid://ygego3qxiycn" path="res://Assets/Sprites/Character/pull3.png" id="28_n4csa"]
 [ext_resource type="Texture2D" uid="uid://bndq0jtjon5ay" path="res://Assets/Sprites/Tutorials/O1.png" id="28_qbmbg"]
+[ext_resource type="Texture2D" uid="uid://eabpv0wv1gws" path="res://Assets/Sprites/Character/pull3.5.png" id="29_2r6ot"]
+[ext_resource type="Texture2D" uid="uid://cosrv7kcfja2h" path="res://Assets/Sprites/Character/pull4.png" id="30_66w4f"]
+[ext_resource type="Texture2D" uid="uid://bvotkbnkinptd" path="res://Assets/Sprites/Character/pull5.png" id="31_jcwuq"]
 [ext_resource type="Texture2D" uid="uid://c2ntm40saxfwm" path="res://Assets/Menus/SpeechbarLighter1.png" id="35_q1x5c"]
 [ext_resource type="Texture2D" uid="uid://d33vnxb146pwg" path="res://Assets/Menus/SpeechbarLighter2.png" id="36_jr1nn"]
 [ext_resource type="Texture2D" uid="uid://hdqf7n8ve8xb" path="res://Assets/Menus/SpeechbarLighter3.png" id="37_qjug4"]
@@ -156,6 +161,35 @@ animations = [{
 }, {
 "frames": [{
 "duration": 2.0,
+"texture": ExtResource("26_4hx6d")
+}, {
+"duration": 2.0,
+"texture": ExtResource("27_ej3r6")
+}, {
+"duration": 2.0,
+"texture": ExtResource("28_n4csa")
+}, {
+"duration": 2.0,
+"texture": ExtResource("29_2r6ot")
+}, {
+"duration": 2.0,
+"texture": ExtResource("28_n4csa")
+}, {
+"duration": 2.0,
+"texture": ExtResource("29_2r6ot")
+}, {
+"duration": 2.0,
+"texture": ExtResource("30_66w4f")
+}, {
+"duration": 1.0,
+"texture": ExtResource("31_jcwuq")
+}],
+"loop": false,
+"name": &"pull",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 2.0,
 "texture": ExtResource("9_bi0jp")
 }, {
 "duration": 2.0,
@@ -179,19 +213,8 @@ animations = [{
 "duration": 2.0,
 "texture": ExtResource("12_n1vgq")
 }],
-"loop": true,
-"name": &"pushPull",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("8_amdmj")
-}, {
-"duration": 1.0,
-"texture": ExtResource("10_t5p5y")
-}],
-"loop": true,
-"name": &"start_push",
+"loop": false,
+"name": &"push",
 "speed": 5.0
 }, {
 "frames": [{
@@ -614,8 +637,7 @@ position = Vector2(1.39999, -3)
 rotation = -0.000699009
 scale = Vector2(0.015, 0.015)
 sprite_frames = SubResource("SpriteFrames_xgdro")
-animation = &"pushPull"
-frame_progress = 0.842078
+animation = &"push"
 offset = Vector2(95, 39)
 flip_h = true
 
