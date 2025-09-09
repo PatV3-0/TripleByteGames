@@ -13,18 +13,18 @@ signal fade_back_triggered
 var base_scale: Vector2
 var base_speed: float
 var base_jump_force: float
-
+var base_acm: float
 var jumping = false
 
 var can_pull: bool = false
 var pull_target: RigidBody2D = null
 var pulling: bool = false
 var pull_force = 200
-var push_force = 200
 
 var can_push: bool = false
 var push_target: RigidBody2D = null
 var pushing: bool = false
+var push_force_magnitude = 1200
 
 @onready var jump_sound = $JumpSound
 @onready var push_pull_sound = $PushPullSound
@@ -41,6 +41,7 @@ func _ready():
 	base_scale = scale
 	base_jump_force = jump_force
 	base_speed = speed
+	base_acm = air_control_multiplier
 	pulling = false
 	pushing = false
 	$Sprite2D.stop()
@@ -192,7 +193,7 @@ func _physics_process(delta: float) -> void:
 		else:
 			velocity.x = 0
 			
-		var push_force_magnitude = 1200
+		
 		var push_force = Vector2(push_dir * push_force_magnitude, 0)
 		push_target.apply_force(push_force, Vector2.ZERO)
 
@@ -294,8 +295,9 @@ func _on_animation_finish():
 func grow(offset):
 	
 	scale = base_scale * 1.5 
-	jump_force = base_jump_force + 300 
+	jump_force = base_jump_force + 200 
 	speed = base_speed -100
+	air_control_multiplier = base_acm -0.4
 	
 	#update_camera_zoom()
 	return true  # Successfully grew
@@ -304,6 +306,7 @@ func shrink(offset):
 	scale = base_scale
 	jump_force = base_jump_force
 	speed = base_speed 
+	air_control_multiplier = base_acm
 	#update_camera_zoom()
 		
 	return true  # Successfully grew
