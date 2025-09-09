@@ -11,6 +11,9 @@ func _on_body_entered(body):
 		return  # Death Zone is inactive, ignore
 	if body is CharacterBody2D:
 		print("Player fell into the death zone!")
+		var tutorial = get_tree().current_scene.get_node("TutorialCanvas")
+		if is_instance_valid(tutorial):
+			tutorial.cancel_tutorial()
 		if body.has_method("play_death"):
 			body.play_death()
 			# Wait for animation before reloading

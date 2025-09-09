@@ -3,8 +3,6 @@ extends Node2D
 var pauseMenu = null
 @onready var pauseMenuScene = preload("res://Scenes/PauseMenu.tscn")
 @onready var ui_layer = $UILayer  
-@onready var portalSprite1 = $"Portal/Violet"
-@onready var portalSprite2 = $"Portal/Purple"
 
 @onready var a_key_sprite = $AKey
 @onready var d_key_sprite = $DKey
@@ -27,8 +25,6 @@ func _ready() -> void:
 	if stream is AudioStreamWAV:
 		stream.set_loop(true)
 		
-	portalSprite1.play("Swirl")
-	portalSprite2.play("Swirl")
 	$Background.play()
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	spacebar_sprite.visible = false
@@ -44,6 +40,10 @@ func _unhandled_input(event):
 			hidePauseMenu()
 
 func showPauseMenu():
+	var tutorial = get_tree().current_scene.get_node("TutorialCanvas")
+	if is_instance_valid(tutorial):
+		tutorial.cancel_tutorial()
+		#print("cancelled")
 	get_tree().paused = true
 	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 	pauseMenu.visible = true
@@ -89,6 +89,9 @@ func _process(_delta: float) -> void:
 		spacebar_sprite.visible = false
 		
 func _on_player_fade_out_triggered():
+	var tutorial = get_tree().current_scene.get_node("TutorialCanvas")
+	if is_instance_valid(tutorial):
+		tutorial.cancel_tutorial()
 	# Handle the fade + scene change here
 	var fade_rect = $FadeLayer/FadeRect
 	var tween = create_tween()

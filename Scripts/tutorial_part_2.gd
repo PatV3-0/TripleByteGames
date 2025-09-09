@@ -28,13 +28,17 @@ func _ready() -> void:
 	$Background.play()
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 
-	var tutorial_area = $Area2D
+	var tutorial_area = $Hole_Tut
 	tutorial_area.connect("show_w_key", Callable(self, "_on_show_w_key"))
 	pauseMenu = pauseMenuScene.instantiate()
 	ui_layer.add_child(pauseMenu)  
 	pauseMenu.visible = false
 	
 	if fade_rect:
+		
+		var tutorial = get_tree().current_scene.get_node("TutorialCanvas")
+		if is_instance_valid(tutorial):
+			tutorial.cancel_tutorial()
 		fade_rect.color.a = 1.0
 		var tween = get_tree().create_tween()
 		tween.tween_property(fade_rect, "color:a", 0.0, 1.5).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_OUT)
@@ -77,6 +81,9 @@ func _unhandled_input(event):
 			hidePauseMenu()
 
 func showPauseMenu():
+	var tutorial = get_tree().current_scene.get_node("TutorialCanvas")
+	if is_instance_valid(tutorial):
+		tutorial.cancel_tutorial()
 	get_tree().paused = true
 	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 	pauseMenu.visible = true

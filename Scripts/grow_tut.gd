@@ -1,21 +1,17 @@
 extends Area2D
 
 @export var bod: CharacterBody2D
+@export var tutorial_canvas: Node 
+var triggered := false
+var tutorial_lines = [
+	["Woah! I'm bigger!", 4.0],
+	["I better keep an eye out for more of these fumes...", 4.0]
+]
 
 func _ready():
 	connect("body_entered", Callable(self, "_on_body_entered"))
-
+	
 func _on_body_entered(body):
-	if body is CharacterBody2D:
-		if bod:
-			bod.show_tutorial()
-			await get_tree().create_timer(1.0).timeout
-			bod.show_tutorial_text("Would you look at that! I'm bigger!")
-			await get_tree().create_timer(5.0).timeout
-			bod.show_tutorial_text("I'd better keep an eye out for more of these spills...")
-			await get_tree().create_timer(5.0).timeout
-			bod.show_tutorial_text("")
-			await get_tree().create_timer(0.5).timeout
-			bod.hide_tutorial_text()
-			await get_tree().create_timer(0.5).timeout
-			bod.hide_tutorial()
+	if body == bod and not triggered:  # Adjust check for your player
+		triggered = true
+		tutorial_canvas.start_lines(tutorial_lines,self)

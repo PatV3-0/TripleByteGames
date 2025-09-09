@@ -1,32 +1,39 @@
-[gd_scene load_steps=150 format=3 uid="uid://bnp2npmm6vg2g"]
+[gd_scene load_steps=157 format=3 uid="uid://bnp2npmm6vg2g"]
 
 [ext_resource type="Script" path="res://Scripts/underground_1.gd" id="1_2c2qv"]
 [ext_resource type="Script" path="res://Scripts/character_body_2d.gd" id="2_15omn"]
 [ext_resource type="Texture2D" uid="uid://bbx8c0bj0uxe3" path="res://Assets/Background/Untitled 103.png" id="2_y2b77"]
-[ext_resource type="Texture2D" uid="uid://dreig70jokor0" path="res://Assets/Sprites/Character/Gjump (3).png" id="3_rcv7k"]
 [ext_resource type="Texture2D" uid="uid://bj13c56ukewxx" path="res://Assets/Background/Untitled 105.png" id="3_wly5s"]
 [ext_resource type="Texture2D" uid="uid://c3d727o5ir7qf" path="res://Assets/Placeholders/u1shroom3.png" id="4_4y1di"]
-[ext_resource type="Texture2D" uid="uid://bop8j7py8orur" path="res://Assets/Sprites/Character/Gjump (2).png" id="4_egalu"]
 [ext_resource type="Texture2D" uid="uid://byypnkjc87sdb" path="res://Assets/Sprites/Character/Gjump (6).png" id="5_ahef8"]
 [ext_resource type="Texture2D" uid="uid://7ualwm67oad2" path="res://Assets/Placeholders/u1shroom1.png" id="5_bl4nj"]
 [ext_resource type="Texture2D" uid="uid://dbnhpmjn5wfa4" path="res://Assets/Placeholders/u1shroom4.png" id="5_nw5he"]
 [ext_resource type="Texture2D" uid="uid://ch6i60lvqaei8" path="res://Assets/Placeholders/u1shroom2.png" id="6_6tllt"]
 [ext_resource type="Texture2D" uid="uid://c12k2h2j8vdjt" path="res://Assets/Sprites/Character/Gjump (5).png" id="6_ojvsx"]
-[ext_resource type="Texture2D" uid="uid://dytxwri855i1v" path="res://Assets/Sprites/Character/Gjump (1).png" id="7_p0epj"]
-[ext_resource type="Texture2D" uid="uid://cd0ymrrfi02vh" path="res://Assets/Sprites/Character/push-1.png" id="8_jflyn"]
+[ext_resource type="Texture2D" uid="uid://ch1intxq0cr18" path="res://Assets/Sprites/Character/idle 1.png" id="9_u242y"]
 [ext_resource type="Texture2D" uid="uid://d112q6ipvg3ur" path="res://Assets/Sprites/Character/push_3.png" id="9_yx6q6"]
+[ext_resource type="Texture2D" uid="uid://emqo2h4ltk2n" path="res://Assets/Sprites/Character/idle-2.png" id="10_8mg5a"]
 [ext_resource type="Texture2D" uid="uid://heuqru2dosrk" path="res://Assets/Sprites/Character/push_2.png" id="10_q5fl0"]
 [ext_resource type="Texture2D" uid="uid://brikmqy8ntt4f" path="res://Assets/Sprites/Character/push_strain_breathe_in-1.png" id="11_fml7l"]
+[ext_resource type="Texture2D" uid="uid://bv5vca3wykfry" path="res://Assets/Sprites/Character/Gjump (1.1).png" id="12_0tgdg"]
 [ext_resource type="Texture2D" uid="uid://dktlv8fcbb4lf" path="res://Assets/Sprites/Character/push_strain_breathe_out-1.png" id="12_nh0rw"]
 [ext_resource type="Texture2D" uid="uid://b23akb18jrfgm" path="res://Assets/Sprites/Character/push_strain_breathe_in-2.png" id="13_i1pwr"]
+[ext_resource type="Texture2D" uid="uid://dyy7bp757jofl" path="res://Assets/Sprites/Character/Gjump (0).png" id="14_ly7q3"]
 [ext_resource type="Texture2D" uid="uid://jsttnhfnypr" path="res://Assets/Sprites/Character/push_strain_breathe_out-2.png" id="14_u7t88"]
 [ext_resource type="Texture2D" uid="uid://cvutlp1cgta8b" path="res://Assets/Sprites/Character/walk-stop.png" id="15_37xi3"]
+[ext_resource type="Texture2D" uid="uid://dhl4ey5414ddw" path="res://Assets/Sprites/Character/Gjump (2.1).png" id="15_ar1so"]
 [ext_resource type="Texture2D" uid="uid://cpjbtyxusic6r" path="res://Assets/Sprites/Character/walk-2.png" id="16_6sanh"]
+[ext_resource type="Texture2D" uid="uid://uv7p712dwm1x" path="res://Assets/Sprites/Character/pull1.png" id="16_omn5s"]
+[ext_resource type="Texture2D" uid="uid://qeqb7yadg5ns" path="res://Assets/Sprites/Character/pull2.png" id="17_einv5"]
 [ext_resource type="Texture2D" uid="uid://dyg15lcss7s5k" path="res://Assets/Sprites/Character/walk_1.png" id="17_g4jfi"]
+[ext_resource type="Texture2D" uid="uid://ygego3qxiycn" path="res://Assets/Sprites/Character/pull3.png" id="18_24npy"]
 [ext_resource type="AudioStream" uid="uid://c3iu4fh2kf3kk" path="res://Assets/Sound/jump.wav" id="18_eup0n"]
 [ext_resource type="AudioStream" uid="uid://cm8n17onir64w" path="res://Assets/Sound/boxSound.wav" id="19_f23k4"]
+[ext_resource type="Texture2D" uid="uid://eabpv0wv1gws" path="res://Assets/Sprites/Character/pull3.5.png" id="19_tuq6n"]
 [ext_resource type="AudioStream" uid="uid://dydis8421b2ou" path="res://Assets/Sound/walk.wav" id="20_10bu3"]
+[ext_resource type="Texture2D" uid="uid://cosrv7kcfja2h" path="res://Assets/Sprites/Character/pull4.png" id="20_pk0bs"]
 [ext_resource type="Texture2D" uid="uid://c2ntm40saxfwm" path="res://Assets/Menus/SpeechbarLighter1.png" id="21_0arto"]
+[ext_resource type="Texture2D" uid="uid://bvotkbnkinptd" path="res://Assets/Sprites/Character/pull5.png" id="21_07lid"]
 [ext_resource type="Texture2D" uid="uid://d33vnxb146pwg" path="res://Assets/Menus/SpeechbarLighter2.png" id="22_1m3do"]
 [ext_resource type="Texture2D" uid="uid://hdqf7n8ve8xb" path="res://Assets/Menus/SpeechbarLighter3.png" id="23_5ww3q"]
 [ext_resource type="Texture2D" uid="uid://lxblcan0e0gl" path="res://Assets/Menus/SpeechbarLighter4.png" id="24_vrnup"]
@@ -349,23 +356,20 @@ size = Vector2(25, 968)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bp58j"]
 size = Vector2(13, 25.2)
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_efqck"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_8re0x"]
 animations = [{
 "frames": [{
-"duration": 1.0,
-"texture": ExtResource("3_rcv7k")
+"duration": 2.0,
+"texture": ExtResource("9_u242y")
 }, {
-"duration": 1.0,
-"texture": ExtResource("4_egalu")
+"duration": 4.0,
+"texture": ExtResource("10_8mg5a")
 }],
-"loop": false,
-"name": &"jump",
+"loop": true,
+"name": &"idle",
 "speed": 5.0
 }, {
 "frames": [{
-"duration": 1.0,
-"texture": ExtResource("5_ahef8")
-}, {
 "duration": 1.0,
 "texture": ExtResource("6_ojvsx")
 }],
@@ -375,10 +379,10 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("4_egalu")
+"texture": ExtResource("12_0tgdg")
 }, {
-"duration": 1.0,
-"texture": ExtResource("3_rcv7k")
+"duration": 4.0,
+"texture": ExtResource("5_ahef8")
 }],
 "loop": false,
 "name": &"jump_rise",
@@ -386,42 +390,76 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("5_ahef8")
+"texture": ExtResource("14_ly7q3")
+}],
+"loop": false,
+"name": &"jump_start",
+"speed": 2.0
 }, {
+"frames": [{
 "duration": 1.0,
-"texture": ExtResource("7_p0epj")
+"texture": ExtResource("15_ar1so")
 }],
 "loop": false,
 "name": &"land",
 "speed": 5.0
 }, {
 "frames": [{
-"duration": 1.0,
-"texture": ExtResource("8_jflyn")
+"duration": 2.0,
+"texture": ExtResource("16_omn5s")
+}, {
+"duration": 2.0,
+"texture": ExtResource("17_einv5")
+}, {
+"duration": 2.0,
+"texture": ExtResource("18_24npy")
+}, {
+"duration": 2.0,
+"texture": ExtResource("19_tuq6n")
+}, {
+"duration": 2.0,
+"texture": ExtResource("18_24npy")
+}, {
+"duration": 2.0,
+"texture": ExtResource("19_tuq6n")
+}, {
+"duration": 2.0,
+"texture": ExtResource("20_pk0bs")
 }, {
 "duration": 1.0,
+"texture": ExtResource("21_07lid")
+}],
+"loop": false,
+"name": &"pull",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 2.0,
 "texture": ExtResource("9_yx6q6")
 }, {
-"duration": 1.0,
+"duration": 2.0,
 "texture": ExtResource("10_q5fl0")
 }, {
-"duration": 1.0,
+"duration": 2.0,
 "texture": ExtResource("11_fml7l")
 }, {
-"duration": 1.0,
-"texture": ExtResource("12_nh0rw")
-}, {
-"duration": 1.0,
+"duration": 2.0,
 "texture": ExtResource("13_i1pwr")
 }, {
-"duration": 1.0,
+"duration": 2.0,
+"texture": ExtResource("11_fml7l")
+}, {
+"duration": 2.0,
+"texture": ExtResource("13_i1pwr")
+}, {
+"duration": 2.0,
 "texture": ExtResource("14_u7t88")
 }, {
-"duration": 1.0,
-"texture": ExtResource("9_yx6q6")
+"duration": 2.0,
+"texture": ExtResource("12_nh0rw")
 }],
-"loop": true,
-"name": &"pushPull",
+"loop": false,
+"name": &"push",
 "speed": 5.0
 }, {
 "frames": [{
@@ -1353,8 +1391,8 @@ shape = SubResource("RectangleShape2D_bp58j")
 position = Vector2(1.39999, -3)
 rotation = -0.000699009
 scale = Vector2(0.015, 0.015)
-sprite_frames = SubResource("SpriteFrames_efqck")
-animation = &"pushPull"
+sprite_frames = SubResource("SpriteFrames_8re0x")
+animation = &"push"
 offset = Vector2(95, 39)
 flip_h = true
 

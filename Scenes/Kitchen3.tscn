@@ -1,4 +1,4 @@
-[gd_scene load_steps=78 format=3 uid="uid://bt4cdbkr6qe2n"]
+[gd_scene load_steps=85 format=3 uid="uid://bt4cdbkr6qe2n"]
 
 [ext_resource type="Script" path="res://Scenes/kitchen_3.gd" id="1_k4qw0"]
 [ext_resource type="Texture2D" uid="uid://b3p05wkj6axuq" path="res://Assets/Background/Untitled 97.png" id="2_er1oh"]
@@ -10,16 +10,12 @@
 [ext_resource type="Texture2D" uid="uid://c1tomtra1weud" path="res://Assets/Interactables/tomato 1.png" id="4_kcxds"]
 [ext_resource type="Texture2D" uid="uid://blwrsrc0aol8j" path="res://Assets/Interactables/tomato 2.png" id="5_b4gra"]
 [ext_resource type="Script" path="res://Scripts/character_body_2d.gd" id="5_raxun"]
-[ext_resource type="Texture2D" uid="uid://dreig70jokor0" path="res://Assets/Sprites/Character/Gjump (3).png" id="6_cl2q6"]
 [ext_resource type="Texture2D" uid="uid://dtodd43h35nhb" path="res://Assets/Interactables/potato 2.png" id="6_xps5p"]
-[ext_resource type="Texture2D" uid="uid://bop8j7py8orur" path="res://Assets/Sprites/Character/Gjump (2).png" id="7_rx6bx"]
 [ext_resource type="Texture2D" uid="uid://cy6whspwg3dop" path="res://Assets/Interactables/potato 3.png" id="8_765qg"]
 [ext_resource type="Texture2D" uid="uid://byypnkjc87sdb" path="res://Assets/Sprites/Character/Gjump (6).png" id="8_ej6nh"]
 [ext_resource type="Texture2D" uid="uid://bmikkp5urvlsg" path="res://Assets/Interactables/potato 4.png" id="9_aohqs"]
 [ext_resource type="Texture2D" uid="uid://c12k2h2j8vdjt" path="res://Assets/Sprites/Character/Gjump (5).png" id="9_w68wr"]
 [ext_resource type="Texture2D" uid="uid://c2b5eqr0dlaiq" path="res://Assets/Interactables/carrot.png" id="10_e0w8c"]
-[ext_resource type="Texture2D" uid="uid://dytxwri855i1v" path="res://Assets/Sprites/Character/Gjump (1).png" id="10_ol6br"]
-[ext_resource type="Texture2D" uid="uid://cd0ymrrfi02vh" path="res://Assets/Sprites/Character/push-1.png" id="11_iudi2"]
 [ext_resource type="Texture2D" uid="uid://c07mbn01rk66p" path="res://Assets/Interactables/plates.png" id="11_xd1yt"]
 [ext_resource type="Texture2D" uid="uid://bkrfauvi77sra" path="res://Assets/Interactables/Untitled 111.png" id="12_30h5o"]
 [ext_resource type="Texture2D" uid="uid://d112q6ipvg3ur" path="res://Assets/Sprites/Character/push_3.png" id="12_jvegh"]
@@ -39,12 +35,23 @@
 [ext_resource type="Texture2D" uid="uid://81vpbbt7xjmo" path="res://Assets/Placeholders/shrinkwisp.png" id="21_4cwny"]
 [ext_resource type="AudioStream" uid="uid://c3iu4fh2kf3kk" path="res://Assets/Sound/jump.wav" id="21_djkik"]
 [ext_resource type="AudioStream" uid="uid://cm8n17onir64w" path="res://Assets/Sound/boxSound.wav" id="22_q08i7"]
+[ext_resource type="Texture2D" uid="uid://ch1intxq0cr18" path="res://Assets/Sprites/Character/idle 1.png" id="23_34mxx"]
 [ext_resource type="AudioStream" uid="uid://dydis8421b2ou" path="res://Assets/Sound/walk.wav" id="23_bnkjs"]
+[ext_resource type="Texture2D" uid="uid://emqo2h4ltk2n" path="res://Assets/Sprites/Character/idle-2.png" id="24_7fbpd"]
 [ext_resource type="Texture2D" uid="uid://c2ntm40saxfwm" path="res://Assets/Menus/SpeechbarLighter1.png" id="24_8q8ly"]
 [ext_resource type="Texture2D" uid="uid://d33vnxb146pwg" path="res://Assets/Menus/SpeechbarLighter2.png" id="25_xh6ts"]
 [ext_resource type="Texture2D" uid="uid://hdqf7n8ve8xb" path="res://Assets/Menus/SpeechbarLighter3.png" id="26_0o1sh"]
+[ext_resource type="Texture2D" uid="uid://bv5vca3wykfry" path="res://Assets/Sprites/Character/Gjump (1.1).png" id="26_qqf6k"]
 [ext_resource type="Texture2D" uid="uid://lxblcan0e0gl" path="res://Assets/Menus/SpeechbarLighter4.png" id="27_us5jn"]
 [ext_resource type="Script" path="res://Scripts/fade_out.gd" id="28_e5q4b"]
+[ext_resource type="Texture2D" uid="uid://dyy7bp757jofl" path="res://Assets/Sprites/Character/Gjump (0).png" id="28_m6ryv"]
+[ext_resource type="Texture2D" uid="uid://dhl4ey5414ddw" path="res://Assets/Sprites/Character/Gjump (2.1).png" id="29_13k7l"]
+[ext_resource type="Texture2D" uid="uid://uv7p712dwm1x" path="res://Assets/Sprites/Character/pull1.png" id="30_64xti"]
+[ext_resource type="Texture2D" uid="uid://qeqb7yadg5ns" path="res://Assets/Sprites/Character/pull2.png" id="31_khgex"]
+[ext_resource type="Texture2D" uid="uid://ygego3qxiycn" path="res://Assets/Sprites/Character/pull3.png" id="32_ijwl2"]
+[ext_resource type="Texture2D" uid="uid://eabpv0wv1gws" path="res://Assets/Sprites/Character/pull3.5.png" id="33_pvuvn"]
+[ext_resource type="Texture2D" uid="uid://cosrv7kcfja2h" path="res://Assets/Sprites/Character/pull4.png" id="34_yiy3k"]
+[ext_resource type="Texture2D" uid="uid://bvotkbnkinptd" path="res://Assets/Sprites/Character/pull5.png" id="35_eualn"]
 [ext_resource type="Script" path="res://Scripts/tutorial_canvas1.gd" id="44_3di2i"]
 [ext_resource type="Texture2D" uid="uid://cnbl2133psakv" path="res://Assets/Menus/SpeechbarLighter5.png" id="45_25tf5"]
 [ext_resource type="Texture2D" uid="uid://cay0c273362pd" path="res://Assets/Menus/SpeechbarLighter6.png" id="46_yujaq"]
@@ -108,23 +115,20 @@ radius = 27.8927
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xy8yh"]
 size = Vector2(13, 25.2)
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_u2f14"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_rlqqp"]
 animations = [{
 "frames": [{
-"duration": 1.0,
-"texture": ExtResource("6_cl2q6")
+"duration": 2.0,
+"texture": ExtResource("23_34mxx")
 }, {
-"duration": 1.0,
-"texture": ExtResource("7_rx6bx")
+"duration": 4.0,
+"texture": ExtResource("24_7fbpd")
 }],
-"loop": false,
-"name": &"jump",
+"loop": true,
+"name": &"idle",
 "speed": 5.0
 }, {
 "frames": [{
-"duration": 1.0,
-"texture": ExtResource("8_ej6nh")
-}, {
 "duration": 1.0,
 "texture": ExtResource("9_w68wr")
 }],
@@ -134,10 +138,10 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("7_rx6bx")
+"texture": ExtResource("26_qqf6k")
 }, {
-"duration": 1.0,
-"texture": ExtResource("6_cl2q6")
+"duration": 4.0,
+"texture": ExtResource("8_ej6nh")
 }],
 "loop": false,
 "name": &"jump_rise",
@@ -145,42 +149,76 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("8_ej6nh")
+"texture": ExtResource("28_m6ryv")
+}],
+"loop": false,
+"name": &"jump_start",
+"speed": 2.0
 }, {
+"frames": [{
 "duration": 1.0,
-"texture": ExtResource("10_ol6br")
+"texture": ExtResource("29_13k7l")
 }],
 "loop": false,
 "name": &"land",
 "speed": 5.0
 }, {
 "frames": [{
-"duration": 1.0,
-"texture": ExtResource("11_iudi2")
+"duration": 2.0,
+"texture": ExtResource("30_64xti")
+}, {
+"duration": 2.0,
+"texture": ExtResource("31_khgex")
+}, {
+"duration": 2.0,
+"texture": ExtResource("32_ijwl2")
+}, {
+"duration": 2.0,
+"texture": ExtResource("33_pvuvn")
+}, {
+"duration": 2.0,
+"texture": ExtResource("32_ijwl2")
+}, {
+"duration": 2.0,
+"texture": ExtResource("33_pvuvn")
+}, {
+"duration": 2.0,
+"texture": ExtResource("34_yiy3k")
 }, {
 "duration": 1.0,
+"texture": ExtResource("35_eualn")
+}],
+"loop": false,
+"name": &"pull",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 2.0,
 "texture": ExtResource("12_jvegh")
 }, {
-"duration": 1.0,
+"duration": 2.0,
 "texture": ExtResource("13_ksf30")
 }, {
-"duration": 1.0,
+"duration": 2.0,
 "texture": ExtResource("14_sas4c")
 }, {
-"duration": 1.0,
-"texture": ExtResource("15_1fc57")
-}, {
-"duration": 1.0,
+"duration": 2.0,
 "texture": ExtResource("16_sijvi")
 }, {
-"duration": 1.0,
+"duration": 2.0,
+"texture": ExtResource("14_sas4c")
+}, {
+"duration": 2.0,
+"texture": ExtResource("16_sijvi")
+}, {
+"duration": 2.0,
 "texture": ExtResource("17_5aa4c")
 }, {
-"duration": 1.0,
-"texture": ExtResource("12_jvegh")
+"duration": 2.0,
+"texture": ExtResource("15_1fc57")
 }],
-"loop": true,
-"name": &"pushPull",
+"loop": false,
+"name": &"push",
 "speed": 5.0
 }, {
 "frames": [{
@@ -708,18 +746,18 @@ script = ExtResource("5_raxun")
 position = Vector2(1.39999, -3)
 shape = SubResource("RectangleShape2D_xy8yh")
 
+[node name="Camera2D" type="Camera2D" parent="CharacterBody2D"]
+offset = Vector2(0, -32)
+zoom = Vector2(1.5, 1.5)
+
 [node name="Sprite2D" type="AnimatedSprite2D" parent="CharacterBody2D"]
 position = Vector2(1.39999, -3)
 rotation = -0.000699009
 scale = Vector2(0.015, 0.015)
-sprite_frames = SubResource("SpriteFrames_u2f14")
-animation = &"pushPull"
+sprite_frames = SubResource("SpriteFrames_rlqqp")
+animation = &"push"
 offset = Vector2(95, 39)
 flip_h = true
-
-[node name="Camera2D" type="Camera2D" parent="CharacterBody2D"]
-offset = Vector2(0, -32)
-zoom = Vector2(1.5, 1.5)
 
 [node name="JumpSound" type="AudioStreamPlayer2D" parent="CharacterBody2D"]
 stream = ExtResource("21_djkik")

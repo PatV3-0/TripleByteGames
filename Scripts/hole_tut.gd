@@ -1,7 +1,13 @@
 extends Area2D
 
 @export var bod: CharacterBody2D
+@export var tutorial_canvas: Node 
 @export var stand_time: float = 1.0
+var triggered := false
+
+var tutorial_lines = [
+	["Use ‘w’ to crawl through a hole.", 1.0]
+]
 
 signal show_w_key
 
@@ -41,21 +47,12 @@ func _physics_process(delta):
 				player_inside = false
 				tutorial_done = true
 				emit_signal("show_w_key")  # emit signal to main scene
-				await _play_tutorial()
+				if not triggered:  # Adjust check for your player
+					triggered = true
+					tutorial_canvas.start_lines(tutorial_lines,self)
+
 		else:
 			timer = 0.0
 		last_pos = bod.global_position
 
-func _play_tutorial() -> void:
-	print("tut")
-	bod.show_tutorial()
-	await get_tree().create_timer(1.0).timeout
-	bod.show_tutorial_text("Sometimes there’s a small gap to squeeze through...")
-	await get_tree().create_timer(5.0).timeout
-	bod.show_tutorial_text("Use ‘w’ to crawl through a hole.")
-	await get_tree().create_timer(5.0).timeout
-	bod.show_tutorial_text("")
-	await get_tree().create_timer(0.5).timeout
-	bod.hide_tutorial_text()
-	await get_tree().create_timer(0.5).timeout
-	bod.hide_tutorial()
+	

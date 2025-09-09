@@ -6,6 +6,7 @@ extends Area2D
 var player_inside: Node = null
 var transitioning := false
 
+
 func _physics_process(_delta: float) -> void:
 	if player_inside and not transitioning:
 		# Wait for player to press W (or your "enter_door" action)

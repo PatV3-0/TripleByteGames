@@ -1,7 +1,6 @@
 extends Node2D
 
-@export var next_scene_path: String = "res://Scenes/KitchenCut.tscn"
-@export var previous_scene_path: String = "res://Scenes/Walls1_Return.tscn"
+@export var next_scene_path: String = "res://Scenes/Walls2.tscn"
 var pauseMenu = null
 @onready var pauseMenuScene = preload("res://Scenes/PauseMenu.tscn")
 @onready var ui_layer = $UILayer  
@@ -11,7 +10,6 @@ var pauseMenu = null
 func _ready() -> void:
 	$CharacterBody2D.grow(105)
 	$CharacterBody2D.fade_out_triggered.connect(_on_player_fade_out_triggered)
-	$CharacterBody2D.fade_back_triggered.connect(_on_player_fade_back_triggered)
 	var stream = $Background
 	if stream is AudioStreamWAV:
 		stream.set_loop(true)
@@ -36,14 +34,6 @@ func _on_player_fade_out_triggered():
 	tween.tween_property(fade_rect, "color:a", 1.0, 1.5).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_IN_OUT)
 	await tween.finished
 	get_tree().change_scene_to_file(next_scene_path)	
-	
-func _on_player_fade_back_triggered():
-	print("Called Back")
-	var fade_rect = $FadeLayer/FadeRect
-	var tween = create_tween()
-	tween.tween_property(fade_rect, "color:a", 1.0, 1.5).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_IN_OUT)
-	await tween.finished
-	get_tree().change_scene_to_file(previous_scene_path)
 
 func _unhandled_input(event):
 	if event.is_action_pressed("ui_cancel"):

@@ -94,7 +94,7 @@ size = Vector2(478, 491.5)
 size = Vector2(101, 1204)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ywdqv"]
-size = Vector2(38.6667, 39.8333)
+size = Vector2(25.6664, 20.8336)
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_iesax"]
 friction = 2.0
@@ -571,7 +571,7 @@ script = ExtResource("21_n0mxo")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hole"]
 visible = false
-position = Vector2(414.333, 470.583)
+position = Vector2(420.833, 461.083)
 shape = SubResource("RectangleShape2D_ywdqv")
 debug_color = Color(0.687756, 0.387991, 0.0984149, 0.42)
 
@@ -718,10 +718,11 @@ position = Vector2(282.333, 374)
 scale = Vector2(0.123765, 0.123765)
 sprite_frames = SubResource("SpriteFrames_d1hw3")
 
-[node name="TutLayer" type="Area2D" parent="." node_paths=PackedStringArray("bod")]
+[node name="TutLayer" type="Area2D" parent="." node_paths=PackedStringArray("bod", "tutorial_canvas")]
 visible = false
 script = ExtResource("24_5dx7j")
 bod = NodePath("../CharacterBody2D")
+tutorial_canvas = NodePath("../TutorialCanvas")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="TutLayer"]
 position = Vector2(279.333, 366.667)
@@ -731,7 +732,6 @@ debug_color = Color(0.510884, 0.573227, 0.206706, 0.42)
 [node name="FadeLayer" type="CanvasLayer" parent="."]
 
 [node name="FadeRect" type="ColorRect" parent="FadeLayer"]
-visible = false
 offset_left = -2232.0
 offset_top = -1068.0
 offset_right = 8057.0
@@ -761,7 +761,6 @@ texture = ExtResource("53_rpqk6")
 [node name="FadeLayer2" type="CanvasLayer" parent="."]
 
 [node name="FadeRect" type="ColorRect" parent="FadeLayer2"]
-visible = false
 offset_left = -2232.0
 offset_top = -1068.0
 offset_right = 8057.0
@@ -770,11 +769,12 @@ mouse_filter = 2
 color = Color(0, 0, 0, 1)
 metadata/_edit_use_anchors_ = true
 
-[node name="Area2D" type="Area2D" parent="." node_paths=PackedStringArray("bod")]
+[node name="Hole_Tut" type="Area2D" parent="." node_paths=PackedStringArray("bod", "tutorial_canvas")]
 script = ExtResource("53_7xhr6")
 bod = NodePath("../CharacterBody2D")
+tutorial_canvas = NodePath("../TutorialCanvas")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hole_Tut"]
 visible = false
 position = Vector2(415.875, 460.75)
 shape = SubResource("RectangleShape2D_udmf7")

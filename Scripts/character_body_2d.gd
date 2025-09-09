@@ -33,8 +33,7 @@ var push_force_magnitude = 1200
 @onready var fade = $"../FadeLayer"
 @onready var fade_zone = $"../FadeOut"
 @onready var fade_back = $"../FadeOut2"
-@onready var tutorial_ui = null
-
+@onready var tutorial_ui = get_tree().get_current_scene().get_node_or_null("TutorialCanvas")
 
 func _ready():
 	#print(pull_target)
@@ -53,34 +52,10 @@ func _ready():
 	
 	if fade_back:	
 		fade_back.body_entered.connect(_on_fade_out_2_body_entered)
-	
-	tutorial_ui = get_tree().get_current_scene().get_node_or_null("TutorialCanvas")
-	if tutorial_ui == null:
-		print("TutorialCanvas not found!")
-	else:
+		
+	if tutorial_ui:
 		await get_tree().process_frame
-		print(tutorial_ui)
 		tutorial_ui.visible = true
-		tutorial_ui.hide_tutorial_text()
-		tutorial_ui.hide_tutorial()
-
-func show_tutorial():
-	tutorial_ui.show_tutorial()
-
-func hide_tutorial():
-	tutorial_ui.hide_tutorial()
-
-func show_tutorial_text(text: String):
-	tutorial_ui.show_tutorial_text(text)
-
-func hide_tutorial_text():
-	tutorial_ui.hide_tutorial_text()
-
-#func freeze():
-	#set_physics_process(false)
-	#set_process(false)
-	#if has_node("CollisionShape2D"):
-		#$CollisionShape2D.disabled = true
 
 func _physics_process(delta: float) -> void:
 	#var pulling_now = false
