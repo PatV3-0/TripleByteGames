@@ -1,8 +1,6 @@
 extends Area2D
 
 @onready var collision_shape = $CollisionShape2D
-#@onready var sprite = $Purple
-#@onready var sprite2 = $Violet
 
 @export var trigger_tutorial_on_growth: bool = false
 @export var tutorial_area: Area2D  # Drag your tutorial Area2D here if needed

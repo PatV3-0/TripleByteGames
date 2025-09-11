@@ -26,6 +26,8 @@ var push_target: RigidBody2D = null
 var pushing: bool = false
 var push_force_magnitude = 1200
 
+var size = 0 #regular and 1 for grown
+
 @onready var jump_sound = $JumpSound
 @onready var push_pull_sound = $PushPullSound
 @onready var walking_sound = $Walking
@@ -85,7 +87,7 @@ func _physics_process(delta: float) -> void:
 			var pull_dir = pull_vector.normalized()
 			var pull_strength = clamp(pull_force * pull_distance, 0, 500) #Grasp It Firmly
 			pull_target.apply_central_impulse(pull_dir * pull_strength)
-		##Position Player	
+		#Position Player	
 		if moving_left:
 			velocity.x = -speed * 0.6
 		elif moving_right:
@@ -268,16 +270,17 @@ func _on_animation_finish():
 			$Sprite2D.play("push")
 	
 func grow(offset):
-	
+	size = 1
 	scale = base_scale * 1.5 
 	jump_force = base_jump_force + 200 
 	speed = base_speed -100
 	air_control_multiplier = base_acm -0.4
-	
 	#update_camera_zoom()
+	
 	return true  # Successfully grew
 	
 func shrink(offset):		
+	size = 0
 	scale = base_scale
 	jump_force = base_jump_force
 	speed = base_speed 
@@ -323,9 +326,10 @@ func transition_to_next_scene(next_scene_path: String):
 	get_tree().change_scene_to_file(next_scene_path)
 
 func _on_mushroom_launch_body_entered(body: Node2D) -> void:
-	if body.is_in_group("Player"):
-		print("Launch!")
-		body.velocity = launch_strength
+	if size == 0:
+		if body.is_in_group("Player"):
+			print("Launch!")
+			body.velocity = launch_strength
 
 func _on_fade_out_2_body_entered(body: Node2D) -> void:
 	print("Fade Back found")

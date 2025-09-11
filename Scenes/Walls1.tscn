@@ -878,6 +878,7 @@ position = Vector2(-414, -470)
 script = ExtResource("6_x0pb5")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Pushable/Highlight"]
+visible = false
 position = Vector2(389.911, 530.03)
 shape = SubResource("RectangleShape2D_x7q41")
 debug_color = Color(0.956871, 0.119971, 0.43239, 0.42)

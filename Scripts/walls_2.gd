@@ -16,8 +16,6 @@ func _ready() -> void:
 	if stream is AudioStreamWAV:
 		stream.set_loop(true)
 		
-	#portalSprite1.play("Swirl")
-	#portalSprite2.play("Swirl")
 	$Background.play()
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	pauseMenu = pauseMenuScene.instantiate()
@@ -53,6 +51,9 @@ func _unhandled_input(event):
 			hidePauseMenu()
 
 func showPauseMenu():
+	var tutorial = get_tree().current_scene.get_node("TutorialCanvas")
+	if is_instance_valid(tutorial):
+		tutorial.cancel_tutorial()
 	get_tree().paused = true
 	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 	pauseMenu.visible = true

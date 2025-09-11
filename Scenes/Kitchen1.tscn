@@ -1,9 +1,11 @@
-[gd_scene load_steps=113 format=3 uid="uid://drq3m40mvk8jp"]
+[gd_scene load_steps=117 format=3 uid="uid://drq3m40mvk8jp"]
 
 [ext_resource type="Script" path="res://Scripts/kitchen_1.gd" id="1_3weli"]
 [ext_resource type="Script" path="res://Scripts/character_body_2d.gd" id="2_jx67a"]
 [ext_resource type="Texture2D" uid="uid://v6njha2nnja4" path="res://Assets/Background/Untitled 93.png" id="2_pgmip"]
+[ext_resource type="Texture2D" uid="uid://cy4hm4tq5nmir" path="res://Assets/Background/Untitled 92.png" id="2_rsfct"]
 [ext_resource type="Texture2D" uid="uid://dpo0crtv78ntq" path="res://Assets/Placeholders/box5.png" id="3_nij11"]
+[ext_resource type="Texture2D" uid="uid://cdi47y8m6tqdn" path="res://Assets/Interactables/Untitled 55.PNG" id="4_cfj68"]
 [ext_resource type="Texture2D" uid="uid://bdpb2eqvdlclj" path="res://Assets/Placeholders/box3.png" id="4_g3jsq"]
 [ext_resource type="Texture2D" uid="uid://byypnkjc87sdb" path="res://Assets/Sprites/Character/Gjump (6).png" id="5_3aoh3"]
 [ext_resource type="Texture2D" uid="uid://c75vvubjx4hyw" path="res://Assets/Placeholders/box4_1.png" id="5_xrfju"]
@@ -56,6 +58,12 @@
 [ext_resource type="Texture2D" uid="uid://srercerjo0jg" path="res://Assets/Tutorial assets/1.png" id="38_4dpb3"]
 [ext_resource type="Texture2D" uid="uid://1x876ycnlyv7" path="res://Assets/Tutorial assets/3.png" id="39_ouqhe"]
 [ext_resource type="Texture2D" uid="uid://ca1cms2y3p3co" path="res://Assets/Placeholders/growwisp.png" id="39_t1dv1"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6o5dc"]
+size = Vector2(658, 75)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jmu21"]
+size = Vector2(172.226, 20)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rgd02"]
 size = Vector2(26, 1640.5)
@@ -480,6 +488,11 @@ animations = [{
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_3weli")
 
+[node name="Sprite2D3" type="Sprite2D" parent="."]
+position = Vector2(167, 826)
+scale = Vector2(1.12321, 1.12321)
+texture = ExtResource("2_rsfct")
+
 [node name="Sprite2D2" type="Sprite2D" parent="."]
 position = Vector2(-1053, -2065.5)
 rotation = 3.14159
@@ -491,10 +504,24 @@ position = Vector2(-1051.97, 725)
 scale = Vector2(1.19401, 1.2442)
 texture = ExtResource("2_pgmip")
 
+[node name="Sprite2D4" type="Sprite2D" parent="."]
+position = Vector2(1897, 287)
+scale = Vector2(0.83269, 0.83269)
+texture = ExtResource("4_cfj68")
+
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 
+[node name="CollisionShape2D31" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(1331, 529)
+shape = SubResource("RectangleShape2D_6o5dc")
+
+[node name="CollisionShape2D30" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(1939.29, 451)
+scale = Vector2(0.83269, 0.83269)
+shape = SubResource("RectangleShape2D_jmu21")
+
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(1348, -72)
+position = Vector2(2021, -87)
 shape = SubResource("RectangleShape2D_rgd02")
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D"]
@@ -680,7 +707,7 @@ scale = Vector2(4.80069, 5.95592)
 texture = ExtResource("5_xrfju")
 
 [node name="CharacterBody2D" type="CharacterBody2D" parent="." groups=["Player"]]
-position = Vector2(1046, 450)
+position = Vector2(1047, 476)
 scale = Vector2(1.5, 1.5)
 script = ExtResource("2_jx67a")
 
@@ -695,7 +722,6 @@ scale = Vector2(0.015, 0.015)
 sprite_frames = SubResource("SpriteFrames_5a7sy")
 animation = &"push"
 offset = Vector2(95, 39)
-flip_h = true
 
 [node name="Camera2D" type="Camera2D" parent="CharacterBody2D"]
 offset = Vector2(0, -32)
@@ -797,15 +823,16 @@ debug_color = Color(0.411765, 0.407843, 0.172549, 1)
 [node name="FadeLayer" type="CanvasLayer" parent="."]
 
 [node name="FadeRect" type="ColorRect" parent="FadeLayer"]
+visible = false
 anchors_preset = -1
 anchor_left = -0.530382
 anchor_top = -1.93981
 anchor_right = -0.530382
 anchor_bottom = -1.93981
-offset_left = -4961.0
-offset_top = -1322.0
-offset_right = 5328.0
-offset_bottom = 3173.0
+offset_left = -4923.0
+offset_top = -1110.0
+offset_right = 5366.0
+offset_bottom = 3385.0
 mouse_filter = 2
 color = Color(0, 0, 0, 0)
 metadata/_edit_use_anchors_ = true
