@@ -463,11 +463,11 @@ animations = [{
 "speed": 3.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_wp3hd"]
-size = Vector2(5.66663, 322.167)
-
 [sub_resource type="CircleShape2D" id="CircleShape2D_2pl4v"]
 radius = 15.0333
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wp3hd"]
+size = Vector2(5.66663, 322.167)
 
 [node name="TutorialScene" type="Node2D"]
 position = Vector2(-230, 120)
@@ -982,6 +982,19 @@ position = Vector2(474, 397.667)
 scale = Vector2(0.102353, 0.102353)
 sprite_frames = SubResource("SpriteFrames_m6cdt")
 
+[node name="ShrinkPortal" type="Area2D" parent="."]
+position = Vector2(884, 460.667)
+script = ExtResource("81_tpgwp")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ShrinkPortal"]
+shape = SubResource("CircleShape2D_2pl4v")
+debug_color = Color(0.748797, 0.455883, 0.179411, 0.42)
+
+[node name="Sprite2D" type="Sprite2D" parent="ShrinkPortal"]
+position = Vector2(1.33333, -2.66698)
+scale = Vector2(0.733661, 0.732391)
+texture = ExtResource("90_p3bqw")
+
 [node name="FadeOut" type="Area2D" parent="."]
 script = ExtResource("31_8l0nc")
 
@@ -1006,18 +1019,5 @@ offset_bottom = 3495.0
 mouse_filter = 2
 color = Color(0, 0, 0, 0)
 metadata/_edit_use_anchors_ = true
-
-[node name="ShrinkPortal" type="Area2D" parent="."]
-position = Vector2(884, 460.667)
-script = ExtResource("81_tpgwp")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="ShrinkPortal"]
-shape = SubResource("CircleShape2D_2pl4v")
-debug_color = Color(0.748797, 0.455883, 0.179411, 0.42)
-
-[node name="Sprite2D" type="Sprite2D" parent="ShrinkPortal"]
-position = Vector2(1.33333, -2.66698)
-scale = Vector2(0.733661, 0.732391)
-texture = ExtResource("90_p3bqw")
 
 [connection signal="body_entered" from="FadeOut" to="CharacterBody2D" method="_on_fade_out_body_entered"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=112 format=3 uid="uid://duvfb6prmpxpu"]
+[gd_scene load_steps=115 format=3 uid="uid://duvfb6prmpxpu"]
 
 [ext_resource type="Script" path="res://Scripts/kitchen_2.gd" id="1_4in3w"]
 [ext_resource type="Texture2D" uid="uid://v6njha2nnja4" path="res://Assets/Background/Untitled 93.png" id="2_erwe7"]
@@ -66,6 +66,11 @@
 [ext_resource type="Texture2D" uid="uid://nkmvddm2gdg8" path="res://Assets/Menus/torn-paper.png" id="41_v5jm2"]
 [ext_resource type="Texture2D" uid="uid://dox0elb1ap3v3" path="res://Assets/Menus/Morning-Glory.png" id="43_gfk8d"]
 [ext_resource type="Texture2D" uid="uid://pekpyksj45ua" path="res://Assets/Placeholders/crystal-small.png" id="46_yoju2"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cwiwd"]
+size = Vector2(103, 81)
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_m3ywv"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6kbt8"]
 size = Vector2(360.25, 16)
@@ -363,10 +368,13 @@ size = Vector2(5.66663, 510.5)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ax7nc"]
 size = Vector2(53, 65)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g1m7v"]
+size = Vector2(5.66663, 435.25)
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8xbkb"]
 size = Vector2(3, 128.5)
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_l4xye"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_hhmga"]
 animations = [{
 "frames": [{
 "duration": 1.0,
@@ -406,7 +414,7 @@ animations = [{
 }],
 "loop": false,
 "name": &"expand",
-"speed": 5.0
+"speed": 8.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -446,7 +454,7 @@ animations = [{
 }],
 "loop": false,
 "name": &"retract",
-"speed": 5.0
+"speed": 8.0
 }]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_7hgcl"]
@@ -504,15 +512,26 @@ position = Vector2(1732, 193)
 scale = Vector2(0.958363, 0.982443)
 texture = ExtResource("2_erwe7")
 
-[node name="Sprite2D2" type="Sprite2D" parent="."]
+[node name="bg" type="Sprite2D" parent="."]
+position = Vector2(1928, 202)
+scale = Vector2(1.14429, 1.22236)
+texture = ExtResource("2_erwe7")
+
+[node name="wall" type="Sprite2D" parent="."]
 position = Vector2(-1584, -102)
 rotation = 1.5708
 scale = Vector2(1, 2.64268)
 texture = ExtResource("2_erwe7")
 
-[node name="Sprite2D3" type="Sprite2D" parent="."]
+[node name="shelves" type="Sprite2D" parent="."]
 position = Vector2(860, 668)
 scale = Vector2(0.3365, 0.554306)
+texture = ExtResource("4_50ryo")
+
+[node name="cupboard" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(867, 743)
+scale = Vector2(0.38375, 0.632139)
 texture = ExtResource("4_50ryo")
 
 [node name="ColorRect4" type="ColorRect" parent="."]
@@ -537,13 +556,13 @@ offset_bottom = 1302.0
 color = Color(0.407843, 0.231373, 0.0980392, 1)
 
 [node name="ColorRect7" type="ColorRect" parent="."]
-offset_left = 8.0
+offset_left = 8.00012
 offset_top = 1261.0
 offset_right = 193.0
 offset_bottom = 1778.0
 color = Color(0.733333, 0.607843, 0.254902, 1)
 
-[node name="ColorRect9" type="ColorRect" parent="."]
+[node name="g_wall" type="ColorRect" parent="."]
 offset_left = -760.0
 offset_top = -607.0
 offset_right = 367.0
@@ -571,6 +590,14 @@ offset_right = 794.0
 offset_bottom = 740.0
 color = Color(0.305882, 0.172549, 0.0705882, 1)
 
+[node name="ColorRect14" type="ColorRect" parent="."]
+offset_left = 366.0
+offset_top = 1051.0
+offset_right = 3648.0
+offset_bottom = 1091.0
+pivot_offset = Vector2(1466, -319)
+color = Color(0.305882, 0.172549, 0.0705882, 1)
+
 [node name="ColorRect13" type="ColorRect" parent="."]
 offset_left = 431.0
 offset_top = 942.0
@@ -578,18 +605,18 @@ offset_right = 794.0
 offset_bottom = 957.0
 color = Color(0.305882, 0.172549, 0.0705882, 1)
 
-[node name="ColorRect" type="ColorRect" parent="ColorRect13"]
-layout_mode = 0
-offset_left = -65.0
-offset_top = 109.0
-offset_right = 3217.0
-offset_bottom = 149.0
-color = Color(0.305882, 0.172549, 0.0705882, 1)
-
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 
+[node name="CollisionShape2D35" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(1086, 50)
+shape = SubResource("RectangleShape2D_cwiwd")
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D/CollisionShape2D35"]
+position = Vector2(7.62939e-05, -3.8147e-06)
+scale = Vector2(103, 80)
+texture = SubResource("PlaceholderTexture2D_m3ywv")
+
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
-visible = false
 position = Vector2(611.125, 131.5)
 shape = SubResource("RectangleShape2D_6kbt8")
 
@@ -888,7 +915,6 @@ scale = Vector2(0.015, 0.015)
 sprite_frames = SubResource("SpriteFrames_fm41i")
 animation = &"push"
 offset = Vector2(95, 39)
-flip_h = true
 
 [node name="Camera2D" type="Camera2D" parent="CharacterBody2D"]
 offset = Vector2(0, -32)
@@ -1014,14 +1040,14 @@ position = Vector2(-933, 379)
 script = ExtResource("27_e3m51")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="FadeOut"]
-visible = false
-position = Vector2(2092, 458)
+position = Vector2(2105, 461)
 shape = SubResource("RectangleShape2D_bx0os")
 debug_color = Color(0.411765, 0.407843, 0.172549, 1)
 
 [node name="FadeLayer" type="CanvasLayer" parent="."]
 
 [node name="FadeRect" type="ColorRect" parent="FadeLayer"]
+visible = false
 anchors_preset = -1
 anchor_left = -0.530382
 anchor_top = -1.93981
@@ -1050,10 +1076,20 @@ rotation = 0.802851
 scale = Vector2(0.312805, 0.312805)
 texture = ExtResource("46_yoju2")
 
-[node name="Tutorial1" type="Area2D" parent="." node_paths=PackedStringArray("bod")]
+[node name="Fade" type="Area2D" parent="."]
+position = Vector2(-4033, -402)
+script = ExtResource("27_e3m51")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Fade"]
+position = Vector2(4818, 310.375)
+shape = SubResource("RectangleShape2D_g1m7v")
+debug_color = Color(0.411765, 0.407843, 0.172549, 1)
+
+[node name="Tutorial1" type="Area2D" parent="." node_paths=PackedStringArray("bod", "tutorial_canvas")]
 position = Vector2(709, -367)
 script = ExtResource("40_dhuft")
 bod = NodePath("../CharacterBody2D")
+tutorial_canvas = NodePath("../TutorialCanvas")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Tutorial1"]
 position = Vector2(-9.5, 426.583)
@@ -1061,12 +1097,13 @@ shape = SubResource("RectangleShape2D_8xbkb")
 debug_color = Color(0.57197, 0.555292, 0, 0.42)
 
 [node name="TutorialCanvas" type="CanvasLayer" parent="."]
+visible = false
 script = ExtResource("31_wqkyw")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="TutorialCanvas"]
 position = Vector2(268.5, 181.1)
 scale = Vector2(0.397911, 0.471736)
-sprite_frames = SubResource("SpriteFrames_l4xye")
+sprite_frames = SubResource("SpriteFrames_hhmga")
 animation = &"retract"
 
 [node name="TutLabel" type="Label" parent="TutorialCanvas"]
@@ -1133,3 +1170,5 @@ scale = Vector2(0.407407, 0.407407)
 texture = ExtResource("43_gfk8d")
 
 [node name="UILayer" type="CanvasLayer" parent="."]
+
+[connection signal="body_entered" from="Fade" to="CharacterBody2D" method="_on_fade_out_2_body_entered"]

@@ -492,24 +492,22 @@ position = Vector2(-1596, -143)
 script = ExtResource("27_q3hxr")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="FadeOut"]
-visible = false
-position = Vector2(1800.17, 502.75)
+position = Vector2(1708, 507)
 shape = SubResource("RectangleShape2D_p2p6t")
 debug_color = Color(0.411765, 0.407843, 0.172549, 1)
 
 [node name="FadeLayer" type="CanvasLayer" parent="."]
 
 [node name="FadeRect" type="ColorRect" parent="FadeLayer"]
-visible = false
 anchors_preset = -1
 anchor_left = -0.530382
 anchor_top = -1.93981
 anchor_right = -0.530382
 anchor_bottom = -1.93981
-offset_left = -2232.0
-offset_top = -1068.0
-offset_right = 8057.0
-offset_bottom = 3427.0
+offset_left = -2276.0
+offset_top = -1069.0
+offset_right = 8013.0
+offset_bottom = 3426.0
 mouse_filter = 2
 color = Color(0, 0, 0, 0)
 metadata/_edit_use_anchors_ = true

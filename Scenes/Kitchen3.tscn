@@ -398,7 +398,7 @@ animations = [{
 script = ExtResource("1_k4qw0")
 
 [node name="Sprite2D2" type="Sprite2D" parent="."]
-position = Vector2(-907.5, -2800)
+position = Vector2(-864, -2793)
 scale = Vector2(3.82275, 3.68233)
 texture = ExtResource("2_p211o")
 
@@ -806,6 +806,7 @@ debug_color = Color(0.411765, 0.407843, 0.172549, 1)
 [node name="FadeLayer" type="CanvasLayer" parent="."]
 
 [node name="FadeRect" type="ColorRect" parent="FadeLayer"]
+visible = false
 anchors_preset = -1
 anchor_left = -0.530382
 anchor_top = -1.93981
@@ -820,6 +821,7 @@ color = Color(0, 0, 0, 0)
 metadata/_edit_use_anchors_ = true
 
 [node name="TutorialCanvas" type="CanvasLayer" parent="."]
+visible = false
 script = ExtResource("44_3di2i")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="TutorialCanvas"]
@@ -847,6 +849,7 @@ justification_flags = 162
 metadata/_edit_use_anchors_ = true
 
 [node name="Text" type="AnimatedSprite2D" parent="TutorialCanvas"]
+visible = false
 position = Vector2(-177.2, 971)
 sprite_frames = SubResource("SpriteFrames_22hxn")
 
