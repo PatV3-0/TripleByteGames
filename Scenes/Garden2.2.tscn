@@ -1,4 +1,4 @@
-[gd_scene load_steps=108 format=3 uid="uid://dlv0ashhlgcqg"]
+[gd_scene load_steps=106 format=3 uid="uid://dlv0ashhlgcqg"]
 
 [ext_resource type="Script" path="res://Scripts/garden_2.gd" id="1_xvhm1"]
 [ext_resource type="Texture2D" uid="uid://cmq1vhmr7erlq" path="res://Assets/Background/Untitled 99.png" id="2_18k6u"]
@@ -84,27 +84,12 @@ size = Vector2(4137, 20)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_uay0r"]
 size = Vector2(28, 39)
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_putnp"]
-radius = 36.4006
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_de4od"]
-radius = 30.6515
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_hbekk"]
-radius = 44.4445
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_7ywxu"]
-radius = 34.4741
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_a3vcc"]
-radius = 31.7113
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_an12d"]
 size = Vector2(1563, 130)
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_utsb2"]
 radius = 10.0757
-height = 120.446
+height = 97.7108
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_14njt"]
 radius = 12.222
@@ -112,13 +97,19 @@ height = 125.714
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_6anr4"]
 radius = 12.5631
-height = 107.223
+height = 105.274
 
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_7hss2"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_qbhkd"]
 radius = 11.7931
 height = 82.1799
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_fm7gk"]
+radius = 21.0238
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_e7uqw"]
+radius = 21.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_50vub"]
 size = Vector2(13, 25.2)
@@ -305,11 +296,11 @@ animations = [{
 [sub_resource type="CircleShape2D" id="CircleShape2D_ndvkv"]
 radius = 12.0416
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_j5fxu"]
+radius = 16.0
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kqefc"]
 size = Vector2(423.1, 17.667)
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_nj5e2"]
-radius = 10.0499
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vgm66"]
 size = Vector2(5.66663, 510.5)
@@ -322,6 +313,9 @@ radius = 35.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_56vc3"]
 size = Vector2(121.833, 7)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ogl02"]
+radius = 35.0
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_vo2lh"]
 friction = 2.0
@@ -495,11 +489,12 @@ position = Vector2(1432, 628)
 shape = SubResource("RectangleShape2D_uay0r")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
+position = Vector2(-6, 0)
 polygon = PackedVector2Array(133, 503, 129, 498, 128, 492, 129, 487, 130, 481, 133, 476, 137, 471, 142, 466, 147, 464, 153, 464, 161, 464, 168, 463, 172, 458, 176, 451, 180, 446, 185, 442, 194, 438, 204, 437, 209, 434, 217, 431, 224, 429, 231, 429, 236, 433, 240, 436, 246, 441, 250, 444, 256, 449, 261, 454, 266, 455, 271, 454, 274, 449, 277, 447, 281, 448, 284, 450, 289, 450, 293, 448, 299, 445, 305, 442, 311, 440, 316, 441, 322, 444, 329, 447, 333, 450, 338, 453, 343, 457, 346, 461, 351, 465, 353, 470, 354, 475, 352, 479, 350, 483, 348, 487, 343, 491, 339, 493, 337, 496, 336, 499, 339, 503, 337, 506, 138, 508)
 
 [node name="Sprite2D" type="Sprite2D" parent="StaticBody2D/CollisionPolygon2D"]
-position = Vector2(237, 484)
-scale = Vector2(1.53488, 1.19027)
+position = Vector2(239, 486)
+scale = Vector2(1.51744, 1.30199)
 texture = ExtResource("4_tymoi")
 
 [node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="StaticBody2D"]
@@ -526,63 +521,6 @@ position = Vector2(531, 449)
 scale = Vector2(1.5471, 1.55108)
 texture = ExtResource("7_jmipx")
 
-[node name="CollisionShape2D5" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(588, 277)
-rotation = -0.279253
-scale = Vector2(1, 0.8)
-shape = SubResource("CircleShape2D_putnp")
-
-[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D/CollisionShape2D5"]
-position = Vector2(16.0242, 61.6597)
-rotation = 0.321141
-scale = Vector2(1.49463, 2.0198)
-skew = -0.0802851
-texture = ExtResource("8_76g3b")
-
-[node name="CollisionShape2D6" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(651, 147)
-rotation = 1.5708
-scale = Vector2(1, 0.9)
-shape = SubResource("CircleShape2D_de4od")
-
-[node name="CollisionShape2D7" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(727, 240)
-rotation = -3.14159
-scale = Vector2(0.9, 0.6)
-shape = SubResource("CircleShape2D_hbekk")
-
-[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D/CollisionShape2D7"]
-position = Vector2(-1.39015, -195)
-rotation = 3.14159
-scale = Vector2(1.72338, 2.66179)
-texture = ExtResource("9_id3jw")
-
-[node name="CollisionShape2D8" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(802, 332)
-rotation = 2.86234
-scale = Vector2(0.9, 0.7)
-shape = SubResource("CircleShape2D_7ywxu")
-
-[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D/CollisionShape2D8"]
-position = Vector2(11.4853, -104.211)
-rotation = 3.46448
-scale = Vector2(1.66933, 2.32756)
-skew = -0.120428
-texture = ExtResource("10_h77aq")
-
-[node name="CollisionShape2D9" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(887, 393)
-rotation = 2.86234
-scale = Vector2(0.9, 0.7)
-shape = SubResource("CircleShape2D_a3vcc")
-
-[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D/CollisionShape2D9"]
-position = Vector2(13.9389, -67.6821)
-rotation = 3.54476
-scale = Vector2(1.79855, 2.2032)
-skew = -0.16057
-texture = ExtResource("11_8l2va")
-
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
 position = Vector2(677.5, 568)
 shape = SubResource("RectangleShape2D_an12d")
@@ -593,15 +531,15 @@ scale = Vector2(1.63971, 1.63971)
 texture = ExtResource("12_is40n")
 
 [node name="CollisionShape2D12" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(1026, 442)
+position = Vector2(1026, 439)
 rotation = 0.890118
 scale = Vector2(0.9, 0.7)
 shape = SubResource("CapsuleShape2D_utsb2")
 
 [node name="Sprite2D" type="Sprite2D" parent="StaticBody2D/CollisionShape2D12"]
-position = Vector2(10.8171, -12.6346)
+position = Vector2(9.45572, -18.418)
 rotation = -1.0472
-scale = Vector2(1.7839, 1.7839)
+scale = Vector2(1.72515, 1.73249)
 skew = 0.392699
 texture = ExtResource("13_1bys6")
 
@@ -616,7 +554,7 @@ scale = Vector2(1.69322, 2.19102)
 texture = ExtResource("14_hlr8d")
 
 [node name="CollisionShape2D13" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(1113, 398)
+position = Vector2(1110, 394)
 rotation = -0.820305
 scale = Vector2(0.9, 0.7)
 shape = SubResource("CapsuleShape2D_6anr4")
@@ -628,35 +566,61 @@ scale = Vector2(-24.1618, 116.334)
 texture = SubResource("PlaceholderTexture2D_7hss2")
 
 [node name="CollisionShape2D14" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(1161, 466)
+position = Vector2(1175, 463)
 rotation = 0.907571
 scale = Vector2(0.9, 0.7)
 shape = SubResource("CapsuleShape2D_qbhkd")
 
 [node name="Sprite2D" type="Sprite2D" parent="StaticBody2D/CollisionShape2D14"]
-position = Vector2(5.00763, -22.1631)
+position = Vector2(1.6968, -23.6756)
 rotation = -1.0472
-scale = Vector2(1.84061, 1.84061)
+scale = Vector2(1.84061, 2.11106)
 skew = 0.218166
 texture = ExtResource("15_fnfgq")
 
+[node name="Sprite2D2" type="Sprite2D" parent="StaticBody2D"]
+position = Vector2(617, 320)
+rotation = -0.0191564
+scale = Vector2(1.46758, 1.64149)
+skew = 0.0377972
+texture = ExtResource("8_76g3b")
+
 [node name="CollisionPolygon2D5" type="CollisionPolygon2D" parent="StaticBody2D"]
-polygon = PackedVector2Array(588, 305, 592, 312, 593, 318, 590, 327, 588, 337, 594, 351, 603, 368, 601, 382, 592, 394, 589, 407, 589, 421, 591, 431, 597, 441, 607, 460, 607, 474, 604, 487, 594, 504, 605, 505, 614, 489, 615, 473, 615, 458, 603, 437, 599, 427, 596, 413, 596, 400, 601, 389, 609, 378, 612, 366, 605, 358, 599, 348, 597, 333, 597, 320, 599, 310, 597, 302)
+polygon = PackedVector2Array(574, 309, 592, 312, 593, 318, 590, 327, 588, 337, 594, 351, 603, 368, 601, 382, 592, 394, 589, 407, 589, 421, 591, 431, 597, 441, 607, 460, 607, 474, 604, 487, 594, 504, 605, 505, 614, 489, 615, 473, 615, 458, 603, 437, 599, 427, 596, 413, 596, 400, 601, 389, 609, 378, 612, 366, 605, 358, 599, 348, 597, 333, 597, 320, 599, 310, 602, 309, 606, 307, 617, 297, 623, 285, 622, 270, 606, 248, 587, 246, 574, 250, 564, 257, 555, 271, 555, 292, 560, 301)
 
 [node name="CollisionPolygon2D6" type="CollisionPolygon2D" parent="StaticBody2D"]
-polygon = PackedVector2Array(648, 167, 632, 168, 642, 181, 642, 188, 645, 198, 647, 208, 645, 207, 643, 213, 640, 226, 633, 234, 628, 240, 626, 247, 606, 249, 620, 271, 620, 280, 624, 288, 635, 288, 638, 300, 642, 313, 644, 324, 643, 334, 635, 343, 628, 349, 624, 358, 621, 372, 626, 389, 633, 399, 641, 408, 647, 425, 649, 440, 644, 454, 640, 459, 636, 464, 635, 472, 637, 480, 641, 488, 653, 506, 661, 506, 646, 486, 642, 477, 641, 471, 641, 464, 646, 460, 651, 453, 653, 442, 652, 430, 651, 423, 648, 411, 646, 406, 640, 397, 635, 392, 630, 384, 628, 378, 627, 368, 629, 361, 633, 353, 640, 348, 645, 342, 649, 335, 650, 326, 648, 317, 646, 303, 642, 289, 640, 280, 637, 270, 634, 261, 634, 253, 636, 245, 640, 240, 647, 234, 651, 227, 663, 219, 663, 213, 659, 207, 657, 199, 656, 194, 660, 191, 659, 185, 669, 171)
+polygon = PackedVector2Array(647, 116, 629, 127, 621, 148, 629, 169, 642, 181, 642, 188, 645, 198, 647, 208, 647, 209, 643, 213, 640, 226, 633, 234, 628, 240, 626, 247, 606, 249, 620, 271, 620, 280, 624, 288, 635, 288, 638, 300, 642, 313, 644, 324, 643, 334, 635, 343, 628, 349, 624, 358, 621, 372, 626, 389, 633, 399, 641, 408, 647, 425, 649, 440, 644, 454, 640, 459, 636, 464, 635, 472, 637, 480, 641, 488, 653, 506, 661, 506, 646, 486, 642, 477, 641, 471, 641, 464, 646, 460, 651, 453, 653, 442, 652, 430, 651, 423, 648, 411, 646, 406, 640, 397, 635, 392, 630, 384, 628, 378, 627, 368, 629, 361, 633, 353, 640, 348, 645, 342, 649, 335, 650, 326, 648, 317, 646, 303, 642, 289, 640, 280, 637, 270, 634, 261, 634, 253, 636, 245, 640, 240, 647, 234, 651, 227, 663, 219, 663, 213, 659, 207, 658, 206, 660, 203, 663, 202, 659, 185, 674, 168, 680, 152, 679, 139, 676, 130, 662, 118)
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D"]
+position = Vector2(728.251, 357)
+scale = Vector2(1.55104, 1.59707)
+texture = ExtResource("9_id3jw")
 
 [node name="CollisionPolygon2D7" type="CollisionPolygon2D" parent="StaticBody2D"]
-polygon = PackedVector2Array(714, 264, 710, 269, 704, 277, 701, 283, 701, 294, 710, 303, 720, 309, 726, 316, 732, 327, 738, 339, 741, 349, 742, 361, 739, 373, 733, 381, 725, 389, 719, 396, 716, 405, 714, 414, 714, 425, 721, 442, 726, 451, 733, 464, 736, 477, 737, 484, 736, 495, 732, 505, 740, 505, 743, 497, 745, 487, 745, 481, 743, 470, 740, 461, 735, 452, 730, 444, 726, 436, 722, 428, 718, 418, 722, 406, 724, 399, 730, 393, 737, 385, 741, 378, 746, 368, 747, 356, 747, 348, 744, 334, 739, 326, 742, 317, 731, 306, 724, 300, 721, 296, 714, 289, 715, 278, 727, 283, 729, 279, 737, 265)
+polygon = PackedVector2Array(691, 247, 699, 269, 704, 277, 701, 283, 701, 294, 710, 303, 720, 309, 726, 316, 732, 327, 738, 339, 741, 349, 742, 361, 739, 373, 733, 381, 725, 389, 719, 396, 716, 405, 714, 414, 714, 425, 721, 442, 726, 451, 733, 464, 736, 477, 737, 484, 736, 495, 732, 505, 740, 505, 743, 497, 745, 487, 745, 481, 743, 470, 740, 461, 735, 452, 730, 444, 726, 436, 722, 428, 718, 418, 722, 406, 724, 399, 730, 393, 737, 385, 741, 378, 746, 368, 747, 356, 747, 348, 744, 334, 739, 326, 742, 317, 731, 306, 724, 300, 721, 296, 714, 289, 717, 276, 728, 280, 730, 275, 725, 273, 737, 268, 742, 267, 757, 261, 766, 242, 755, 224, 717, 214, 699, 219, 690, 229, 689, 239)
+
+[node name="Sprite2D3" type="Sprite2D" parent="StaticBody2D"]
+position = Vector2(812.171, 404.971)
+rotation = -0.024658
+scale = Vector2(1.47221, 1.65066)
+skew = 0.00344217
+texture = ExtResource("10_h77aq")
 
 [node name="CollisionPolygon2D8" type="CollisionPolygon2D" parent="StaticBody2D"]
-polygon = PackedVector2Array(796, 354, 799, 358, 801, 366, 809, 369, 812, 375, 814, 385, 815, 395, 814, 403, 811, 410, 804, 417, 796, 424, 789, 430, 781, 438, 778, 445, 775, 454, 773, 462, 775, 473, 778, 481, 782, 490, 784, 495, 789, 503, 791, 505, 800, 505, 797, 499, 792, 494, 790, 488, 787, 480, 783, 471, 781, 463, 781, 452, 784, 444, 789, 438, 797, 433, 803, 429, 818, 423, 828, 419, 845, 417, 855, 416, 870, 413, 864, 409, 850, 406, 842, 405, 831, 405, 820, 407, 815, 410, 813, 419, 820, 406, 820, 395, 820, 384, 817, 373, 817, 362, 818, 351, 806, 353)
+polygon = PackedVector2Array(782, 315, 773, 327, 771, 343, 776, 355, 789, 360, 791, 365, 797, 370, 801, 366, 809, 369, 812, 375, 814, 385, 815, 395, 814, 403, 811, 410, 804, 417, 796, 424, 789, 430, 781, 438, 778, 445, 775, 454, 773, 462, 775, 473, 778, 481, 782, 490, 784, 495, 789, 503, 791, 505, 800, 505, 797, 499, 792, 494, 790, 488, 787, 480, 783, 471, 781, 463, 781, 452, 784, 444, 789, 438, 797, 433, 803, 429, 818, 423, 828, 419, 845, 417, 855, 416, 870, 413, 864, 409, 850, 406, 842, 405, 831, 405, 820, 407, 815, 410, 813, 419, 820, 406, 820, 395, 820, 384, 817, 373, 817, 362, 818, 351, 819, 350, 822, 348, 831, 336, 831, 325, 827, 316, 813, 310, 798, 309)
+
+[node name="Sprite2D4" type="Sprite2D" parent="StaticBody2D"]
+position = Vector2(888, 442)
+rotation = 0.0410694
+scale = Vector2(1.56871, 1.57103)
+skew = -0.0122732
+texture = ExtResource("11_8l2va")
 
 [node name="CollisionPolygon2D9" type="CollisionPolygon2D" parent="StaticBody2D"]
-polygon = PackedVector2Array(885, 414, 888, 418, 891, 425, 890, 432, 884, 440, 876, 444, 868, 452, 864, 460, 864, 469, 864, 476, 866, 483, 869, 489, 874, 495, 876, 499, 877, 505, 888, 504, 886, 499, 882, 493, 878, 486, 874, 482, 871, 476, 871, 469, 871, 464, 874, 458, 874, 452, 879, 448, 883, 445, 889, 441, 894, 432, 903, 415, 898, 410, 889, 412)
+polygon = PackedVector2Array(859, 387, 858, 402, 870, 415, 876, 417, 875, 422, 879, 428, 883, 432, 881, 436, 874, 441, 868, 452, 864, 460, 864, 469, 864, 476, 866, 483, 869, 489, 874, 495, 876, 499, 877, 505, 888, 504, 886, 499, 882, 493, 878, 486, 874, 482, 871, 476, 871, 469, 871, 464, 874, 458, 874, 452, 879, 448, 883, 445, 889, 441, 894, 432, 896, 427, 903, 416, 900, 413, 905, 410, 914, 396, 912, 382, 899, 372, 883, 370, 866, 377)
 
 [node name="CollisionPolygon2D10" type="CollisionPolygon2D" parent="StaticBody2D"]
-polygon = PackedVector2Array(549, 331, 555, 323, 562, 319, 571, 317, 578, 316, 586, 311, 594, 310, 593, 326, 591, 332, 584, 332, 576, 332, 570, 332, 549, 338)
+polygon = PackedVector2Array(549, 329, 555, 322, 562, 319, 571, 317, 578, 316, 586, 311, 594, 310, 593, 326, 591, 332, 584, 332, 576, 332, 570, 332, 549, 338)
 
 [node name="CollisionPolygon2D11" type="CollisionPolygon2D" parent="StaticBody2D"]
 polygon = PackedVector2Array(653, 225, 656, 207, 668, 200, 684, 194, 690, 193, 708, 193, 720, 194, 699, 211, 691, 216, 681, 220, 673, 223, 664, 225)
@@ -664,8 +628,29 @@ polygon = PackedVector2Array(653, 225, 656, 207, 668, 200, 684, 194, 690, 193, 7
 [node name="CollisionPolygon2D12" type="CollisionPolygon2D" parent="StaticBody2D"]
 polygon = PackedVector2Array(741, 330, 736, 321, 741, 305, 756, 298, 771, 296, 784, 295, 780, 305, 774, 314, 765, 317, 756, 322, 751, 325)
 
+[node name="CollisionPolygon2D45" type="CollisionPolygon2D" parent="StaticBody2D"]
+visible = false
+position = Vector2(1235, -630.625)
+rotation = 3.14159
+scale = Vector2(1.27098, -1.37237)
+polygon = PackedVector2Array(1080, 915, 1080, 921, 1079, 927, 1077, 933, 1074, 940, 1071, 944, 1065, 950, 1113, 950, 1108, 944, 1102, 937, 1099, 930, 1096, 918, 1097, 911)
+
+[node name="CollisionShape2D10" type="CollisionShape2D" parent="StaticBody2D"]
+visible = false
+position = Vector2(-153, 630)
+rotation = 3.14159
+scale = Vector2(2.37612, -0.872946)
+shape = SubResource("CircleShape2D_fm7gk")
+
+[node name="CollisionPolygon2D46" type="CollisionShape2D" parent="StaticBody2D"]
+visible = false
+position = Vector2(-152, 627)
+rotation = 3.14159
+scale = Vector2(2.37612, -0.872946)
+shape = SubResource("CircleShape2D_e7uqw")
+
 [node name="CharacterBody2D" type="CharacterBody2D" parent="." groups=["Player"]]
-position = Vector2(-84, 488)
+position = Vector2(-439, 636)
 scale = Vector2(1.5, 1.5)
 script = ExtResource("16_ck7kn")
 
@@ -733,6 +718,20 @@ position = Vector2(-0.99997, -2.99999)
 scale = Vector2(-0.625649, 0.549383)
 texture = ExtResource("40_tdiw1")
 
+[node name="GrowPortal" type="Area2D" parent="."]
+position = Vector2(368, 482)
+script = ExtResource("42_5q1nw")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="GrowPortal"]
+position = Vector2(3, 5)
+shape = SubResource("CircleShape2D_j5fxu")
+debug_color = Color(0.52549, 0.239216, 0.862745, 0.419608)
+
+[node name="Sprite2D" type="Sprite2D" parent="GrowPortal"]
+position = Vector2(4.00003, 5)
+scale = Vector2(0.77451, 0.664384)
+texture = ExtResource("43_akhv3")
+
 [node name="DeathZone" type="Area2D" parent="." groups=["DeathZones"]]
 position = Vector2(2856, -14)
 script = ExtResource("41_0u8lk")
@@ -741,20 +740,6 @@ script = ExtResource("41_0u8lk")
 position = Vector2(-1184.55, 590)
 shape = SubResource("RectangleShape2D_kqefc")
 debug_color = Color(0.99473, 0, 0.217308, 0.42)
-
-[node name="GrowPortal1" type="Area2D" parent="."]
-position = Vector2(1219, 482)
-script = ExtResource("42_5q1nw")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="GrowPortal1"]
-position = Vector2(3, 5)
-shape = SubResource("CircleShape2D_nj5e2")
-debug_color = Color(0.52549, 0.239216, 0.862745, 0.419608)
-
-[node name="Sprite2D" type="Sprite2D" parent="GrowPortal1/CollisionShape2D"]
-position = Vector2(-0.99997, -1.00001)
-scale = Vector2(-0.554468, 0.448434)
-texture = ExtResource("43_akhv3")
 
 [node name="FadeOut" type="Area2D" parent="."]
 position = Vector2(-16, -29)
@@ -766,6 +751,7 @@ shape = SubResource("RectangleShape2D_vgm66")
 debug_color = Color(0.411765, 0.407843, 0.172549, 1)
 
 [node name="MushroomLaunch2" type="Area2D" parent="."]
+visible = false
 position = Vector2(-163, 607)
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="MushroomLaunch2"]
@@ -809,6 +795,23 @@ script = ExtResource("45_k834a")
 position = Vector2(15, 31)
 rotation = 1.5708
 shape = SubResource("RectangleShape2D_56vc3")
+
+[node name="MushroomLaunch3" type="Area2D" parent="."]
+visible = false
+position = Vector2(-187, 599)
+scale = Vector2(1.33125, 1.33125)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MushroomLaunch3"]
+position = Vector2(24, 21)
+scale = Vector2(1, 0.4)
+shape = SubResource("CircleShape2D_ogl02")
+debug_color = Color(0.666293, 0.511325, 0, 0.42)
+
+[node name="Sprite2D" type="Sprite2D" parent="MushroomLaunch3/CollisionShape2D"]
+position = Vector2(-3.71829, 35.763)
+rotation = -3.14159
+scale = Vector2(2.37054, -6.31936)
+texture = ExtResource("3_vqeex")
 
 [node name="Pushable" type="RigidBody2D" parent="." groups=["Pushable"]]
 position = Vector2(1378, 446)
@@ -939,3 +942,5 @@ scale = Vector2(0.611111, 0.611111)
 texture = ExtResource("61_coer0")
 
 [node name="UILayer" type="CanvasLayer" parent="."]
+
+[connection signal="body_entered" from="MushroomLaunch3" to="CharacterBody2D" method="_on_mushroom_launch_body_entered"]

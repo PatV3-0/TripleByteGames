@@ -28,8 +28,9 @@ func _ready() -> void:
 	$Background.play()
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 
-	var tutorial_area = $Hole_Tut
-	tutorial_area.connect("show_w_key", Callable(self, "_on_show_w_key"))
+	var tutorial_area = get_node_or_null("Hole_Tut")
+	if tutorial_area:
+		tutorial_area.connect("show_w_key", Callable(self, "_on_show_w_key"))
 	pauseMenu = pauseMenuScene.instantiate()
 	ui_layer.add_child(pauseMenu)  
 	pauseMenu.visible = false

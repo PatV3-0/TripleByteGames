@@ -34,9 +34,9 @@
 [ext_resource type="Texture2D" uid="uid://ca1cms2y3p3co" path="res://Assets/Placeholders/growwisp.png" id="17_hig4x"]
 [ext_resource type="Texture2D" uid="uid://81vpbbt7xjmo" path="res://Assets/Placeholders/shrinkwisp.png" id="19_edda2"]
 [ext_resource type="Script" path="res://Scripts/fade_out.gd" id="19_l1wwf"]
-[ext_resource type="Script" path="res://Scripts/hole2.gd" id="19_o6mr6"]
 [ext_resource type="AudioStream" uid="uid://c3iu4fh2kf3kk" path="res://Assets/Sound/jump.wav" id="20_keql5"]
 [ext_resource type="AudioStream" uid="uid://cm8n17onir64w" path="res://Assets/Sound/boxSound.wav" id="21_nbsc4"]
+[ext_resource type="Script" path="res://Scripts/hole.gd" id="21_udxdw"]
 [ext_resource type="AudioStream" uid="uid://dydis8421b2ou" path="res://Assets/Sound/walk.wav" id="22_wow8s"]
 [ext_resource type="Texture2D" uid="uid://c2ntm40saxfwm" path="res://Assets/Menus/SpeechbarLighter1.png" id="23_6tajr"]
 [ext_resource type="Texture2D" uid="uid://ch1intxq0cr18" path="res://Assets/Sprites/Character/idle 1.png" id="23_swu3g"]
@@ -770,7 +770,8 @@ metadata/_edit_use_anchors_ = true
 
 [node name="Hole" type="Area2D" parent="."]
 position = Vector2(-375.455, 309.091)
-script = ExtResource("19_o6mr6")
+script = ExtResource("21_udxdw")
+next_scene_path = "res://Scenes/Tut2_back.tscn"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hole"]
 position = Vector2(460.909, 464.545)

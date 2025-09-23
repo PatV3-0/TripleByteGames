@@ -35,6 +35,7 @@
 [ext_resource type="Texture2D" uid="uid://81vpbbt7xjmo" path="res://Assets/Placeholders/shrinkwisp.png" id="20_4ws23"]
 [ext_resource type="AudioStream" uid="uid://cm8n17onir64w" path="res://Assets/Sound/boxSound.wav" id="20_gj1hp"]
 [ext_resource type="AudioStream" uid="uid://dydis8421b2ou" path="res://Assets/Sound/walk.wav" id="21_30ke1"]
+[ext_resource type="Script" path="res://Scripts/hole.gd" id="21_nndc7"]
 [ext_resource type="Texture2D" uid="uid://c2ntm40saxfwm" path="res://Assets/Menus/SpeechbarLighter1.png" id="22_cqr1c"]
 [ext_resource type="Texture2D" uid="uid://ch1intxq0cr18" path="res://Assets/Sprites/Character/idle 1.png" id="22_ea7xr"]
 [ext_resource type="Script" path="res://Scenes/tutorial_w2.gd" id="23_2o55q"]
@@ -58,7 +59,6 @@
 [ext_resource type="Script" path="res://Scenes/tutorial_w_3.gd" id="35_un5eh"]
 [ext_resource type="Script" path="res://Scenes/tutorial_w_4.gd" id="37_0f71x"]
 [ext_resource type="Texture2D" uid="uid://cdi47y8m6tqdn" path="res://Assets/Interactables/Untitled 55.PNG" id="45_2jhoa"]
-[ext_resource type="Script" path="res://Scripts/hole3.gd" id="45_8nopc"]
 [ext_resource type="Script" path="res://Scripts/tutorial_canvas1.gd" id="47_m5br8"]
 [ext_resource type="Texture2D" uid="uid://cnbl2133psakv" path="res://Assets/Menus/SpeechbarLighter5.png" id="48_rpawl"]
 [ext_resource type="Texture2D" uid="uid://cay0c273362pd" path="res://Assets/Menus/SpeechbarLighter6.png" id="49_kmifb"]
@@ -810,7 +810,8 @@ texture = ExtResource("18_0g262")
 
 [node name="Hole" type="Area2D" parent="."]
 position = Vector2(-998, -1248)
-script = ExtResource("45_8nopc")
+script = ExtResource("21_nndc7")
+next_scene_path = "res://Scenes/KitchenCut.tscn"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hole"]
 visible = false

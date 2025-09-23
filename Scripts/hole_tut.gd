@@ -22,7 +22,7 @@ func _ready():
 
 func _on_body_entered(body):
 	if body is CharacterBody2D:
-		print("Inside!!!")
+		#print("Inside!!!")
 		player_inside = true
 		timer = 0.0
 		last_pos = bod.global_position  # initialize
@@ -31,25 +31,33 @@ func _on_body_exited(body):
 	if tutorial_done:
 		return
 	if body is CharacterBody2D:
-		print("Left")
+		#print("Left")
 		player_inside = false
 		timer = 0.0
 
 func _physics_process(delta):
 	if tutorial_done:
 		return
+	if Input.is_action_just_pressed("enter_door"):
+		print("Tutorial cancelled by W press")
+		var tutorial = get_tree().current_scene.get_node("TutorialCanvas")
+		if is_instance_valid(tutorial):
+			tutorial.cancel_tutorial()
+		tutorial_done = true
+		return
 	if player_inside and bod:
 		var moved = bod.global_position.distance_to(last_pos)
 		if moved < 1.0:  # essentially stationary
 			timer += delta
 			if timer >= stand_time:
-				print("Playing")
+				#print("Playing")
 				player_inside = false
 				tutorial_done = true
 				emit_signal("show_w_key")  # emit signal to main scene
 				if not triggered:  # Adjust check for your player
 					triggered = true
 					tutorial_canvas.start_lines(tutorial_lines,self)
+					
 
 		else:
 			timer = 0.0

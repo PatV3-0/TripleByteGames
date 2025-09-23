@@ -754,6 +754,7 @@ texture = ExtResource("15_skvwp")
 [node name="UILayer" type="CanvasLayer" parent="."]
 
 [node name="TutorialCanvas" type="CanvasLayer" parent="."]
+visible = false
 script = ExtResource("82_pt6cx")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="TutorialCanvas"]
@@ -1007,6 +1008,7 @@ debug_color = Color(0.411765, 0.407843, 0.172549, 1)
 [node name="FadeLayer" type="CanvasLayer" parent="."]
 
 [node name="FadeRect" type="ColorRect" parent="FadeLayer"]
+visible = false
 anchors_preset = -1
 anchor_left = -0.530382
 anchor_top = -1.93981
