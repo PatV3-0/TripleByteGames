@@ -1,4 +1,4 @@
-[gd_scene load_steps=163 format=3 uid="uid://d1j5vjuj8a5sa"]
+[gd_scene load_steps=162 format=3 uid="uid://d1j5vjuj8a5sa"]
 
 [ext_resource type="Script" path="res://Scripts/underground_2.gd" id="1_4r3nq"]
 [ext_resource type="Texture2D" uid="uid://bi4bwr4jdr45s" path="res://Assets/Background/Untitled 113.png" id="2_88yj5"]
@@ -51,9 +51,8 @@
 [ext_resource type="Texture2D" uid="uid://bicu3c3rbd1rn" path="res://Assets/Menus/SpeechbarLighter9.png" id="32_0aphf"]
 [ext_resource type="Texture2D" uid="uid://srercerjo0jg" path="res://Assets/Tutorial assets/1.png" id="33_tgttl"]
 [ext_resource type="Texture2D" uid="uid://1x876ycnlyv7" path="res://Assets/Tutorial assets/3.png" id="34_w6w57"]
-[ext_resource type="Script" path="res://Scripts/ingredient1.gd" id="35_oc5ch"]
+[ext_resource type="Script" path="res://Scripts/ingredient.gd" id="35_oc5ch"]
 [ext_resource type="Texture2D" uid="uid://nkmvddm2gdg8" path="res://Assets/Menus/torn-paper.png" id="36_nsxfs"]
-[ext_resource type="Texture2D" uid="uid://cxa22mpaau64e" path="res://Assets/Menus/Unfolded.png" id="37_h77ri"]
 [ext_resource type="Texture2D" uid="uid://b50uoh3pd65yh" path="res://Assets/Menus/WCM-paper.png" id="37_jaxve"]
 [ext_resource type="Texture2D" uid="uid://olt8wt64rdvp" path="res://Assets/Placeholders/shroom-ing.png" id="43_j86eb"]
 [ext_resource type="Script" path="res://Scripts/death_zone.gd" id="57_vb4g4"]
@@ -1210,15 +1209,15 @@ position = Vector2(-321, 591)
 scale = Vector2(1.5, 1.5)
 script = ExtResource("10_omspx")
 
+[node name="Sprite2D" type="Sprite2D" parent="GrowPortal1"]
+position = Vector2(5, 3)
+scale = Vector2(0.755713, 0.567922)
+texture = ExtResource("11_6xepv")
+
 [node name="CollisionShape2D" type="CollisionShape2D" parent="GrowPortal1"]
 position = Vector2(3.33333, 3.33333)
 shape = SubResource("CircleShape2D_i1djl")
 debug_color = Color(0.52549, 0.239216, 0.862745, 0.419608)
-
-[node name="Sprite2D" type="Sprite2D" parent="GrowPortal1/CollisionShape2D"]
-position = Vector2(1.66667, -0.333322)
-scale = Vector2(0.755713, 0.567922)
-texture = ExtResource("11_6xepv")
 
 [node name="CharacterBody2D" type="CharacterBody2D" parent="." groups=["Player"]]
 position = Vector2(1298, 361)
@@ -1349,17 +1348,18 @@ max_distance = 1000.0
 [node name="Ingredient" type="Area2D" parent="."]
 position = Vector2(-1189, 180)
 script = ExtResource("35_oc5ch")
+i_name = "mushroom"
+
+[node name="Sprite2D" type="Sprite2D" parent="Ingredient"]
+position = Vector2(69, 623)
+scale = Vector2(0.49022, 0.49022)
+texture = ExtResource("43_j86eb")
+offset = Vector2(2.22253, -3.81003)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Ingredient"]
 position = Vector2(75.5, 611)
 shape = SubResource("RectangleShape2D_ot7vn")
 debug_color = Color(0.511734, 0.57743, 0, 0.42)
-
-[node name="Sprite2D" type="Sprite2D" parent="Ingredient/CollisionShape2D"]
-position = Vector2(-6.49999, 12)
-scale = Vector2(0.49022, 0.49022)
-texture = ExtResource("43_j86eb")
-offset = Vector2(2.22253, -3.81003)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
@@ -1379,19 +1379,6 @@ metadata/_edit_use_anchors_ = true
 position = Vector2(155, 134)
 scale = Vector2(0.545139, 0.545139)
 texture = ExtResource("37_jaxve")
-
-[node name="CanvasLayer2" type="CanvasLayer" parent="."]
-
-[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer2"]
-position = Vector2(134.25, 133.663)
-scale = Vector2(0.487963, 0.316219)
-texture = ExtResource("37_h77ri")
-
-[node name="ColorRect" type="ColorRect" parent="CanvasLayer2"]
-visible = false
-offset_right = 267.0
-offset_bottom = 267.0
-metadata/_edit_use_anchors_ = true
 
 [node name="DeathZone" type="Area2D" parent="." groups=["DeathZones"]]
 position = Vector2(2856, -14)

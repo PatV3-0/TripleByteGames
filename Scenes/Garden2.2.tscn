@@ -1,4 +1,4 @@
-[gd_scene load_steps=105 format=3 uid="uid://dlv0ashhlgcqg"]
+[gd_scene load_steps=103 format=3 uid="uid://dlv0ashhlgcqg"]
 
 [ext_resource type="Script" path="res://Scripts/garden_2.gd" id="1_xvhm1"]
 [ext_resource type="Texture2D" uid="uid://cmq1vhmr7erlq" path="res://Assets/Background/Untitled 99.png" id="2_18k6u"]
@@ -68,12 +68,10 @@
 [ext_resource type="Texture2D" uid="uid://bicu3c3rbd1rn" path="res://Assets/Menus/SpeechbarLighter9.png" id="54_6pwly"]
 [ext_resource type="Texture2D" uid="uid://srercerjo0jg" path="res://Assets/Tutorial assets/1.png" id="55_dmn05"]
 [ext_resource type="Texture2D" uid="uid://1x876ycnlyv7" path="res://Assets/Tutorial assets/3.png" id="56_vwywf"]
-[ext_resource type="Script" path="res://Scripts/ingredient1.gd" id="57_k28r7"]
+[ext_resource type="Script" path="res://Scripts/ingredient.gd" id="57_k28r7"]
 [ext_resource type="Texture2D" uid="uid://nkmvddm2gdg8" path="res://Assets/Menus/torn-paper.png" id="58_fomx8"]
 [ext_resource type="Texture2D" uid="uid://bglqmusi88d3" path="res://Assets/Placeholders/Beetle-1.png" id="58_mqace"]
 [ext_resource type="Texture2D" uid="uid://bk0wv2eltfmhf" path="res://Assets/Menus/JB-paper.png" id="59_hmyjb"]
-[ext_resource type="Texture2D" uid="uid://cxa22mpaau64e" path="res://Assets/Menus/Unfolded.png" id="60_8ggja"]
-[ext_resource type="Texture2D" uid="uid://cmxg6tmnx6tq5" path="res://Assets/Menus/Jewel-Beetle.png" id="61_coer0"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_s17ju"]
 size = Vector2(28.75, 39)
@@ -698,14 +696,15 @@ metadata/_edit_use_anchors_ = true
 position = Vector2(895, 475)
 script = ExtResource("39_1m415")
 
+[node name="Sprite2D" type="Sprite2D" parent="ShrinkPortal"]
+position = Vector2(-1, -3)
+rotation = 3.14159
+scale = Vector2(0.625649, -0.549383)
+texture = ExtResource("40_tdiw1")
+
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ShrinkPortal"]
 shape = SubResource("CircleShape2D_ndvkv")
 debug_color = Color(0.748797, 0.455883, 0.179411, 0.42)
-
-[node name="Sprite2D" type="Sprite2D" parent="ShrinkPortal/CollisionShape2D"]
-position = Vector2(-0.99997, -2.99999)
-scale = Vector2(-0.625649, 0.549383)
-texture = ExtResource("40_tdiw1")
 
 [node name="GrowPortal" type="Area2D" parent="."]
 position = Vector2(368, 482)
@@ -880,16 +879,21 @@ max_distance = 1000.0
 [node name="Ingredient" type="Area2D" parent="."]
 position = Vector2(1012, -140)
 script = ExtResource("57_k28r7")
+i_name = "beetle"
+
+[node name="Sprite2D" type="AnimatedSprite2D" parent="Ingredient"]
+position = Vector2(75, 627)
+scale = Vector2(0.0685989, 0.0685989)
+
+[node name="7Sprite2D" type="Sprite2D" parent="Ingredient"]
+position = Vector2(75, 627)
+scale = Vector2(0.0685989, 0.0685989)
+texture = ExtResource("58_mqace")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Ingredient"]
 position = Vector2(75.5, 611)
 shape = SubResource("RectangleShape2D_mri3u")
 debug_color = Color(0.511734, 0.57743, 0, 0.42)
-
-[node name="Sprite2D" type="Sprite2D" parent="Ingredient/CollisionShape2D"]
-position = Vector2(-0.50005, 16)
-scale = Vector2(0.0685989, 0.0685989)
-texture = ExtResource("58_mqace")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
@@ -909,24 +913,6 @@ metadata/_edit_use_anchors_ = true
 position = Vector2(151, 129)
 scale = Vector2(0.520833, 0.520833)
 texture = ExtResource("59_hmyjb")
-
-[node name="CanvasLayer2" type="CanvasLayer" parent="."]
-
-[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer2"]
-position = Vector2(134.25, 133.663)
-scale = Vector2(0.487963, 0.316219)
-texture = ExtResource("60_8ggja")
-
-[node name="ColorRect" type="ColorRect" parent="CanvasLayer2"]
-visible = false
-offset_right = 267.0
-offset_bottom = 267.0
-metadata/_edit_use_anchors_ = true
-
-[node name="Sprite2D2" type="Sprite2D" parent="CanvasLayer2"]
-position = Vector2(138.694, 96.5)
-scale = Vector2(0.611111, 0.611111)
-texture = ExtResource("61_coer0")
 
 [node name="UILayer" type="CanvasLayer" parent="."]
 

@@ -673,68 +673,67 @@ position = Vector2(414.545, -91.8182)
 polygon = PackedVector2Array(1290.17, 235.145, 1259.09, 233.636, 1252.73, 230.909, 1254, 211, 1254, 206, 1255, 201, 1260, 191.818, 1265.45, 188.182, 1270.91, 186.364, 1276.36, 185.455, 1282.73, 184.545, 1291.82, 184.545, 1309.09, 184.545, 1310.17, 201.509, 1311.08, 220.6, 1309.26, 221.509, 1304.72, 221.509, 1299.26, 222.418, 1295.63, 223.327, 1291.99, 227.872)
 
 [node name="GrowPortal4" type="Area2D" parent="."]
-visible = false
 position = Vector2(1120.91, 252.727)
 script = ExtResource("16_l4pdx")
+
+[node name="Sprite2D" type="Sprite2D" parent="GrowPortal4"]
+visible = false
+position = Vector2(4.54443, 2.72707)
+scale = Vector2(0.921145, 0.740968)
+texture = ExtResource("17_h0sh1")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="GrowPortal4"]
 position = Vector2(3, 5)
 shape = SubResource("CircleShape2D_qfemj")
 debug_color = Color(0.52549, 0.239216, 0.862745, 0.419608)
 
-[node name="Sprite2D" type="Sprite2D" parent="GrowPortal4/CollisionShape2D"]
-position = Vector2(1.54439, -2.27293)
-scale = Vector2(0.921145, 0.740968)
-texture = ExtResource("17_h0sh1")
-
 [node name="GrowPortal3" type="Area2D" parent="."]
-visible = false
 position = Vector2(606.364, 612.727)
 script = ExtResource("16_l4pdx")
+
+[node name="Sprite2D" type="Sprite2D" parent="GrowPortal3"]
+visible = false
+position = Vector2(4.54437, 2.72705)
+scale = Vector2(0.921145, 0.740968)
+texture = ExtResource("17_h0sh1")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="GrowPortal3"]
 position = Vector2(3, 5)
 shape = SubResource("CircleShape2D_qfemj")
 debug_color = Color(0.52549, 0.239216, 0.862745, 0.419608)
 
-[node name="Sprite2D" type="Sprite2D" parent="GrowPortal3/CollisionShape2D"]
-position = Vector2(1.54439, -2.27293)
-scale = Vector2(0.921145, 0.740968)
-texture = ExtResource("17_h0sh1")
-
 [node name="GrowPortal1" type="Area2D" parent="."]
-visible = false
 position = Vector2(1040.91, 748.182)
 script = ExtResource("16_l4pdx")
+
+[node name="Sprite2D" type="Sprite2D" parent="GrowPortal1"]
+visible = false
+position = Vector2(4.54443, 2.72705)
+scale = Vector2(0.921145, 0.740968)
+texture = ExtResource("17_h0sh1")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="GrowPortal1"]
 position = Vector2(3, 5)
 shape = SubResource("CircleShape2D_qfemj")
 debug_color = Color(0.52549, 0.239216, 0.862745, 0.419608)
 
-[node name="Sprite2D" type="Sprite2D" parent="GrowPortal1/CollisionShape2D"]
-position = Vector2(1.54439, -2.27293)
-scale = Vector2(0.921145, 0.740968)
-texture = ExtResource("17_h0sh1")
-
 [node name="ShrinkPortal2" type="Area2D" parent="."]
-visible = false
 position = Vector2(143.636, 108.182)
 rotation = -0.785397
 script = ExtResource("18_ydvco")
+
+[node name="Sprite2D" type="Sprite2D" parent="ShrinkPortal2"]
+visible = false
+position = Vector2(0.306694, -1.9091)
+rotation = 0.785397
+scale = Vector2(0.608293, 0.556983)
+texture = ExtResource("19_c2tgq")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ShrinkPortal2"]
 shape = SubResource("CircleShape2D_vbehq")
 debug_color = Color(0.748797, 0.455883, 0.179411, 0.42)
 
-[node name="Sprite2D" type="Sprite2D" parent="ShrinkPortal2"]
-position = Vector2(0.306698, -1.90911)
-rotation = 0.785397
-scale = Vector2(0.608293, 0.556983)
-texture = ExtResource("19_c2tgq")
-
 [node name="ShrinkPortal" type="Area2D" parent="."]
-visible = false
 position = Vector2(872.727, 455.455)
 script = ExtResource("18_ydvco")
 
@@ -743,6 +742,7 @@ shape = SubResource("CircleShape2D_vbehq")
 debug_color = Color(0.748797, 0.455883, 0.179411, 0.42)
 
 [node name="Sprite2D" type="Sprite2D" parent="ShrinkPortal"]
+visible = false
 position = Vector2(0.306698, -1.90911)
 scale = Vector2(0.608293, 0.556983)
 texture = ExtResource("19_c2tgq")

@@ -1,0 +1,90 @@
+[gd_scene load_steps=14 format=3 uid="uid://bx02m7uho1ddl"]
+
+[ext_resource type="Texture2D" uid="uid://cxa22mpaau64e" path="res://Assets/Menus/Unfolded.png" id="1_3msne"]
+[ext_resource type="Script" path="res://Scenes/ingredients_canvas.gd" id="1_463q6"]
+[ext_resource type="Texture2D" uid="uid://e87tdme3rp6h" path="res://Assets/Menus/garlic.png" id="2_w1px7"]
+[ext_resource type="Texture2D" uid="uid://cuo35uu5gtx23" path="res://Assets/Menus/garlic-check.png" id="3_a67sc"]
+[ext_resource type="Script" path="res://Scenes/ingredient_button.gd" id="3_kl8po"]
+[ext_resource type="Texture2D" uid="uid://bcorajc714ive" path="res://Assets/Menus/mush-check.png" id="3_q01t7"]
+[ext_resource type="Texture2D" uid="uid://cmxg6tmnx6tq5" path="res://Assets/Menus/Jewel-Beetle.png" id="4_hpgh7"]
+[ext_resource type="Texture2D" uid="uid://b02077w4d2g3e" path="res://Assets/Menus/Himalayan-crystal.png" id="4_i67xj"]
+[ext_resource type="Texture2D" uid="uid://s7n4x1vx7rry" path="res://Assets/Menus/MG.png" id="6_gg1u7"]
+[ext_resource type="Texture2D" uid="uid://noqwnkn15p7p" path="res://Assets/Menus/MG-check.png" id="6_xdr2y"]
+[ext_resource type="Texture2D" uid="uid://cl3eton7vof1m" path="res://Assets/Menus/mush.png" id="7_7btk8"]
+[ext_resource type="Texture2D" uid="uid://drhwokv4jspqb" path="res://Assets/Menus/Jewel-Beetle-check.png" id="8_cd835"]
+[ext_resource type="Texture2D" uid="uid://ppb05p72sls3" path="res://Assets/Menus/Himalayan-crystal-check.png" id="10_j7u36"]
+
+[node name="IngredientsCanvas" type="CanvasLayer"]
+script = ExtResource("1_463q6")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(103, 129)
+scale = Vector2(0.381161, 0.307726)
+texture = ExtResource("1_3msne")
+
+[node name="Panel" type="Panel" parent="."]
+offset_left = 21.0
+offset_top = 4.0
+offset_right = 21.0
+offset_bottom = 4.0
+scale = Vector2(0.65925, 0.949498)
+size_flags_horizontal = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel"]
+layout_mode = 1
+offset_left = 47.0231
+offset_top = 34.7552
+offset_right = 441.023
+offset_bottom = 651.755
+scale = Vector2(0.536074, 0.319992)
+theme_override_constants/separation = 19
+
+[node name="TextureButton5" type="TextureButton" parent="Panel/VBoxContainer"]
+layout_mode = 2
+texture_normal = ExtResource("7_7btk8")
+texture_pressed = ExtResource("3_q01t7")
+stretch_mode = 4
+script = ExtResource("3_kl8po")
+option_name = "mushroom"
+texture_unselected = ExtResource("7_7btk8")
+texture_selected = ExtResource("3_q01t7")
+
+[node name="TextureButton2" type="TextureButton" parent="Panel/VBoxContainer"]
+layout_mode = 2
+texture_normal = ExtResource("6_gg1u7")
+texture_pressed = ExtResource("6_xdr2y")
+stretch_mode = 4
+script = ExtResource("3_kl8po")
+option_name = "flower"
+texture_unselected = ExtResource("6_gg1u7")
+texture_selected = ExtResource("6_xdr2y")
+
+[node name="TextureButton3" type="TextureButton" parent="Panel/VBoxContainer"]
+layout_mode = 2
+texture_normal = ExtResource("4_hpgh7")
+texture_pressed = ExtResource("8_cd835")
+stretch_mode = 4
+script = ExtResource("3_kl8po")
+option_name = "beetle"
+texture_unselected = ExtResource("4_hpgh7")
+texture_selected = ExtResource("8_cd835")
+
+[node name="TextureButton4" type="TextureButton" parent="Panel/VBoxContainer"]
+layout_mode = 2
+texture_normal = ExtResource("4_i67xj")
+texture_pressed = ExtResource("10_j7u36")
+stretch_mode = 4
+script = ExtResource("3_kl8po")
+option_name = "salt"
+texture_unselected = ExtResource("4_i67xj")
+texture_selected = ExtResource("10_j7u36")
+
+[node name="TextureButton" type="TextureButton" parent="Panel/VBoxContainer"]
+layout_mode = 2
+texture_normal = ExtResource("2_w1px7")
+texture_pressed = ExtResource("3_a67sc")
+stretch_mode = 4
+script = ExtResource("3_kl8po")
+option_name = "garlic"
+texture_unselected = ExtResource("2_w1px7")
+texture_selected = ExtResource("3_a67sc")

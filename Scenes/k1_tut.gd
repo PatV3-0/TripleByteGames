@@ -5,6 +5,7 @@ extends Area2D
 var triggered := false
 
 var tutorial_lines = [
+	["~Press TAB to view ingredient list~", 4.0],
 	["Now I just need to get down safely...", 4.0]
 ]
 

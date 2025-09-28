@@ -1,4 +1,4 @@
-[gd_scene load_steps=126 format=3 uid="uid://duvfb6prmpxpu"]
+[gd_scene load_steps=124 format=3 uid="uid://duvfb6prmpxpu"]
 
 [ext_resource type="Script" path="res://Scripts/kitchen_2.gd" id="1_4in3w"]
 [ext_resource type="Texture2D" uid="uid://v6njha2nnja4" path="res://Assets/Background/Untitled 93.png" id="2_erwe7"]
@@ -59,13 +59,11 @@
 [ext_resource type="Texture2D" uid="uid://srercerjo0jg" path="res://Assets/Tutorial assets/1.png" id="37_jetq8"]
 [ext_resource type="Texture2D" uid="uid://ca1cms2y3p3co" path="res://Assets/Placeholders/growwisp.png" id="38_77v4g"]
 [ext_resource type="Texture2D" uid="uid://1x876ycnlyv7" path="res://Assets/Tutorial assets/3.png" id="38_efv0f"]
-[ext_resource type="Script" path="res://Scripts/ingredient1.gd" id="39_cbs2x"]
+[ext_resource type="Script" path="res://Scripts/ingredient.gd" id="39_cbs2x"]
 [ext_resource type="Script" path="res://Scripts/tutorial_salt.gd" id="40_dhuft"]
 [ext_resource type="Texture2D" uid="uid://81vpbbt7xjmo" path="res://Assets/Placeholders/shrinkwisp.png" id="40_r0f4m"]
-[ext_resource type="Texture2D" uid="uid://cxa22mpaau64e" path="res://Assets/Menus/Unfolded.png" id="41_5ihk4"]
 [ext_resource type="Texture2D" uid="uid://o1lj7wqwqnij" path="res://Assets/Menus/HC-paper.png" id="41_lapyt"]
 [ext_resource type="Texture2D" uid="uid://nkmvddm2gdg8" path="res://Assets/Menus/torn-paper.png" id="41_v5jm2"]
-[ext_resource type="Texture2D" uid="uid://dox0elb1ap3v3" path="res://Assets/Menus/Morning-Glory.png" id="43_gfk8d"]
 [ext_resource type="Texture2D" uid="uid://pekpyksj45ua" path="res://Assets/Placeholders/crystal-small.png" id="46_yoju2"]
 [ext_resource type="Texture2D" uid="uid://br0c67qsy1doe" path="res://Assets/Interactables/springs-highlight.png" id="47_11f4e"]
 [ext_resource type="Script" path="res://Scripts/area_2d.gd" id="48_3v77k"]
@@ -1097,82 +1095,82 @@ debug_color = Color(0.956871, 0.119971, 0.43239, 0.42)
 position = Vector2(677, -10)
 script = ExtResource("25_wifyc")
 
+[node name="Sprite2D" type="Sprite2D" parent="GrowPortal1"]
+position = Vector2(3.78125, 3.8906)
+scale = Vector2(0.832109, 0.709332)
+texture = ExtResource("38_77v4g")
+
 [node name="CollisionShape2D" type="CollisionShape2D" parent="GrowPortal1"]
 position = Vector2(3, 5)
 shape = SubResource("CircleShape2D_3bjgf")
 debug_color = Color(0.52549, 0.239216, 0.862745, 0.419608)
 
-[node name="Sprite2D" type="Sprite2D" parent="GrowPortal1/CollisionShape2D"]
-position = Vector2(0.781243, -1.1094)
-scale = Vector2(0.832109, 0.709332)
-texture = ExtResource("38_77v4g")
-
 [node name="GrowPortal3" type="Area2D" parent="."]
 position = Vector2(810, 718)
 script = ExtResource("25_wifyc")
+
+[node name="Sprite2D" type="Sprite2D" parent="GrowPortal3"]
+position = Vector2(5, 6)
+scale = Vector2(0.735295, 0.657534)
+texture = ExtResource("38_77v4g")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="GrowPortal3"]
 position = Vector2(3, 5)
 shape = SubResource("CircleShape2D_3bjgf")
 debug_color = Color(0.52549, 0.239216, 0.862745, 0.419608)
 
-[node name="Sprite2D" type="Sprite2D" parent="GrowPortal3/CollisionShape2D"]
-position = Vector2(2, 0.99999)
-scale = Vector2(0.735295, 0.657534)
-texture = ExtResource("38_77v4g")
-
 [node name="GrowPortal2" type="Area2D" parent="."]
 position = Vector2(363, 818)
 script = ExtResource("25_wifyc")
+
+[node name="Sprite2D" type="Sprite2D" parent="GrowPortal2"]
+position = Vector2(5, 6)
+scale = Vector2(0.735295, 0.657534)
+texture = ExtResource("38_77v4g")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="GrowPortal2"]
 position = Vector2(3, 5)
 shape = SubResource("CircleShape2D_3bjgf")
 debug_color = Color(0.52549, 0.239216, 0.862745, 0.419608)
 
-[node name="Sprite2D" type="Sprite2D" parent="GrowPortal2/CollisionShape2D"]
-position = Vector2(2, 0.99999)
-scale = Vector2(0.735295, 0.657534)
-texture = ExtResource("38_77v4g")
-
 [node name="ShrinkPortal2" type="Area2D" parent="."]
 position = Vector2(513, 223)
 script = ExtResource("26_rnq5f")
+
+[node name="Sprite2D" type="Sprite2D" parent="ShrinkPortal2"]
+position = Vector2(1, 1.52588e-05)
+scale = Vector2(0.642157, 0.591549)
+texture = ExtResource("40_r0f4m")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ShrinkPortal2"]
 shape = SubResource("CircleShape2D_ytawt")
 debug_color = Color(0.748797, 0.455883, 0.179411, 0.42)
 
-[node name="Sprite2D" type="Sprite2D" parent="ShrinkPortal2/CollisionShape2D"]
-position = Vector2(1.00002, 1.04904e-05)
-scale = Vector2(0.642157, 0.591549)
-texture = ExtResource("40_r0f4m")
-
 [node name="ShrinkPortal3" type="Area2D" parent="."]
 position = Vector2(704, 506)
 script = ExtResource("26_rnq5f")
+
+[node name="Sprite2D" type="Sprite2D" parent="ShrinkPortal3"]
+position = Vector2(1, -1.00003)
+scale = Vector2(0.745098, 0.635563)
+texture = ExtResource("40_r0f4m")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ShrinkPortal3"]
 shape = SubResource("CircleShape2D_ytawt")
 debug_color = Color(0.748797, 0.455883, 0.179411, 0.42)
 
-[node name="Sprite2D" type="Sprite2D" parent="ShrinkPortal3/CollisionShape2D"]
-position = Vector2(1.00002, -1.00002)
-scale = Vector2(0.745098, 0.635563)
-texture = ExtResource("40_r0f4m")
-
 [node name="ShrinkPortal4" type="Area2D" parent="."]
 position = Vector2(691, 1031)
 script = ExtResource("26_rnq5f")
 
+[node name="Sprite2D" type="Sprite2D" parent="ShrinkPortal4"]
+position = Vector2(1, -1)
+scale = Vector2(0.745098, 0.635563)
+texture = ExtResource("40_r0f4m")
+
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ShrinkPortal4"]
 shape = SubResource("CircleShape2D_ytawt")
 debug_color = Color(0.748797, 0.455883, 0.179411, 0.42)
-
-[node name="Sprite2D" type="Sprite2D" parent="ShrinkPortal4/CollisionShape2D"]
-position = Vector2(1.00002, -1.00002)
-scale = Vector2(0.745098, 0.635563)
-texture = ExtResource("40_r0f4m")
 
 [node name="FadeOut" type="Area2D" parent="."]
 position = Vector2(-933, 379)
@@ -1186,7 +1184,6 @@ debug_color = Color(0.411765, 0.407843, 0.172549, 1)
 [node name="FadeLayer" type="CanvasLayer" parent="."]
 
 [node name="FadeRect" type="ColorRect" parent="FadeLayer"]
-visible = false
 anchors_preset = -1
 anchor_left = -0.530382
 anchor_top = -1.93981
@@ -1203,17 +1200,18 @@ metadata/_edit_use_anchors_ = true
 [node name="Ingredient" type="Area2D" parent="."]
 position = Vector2(540, -190)
 script = ExtResource("39_cbs2x")
+i_name = "salt"
+
+[node name="Sprite2D" type="Sprite2D" parent="Ingredient"]
+position = Vector2(70, 613)
+rotation = 0.802851
+scale = Vector2(0.312805, 0.312805)
+texture = ExtResource("46_yoju2")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Ingredient"]
 position = Vector2(75.5, 611)
 shape = SubResource("RectangleShape2D_ax7nc")
 debug_color = Color(0.511734, 0.57743, 0, 0.42)
-
-[node name="Sprite2D" type="Sprite2D" parent="Ingredient/CollisionShape2D"]
-position = Vector2(-5.49998, 2)
-rotation = 0.802851
-scale = Vector2(0.312805, 0.312805)
-texture = ExtResource("46_yoju2")
 
 [node name="Tutorial1" type="Area2D" parent="." node_paths=PackedStringArray("bod", "tutorial_canvas")]
 position = Vector2(709, -367)
@@ -1280,24 +1278,6 @@ metadata/_edit_use_anchors_ = true
 position = Vector2(145, 124)
 scale = Vector2(0.565217, 0.565217)
 texture = ExtResource("41_lapyt")
-
-[node name="CanvasLayer2" type="CanvasLayer" parent="."]
-
-[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer2"]
-position = Vector2(134.25, 133.663)
-scale = Vector2(0.487963, 0.316219)
-texture = ExtResource("41_5ihk4")
-
-[node name="ColorRect" type="ColorRect" parent="CanvasLayer2"]
-visible = false
-offset_right = 267.0
-offset_bottom = 267.0
-metadata/_edit_use_anchors_ = true
-
-[node name="Sprite2D2" type="Sprite2D" parent="CanvasLayer2"]
-position = Vector2(137.222, 96)
-scale = Vector2(0.407407, 0.407407)
-texture = ExtResource("43_gfk8d")
 
 [node name="UILayer" type="CanvasLayer" parent="."]
 

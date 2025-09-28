@@ -21,7 +21,8 @@ func _on_body_entered(body):
 		var grew = false
 		if body.has_method("grow"):
 			grew = body.grow(105)
-
+			if grew:
+				$Sprite2D.visible = false
 		# Trigger tutorial only if player actually grew
 		if trigger_tutorial_on_growth and grew and tutorial_area:
 			if tutorial_area.has_method("_on_body_entered"):

@@ -353,7 +353,7 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_fn32p"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_4yad2"]
 animations = [{
 "frames": [{
 "duration": 1.0,
@@ -393,7 +393,7 @@ animations = [{
 }],
 "loop": false,
 "name": &"expand",
-"speed": 8.0
+"speed": 5.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -433,10 +433,10 @@ animations = [{
 }],
 "loop": false,
 "name": &"retract",
-"speed": 8.0
+"speed": 5.0
 }]
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_ylewf"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_k0cq7"]
 animations = [{
 "frames": [{
 "duration": 1.0,
@@ -954,13 +954,12 @@ offset_bottom = 116.121
 metadata/_edit_use_anchors_ = true
 
 [node name="TutorialCanvas" type="CanvasLayer" parent="."]
-visible = false
 script = ExtResource("32_hx58h")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="TutorialCanvas"]
-position = Vector2(268.5, 181.1)
+position = Vector2(1137, -8)
 scale = Vector2(0.397911, 0.471736)
-sprite_frames = SubResource("SpriteFrames_fn32p")
+sprite_frames = SubResource("SpriteFrames_4yad2")
 animation = &"retract"
 
 [node name="TutLabel" type="Label" parent="TutorialCanvas"]
@@ -969,10 +968,10 @@ anchor_left = -0.451389
 anchor_top = 1.62037
 anchor_right = 0.506944
 anchor_bottom = 1.66975
-offset_left = 384.0
-offset_top = -902.0
-offset_right = 426.0
-offset_bottom = -879.0
+offset_left = 992.199
+offset_top = -552.765
+offset_right = 1034.2
+offset_bottom = -529.765
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 30
@@ -982,8 +981,8 @@ justification_flags = 162
 metadata/_edit_use_anchors_ = true
 
 [node name="Text" type="AnimatedSprite2D" parent="TutorialCanvas"]
-position = Vector2(-177.2, 971)
-sprite_frames = SubResource("SpriteFrames_ylewf")
+position = Vector2(-337, 780)
+sprite_frames = SubResource("SpriteFrames_k0cq7")
 
 [node name="GrowPortal" type="Area2D" parent="."]
 position = Vector2(615, 499)
@@ -1327,6 +1326,7 @@ texture = ExtResource("62_s1ti4")
 [node name="FadeLayer" type="CanvasLayer" parent="."]
 
 [node name="FadeRect" type="ColorRect" parent="FadeLayer"]
+visible = false
 anchors_preset = -1
 anchor_left = -0.530382
 anchor_top = -1.93981

@@ -6,7 +6,7 @@ extends Area2D
 var triggered := false
 
 var tutorial_lines = [
-	["Use ‘w’ to crawl through a hole.", 1.0]
+	["~Use ‘w’ to crawl through a hole~", 1.0]
 ]
 
 signal show_w_key

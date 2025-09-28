@@ -877,88 +877,88 @@ offset = Vector2(95, 39)
 position = Vector2(575, 217)
 script = ExtResource("27_ks71r")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="ShrinkPortal"]
-shape = SubResource("CircleShape2D_gnuej")
-debug_color = Color(0.748797, 0.455883, 0.179411, 0.42)
-
-[node name="Sprite2D2" type="Sprite2D" parent="ShrinkPortal/CollisionShape2D"]
+[node name="Sprite2D" type="Sprite2D" parent="ShrinkPortal"]
 position = Vector2(-1, 2)
 scale = Vector2(0.572762, 0.433765)
 texture = ExtResource("40_ffmfq")
 offset = Vector2(2.22253, -3.81003)
 
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ShrinkPortal"]
+shape = SubResource("CircleShape2D_gnuej")
+debug_color = Color(0.748797, 0.455883, 0.179411, 0.42)
+
 [node name="GrowPortal1" type="Area2D" parent="."]
 position = Vector2(284, 275)
 script = ExtResource("28_3d5qo")
+
+[node name="Sprite2D" type="Sprite2D" parent="GrowPortal1"]
+position = Vector2(3.17398, 4.42441)
+scale = Vector2(0.737793, 0.537644)
+texture = ExtResource("42_2yceb")
+offset = Vector2(2.22253, -3.81003)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="GrowPortal1"]
 position = Vector2(3, 5)
 shape = SubResource("CircleShape2D_e4s6x")
 debug_color = Color(0.52549, 0.239216, 0.862745, 0.419608)
 
-[node name="Sprite2D2" type="Sprite2D" parent="GrowPortal1/CollisionShape2D"]
-position = Vector2(0.17397, -0.575584)
-scale = Vector2(0.737793, 0.537644)
-texture = ExtResource("42_2yceb")
-offset = Vector2(2.22253, -3.81003)
-
 [node name="ShrinkPortal2" type="Area2D" parent="."]
 position = Vector2(451, 61)
 script = ExtResource("27_ks71r")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="ShrinkPortal2"]
-shape = SubResource("CircleShape2D_gnuej")
-debug_color = Color(0.748797, 0.455883, 0.179411, 0.42)
-
-[node name="Sprite2D" type="Sprite2D" parent="ShrinkPortal2/CollisionShape2D"]
+[node name="Sprite2D" type="Sprite2D" parent="ShrinkPortal2"]
 position = Vector2(-1, 2)
 scale = Vector2(0.572762, 0.433765)
 texture = ExtResource("40_ffmfq")
 offset = Vector2(2.22253, -3.81003)
 
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ShrinkPortal2"]
+shape = SubResource("CircleShape2D_gnuej")
+debug_color = Color(0.748797, 0.455883, 0.179411, 0.42)
+
 [node name="GrowPortal2" type="Area2D" parent="."]
 position = Vector2(619, 136)
 script = ExtResource("28_3d5qo")
+
+[node name="Sprite2D" type="Sprite2D" parent="GrowPortal2"]
+position = Vector2(3.17395, 4.42442)
+scale = Vector2(0.737793, 0.537644)
+texture = ExtResource("42_2yceb")
+offset = Vector2(2.22253, -3.81003)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="GrowPortal2"]
 position = Vector2(3, 5)
 shape = SubResource("CircleShape2D_e4s6x")
 debug_color = Color(0.52549, 0.239216, 0.862745, 0.419608)
 
-[node name="Sprite2D2" type="Sprite2D" parent="GrowPortal2/CollisionShape2D"]
-position = Vector2(0.17397, -0.575584)
-scale = Vector2(0.737793, 0.537644)
-texture = ExtResource("42_2yceb")
-offset = Vector2(2.22253, -3.81003)
-
 [node name="ShrinkPortal3" type="Area2D" parent="."]
 position = Vector2(457, 413)
 script = ExtResource("27_ks71r")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="ShrinkPortal3"]
-shape = SubResource("CircleShape2D_gnuej")
-debug_color = Color(0.748797, 0.455883, 0.179411, 0.42)
-
-[node name="Sprite2D2" type="Sprite2D" parent="ShrinkPortal3/CollisionShape2D"]
+[node name="Sprite2D" type="Sprite2D" parent="ShrinkPortal3"]
 position = Vector2(-1, 2)
 scale = Vector2(0.572762, 0.433765)
 texture = ExtResource("40_ffmfq")
 offset = Vector2(2.22253, -3.81003)
 
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ShrinkPortal3"]
+shape = SubResource("CircleShape2D_gnuej")
+debug_color = Color(0.748797, 0.455883, 0.179411, 0.42)
+
 [node name="GrowPortal3" type="Area2D" parent="."]
 position = Vector2(348, 476)
 script = ExtResource("28_3d5qo")
+
+[node name="Sprite2D" type="Sprite2D" parent="GrowPortal3"]
+position = Vector2(3.17398, 4.42441)
+scale = Vector2(0.737793, 0.537644)
+texture = ExtResource("42_2yceb")
+offset = Vector2(2.22253, -3.81003)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="GrowPortal3"]
 position = Vector2(3, 5)
 shape = SubResource("CircleShape2D_e4s6x")
 debug_color = Color(0.52549, 0.239216, 0.862745, 0.419608)
-
-[node name="Sprite2D" type="Sprite2D" parent="GrowPortal3/CollisionShape2D"]
-position = Vector2(0.17397, -0.575584)
-scale = Vector2(0.737793, 0.537644)
-texture = ExtResource("42_2yceb")
-offset = Vector2(2.22253, -3.81003)
 
 [node name="TutorialCanvas" type="CanvasLayer" parent="."]
 visible = false

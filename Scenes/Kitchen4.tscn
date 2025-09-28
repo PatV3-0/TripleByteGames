@@ -1,4 +1,4 @@
-[gd_scene load_steps=103 format=3 uid="uid://c38ppo2oxtnec"]
+[gd_scene load_steps=102 format=3 uid="uid://c38ppo2oxtnec"]
 
 [ext_resource type="Script" path="res://Scripts/kitchen_4.gd" id="1_b6566"]
 [ext_resource type="Script" path="res://Scripts/character_body_2d.gd" id="2_2dv4w"]
@@ -58,10 +58,9 @@
 [ext_resource type="Texture2D" uid="uid://bicu3c3rbd1rn" path="res://Assets/Menus/SpeechbarLighter9.png" id="36_dfro5"]
 [ext_resource type="Texture2D" uid="uid://srercerjo0jg" path="res://Assets/Tutorial assets/1.png" id="37_c01j6"]
 [ext_resource type="Texture2D" uid="uid://1x876ycnlyv7" path="res://Assets/Tutorial assets/3.png" id="38_hqhhw"]
-[ext_resource type="Script" path="res://Scripts/ingredient1.gd" id="39_jgjpk"]
+[ext_resource type="Script" path="res://Scripts/ingredient.gd" id="39_jgjpk"]
 [ext_resource type="Texture2D" uid="uid://nkmvddm2gdg8" path="res://Assets/Menus/torn-paper.png" id="40_xaqwy"]
 [ext_resource type="Texture2D" uid="uid://kdwlsfvpgogg" path="res://Assets/Menus/GC-paper.png" id="41_frl0x"]
-[ext_resource type="Texture2D" uid="uid://cxa22mpaau64e" path="res://Assets/Menus/Unfolded.png" id="41_muipl"]
 [ext_resource type="Texture2D" uid="uid://ms8yox5h3kqx" path="res://Assets/Placeholders/garlic.png" id="48_mnphf"]
 [ext_resource type="Script" path="res://Scripts/hole.gd" id="59_8vuwf"]
 [ext_resource type="Texture2D" uid="uid://cdi47y8m6tqdn" path="res://Assets/Interactables/Untitled 55.PNG" id="60_qeo7x"]
@@ -857,14 +856,14 @@ metadata/_edit_use_anchors_ = true
 position = Vector2(122, 202)
 script = ExtResource("25_dvl14")
 
+[node name="Sprite2D" type="Sprite2D" parent="ShrinkPortal"]
+position = Vector2(1, -6)
+scale = Vector2(0.696078, 0.696078)
+texture = ExtResource("34_1uj5a")
+
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ShrinkPortal"]
 shape = SubResource("CircleShape2D_e81oh")
 debug_color = Color(0.748797, 0.455883, 0.179411, 0.42)
-
-[node name="Sprite2D" type="Sprite2D" parent="ShrinkPortal/CollisionShape2D"]
-position = Vector2(0.999999, -6)
-scale = Vector2(0.696078, 0.696078)
-texture = ExtResource("34_1uj5a")
 
 [node name="DeathZone" type="Area2D" parent="." groups=["DeathZones"]]
 position = Vector2(1677, -79)
@@ -959,19 +958,19 @@ max_distance = 1000.0
 [node name="Ingredient" type="Area2D" parent="."]
 position = Vector2(59, -553)
 script = ExtResource("39_jgjpk")
+i_name = "garlic"
+
+[node name="Sprite2D" type="Sprite2D" parent="Ingredient"]
+position = Vector2(75, 615)
+scale = Vector2(0.359797, 0.359797)
+texture = ExtResource("48_mnphf")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Ingredient"]
 position = Vector2(75.5, 611)
 shape = SubResource("RectangleShape2D_v3ctd")
 debug_color = Color(0.511734, 0.57743, 0, 0.42)
 
-[node name="Sprite2D" type="Sprite2D" parent="Ingredient/CollisionShape2D"]
-position = Vector2(-0.500007, 4)
-scale = Vector2(0.359797, 0.359797)
-texture = ExtResource("48_mnphf")
-
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
-visible = false
 
 [node name="Sprite2D4" type="Sprite2D" parent="CanvasLayer"]
 visible = false
@@ -986,23 +985,9 @@ offset_bottom = 267.0
 metadata/_edit_use_anchors_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="CanvasLayer"]
-position = Vector2(159, 129)
+position = Vector2(-217, 127)
 scale = Vector2(0.524263, 0.524263)
 texture = ExtResource("41_frl0x")
-
-[node name="CanvasLayer2" type="CanvasLayer" parent="."]
-visible = false
-
-[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer2"]
-position = Vector2(134.25, 133.663)
-scale = Vector2(0.487963, 0.316219)
-texture = ExtResource("41_muipl")
-
-[node name="ColorRect" type="ColorRect" parent="CanvasLayer2"]
-visible = false
-offset_right = 267.0
-offset_bottom = 267.0
-metadata/_edit_use_anchors_ = true
 
 [node name="UILayer" type="CanvasLayer" parent="."]
 

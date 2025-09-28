@@ -6,6 +6,7 @@ extends Control
 @onready var levelSelectPanel = $PanelHolder/LvlSelectPanel
 @onready var buttons_container = $PanelHolder/LvlSelectPanel/VBoxContainer
 @onready var invincibility_check = $PanelHolder/LvlSelectPanel/CheckButton
+@onready var chef_check = $PanelHolder/LvlSelectPanel/CheckButton2
 
 var levels = [
 	"res://Scenes/tutorial_scene.tscn",
@@ -34,6 +35,7 @@ func _ready() -> void:
 	if restartLevelButton:
 		restartLevelButton.pressed.connect(self.onRestartPressed)
 	invincibility_check.connect("toggled", Callable(self, "_on_invincibility_toggled"))
+	chef_check.connect("toggled", Callable(self, "_on_chef_toggled"))
 		
 	for i in range(levels.size()):
 		var btn = buttons_container.get_child(i)
@@ -65,6 +67,13 @@ func _on_level_button_pressed(level_index):
 func _on_invincibility_toggled(button_pressed: bool):
 	CheatManager.invincible = button_pressed
 	print("Invincibility: ", CheatManager.invincible)
+	
+func _on_chef_toggled(button_pressed: bool):
+	if button_pressed:
+		Ingredients.collect_all_ingredients()
+	else:
+		Ingredients.reset_ingredients()
+	print("Chef: ", button_pressed)
 	
 func _input(event):
 	if event.is_action_pressed("CheatKey"):

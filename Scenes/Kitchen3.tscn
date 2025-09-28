@@ -719,55 +719,55 @@ debug_color = Color(0.996078, 0, 0.215686, 0.419608)
 position = Vector2(1207, 280)
 script = ExtResource("3_ox0bq")
 
+[node name="Sprite2D" type="Sprite2D" parent="GrowPortal1"]
+position = Vector2(5, 2.99994)
+scale = Vector2(1.44115, 1.23972)
+texture = ExtResource("19_a8acj")
+
 [node name="CollisionShape2D" type="CollisionShape2D" parent="GrowPortal1"]
 position = Vector2(3, 5)
 shape = SubResource("CircleShape2D_6nk6j")
 debug_color = Color(0.52549, 0.239216, 0.862745, 0.419608)
 
-[node name="Sprite2D" type="Sprite2D" parent="GrowPortal1/CollisionShape2D"]
-position = Vector2(1.99998, -2.00006)
-scale = Vector2(1.44115, 1.23972)
-texture = ExtResource("19_a8acj")
-
 [node name="ShrinkPortal" type="Area2D" parent="."]
 position = Vector2(1433, 135)
 script = ExtResource("4_3ck8j")
+
+[node name="Sprite2D" type="Sprite2D" parent="ShrinkPortal"]
+position = Vector2(4, -2)
+scale = Vector2(1.37252, 1.14789)
+texture = ExtResource("21_4cwny")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ShrinkPortal"]
 shape = SubResource("CircleShape2D_v3p4c")
 debug_color = Color(0.748797, 0.455883, 0.179411, 0.42)
 
-[node name="Sprite2D" type="Sprite2D" parent="ShrinkPortal/CollisionShape2D"]
-position = Vector2(4.00004, -2)
-scale = Vector2(1.37252, 1.14789)
-texture = ExtResource("21_4cwny")
-
 [node name="GrowPortal2" type="Area2D" parent="."]
 position = Vector2(2778, 328)
 script = ExtResource("3_ox0bq")
+
+[node name="Sprite2D" type="Sprite2D" parent="GrowPortal2"]
+position = Vector2(8, 5)
+scale = Vector2(1.60291, 1.20205)
+texture = ExtResource("19_a8acj")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="GrowPortal2"]
 position = Vector2(3, 5)
 shape = SubResource("CircleShape2D_6nk6j")
 debug_color = Color(0.52549, 0.239216, 0.862745, 0.419608)
 
-[node name="Sprite2D" type="Sprite2D" parent="GrowPortal2/CollisionShape2D"]
-position = Vector2(4.99988, -1.90735e-06)
-scale = Vector2(1.60291, 1.20205)
-texture = ExtResource("19_a8acj")
-
 [node name="ShrinkPortal3" type="Area2D" parent="."]
 position = Vector2(367, 274)
 script = ExtResource("4_3ck8j")
 
+[node name="Sprite2D" type="Sprite2D" parent="ShrinkPortal3"]
+position = Vector2(1.00003, -1.00003)
+scale = Vector2(0.745098, 0.635563)
+texture = ExtResource("21_4cwny")
+
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ShrinkPortal3"]
 shape = SubResource("CircleShape2D_3i211")
 debug_color = Color(0.748797, 0.455883, 0.179411, 0.42)
-
-[node name="Sprite2D" type="Sprite2D" parent="ShrinkPortal3/CollisionShape2D"]
-position = Vector2(1.00002, -1.00002)
-scale = Vector2(0.745098, 0.635563)
-texture = ExtResource("21_4cwny")
 
 [node name="CharacterBody2D" type="CharacterBody2D" parent="." groups=["Player"]]
 position = Vector2(106, 262)
@@ -838,7 +838,6 @@ debug_color = Color(0.411765, 0.407843, 0.172549, 1)
 [node name="FadeLayer" type="CanvasLayer" parent="."]
 
 [node name="FadeRect" type="ColorRect" parent="FadeLayer"]
-visible = false
 anchors_preset = -1
 anchor_left = -0.530382
 anchor_top = -1.93981

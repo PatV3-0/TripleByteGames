@@ -5,8 +5,8 @@ extends Area2D
 var triggered := false
 
 var tutorial_lines = [
-	["Objects may highlight as you approach.", 4.0],
-	["You can push or pull these objects.", 4.0]
+	["~Objects may highlight as you approach~", 4.0],
+	["~You can push or pull these objects~", 4.0]
 ]
 
 func _ready():

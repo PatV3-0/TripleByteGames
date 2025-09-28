@@ -271,6 +271,8 @@ func _on_animation_finish():
 			$Sprite2D.play("push")
 	
 func grow(offset):
+	if size == 1:
+		return false
 	size = 1
 	scale = base_scale * 1.5 
 	jump_force = base_jump_force + 200 
@@ -281,6 +283,8 @@ func grow(offset):
 	return true  # Successfully grew
 	
 func shrink(offset):		
+	if size == 0:
+		return false
 	size = 0
 	scale = base_scale
 	jump_force = base_jump_force

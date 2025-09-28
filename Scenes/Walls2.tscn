@@ -803,15 +803,15 @@ texture = ExtResource("20_4ws23")
 position = Vector2(663, 426)
 script = ExtResource("2_lbqil")
 
+[node name="Sprite2D" type="Sprite2D" parent="GrowPortal2"]
+position = Vector2(-2.5, -4.00003)
+scale = Vector2(0.708112, 0.54919)
+texture = ExtResource("18_0g262")
+
 [node name="CollisionShape2D" type="CollisionShape2D" parent="GrowPortal2"]
 position = Vector2(-4, -5)
 shape = SubResource("CircleShape2D_amrjt")
 debug_color = Color(0.52549, 0.239216, 0.862745, 0.419608)
-
-[node name="Sprite2D" type="Sprite2D" parent="GrowPortal2/CollisionShape2D"]
-position = Vector2(1.50002, 0.999972)
-scale = Vector2(0.708112, 0.54919)
-texture = ExtResource("18_0g262")
 
 [node name="Hole" type="Area2D" parent="."]
 position = Vector2(-998, -1248)

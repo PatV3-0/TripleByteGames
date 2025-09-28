@@ -726,15 +726,15 @@ debug_color = Color(0.478765, 0.438134, 1, 0.42)
 position = Vector2(353.333, 372)
 script = ExtResource("7_gx4qd")
 
+[node name="Sprite2D" type="Sprite2D" parent="GrowPortal1"]
+position = Vector2(4.54439, 2.72705)
+scale = Vector2(0.921145, 0.740968)
+texture = ExtResource("26_e48wr")
+
 [node name="CollisionShape2D" type="CollisionShape2D" parent="GrowPortal1"]
 position = Vector2(3, 5)
 shape = SubResource("CircleShape2D_5jcc0")
 debug_color = Color(0.52549, 0.239216, 0.862745, 0.419608)
-
-[node name="Sprite2D" type="Sprite2D" parent="GrowPortal1/CollisionShape2D"]
-position = Vector2(1.54439, -2.27293)
-scale = Vector2(0.921145, 0.740968)
-texture = ExtResource("26_e48wr")
 
 [node name="Background" type="AudioStreamPlayer2D" parent="."]
 position = Vector2(0, 1)

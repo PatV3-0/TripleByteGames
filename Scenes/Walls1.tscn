@@ -676,43 +676,43 @@ polygon = PackedVector2Array(1290.17, 235.145, 1259.09, 233.636, 1252.73, 230.90
 position = Vector2(1120.91, 252.727)
 script = ExtResource("1_d0m4j")
 
+[node name="Sprite2D" type="Sprite2D" parent="GrowPortal4"]
+position = Vector2(4.54443, 2.72707)
+scale = Vector2(0.921145, 0.740968)
+texture = ExtResource("17_hig4x")
+
 [node name="CollisionShape2D" type="CollisionShape2D" parent="GrowPortal4"]
 position = Vector2(3, 5)
 shape = SubResource("CircleShape2D_qfemj")
 debug_color = Color(0.52549, 0.239216, 0.862745, 0.419608)
 
-[node name="Sprite2D" type="Sprite2D" parent="GrowPortal4/CollisionShape2D"]
-position = Vector2(1.54439, -2.27293)
-scale = Vector2(0.921145, 0.740968)
-texture = ExtResource("17_hig4x")
-
 [node name="GrowPortal3" type="Area2D" parent="."]
 position = Vector2(606.364, 612.727)
 script = ExtResource("1_d0m4j")
+
+[node name="Sprite2D" type="Sprite2D" parent="GrowPortal3"]
+position = Vector2(4.54437, 2.72705)
+scale = Vector2(0.921145, 0.740968)
+texture = ExtResource("17_hig4x")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="GrowPortal3"]
 position = Vector2(3, 5)
 shape = SubResource("CircleShape2D_qfemj")
 debug_color = Color(0.52549, 0.239216, 0.862745, 0.419608)
 
-[node name="Sprite2D" type="Sprite2D" parent="GrowPortal3/CollisionShape2D"]
-position = Vector2(1.54439, -2.27293)
-scale = Vector2(0.921145, 0.740968)
-texture = ExtResource("17_hig4x")
-
 [node name="GrowPortal1" type="Area2D" parent="."]
 position = Vector2(1040.91, 748.182)
 script = ExtResource("1_d0m4j")
+
+[node name="Sprite2D" type="Sprite2D" parent="GrowPortal1"]
+position = Vector2(4.54443, 2.72705)
+scale = Vector2(0.921145, 0.740968)
+texture = ExtResource("17_hig4x")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="GrowPortal1"]
 position = Vector2(3, 5)
 shape = SubResource("CircleShape2D_qfemj")
 debug_color = Color(0.52549, 0.239216, 0.862745, 0.419608)
-
-[node name="Sprite2D" type="Sprite2D" parent="GrowPortal1/CollisionShape2D"]
-position = Vector2(1.54439, -2.27293)
-scale = Vector2(0.921145, 0.740968)
-texture = ExtResource("17_hig4x")
 
 [node name="ShrinkPortal2" type="Area2D" parent="."]
 position = Vector2(143.636, 108.182)
