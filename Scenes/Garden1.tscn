@@ -599,11 +599,11 @@ scale = Vector2(0.885201, 1.08322)
 texture = ExtResource("10_qms5n")
 
 [node name="CollisionShape2D13" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(2401, 869)
+position = Vector2(2707, 869)
 shape = SubResource("RectangleShape2D_1m800")
 
 [node name="Sprite2D" type="Sprite2D" parent="StaticBody2D/CollisionShape2D13"]
-position = Vector2(2.50003, 15)
+position = Vector2(-0.999969, 4)
 scale = Vector2(1.63971, 1.63971)
 texture = ExtResource("11_o0ai6")
 
@@ -686,14 +686,13 @@ position = Vector2(-487, 84)
 script = ExtResource("27_wlmxx")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="FadeOut"]
-position = Vector2(1824, 676)
+position = Vector2(1679, 687)
 shape = SubResource("RectangleShape2D_mr4lb")
 debug_color = Color(0.411765, 0.407843, 0.172549, 1)
 
 [node name="FadeLayer" type="CanvasLayer" parent="."]
 
 [node name="FadeRect" type="ColorRect" parent="FadeLayer"]
-visible = false
 anchors_preset = -1
 anchor_left = -0.530382
 anchor_top = -1.93981

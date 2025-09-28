@@ -23,7 +23,6 @@ func _ready() -> void:
 	pauseMenu.visible = false
 
 func _process(delta: float) -> void:
-	pass
 	if $Background and not $Background.playing:
 		$Background.play()
 

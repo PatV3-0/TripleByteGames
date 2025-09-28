@@ -6,6 +6,8 @@ func _ready() -> void:
 	connect("body_entered", Callable(self, "_on_body_entered"))
 
 func _on_body_entered(body):
+	if CheatManager.invincible:
+		return # ignore death
 	if not monitoring:
 		print("Not monitoring")
 		return  # Death Zone is inactive, ignore

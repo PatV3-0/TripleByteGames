@@ -72,6 +72,9 @@
 [ext_resource type="Texture2D" uid="uid://chhnhf52venbf" path="res://Assets/Interactables/nails.png" id="68_vrprk"]
 [ext_resource type="Texture2D" uid="uid://b1m54qwlk30rc" path="res://Assets/Interactables/nails-highlight.png" id="69_rqwhe"]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_a587i"]
+size = Vector2(6060, 17.667)
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8yky7"]
 size = Vector2(1002.5, 11)
 
@@ -447,9 +450,6 @@ radius = 4.43778
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ffkok"]
 size = Vector2(5.66663, 523.5)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_a587i"]
-size = Vector2(6060, 17.667)
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qo0om"]
 size = Vector2(5.66663, 322.167)
 
@@ -464,7 +464,7 @@ texture = ExtResource("2_in8h3")
 
 [node name="Sprite2D2" type="Sprite2D" parent="."]
 modulate = Color(0.686275, 0.686275, 0.686275, 1)
-position = Vector2(-3443, -28)
+position = Vector2(-3391, -32)
 scale = Vector2(1.22794, 1.22794)
 texture = ExtResource("2_in8h3")
 
@@ -475,6 +475,11 @@ scale = Vector2(1.22794, 1.22794)
 texture = ExtResource("2_in8h3")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D22" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(-381, 1009)
+shape = SubResource("RectangleShape2D_a587i")
+debug_color = Color(0.99473, 0, 0.217308, 0.42)
 
 [node name="Sprite2D14" type="Sprite2D" parent="StaticBody2D"]
 position = Vector2(-659, -1028)
@@ -960,6 +965,7 @@ scale = Vector2(3, 3)
 polygon = PackedVector2Array(-3.30297, -6.5, -3.63631, -6.16666, -3.63631, -6.5, -3.30297, -6.83333, -3.30297, -7.16666, -3.30297, -7.5, -3.30297, -8.16666, -2.63631, -8.5, -0.636307, -8.83333, 0.697029, -8.83333, 2.69703, -8.5, 3.03036, -7.83333, 3.36369, -7.5, 3.69703, -6.83333, 3.69703, -6.16666, -3.63631, -6.16666, -3.63631, -6.16666)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Pushable3"]
+visible = false
 position = Vector2(-9.99633, 39.9999)
 scale = Vector2(3, 3)
 shape = SubResource("RectangleShape2D_djjpy")
@@ -981,7 +987,6 @@ scale = Vector2(0.0529957, 0.0496261)
 texture = ExtResource("57_5midc")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Pushable3/Area2D"]
-visible = false
 position = Vector2(-39.0911, 40)
 scale = Vector2(3, 3)
 shape = SubResource("RectangleShape2D_ur1kk")

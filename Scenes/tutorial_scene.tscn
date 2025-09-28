@@ -1,4 +1,4 @@
-[gd_scene load_steps=123 format=3 uid="uid://cxvd84y1wcrt3"]
+[gd_scene load_steps=124 format=3 uid="uid://cxvd84y1wcrt3"]
 
 [ext_resource type="Script" path="res://Scripts/character_body_2d.gd" id="1_3lcfs"]
 [ext_resource type="Script" path="res://Scripts/tutorial_scene.gd" id="1_22m25"]
@@ -91,6 +91,9 @@
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rwsn1"]
 size = Vector2(3471.33, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7n7wo"]
+size = Vector2(33.6667, 611.333)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1hr6t"]
 size = Vector2(1356.41, 23.3548)
@@ -529,7 +532,6 @@ texture = ExtResource("11_q0tvs")
 position = Vector2(213, 694.667)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Floor"]
-visible = false
 position = Vector2(991.334, 0)
 shape = SubResource("RectangleShape2D_rwsn1")
 
@@ -543,6 +545,10 @@ texture = ExtResource("12_r7i5r")
 visible = false
 position = Vector2(197, 2)
 polygon = PackedVector2Array(963.333, -1.33362, 954.667, -2.66699, 941.333, -4.00031, 920, -6.66699, 912.667, -10.667, 908.667, -14.667, 906.667, -19.3336, 906, -24.0003, 906, -30.667, 905.333, -37.3336, 904.667, -40.667, 908, -46.0003, 910.667, -50.667, 913.333, -56.0003, 916.667, -59.3336, 921.333, -61, 925.333, -59.6667, 930, -58.0003, 936.667, -56.0003, 941.333, -54.667, 948.667, -52.667, 955.333, -51.3336, 959.333, -50.0003, 964, -49.3336, 969.333, -48.667, 978.667, -47.3336, 988, -46.0003, 996, -46.0003, 1004, -45.3336, 1012, -45.3336, 1020, -45.3336, 1029.33, -45.3336, 1036.67, -46.667, 1044, -47.3336, 1046, -48.0003, 1050.67, -50.0003, 1054.33, -51.3336, 1056, -52.0003, 1057.33, -52.667, 1061.33, -52.667, 1066, -52.667, 1070, -50.0003, 1071.33, -48.0003, 1073.33, -45.3336, 1076, -41.3336, 1077.33, -34.0003, 1079.33, -32.0003, 1080, -29.3336, 1078, -26.667, 1077.33, -24.0003, 1076.67, -20.0003, 1076, -16.667, 1076, -13.3336, 1074, -8.00031, 1070, -1.33362, 1062.67, 1.99969, 1053.33, 3.99969, 1033.33, 3.99969, 1019.33, 3.99969, 1008, 3.33301, 1000, 3.33301, 992.667, 2.66638, 986.667, 1.99969, 980, 1.33301, 974.667, -0.000305176, 969.333, -0.666992)
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Floor"]
+position = Vector2(-427.667, -298)
+shape = SubResource("RectangleShape2D_7n7wo")
 
 [node name="TableBody" type="StaticBody2D" parent="."]
 position = Vector2(625, 502)

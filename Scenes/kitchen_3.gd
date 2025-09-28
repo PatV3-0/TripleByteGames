@@ -8,6 +8,7 @@ var pauseMenu = null
 #@onready var portalSprite2 = $"Portal/Purple"
 
 func _ready() -> void:
+	$CharacterBody2D.grow(105)
 	$CharacterBody2D.fade_out_triggered.connect(_on_player_fade_out_triggered)
 	var stream = $Background
 	if stream is AudioStreamWAV:
@@ -42,6 +43,9 @@ func _unhandled_input(event):
 			hidePauseMenu()
 
 func showPauseMenu():
+	var tutorial = get_tree().current_scene.get_node("TutorialCanvas")
+	if is_instance_valid(tutorial):
+		tutorial.cancel_tutorial()
 	get_tree().paused = true
 	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 	pauseMenu.visible = true

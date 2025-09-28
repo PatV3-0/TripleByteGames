@@ -807,7 +807,6 @@ scale = Vector2(0.015, 0.015)
 sprite_frames = SubResource("SpriteFrames_em5il")
 animation = &"push"
 offset = Vector2(95, 39)
-flip_h = true
 
 [node name="JumpSound" type="AudioStreamPlayer2D" parent="CharacterBody2D"]
 stream = ExtResource("45_regnp")

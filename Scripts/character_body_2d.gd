@@ -27,6 +27,7 @@ var pushing: bool = false
 var push_force_magnitude = 1200
 
 var size = 0 #regular and 1 for grown
+var invincible: bool = false
 
 @onready var jump_sound = $JumpSound
 @onready var push_pull_sound = $PushPullSound
@@ -318,7 +319,8 @@ func _on_fade_out_body_entered(body: Node2D) -> void:
 		print("Calling transition")
 		emit_signal("fade_out_triggered")
 		
-
+func is_invincible() -> bool:
+	return invincible
 #func transition_to_next_scene(next_scene_path: String):
 	#var fade_rect = $FadeLayer/FadeRect
 	#var tween = create_tween()

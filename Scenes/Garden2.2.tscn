@@ -1,4 +1,4 @@
-[gd_scene load_steps=106 format=3 uid="uid://dlv0ashhlgcqg"]
+[gd_scene load_steps=105 format=3 uid="uid://dlv0ashhlgcqg"]
 
 [ext_resource type="Script" path="res://Scripts/garden_2.gd" id="1_xvhm1"]
 [ext_resource type="Texture2D" uid="uid://cmq1vhmr7erlq" path="res://Assets/Background/Untitled 99.png" id="2_18k6u"]
@@ -98,8 +98,6 @@ height = 125.714
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_6anr4"]
 radius = 12.5631
 height = 105.274
-
-[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_7hss2"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_qbhkd"]
 radius = 11.7931
@@ -559,12 +557,6 @@ rotation = -0.820305
 scale = Vector2(0.9, 0.7)
 shape = SubResource("CapsuleShape2D_6anr4")
 
-[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D/CollisionShape2D13"]
-visible = false
-position = Vector2(2.59047, 2.69708)
-scale = Vector2(-24.1618, 116.334)
-texture = SubResource("PlaceholderTexture2D_7hss2")
-
 [node name="CollisionShape2D14" type="CollisionShape2D" parent="StaticBody2D"]
 position = Vector2(1175, 463)
 rotation = 0.907571
@@ -629,21 +621,18 @@ polygon = PackedVector2Array(653, 225, 656, 207, 668, 200, 684, 194, 690, 193, 7
 polygon = PackedVector2Array(741, 330, 736, 321, 741, 305, 756, 298, 771, 296, 784, 295, 780, 305, 774, 314, 765, 317, 756, 322, 751, 325)
 
 [node name="CollisionPolygon2D45" type="CollisionPolygon2D" parent="StaticBody2D"]
-visible = false
 position = Vector2(1235, -630.625)
 rotation = 3.14159
 scale = Vector2(1.27098, -1.37237)
 polygon = PackedVector2Array(1080, 915, 1080, 921, 1079, 927, 1077, 933, 1074, 940, 1071, 944, 1065, 950, 1113, 950, 1108, 944, 1102, 937, 1099, 930, 1096, 918, 1097, 911)
 
 [node name="CollisionShape2D10" type="CollisionShape2D" parent="StaticBody2D"]
-visible = false
 position = Vector2(-153, 630)
 rotation = 3.14159
 scale = Vector2(2.37612, -0.872946)
 shape = SubResource("CircleShape2D_fm7gk")
 
 [node name="CollisionPolygon2D46" type="CollisionShape2D" parent="StaticBody2D"]
-visible = false
 position = Vector2(-152, 627)
 rotation = 3.14159
 scale = Vector2(2.37612, -0.872946)
@@ -797,7 +786,6 @@ rotation = 1.5708
 shape = SubResource("RectangleShape2D_56vc3")
 
 [node name="MushroomLaunch3" type="Area2D" parent="."]
-visible = false
 position = Vector2(-187, 599)
 scale = Vector2(1.33125, 1.33125)
 
@@ -840,7 +828,6 @@ scale = Vector2(1.05344, 1.2624)
 texture = ExtResource("47_okm7x")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Pushable/Area2D"]
-visible = false
 position = Vector2(-102, 9.5)
 scale = Vector2(3, 3)
 shape = SubResource("RectangleShape2D_vgrg6")

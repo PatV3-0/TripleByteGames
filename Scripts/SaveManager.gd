@@ -10,39 +10,73 @@ const saveSlotCount = 3
 #	"timeStamp": "2025-04-07 12:45"
 #}
 
-func saveGame(slot: int, data: Dictionary) -> void:
-	if slot < 1 or slot > saveSlotCount:
-		print("Invalid save slot:", slot)
-		return
+#func saveGame(slot: int, data: Dictionary) -> void:
+	#if slot < 1 or slot > saveSlotCount:
+		#print("Invalid save slot:", slot)
+		#return
 		
-	var filePath = savePath + "saveSlot" + str(slot) + ".json"
+	#var filePath = savePath + "saveSlot" + str(slot) + ".json"
+	#var file = FileAccess.open(filePath, FileAccess.WRITE)
+	#file.store_string(JSON.stringify(data))
+	#file.close()
+	#print("Game saved to slot", slot)
+func saveGame(data: Dictionary) -> void:
+	var filePath = savePath + "save.json"
 	var file = FileAccess.open(filePath, FileAccess.WRITE)
-	file.store_string(JSON.stringify(data))
-	file.close()
-	print("Game saved to slot", slot)
-
-func loadGame(slot: int) -> Dictionary:
-	var filePath = savePath + "saveSlot" + str(slot) + ".json"
-	if not FileAccess.file_exists(filePath):
-		print("No save found in slot", slot)
-		return{}
+	if file:
+		file.store_string(JSON.stringify(data))
+		file.close()
+		print("Game saved")
+	else:
+		print("Failed to open save file")
 		
+#func loadGame(slot: int) -> Dictionary:
+	#var filePath = savePath + "saveSlot" + str(slot) + ".json"
+	#if not FileAccess.file_exists(filePath):
+		#print("No save found in slot", slot)
+		#return{}
+		#
+	#var file = FileAccess.open(filePath, FileAccess.READ)
+	#var content = file.get_as_text()
+	#file.close()
+	#
+	#var result = JSON.parse_string(content)
+	#if typeof(result) == TYPE_DICTIONARY:
+		#return result
+	#else:
+		#print("Failed to load save data")
+		#return {}
+func loadGame() -> Dictionary:
+	var filePath = savePath + "save.json"
+	if not FileAccess.file_exists(filePath):
+		print("No save found")
+		return {}
+	
 	var file = FileAccess.open(filePath, FileAccess.READ)
+	if not file:
+		print("Failed to open save file")
+		return {}
+	
 	var content = file.get_as_text()
 	file.close()
 	
 	var result = JSON.parse_string(content)
-	if typeof(result) == TYPE_DICTIONARY:
-		return result
+	if result.error == OK:
+		return result.result
 	else:
-		print("Failed to load save data")
+		print("Failed to load save data:", result.error_string)
 		return {}
-
+		
 func deleteSave(slot: int) -> void:
 	var filePath = savePath + "saveSlot" + str(slot) + ".json"
 	if FileAccess.file_exists(filePath):
-		DirAccess.remove_absolute(filePath)
-		print("Deleted save slot", slot)
+		var dir = DirAccess.open(savePath)
+		#DirAccess.remove_absolute(filePath)
+		#FileAccess.remove(filePath)
+		if dir:
+			dir.remove("saveSlot" + str(slot) + ".json")
+			print("Deleted save slot", slot)
+		#print("Deleted save slot", slot)
 
 func getAvailableSaves() -> Array:
 	var saves = []
