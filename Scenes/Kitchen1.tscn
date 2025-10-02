@@ -1,4 +1,4 @@
-[gd_scene load_steps=165 format=3 uid="uid://drq3m40mvk8jp"]
+[gd_scene load_steps=166 format=3 uid="uid://drq3m40mvk8jp"]
 
 [ext_resource type="Script" path="res://Scripts/kitchen_1.gd" id="1_3weli"]
 [ext_resource type="Script" path="res://Scripts/character_body_2d.gd" id="2_jx67a"]
@@ -15,6 +15,7 @@
 [ext_resource type="Texture2D" uid="uid://b72e3jjp80nki" path="res://Assets/Placeholders/box8.png" id="6_yvs2g"]
 [ext_resource type="Texture2D" uid="uid://bpyd1swu41rnd" path="res://Assets/Interactables/Untitled 170.png" id="7_a8va0"]
 [ext_resource type="Texture2D" uid="uid://dcgag38fj8sfp" path="res://Assets/Placeholders/box1_1.png" id="7_kigmc"]
+[ext_resource type="Texture2D" uid="uid://brwmyqhkpnu2u" path="res://Assets/Background/Untitled 92 - Copy (2).png" id="7_qjf5q"]
 [ext_resource type="Texture2D" uid="uid://2owtuts2lm5p" path="res://Assets/Placeholders/box6.png" id="8_341ie"]
 [ext_resource type="Texture2D" uid="uid://bc6reyghtjjg" path="res://Assets/Interactables/Untitled 171.png" id="8_hsj04"]
 [ext_resource type="Texture2D" uid="uid://ddqxp2xeib431" path="res://Assets/Interactables/Untitled 172.png" id="9_6huyo"]
@@ -669,6 +670,12 @@ offset_right = -2236.0
 offset_bottom = 834.0
 color = Color(0.304413, 0.171697, 0.0703494, 1)
 
+[node name="Sprite2D5" type="Sprite2D" parent="."]
+position = Vector2(-2877, 626)
+scale = Vector2(1.23955, 2.90037)
+texture = ExtResource("7_qjf5q")
+flip_h = true
+
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 
 [node name="CollisionShape2D31" type="CollisionShape2D" parent="StaticBody2D"]
@@ -1320,6 +1327,7 @@ texture = ExtResource("62_s1ti4")
 [node name="FadeLayer" type="CanvasLayer" parent="."]
 
 [node name="FadeRect" type="ColorRect" parent="FadeLayer"]
+visible = false
 anchors_preset = -1
 anchor_left = -0.530382
 anchor_top = -1.93981
