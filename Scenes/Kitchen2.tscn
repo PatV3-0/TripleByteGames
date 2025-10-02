@@ -67,15 +67,11 @@
 [ext_resource type="Texture2D" uid="uid://pekpyksj45ua" path="res://Assets/Placeholders/crystal-small.png" id="46_yoju2"]
 [ext_resource type="Texture2D" uid="uid://br0c67qsy1doe" path="res://Assets/Interactables/springs-highlight.png" id="47_11f4e"]
 [ext_resource type="Script" path="res://Scripts/area_2d.gd" id="48_3v77k"]
+[ext_resource type="Texture2D" uid="uid://y26yv6o6hewq" path="res://Assets/Interactables/Untitled 155.png" id="48_asvau"]
 [ext_resource type="Texture2D" uid="uid://bx6qkedyjpohu" path="res://Assets/Interactables/speings.png" id="49_ekigf"]
 [ext_resource type="Script" path="res://Scripts/highlight1.gd" id="50_ejcm7"]
 [ext_resource type="Texture2D" uid="uid://chhnhf52venbf" path="res://Assets/Interactables/nails.png" id="51_ct0v1"]
 [ext_resource type="Texture2D" uid="uid://b1m54qwlk30rc" path="res://Assets/Interactables/nails-highlight.png" id="52_mgoo7"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_cwiwd"]
-size = Vector2(103, 81)
-
-[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_m3ywv"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6kbt8"]
 size = Vector2(360.25, 16)
@@ -348,6 +344,9 @@ animations = [{
 "name": &"retract",
 "speed": 5.0
 }]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xs0tt"]
+size = Vector2(104, 88.5)
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_aidll"]
 friction = 2.0
@@ -623,15 +622,6 @@ offset_bottom = 957.0
 color = Color(0.305882, 0.172549, 0.0705882, 1)
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
-
-[node name="CollisionShape2D35" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(1086, 50)
-shape = SubResource("RectangleShape2D_cwiwd")
-
-[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D/CollisionShape2D35"]
-position = Vector2(7.62939e-05, -3.8147e-06)
-scale = Vector2(103, 80)
-texture = SubResource("PlaceholderTexture2D_m3ywv")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
 position = Vector2(611.125, 131.5)
@@ -945,6 +935,18 @@ offset_right = -172.414
 offset_bottom = 116.121
 metadata/_edit_use_anchors_ = true
 
+[node name="StaticBody2D3" type="StaticBody2D" parent="."]
+position = Vector2(1878, 102)
+
+[node name="Sprite2D2" type="Sprite2D" parent="StaticBody2D3"]
+position = Vector2(-790, -45.75)
+scale = Vector2(0.0819599, 0.0636582)
+texture = ExtResource("48_asvau")
+
+[node name="CollisionShape2D24" type="CollisionShape2D" parent="StaticBody2D3"]
+position = Vector2(-793, -46)
+shape = SubResource("RectangleShape2D_xs0tt")
+
 [node name="Pushable3" type="RigidBody2D" parent="." groups=["Pushable"]]
 position = Vector2(591, 544)
 physics_material_override = SubResource("PhysicsMaterial_aidll")
@@ -1184,6 +1186,7 @@ debug_color = Color(0.411765, 0.407843, 0.172549, 1)
 [node name="FadeLayer" type="CanvasLayer" parent="."]
 
 [node name="FadeRect" type="ColorRect" parent="FadeLayer"]
+visible = false
 anchors_preset = -1
 anchor_left = -0.530382
 anchor_top = -1.93981

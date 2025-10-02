@@ -74,15 +74,15 @@
 [ext_resource type="Texture2D" uid="uid://srercerjo0jg" path="res://Assets/Tutorial assets/1.png" id="38_4dpb3"]
 [ext_resource type="Texture2D" uid="uid://1x876ycnlyv7" path="res://Assets/Tutorial assets/3.png" id="39_ouqhe"]
 [ext_resource type="Texture2D" uid="uid://ca1cms2y3p3co" path="res://Assets/Placeholders/growwisp.png" id="39_t1dv1"]
-[ext_resource type="Texture2D" uid="uid://p2sa6rnhme77" path="res://sink1.jpg" id="49_p4rsk"]
-[ext_resource type="Texture2D" uid="uid://ddg57a3y5utgh" path="res://Assets/Interactables/idle 1 41.PNG" id="51_drty2"]
 [ext_resource type="Texture2D" uid="uid://c26xpm7c7e30n" path="res://Assets/Placeholders/box9.png" id="58_vq36q"]
 [ext_resource type="Texture2D" uid="uid://iktun4yrro6o" path="res://Assets/Placeholders/box7.png" id="59_6mmgq"]
 [ext_resource type="Texture2D" uid="uid://n4x2g0nv6xwr" path="res://Assets/Placeholders/box1.png" id="60_pakgv"]
 [ext_resource type="Texture2D" uid="uid://ttc7x8qamtow" path="res://Assets/Placeholders/box4.png" id="61_lo6gu"]
 [ext_resource type="Texture2D" uid="uid://pekpyksj45ua" path="res://Assets/Placeholders/crystal-small.png" id="62_s1ti4"]
+[ext_resource type="Texture2D" uid="uid://vvgccuhc72fa" path="res://Assets/Interactables/Untitled 175.png" id="78_loluo"]
 [ext_resource type="Texture2D" uid="uid://sccjhy6r8uxq" path="res://Assets/Interactables/Untitled 167.png" id="78_vrkmq"]
 [ext_resource type="Texture2D" uid="uid://cw877tdsrrqig" path="res://Assets/Interactables/Untitled 165.png" id="79_qltim"]
+[ext_resource type="Texture2D" uid="uid://c46dvaw5vmgoa" path="res://Assets/Interactables/Untitled 174.png" id="80_l325v"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6o5dc"]
 size = Vector2(658, 75)
@@ -94,7 +94,7 @@ size = Vector2(172.226, 20)
 size = Vector2(26, 1640.5)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_37rfg"]
-size = Vector2(602, 39)
+size = Vector2(595, 33.5)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7qmk3"]
 size = Vector2(80, 175.5)
@@ -130,7 +130,7 @@ size = Vector2(46, 46)
 size = Vector2(48, 47)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cjmsp"]
-size = Vector2(480.375, 37)
+size = Vector2(480.375, 31)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_d3fpy"]
 size = Vector2(45.625, 76)
@@ -567,13 +567,13 @@ size = Vector2(1121, 1891)
 friction = 2.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_r3xxf"]
-size = Vector2(16, 35)
+size = Vector2(19.6667, 35)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_eefa7"]
-size = Vector2(16.3333, 32.6667)
+size = Vector2(21.3333, 37.3334)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_sbnvd"]
-size = Vector2(178, 7.66709)
+size = Vector2(176, 7.66709)
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_0f1qt"]
 friction = 2.0
@@ -685,24 +685,24 @@ position = Vector2(2021, -87)
 shape = SubResource("RectangleShape2D_rgd02")
 
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(471, 632)
+position = Vector2(467.5, 634.75)
 shape = SubResource("RectangleShape2D_37rfg")
 
 [node name="Sprite2D" type="Sprite2D" parent="StaticBody2D"]
-position = Vector2(403, 504)
+position = Vector2(396, 506)
 scale = Vector2(0.173014, 0.178711)
 texture = ExtResource("7_a8va0")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
-position = Vector2(411, 486)
-polygon = PackedVector2Array(-34, -3, -34, -32, -33, -52, -35, -71, -35, -84, -28, -90, -23, -94, -15, -97, 0, -99, 0, -124, 1, -141, 8, -144, 16, -145, 21, -144, 30, -142, 35, -138, 35, -100, 51, -100, 64, -98, 71, -90, 72, -67, 70, -31, 74, 65, 76, 108, 87, 109, 95, 117, 98, 144, 80, 148, 69, 151, 35, 153, 18, 153, -4, 151, -19, 151, -33, 149, -50, 146, -61, 145, -67, 142, -77, 131, -71, 101, -145.875, 30.9212, -145.875, -11.0788, -160.875, -34.0788, -152.875, -39.0788, -141, -40, -142, -47, -110, -47, -112, -51, -95, -51, -97, -47, -57.875, -47.0788, -57, 4, -46, 1, -40, 0, -34, 1)
+position = Vector2(404, 486)
+polygon = PackedVector2Array(-34, -3, -34, -32, -33, -52, -35, -71, -35, -84, -28, -90, -23, -94, -15, -97, 0, -99, 0, -124, 1, -141, 8, -144, 16, -145, 21, -144, 30, -142, 35, -138, 35, -100, 51, -100, 64, -98, 71, -90, 72, -67, 70, -31, 74, 65, 76, 108, 87, 109, 95, 117, 98, 144, 80, 148, 69, 151, 35, 153, 18, 153, -4, 151, -19, 151, -33, 149, -50, 146, -61, 145, -67, 142, -77, 131, -71, 101, -145.875, 30.9212, -145.875, -11.0788, -160.875, -34.0788, -152.875, -39.0788, -141, -40, -142, -47, -110, -47, -112, -51, -95, -51, -97, -47, -72, -46, -61, -46, -58, -44, -57, 4, -46, 1, -40, 0, -34, 1)
 
 [node name="CollisionShape2D6" type="CollisionShape2D" parent="StaticBody2D"]
 position = Vector2(309.5, 528.75)
 shape = SubResource("RectangleShape2D_7qmk3")
 
 [node name="Sprite2D" type="Sprite2D" parent="StaticBody2D/CollisionShape2D6"]
-position = Vector2(16.5, -3.75)
+position = Vector2(11.5, -3.75)
 scale = Vector2(0.101807, 0.110396)
 skew = -0.0523599
 texture = ExtResource("8_hsj04")
@@ -754,11 +754,11 @@ position = Vector2(-558, 209)
 shape = SubResource("RectangleShape2D_q5ifd")
 
 [node name="CollisionShape2D17" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(-708.813, 648.5)
+position = Vector2(-708.813, 651.5)
 shape = SubResource("RectangleShape2D_cjmsp")
 
 [node name="CollisionShape2D18" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(-547, 595)
+position = Vector2(-555, 598)
 shape = SubResource("RectangleShape2D_d3fpy")
 
 [node name="Sprite2D" type="Sprite2D" parent="StaticBody2D/CollisionShape2D18"]
@@ -767,7 +767,7 @@ scale = Vector2(0.0467334, 0.0533016)
 texture = ExtResource("11_q0xnl")
 
 [node name="CollisionShape2D19" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(-605.625, 586)
+position = Vector2(-614, 592)
 shape = SubResource("RectangleShape2D_aod12")
 
 [node name="Sprite2D" type="Sprite2D" parent="StaticBody2D/CollisionShape2D19"]
@@ -784,7 +784,7 @@ position = Vector2(-509.887, 857.5)
 shape = SubResource("RectangleShape2D_ga4or")
 
 [node name="CollisionShape2D20" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(-716.813, 555)
+position = Vector2(-717, 561)
 shape = SubResource("RectangleShape2D_sdc1b")
 
 [node name="Sprite2D" type="Sprite2D" parent="StaticBody2D/CollisionShape2D20"]
@@ -1320,7 +1320,6 @@ texture = ExtResource("62_s1ti4")
 [node name="FadeLayer" type="CanvasLayer" parent="."]
 
 [node name="FadeRect" type="ColorRect" parent="FadeLayer"]
-visible = false
 anchors_preset = -1
 anchor_left = -0.530382
 anchor_top = -1.93981
@@ -1341,28 +1340,30 @@ lock_rotation = true
 angular_damp = 10.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Pushable3"]
-position = Vector2(10, 29.5)
+position = Vector2(15.5, 29.5)
 scale = Vector2(3, 3)
 shape = SubResource("RectangleShape2D_r3xxf")
 debug_color = Color(0.143349, 0.519412, 1, 0.42)
 
 [node name="Sprite2D" type="Sprite2D" parent="Pushable3/CollisionShape2D"]
-position = Vector2(0.777232, -0.505621)
-rotation = 3.12414
-scale = Vector2(0.0143493, 0.0388872)
-texture = ExtResource("49_p4rsk")
+visible = false
+position = Vector2(14.5, -11.1667)
+scale = Vector2(0.0364985, 0.034341)
+skew = -0.0872665
+texture = ExtResource("78_loluo")
 
 [node name="Area2D" type="Area2D" parent="Pushable3"]
 position = Vector2(29.0946, -0.909188)
 script = ExtResource("30_0whpj")
 
 [node name="Sprite2D" type="Sprite2D" parent="Pushable3/Area2D"]
-position = Vector2(65.9054, -11.0908)
-scale = Vector2(0.197778, 0.185202)
-texture = ExtResource("51_drty2")
+position = Vector2(29.9054, -3.0908)
+scale = Vector2(0.108869, 0.101947)
+skew = -0.0698132
+texture = ExtResource("80_l325v")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Pushable3/Area2D"]
-position = Vector2(-17.5946, 25.9092)
+position = Vector2(-14.0946, 33.9092)
 scale = Vector2(3, 3)
 shape = SubResource("RectangleShape2D_eefa7")
 
@@ -1371,12 +1372,12 @@ position = Vector2(-414, -470)
 script = ExtResource("31_htl0w")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Pushable3/Highlight"]
-position = Vector2(432, 548)
+position = Vector2(431, 548)
 shape = SubResource("RectangleShape2D_sbnvd")
 debug_color = Color(0.956871, 0.119971, 0.43239, 0.42)
 
 [node name="Pushable2" type="RigidBody2D" parent="." groups=["Pushable"]]
-position = Vector2(-842, 574)
+position = Vector2(-844, 577)
 physics_material_override = SubResource("PhysicsMaterial_0f1qt")
 lock_rotation = true
 angular_damp = 10.0
