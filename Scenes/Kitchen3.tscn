@@ -1,4 +1,4 @@
-[gd_scene load_steps=87 format=3 uid="uid://bt4cdbkr6qe2n"]
+[gd_scene load_steps=89 format=3 uid="uid://bt4cdbkr6qe2n"]
 
 [ext_resource type="Script" path="res://Scenes/kitchen_3.gd" id="1_k4qw0"]
 [ext_resource type="Texture2D" uid="uid://b3p05wkj6axuq" path="res://Assets/Background/Untitled 97.png" id="2_er1oh"]
@@ -9,9 +9,11 @@
 [ext_resource type="Script" path="res://Scripts/shrink_portal.gd" id="4_3ck8j"]
 [ext_resource type="Texture2D" uid="uid://c16gl1pf3e27o" path="res://Assets/Interactables/potato 1.png" id="4_562mb"]
 [ext_resource type="Texture2D" uid="uid://c1tomtra1weud" path="res://Assets/Interactables/tomato 1.png" id="4_kcxds"]
+[ext_resource type="Texture2D" uid="uid://irbqv83emtqg" path="res://Assets/Interactables/Untitled 163.png" id="5_a0bti"]
 [ext_resource type="Texture2D" uid="uid://blwrsrc0aol8j" path="res://Assets/Interactables/tomato 2.png" id="5_b4gra"]
 [ext_resource type="Script" path="res://Scripts/character_body_2d.gd" id="5_raxun"]
 [ext_resource type="Texture2D" uid="uid://bss1wxmidlvw4" path="res://Assets/Interactables/3d-rubix.png" id="6_ihai5"]
+[ext_resource type="Texture2D" uid="uid://b5qhmwt10a5mx" path="res://Assets/Interactables/Untitled 164.png" id="6_j5i1j"]
 [ext_resource type="Texture2D" uid="uid://dtodd43h35nhb" path="res://Assets/Interactables/potato 2.png" id="6_xps5p"]
 [ext_resource type="Texture2D" uid="uid://cy6whspwg3dop" path="res://Assets/Interactables/potato 3.png" id="8_765qg"]
 [ext_resource type="Texture2D" uid="uid://byypnkjc87sdb" path="res://Assets/Sprites/Character/Gjump (6).png" id="8_ej6nh"]
@@ -458,14 +460,27 @@ position = Vector2(-167.5, 412.5)
 shape = SubResource("RectangleShape2D_c3jvj")
 
 [node name="CollisionPolygon2D7" type="CollisionPolygon2D" parent="StaticBody2D"]
-position = Vector2(1330, 395)
-rotation = 0.139626
-polygon = PackedVector2Array(14, 11, 41, -89, -38, -87, -17, 10)
+position = Vector2(1357, 323)
+rotation = -2.9147
+polygon = PackedVector2Array(18.3654, 17.3124, 44.1819, -88.0054, 45.2043, -102.287, -12.4935, -103.266, -52.5217, -100.67, -38.7704, -53.1212, -29.9543, -11.9475, -19.7111, 16.8663)
 
 [node name="CollisionPolygon2D6" type="CollisionPolygon2D" parent="StaticBody2D"]
 position = Vector2(1294, 556)
 rotation = -0.139626
-polygon = PackedVector2Array(-11, -11.75, -61, -95.75, -64, 32.25, -48, 38.25, -32, 38.25, -12, 38.25, 18, 38.25, 43, 36.25, 59, 34.25, 67, 30.25, 70, -7.75, 78, -13, 93, -32, 89, -96, 74, -116, 67, -112.75, 69, -141.75, 39, -144.75, 4, -137.75, -12, -136.75, -36, -136.75, -57, -137.75, -79, -135.75, -99, -133.75, -114, -132.75, -105, -124.75, -82, -116.75, -67, -106.75, -65, -103.75)
+polygon = PackedVector2Array(-11, -11.75, -61, -95.75, -69.4581, -8.75177, -64, 32.25, -48, 38.25, -32, 38.25, -12, 38.25, 18, 38.25, 43, 36.25, 54.3737, 29.8579, 59.1698, 24.473, 61.5358, 7.63849, 66.2086, 10.3149, 72.707, 7.18884, 80.0403, -1.87878, 84.1085, -16.4545, 83.0701, -37.8068, 84.071, -95.2263, 83.4822, -105.407, 77.6798, -107.233, 67.9323, -102.544, 60.2242, -133.922, 41.5483, -137.556, 9.73657, -133.948, -11.7549, -131.92, -36.9291, -132.428, -56.0226, -133.092, -80.2064, -133.461, -99, -133.75, -106.51, -133.119, -107.918, -130.287, -103.523, -125.63, -82, -116.75, -67, -106.75, -65, -103.75)
+
+[node name="Sprite2D10" type="Sprite2D" parent="StaticBody2D"]
+position = Vector2(1264, 507)
+rotation = -0.139626
+scale = Vector2(0.130338, 0.125431)
+texture = ExtResource("5_a0bti")
+
+[node name="Sprite2D18" type="Sprite2D" parent="StaticBody2D"]
+position = Vector2(1359, 372)
+rotation = -2.9147
+scale = Vector2(0.0981539, 0.0912557)
+skew = -0.122173
+texture = ExtResource("6_j5i1j")
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D"]
 visible = false
@@ -838,6 +853,7 @@ debug_color = Color(0.411765, 0.407843, 0.172549, 1)
 [node name="FadeLayer" type="CanvasLayer" parent="."]
 
 [node name="FadeRect" type="ColorRect" parent="FadeLayer"]
+visible = false
 anchors_preset = -1
 anchor_left = -0.530382
 anchor_top = -1.93981
