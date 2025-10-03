@@ -546,7 +546,6 @@ scale = Vector2(0.953488, 0.732558)
 texture = ExtResource("5_m4dgv")
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D"]
-visible = false
 position = Vector2(92.5, -351.5)
 shape = SubResource("RectangleShape2D_f27a6")
 debug_color = Color(0.901961, 0.278431, 0.356863, 0.419608)
@@ -1161,6 +1160,7 @@ debug_color = Color(0.411765, 0.407843, 0.172549, 1)
 [node name="FadeLayer" type="CanvasLayer" parent="."]
 
 [node name="FadeRect" type="ColorRect" parent="FadeLayer"]
+visible = false
 anchors_preset = -1
 anchor_left = -0.530382
 anchor_top = -1.93981
