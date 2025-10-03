@@ -40,6 +40,7 @@ var invincible: bool = false
 
 func _ready():
 	#print(pull_target)
+	Global.player_ref = self
 	base_scale = scale
 	base_jump_force = jump_force
 	base_speed = speed
@@ -279,7 +280,7 @@ func grow(offset):
 	speed = base_speed -100
 	air_control_multiplier = base_acm -0.4
 	#update_camera_zoom()
-	
+	emit_signal("size_changed", size)
 	return true  # Successfully grew
 	
 func shrink(offset):		
@@ -291,7 +292,7 @@ func shrink(offset):
 	speed = base_speed 
 	air_control_multiplier = base_acm
 	#update_camera_zoom()
-		
+	emit_signal("size_changed", size)
 	return true  # Successfully grew
 	
 func play_death():

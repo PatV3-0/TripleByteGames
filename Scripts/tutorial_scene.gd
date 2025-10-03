@@ -19,7 +19,11 @@ var tutorial_done = false
 var p_pressed = false
 var o_pressed = false
 
+@onready var checklist = preload("res://Scenes/ObjectiveCanvas.tscn").instantiate()
+
 func _ready() -> void:
+	add_child(checklist)
+	Global.current_checklist_type = "objective"
 	$CharacterBody2D.fade_out_triggered.connect(_on_player_fade_out_triggered)
 	var stream = $Background
 	if stream is AudioStreamWAV:
@@ -39,6 +43,10 @@ func _unhandled_input(event):
 		else:
 			hidePauseMenu()
 
+func _input(event):
+	if event.is_action_pressed("i_tab"): #"i_tab" is mapped to Tab in Input Map
+		checklist.visible = !checklist.visible
+		
 func showPauseMenu():
 	var tutorial = get_tree().current_scene.get_node("TutorialCanvas")
 	if is_instance_valid(tutorial):

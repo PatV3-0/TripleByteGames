@@ -10,6 +10,7 @@ var pauseMenu = null
 
 func _ready() -> void:
 	#$CharacterBody2D.grow(105)
+	Global.current_checklist_type = "ingredient"
 	$CharacterBody2D.fade_out_triggered.connect(_on_player_fade_out_triggered)
 	add_child(checklist)
 	var stream = $Background

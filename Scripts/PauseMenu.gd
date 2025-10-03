@@ -7,6 +7,9 @@ extends Control
 @onready var buttons_container = $PanelHolder/LvlSelectPanel/VBoxContainer
 @onready var invincibility_check = $PanelHolder/LvlSelectPanel/CheckButton
 @onready var chef_check = $PanelHolder/LvlSelectPanel/CheckButton2
+@onready var size_option = $PanelHolder/LvlSelectPanel/OptionButton
+@onready var ingredient_sprite = $IngredientSprite
+@onready var objective_sprite = $ObjectiveSprite
 
 var levels = [
 	"res://Scenes/tutorial_scene.tscn",
@@ -27,7 +30,8 @@ var levels = [
 	"res://Scenes/BackInside2.tscn",
 	"res://Scenes/Final.tscn"
 ]
-func _ready() -> void:	
+func _ready() -> void:
+	_update_sprite_for_checklist()
 	if resumeButton:
 		resumeButton.pressed.connect(self._on_resume_pressed)
 	if mainMenuButton:
@@ -36,14 +40,48 @@ func _ready() -> void:
 		restartLevelButton.pressed.connect(self.onRestartPressed)
 	invincibility_check.connect("toggled", Callable(self, "_on_invincibility_toggled"))
 	chef_check.connect("toggled", Callable(self, "_on_chef_toggled"))
-		
+	
+	size_option.item_selected.connect(_on_size_selected)
+	if Global.player_ref:
+		Global.player_ref.connect("size_changed", Callable(self, "_auto_select_size"))
+
+	call_deferred("_auto_select_size")
+	
 	for i in range(levels.size()):
 		var btn = buttons_container.get_child(i)
 		#btn.text = "Level " + str(i + 1)
 		btn.connect("pressed", Callable(self, "_on_level_button_pressed").bind(i))
 
 	levelSelectPanel.visible = false
+	
+func _update_sprite_for_checklist():
+	match Global.current_checklist_type:
+		"ingredient":
+			ingredient_sprite.visible = true
+			objective_sprite.visible = false
+		"objective":
+			ingredient_sprite.visible = false
+			objective_sprite.visible = true
+		_:
+			ingredient_sprite.visible = false
+			objective_sprite.visible = false
+			
+func _on_size_selected(index):
+	if not Global.player_ref:
+		return
+	match index:
+		0:
+			Global.player_ref.grow(105)   # Normal
+		1:
+			Global.player_ref.shrink(-105) # Small
 
+func _auto_select_size():
+	if not Global.player_ref:
+		return
+	match Global.player_ref.size:
+		0: size_option.select(0)
+		1: size_option.select(1)
+			
 func _on_resume_pressed():
 	get_tree().paused = false
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)

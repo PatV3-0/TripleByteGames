@@ -41,6 +41,7 @@ theme_override_constants/separation = 19
 
 [node name="TextureButton5" type="TextureButton" parent="Panel/VBoxContainer"]
 layout_mode = 2
+button_mask = 0
 texture_normal = ExtResource("7_7btk8")
 texture_pressed = ExtResource("3_q01t7")
 stretch_mode = 4
@@ -51,6 +52,7 @@ texture_selected = ExtResource("3_q01t7")
 
 [node name="TextureButton2" type="TextureButton" parent="Panel/VBoxContainer"]
 layout_mode = 2
+button_mask = 0
 texture_normal = ExtResource("6_gg1u7")
 texture_pressed = ExtResource("6_xdr2y")
 stretch_mode = 4
@@ -61,6 +63,7 @@ texture_selected = ExtResource("6_xdr2y")
 
 [node name="TextureButton3" type="TextureButton" parent="Panel/VBoxContainer"]
 layout_mode = 2
+button_mask = 0
 texture_normal = ExtResource("4_hpgh7")
 texture_pressed = ExtResource("8_cd835")
 stretch_mode = 4
@@ -71,6 +74,7 @@ texture_selected = ExtResource("8_cd835")
 
 [node name="TextureButton4" type="TextureButton" parent="Panel/VBoxContainer"]
 layout_mode = 2
+button_mask = 0
 texture_normal = ExtResource("4_i67xj")
 texture_pressed = ExtResource("10_j7u36")
 stretch_mode = 4
@@ -81,6 +85,7 @@ texture_selected = ExtResource("10_j7u36")
 
 [node name="TextureButton" type="TextureButton" parent="Panel/VBoxContainer"]
 layout_mode = 2
+button_mask = 0
 texture_normal = ExtResource("2_w1px7")
 texture_pressed = ExtResource("3_a67sc")
 stretch_mode = 4

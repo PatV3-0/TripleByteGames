@@ -12,6 +12,7 @@ var pauseMenu = null
 func _ready() -> void:
 	$CharacterBody2D.fade_out_triggered.connect(_on_player_fade_out_triggered)
 	$CharacterBody2D.fade_back_triggered.connect(_on_player_fade_back_triggered)
+	Global.current_checklist_type = "ingredient"
 	add_child(checklist)
 	var stream = $Background
 	if stream is AudioStreamWAV:

@@ -21,6 +21,7 @@ config/windows_native_icon="res://logo (1).ico"
 
 CheatManager="*res://cheatmanager.gd"
 Ingredients="*res://Scripts/ingredients.gd"
+Global="*res://global.gd"
 
 [display]
 

@@ -1,5 +1,6 @@
 extends Node
 
+
 # Put all your levels in an array
 var levels = [
 	"res://Scenes/tutorial_scene.tscn",
@@ -22,16 +23,16 @@ var levels = [
 	
 ]
 
-func _input(event):
-	# Example: press 1, 2, 3 on the keyboard to switch
-	if event is InputEventKey and event.pressed:
-		match event.scancode:
-			KEY_1:
-				_load_level(0)
-			KEY_2:
-				_load_level(1)
-			KEY_3:
-				_load_level(2)
+#func _input(event):
+	## Example: press 1, 2, 3 on the keyboard to switch
+	#if event is InputEventKey and event.pressed:
+		#match event.scancode:
+			#KEY_1:
+				#_load_level(0)
+			#KEY_2:
+				#_load_level(1)
+			#KEY_3:
+				#_load_level(2)
 
 func _load_level(index: int):
 	if index >= 0 and index < levels.size():

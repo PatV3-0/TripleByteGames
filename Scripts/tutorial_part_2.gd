@@ -20,7 +20,11 @@ var p_pressed = false
 var o_pressed = false
 var hide_timer_started = false
 
+@onready var checklist = preload("res://Scenes/ObjectiveCanvas.tscn").instantiate()
 func _ready() -> void:
+	Global.current_checklist_type = "objective"
+	add_child(checklist)
+	
 	var stream = $Background
 	if stream is AudioStreamWAV:
 		stream.set_loop(true)
@@ -45,6 +49,9 @@ func _ready() -> void:
 		tween.tween_property(fade_rect, "color:a", 0.0, 1.5).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_OUT)
 
 func _input(event):
+	if event.is_action_pressed("i_tab"): #"i_tab" is mapped to Tab in Input Map
+		checklist.visible = !checklist.visible
+		
 	if event.is_action_pressed("toggle_push") and not p_pressed:
 		p_pressed = true
 		if p_key_sprite and p_green_texture:
