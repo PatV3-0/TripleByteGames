@@ -22,7 +22,7 @@ func _on_body_entered(body):
 
 		var grew = false
 		if body.has_method("shrink"):
-			grew = body.shrink(-105)
+			grew = await body.shrink(-105)
 			if grew:
 				$Sprite2D.visible = false
 

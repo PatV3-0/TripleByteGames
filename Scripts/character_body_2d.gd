@@ -28,6 +28,7 @@ var push_force_magnitude = 1200
 
 var size = 0 #regular and 1 for grown
 var invincible: bool = false
+var transforming: bool = false
 
 @onready var jump_sound = $JumpSound
 @onready var push_pull_sound = $PushPullSound
@@ -98,7 +99,7 @@ func _physics_process(delta: float) -> void:
 			velocity.x = 0
 		$Sprite2D.flip_h = pull_vector.x < 0
 		#Play Animation
-		if $Sprite2D.animation != "pull":
+		if $Sprite2D.animation != "pull" && transforming == false:
 			$Sprite2D.play("pull")
 			if not push_pull_sound.playing:
 				push_pull_sound.play()
@@ -124,7 +125,7 @@ func _physics_process(delta: float) -> void:
 	elif not pull_press and pulling:
 		#Currently pulling but stopped pushing button
 		pulling = false
-		if $Sprite2D.animation == "pull":
+		if $Sprite2D.animation == "pull" && transforming == false:
 			$Sprite2D.stop()
 		push_pull_sound.stop()
 	elif push_press and can_push and push_target and not pushing and not jumping:
@@ -155,7 +156,7 @@ func _physics_process(delta: float) -> void:
 			push_sprite2.offset.x = shift_amount * push_dir
 	
 		# Play Animation
-		if $Sprite2D.animation != "push":
+		if $Sprite2D.animation != "push" && transforming == false:
 			$Sprite2D.play("push")
 			if not push_pull_sound.playing:
 				push_pull_sound.play()
@@ -210,17 +211,17 @@ func _physics_process(delta: float) -> void:
 			velocity.x = current_speed
 			$Sprite2D.flip_h = true
 			$CollisionShape2D.scale.x = 1
-			if not jumping and $Sprite2D.animation != "walk":
+			if not jumping and $Sprite2D.animation != "walk" && transforming == false:
 				$Sprite2D.play("walk")
 		elif moving_left:
 			velocity.x = -current_speed
 			$Sprite2D.flip_h = false
 			$CollisionShape2D.scale.x = -1
-			if not jumping and $Sprite2D.animation != "walk":
+			if not jumping and $Sprite2D.animation != "walk" && transforming == false:
 				$Sprite2D.play("walk")
 		else:
 			velocity.x = 0
-			if not jumping and $Sprite2D.animation != "idle":
+			if not jumping and $Sprite2D.animation != "idle" && transforming == false:
 				$Sprite2D.play("idle")
 
 	# Jump input
@@ -228,7 +229,7 @@ func _physics_process(delta: float) -> void:
 		velocity.y = -jump_force
 		jumping = true
 		$Sprite2D.frame = 0  # Pre-jump
-		if $Sprite2D.animation != "jump_start":
+		if $Sprite2D.animation != "jump_start" && transforming == false:
 			$Sprite2D.play("jump_start")
 		#await get_tree().process_frame
 		#$Sprite2D.frame = 1  # Push-off
@@ -241,13 +242,13 @@ func _physics_process(delta: float) -> void:
 	if jumping and not pushing and not pulling:
 		if not is_on_floor():
 			if velocity.y < -50:
-				if $Sprite2D.animation != "jump_rise":
+				if $Sprite2D.animation != "jump_rise" && transforming == false:
 					$Sprite2D.play("jump_rise")
 			elif velocity.y > 50:
-				if $Sprite2D.animation != "jump_fall":
+				if $Sprite2D.animation != "jump_fall" && transforming == false:
 					$Sprite2D.play("jump_fall")
 		else:
-			if $Sprite2D.animation != "land":
+			if $Sprite2D.animation != "land" && transforming == false:
 				$Sprite2D.play("land")
 		
 	##Sounds
@@ -261,13 +262,13 @@ func _physics_process(delta: float) -> void:
 	
 		
 func _on_animation_finish():
-	if $Sprite2D.animation == "land":
+	if $Sprite2D.animation == "land" && transforming == false:
 		jumping = false
-	if $Sprite2D.animation == "pull":
+	if $Sprite2D.animation == "pull" && transforming == false:
 		if pulling:
 			$Sprite2D.play("pull")
 		
-	if $Sprite2D.animation == "push":
+	if $Sprite2D.animation == "push" && transforming == false:
 		if pushing:
 			$Sprite2D.play("push")
 	
@@ -275,24 +276,42 @@ func grow(offset):
 	if size == 1:
 		return false
 	size = 1
+	transforming = true
+	if "grow" in $Sprite2D.sprite_frames.get_animation_names():
+		print("Growing")
+		$Sprite2D.play("grow")
+	else:
+		$Sprite2D.play("idle")
+	
 	scale = base_scale * 1.5 
 	jump_force = base_jump_force + 200 
 	speed = base_speed -100
 	air_control_multiplier = base_acm -0.4
 	#update_camera_zoom()
 	emit_signal("size_changed", size)
+	await get_tree().create_timer(0.5).timeout
+	transforming = false
 	return true  # Successfully grew
 	
 func shrink(offset):		
 	if size == 0:
 		return false
 	size = 0
+	transforming = true
+	if "shrink" in $Sprite2D.sprite_frames.get_animation_names():
+		print("Shrinking")
+		$Sprite2D.play("shrink")
+	else:
+		$Sprite2D.play("idle")
+	
 	scale = base_scale
 	jump_force = base_jump_force
 	speed = base_speed 
 	air_control_multiplier = base_acm
 	#update_camera_zoom()
 	emit_signal("size_changed", size)
+	await get_tree().create_timer(0.5).timeout
+	transforming = false
 	return true  # Successfully grew
 	
 func play_death():

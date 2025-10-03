@@ -1,4 +1,4 @@
-[gd_scene load_steps=89 format=3 uid="uid://bt4cdbkr6qe2n"]
+[gd_scene load_steps=92 format=3 uid="uid://bt4cdbkr6qe2n"]
 
 [ext_resource type="Script" path="res://Scenes/kitchen_3.gd" id="1_k4qw0"]
 [ext_resource type="Texture2D" uid="uid://b3p05wkj6axuq" path="res://Assets/Background/Untitled 97.png" id="2_er1oh"]
@@ -46,7 +46,9 @@
 [ext_resource type="Texture2D" uid="uid://d33vnxb146pwg" path="res://Assets/Menus/SpeechbarLighter2.png" id="25_xh6ts"]
 [ext_resource type="Texture2D" uid="uid://hdqf7n8ve8xb" path="res://Assets/Menus/SpeechbarLighter3.png" id="26_0o1sh"]
 [ext_resource type="Texture2D" uid="uid://bv5vca3wykfry" path="res://Assets/Sprites/Character/Gjump (1.1).png" id="26_qqf6k"]
+[ext_resource type="Texture2D" uid="uid://kwewpvv6a0dk" path="res://Assets/Sprites/Character/Grow.png" id="27_lpqwy"]
 [ext_resource type="Texture2D" uid="uid://lxblcan0e0gl" path="res://Assets/Menus/SpeechbarLighter4.png" id="27_us5jn"]
+[ext_resource type="Texture2D" uid="uid://cgxuhfktvlhg6" path="res://Assets/Sprites/Character/idle 1 53.PNG" id="28_aqva0"]
 [ext_resource type="Script" path="res://Scripts/fade_out.gd" id="28_e5q4b"]
 [ext_resource type="Texture2D" uid="uid://dyy7bp757jofl" path="res://Assets/Sprites/Character/Gjump (0).png" id="28_m6ryv"]
 [ext_resource type="Texture2D" uid="uid://dhl4ey5414ddw" path="res://Assets/Sprites/Character/Gjump (2.1).png" id="29_13k7l"]
@@ -61,6 +63,7 @@
 [ext_resource type="Texture2D" uid="uid://cay0c273362pd" path="res://Assets/Menus/SpeechbarLighter6.png" id="46_yujaq"]
 [ext_resource type="Texture2D" uid="uid://e0b2aiq41mcl" path="res://Assets/Menus/SpeechbarLighter7.png" id="47_pp2bt"]
 [ext_resource type="Texture2D" uid="uid://blm0prikln4h1" path="res://Assets/Menus/SpeechbarLighter8.png" id="48_eo8hc"]
+[ext_resource type="Texture2D" uid="uid://ds5h0pxykg3ry" path="res://Assets/Sprites/Character/shrink.png" id="48_y1011"]
 [ext_resource type="Texture2D" uid="uid://bicu3c3rbd1rn" path="res://Assets/Menus/SpeechbarLighter9.png" id="49_ttwd0"]
 [ext_resource type="Texture2D" uid="uid://srercerjo0jg" path="res://Assets/Tutorial assets/1.png" id="50_5si11"]
 [ext_resource type="Texture2D" uid="uid://1x876ycnlyv7" path="res://Assets/Tutorial assets/3.png" id="51_mpi8n"]
@@ -121,6 +124,23 @@ size = Vector2(13, 25.2)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_rlqqp"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("27_lpqwy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("28_aqva0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("27_lpqwy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("28_aqva0")
+}],
+"loop": false,
+"name": &"grow",
+"speed": 3.0
+}, {
 "frames": [{
 "duration": 2.0,
 "texture": ExtResource("23_34mxx")
@@ -224,6 +244,23 @@ animations = [{
 "loop": false,
 "name": &"push",
 "speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("48_y1011")
+}, {
+"duration": 1.0,
+"texture": ExtResource("28_aqva0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("48_y1011")
+}, {
+"duration": 1.0,
+"texture": ExtResource("28_aqva0")
+}],
+"loop": false,
+"name": &"shrink",
+"speed": 3.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -802,7 +839,7 @@ position = Vector2(1.39999, -3)
 rotation = -0.000699009
 scale = Vector2(0.015, 0.015)
 sprite_frames = SubResource("SpriteFrames_rlqqp")
-animation = &"push"
+animation = &"shrink"
 offset = Vector2(95, 39)
 flip_h = true
 

@@ -1,4 +1,4 @@
-[gd_scene load_steps=96 format=3 uid="uid://ci5endn4fr8ds"]
+[gd_scene load_steps=99 format=3 uid="uid://ci5endn4fr8ds"]
 
 [ext_resource type="Script" path="res://Scripts/portal.gd" id="1_d0m4j"]
 [ext_resource type="Script" path="res://Scripts/walls_1.gd" id="1_v4uno"]
@@ -39,8 +39,10 @@
 [ext_resource type="Script" path="res://Scripts/hole.gd" id="21_udxdw"]
 [ext_resource type="AudioStream" uid="uid://dydis8421b2ou" path="res://Assets/Sound/walk.wav" id="22_wow8s"]
 [ext_resource type="Texture2D" uid="uid://c2ntm40saxfwm" path="res://Assets/Menus/SpeechbarLighter1.png" id="23_6tajr"]
+[ext_resource type="Texture2D" uid="uid://kwewpvv6a0dk" path="res://Assets/Sprites/Character/Grow.png" id="23_p76ew"]
 [ext_resource type="Texture2D" uid="uid://ch1intxq0cr18" path="res://Assets/Sprites/Character/idle 1.png" id="23_swu3g"]
 [ext_resource type="Texture2D" uid="uid://emqo2h4ltk2n" path="res://Assets/Sprites/Character/idle-2.png" id="24_07ej8"]
+[ext_resource type="Texture2D" uid="uid://cgxuhfktvlhg6" path="res://Assets/Sprites/Character/idle 1 53.PNG" id="24_8lsg8"]
 [ext_resource type="Texture2D" uid="uid://d33vnxb146pwg" path="res://Assets/Menus/SpeechbarLighter2.png" id="24_djpqr"]
 [ext_resource type="Texture2D" uid="uid://hdqf7n8ve8xb" path="res://Assets/Menus/SpeechbarLighter3.png" id="25_kh4s2"]
 [ext_resource type="Texture2D" uid="uid://bv5vca3wykfry" path="res://Assets/Sprites/Character/Gjump (1.1).png" id="26_0p0bb"]
@@ -53,6 +55,7 @@
 [ext_resource type="Texture2D" uid="uid://eabpv0wv1gws" path="res://Assets/Sprites/Character/pull3.5.png" id="33_87sq3"]
 [ext_resource type="Texture2D" uid="uid://cosrv7kcfja2h" path="res://Assets/Sprites/Character/pull4.png" id="34_l0v1m"]
 [ext_resource type="Texture2D" uid="uid://bvotkbnkinptd" path="res://Assets/Sprites/Character/pull5.png" id="35_uh4tn"]
+[ext_resource type="Texture2D" uid="uid://ds5h0pxykg3ry" path="res://Assets/Sprites/Character/shrink.png" id="44_128gv"]
 [ext_resource type="Script" path="res://Scripts/tutorial_canvas1.gd" id="45_64loa"]
 [ext_resource type="Texture2D" uid="uid://cnbl2133psakv" path="res://Assets/Menus/SpeechbarLighter5.png" id="46_sr66i"]
 [ext_resource type="Texture2D" uid="uid://cay0c273362pd" path="res://Assets/Menus/SpeechbarLighter6.png" id="47_jc760"]
@@ -135,6 +138,23 @@ size = Vector2(13, 25.9939)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_em5il"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("23_p76ew")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_8lsg8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_p76ew")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_8lsg8")
+}],
+"loop": false,
+"name": &"grow",
+"speed": 3.0
+}, {
 "frames": [{
 "duration": 2.0,
 "texture": ExtResource("23_swu3g")
@@ -237,6 +257,23 @@ animations = [{
 }],
 "loop": false,
 "name": &"push",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("44_128gv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_8lsg8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("44_128gv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_8lsg8")
+}],
+"loop": false,
+"name": &"shrink",
 "speed": 5.0
 }, {
 "frames": [{
@@ -801,7 +838,7 @@ position = Vector2(1.39999, -3)
 rotation = -0.000699009
 scale = Vector2(0.015, 0.015)
 sprite_frames = SubResource("SpriteFrames_em5il")
-animation = &"push"
+animation = &"grow"
 offset = Vector2(95, 39)
 flip_h = true
 

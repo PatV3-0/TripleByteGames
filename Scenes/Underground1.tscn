@@ -1,4 +1,4 @@
-[gd_scene load_steps=176 format=3 uid="uid://bnp2npmm6vg2g"]
+[gd_scene load_steps=179 format=3 uid="uid://bnp2npmm6vg2g"]
 
 [ext_resource type="Script" path="res://Scripts/underground_1.gd" id="1_2c2qv"]
 [ext_resource type="Script" path="res://Scripts/character_body_2d.gd" id="2_15omn"]
@@ -39,8 +39,10 @@
 [ext_resource type="Texture2D" uid="uid://ygego3qxiycn" path="res://Assets/Sprites/Character/pull3.png" id="18_24npy"]
 [ext_resource type="AudioStream" uid="uid://c3iu4fh2kf3kk" path="res://Assets/Sound/jump.wav" id="18_eup0n"]
 [ext_resource type="AudioStream" uid="uid://cm8n17onir64w" path="res://Assets/Sound/boxSound.wav" id="19_f23k4"]
+[ext_resource type="Texture2D" uid="uid://kwewpvv6a0dk" path="res://Assets/Sprites/Character/Grow.png" id="19_ntof4"]
 [ext_resource type="Texture2D" uid="uid://eabpv0wv1gws" path="res://Assets/Sprites/Character/pull3.5.png" id="19_tuq6n"]
 [ext_resource type="AudioStream" uid="uid://dydis8421b2ou" path="res://Assets/Sound/walk.wav" id="20_10bu3"]
+[ext_resource type="Texture2D" uid="uid://cgxuhfktvlhg6" path="res://Assets/Sprites/Character/idle 1 53.PNG" id="20_jvvgm"]
 [ext_resource type="Texture2D" uid="uid://cosrv7kcfja2h" path="res://Assets/Sprites/Character/pull4.png" id="20_pk0bs"]
 [ext_resource type="Texture2D" uid="uid://c2ntm40saxfwm" path="res://Assets/Menus/SpeechbarLighter1.png" id="21_0arto"]
 [ext_resource type="Texture2D" uid="uid://bvotkbnkinptd" path="res://Assets/Sprites/Character/pull5.png" id="21_07lid"]
@@ -57,6 +59,7 @@
 [ext_resource type="Texture2D" uid="uid://bicu3c3rbd1rn" path="res://Assets/Menus/SpeechbarLighter9.png" id="33_w8xm2"]
 [ext_resource type="Texture2D" uid="uid://srercerjo0jg" path="res://Assets/Tutorial assets/1.png" id="34_k1yvb"]
 [ext_resource type="Texture2D" uid="uid://1x876ycnlyv7" path="res://Assets/Tutorial assets/3.png" id="35_s4046"]
+[ext_resource type="Texture2D" uid="uid://ds5h0pxykg3ry" path="res://Assets/Sprites/Character/shrink.png" id="40_darow"]
 [ext_resource type="Script" path="res://Scenes/tutorial_ug.gd" id="48_q6ij4"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0tq3j"]
@@ -392,6 +395,23 @@ size = Vector2(13, 25.2)
 [sub_resource type="SpriteFrames" id="SpriteFrames_8re0x"]
 animations = [{
 "frames": [{
+"duration": 1.0,
+"texture": ExtResource("19_ntof4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_jvvgm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_ntof4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_jvvgm")
+}],
+"loop": false,
+"name": &"grow",
+"speed": 3.0
+}, {
+"frames": [{
 "duration": 2.0,
 "texture": ExtResource("9_u242y")
 }, {
@@ -494,6 +514,23 @@ animations = [{
 "loop": false,
 "name": &"push",
 "speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("40_darow")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_jvvgm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("40_darow")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_jvvgm")
+}],
+"loop": false,
+"name": &"shrink",
+"speed": 3.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -1372,7 +1409,7 @@ position = Vector2(1.39999, -3)
 rotation = -0.000699009
 scale = Vector2(0.015, 0.015)
 sprite_frames = SubResource("SpriteFrames_8re0x")
-animation = &"push"
+animation = &"shrink"
 offset = Vector2(95, 39)
 flip_h = true
 

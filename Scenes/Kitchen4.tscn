@@ -1,4 +1,4 @@
-[gd_scene load_steps=102 format=3 uid="uid://c38ppo2oxtnec"]
+[gd_scene load_steps=105 format=3 uid="uid://c38ppo2oxtnec"]
 
 [ext_resource type="Script" path="res://Scripts/kitchen_4.gd" id="1_b6566"]
 [ext_resource type="Script" path="res://Scripts/character_body_2d.gd" id="2_2dv4w"]
@@ -33,7 +33,9 @@
 [ext_resource type="Texture2D" uid="uid://emqo2h4ltk2n" path="res://Assets/Sprites/Character/idle-2.png" id="19_k5dls"]
 [ext_resource type="AudioStream" uid="uid://cm8n17onir64w" path="res://Assets/Sound/boxSound.wav" id="19_kw4mk"]
 [ext_resource type="AudioStream" uid="uid://dydis8421b2ou" path="res://Assets/Sound/walk.wav" id="20_8ba7b"]
+[ext_resource type="Texture2D" uid="uid://kwewpvv6a0dk" path="res://Assets/Sprites/Character/Grow.png" id="20_cb43f"]
 [ext_resource type="Texture2D" uid="uid://c2ntm40saxfwm" path="res://Assets/Menus/SpeechbarLighter1.png" id="21_btdj7"]
+[ext_resource type="Texture2D" uid="uid://cgxuhfktvlhg6" path="res://Assets/Sprites/Character/idle 1 53.PNG" id="21_nwx70"]
 [ext_resource type="Texture2D" uid="uid://bv5vca3wykfry" path="res://Assets/Sprites/Character/Gjump (1.1).png" id="21_x4jgw"]
 [ext_resource type="Texture2D" uid="uid://d33vnxb146pwg" path="res://Assets/Menus/SpeechbarLighter2.png" id="22_mgg8p"]
 [ext_resource type="Texture2D" uid="uid://hdqf7n8ve8xb" path="res://Assets/Menus/SpeechbarLighter3.png" id="23_3h64a"]
@@ -60,6 +62,7 @@
 [ext_resource type="Texture2D" uid="uid://1x876ycnlyv7" path="res://Assets/Tutorial assets/3.png" id="38_hqhhw"]
 [ext_resource type="Script" path="res://Scripts/ingredient.gd" id="39_jgjpk"]
 [ext_resource type="Texture2D" uid="uid://nkmvddm2gdg8" path="res://Assets/Menus/torn-paper.png" id="40_xaqwy"]
+[ext_resource type="Texture2D" uid="uid://ds5h0pxykg3ry" path="res://Assets/Sprites/Character/shrink.png" id="41_b4q10"]
 [ext_resource type="Texture2D" uid="uid://kdwlsfvpgogg" path="res://Assets/Menus/GC-paper.png" id="41_frl0x"]
 [ext_resource type="Texture2D" uid="uid://ms8yox5h3kqx" path="res://Assets/Placeholders/garlic.png" id="48_mnphf"]
 [ext_resource type="Script" path="res://Scripts/hole.gd" id="59_8vuwf"]
@@ -150,6 +153,23 @@ size = Vector2(13, 25.2)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_d8e1u"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("20_cb43f")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_nwx70")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_cb43f")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_nwx70")
+}],
+"loop": false,
+"name": &"grow",
+"speed": 3.0
+}, {
 "frames": [{
 "duration": 2.0,
 "texture": ExtResource("18_l7i7q")
@@ -253,6 +273,23 @@ animations = [{
 "loop": false,
 "name": &"push",
 "speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("41_b4q10")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_nwx70")
+}, {
+"duration": 1.0,
+"texture": ExtResource("41_b4q10")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_nwx70")
+}],
+"loop": false,
+"name": &"shrink",
+"speed": 3.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -588,13 +625,13 @@ scale = Vector2(0.5, 1)
 shape = SubResource("RectangleShape2D_qt3hr")
 
 [node name="CollisionShape2D18" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(768.826, 266.737)
+position = Vector2(805, 487)
 rotation = -0.139626
 scale = Vector2(0.5, 1)
 shape = SubResource("RectangleShape2D_0a6r6")
 
 [node name="CollisionPolygon2D14" type="CollisionPolygon2D" parent="StaticBody2D"]
-position = Vector2(732, 562)
+position = Vector2(790, 720)
 scale = Vector2(0.5, 1)
 polygon = PackedVector2Array(28, -262.077, 6, -281.077, -14, -280.077, -26, -285.077, -30, -293.077, -26, -301.077, -16, -305.077, 0, -306.077, 12, -304.077, 22, -297.077, 22, -289.077, 18, -285.077, 14, -284.077, 38, -264.077, 46, -256.077, 28, -258.077)
 
@@ -614,19 +651,19 @@ scale = Vector2(0.54078, 0.597619)
 texture = ExtResource("5_obkeo")
 
 [node name="CollisionShape2D16" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(764.322, 328.643)
+position = Vector2(760.322, 466)
 rotation = 0.244346
 scale = Vector2(0.5, 1)
 shape = SubResource("RectangleShape2D_j8302")
 
 [node name="CollisionShape2D15" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(761, 389)
+position = Vector2(757, 526.357)
 rotation = -0.102974
 scale = Vector2(0.5, 1)
 shape = SubResource("RectangleShape2D_0phgd")
 
 [node name="CollisionShape2D10" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(755, 460)
+position = Vector2(810, 544)
 rotation = 0.174533
 scale = Vector2(0.5, 1)
 shape = SubResource("RectangleShape2D_420yh")
@@ -810,7 +847,7 @@ position = Vector2(1.39999, -3)
 rotation = -0.000699009
 scale = Vector2(0.015, 0.015)
 sprite_frames = SubResource("SpriteFrames_d8e1u")
-animation = &"push"
+animation = &"shrink"
 offset = Vector2(95, 39)
 flip_h = true
 

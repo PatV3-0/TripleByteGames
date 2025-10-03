@@ -1,4 +1,4 @@
-[gd_scene load_steps=116 format=3 uid="uid://bv4c1ivswho8g"]
+[gd_scene load_steps=119 format=3 uid="uid://bv4c1ivswho8g"]
 
 [ext_resource type="Script" path="res://Scripts/back_inside_2.gd" id="1_y41im"]
 [ext_resource type="Texture2D" uid="uid://dy26qsmor8as1" path="res://Assets/Background/Untitled 83.png" id="2_1a5ph"]
@@ -58,7 +58,9 @@
 [ext_resource type="Texture2D" uid="uid://cnbl2133psakv" path="res://Assets/Menus/SpeechbarLighter5.png" id="33_d0pjt"]
 [ext_resource type="Texture2D" uid="uid://ygego3qxiycn" path="res://Assets/Sprites/Character/pull3.png" id="33_kbvf5"]
 [ext_resource type="Texture2D" uid="uid://cay0c273362pd" path="res://Assets/Menus/SpeechbarLighter6.png" id="34_47mqw"]
+[ext_resource type="Texture2D" uid="uid://kwewpvv6a0dk" path="res://Assets/Sprites/Character/Grow.png" id="34_ni3uc"]
 [ext_resource type="Texture2D" uid="uid://eabpv0wv1gws" path="res://Assets/Sprites/Character/pull3.5.png" id="34_pbykk"]
+[ext_resource type="Texture2D" uid="uid://cgxuhfktvlhg6" path="res://Assets/Sprites/Character/idle 1 53.PNG" id="35_6p3d2"]
 [ext_resource type="Texture2D" uid="uid://cosrv7kcfja2h" path="res://Assets/Sprites/Character/pull4.png" id="35_epnb6"]
 [ext_resource type="Texture2D" uid="uid://e0b2aiq41mcl" path="res://Assets/Menus/SpeechbarLighter7.png" id="35_xee27"]
 [ext_resource type="Texture2D" uid="uid://blm0prikln4h1" path="res://Assets/Menus/SpeechbarLighter8.png" id="36_dtkf1"]
@@ -68,6 +70,7 @@
 [ext_resource type="Texture2D" uid="uid://1x876ycnlyv7" path="res://Assets/Tutorial assets/3.png" id="39_awvlq"]
 [ext_resource type="Texture2D" uid="uid://81vpbbt7xjmo" path="res://Assets/Placeholders/shrinkwisp.png" id="40_ffmfq"]
 [ext_resource type="Texture2D" uid="uid://ca1cms2y3p3co" path="res://Assets/Placeholders/growwisp.png" id="42_2yceb"]
+[ext_resource type="Texture2D" uid="uid://ds5h0pxykg3ry" path="res://Assets/Sprites/Character/shrink.png" id="55_x8n5f"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_v6tyy"]
 size = Vector2(2728, 20)
@@ -239,6 +242,23 @@ animations = [{
 [sub_resource type="SpriteFrames" id="SpriteFrames_25qyl"]
 animations = [{
 "frames": [{
+"duration": 1.0,
+"texture": ExtResource("34_ni3uc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("35_6p3d2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("34_ni3uc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("35_6p3d2")
+}],
+"loop": false,
+"name": &"grow",
+"speed": 3.0
+}, {
+"frames": [{
 "duration": 2.0,
 "texture": ExtResource("24_gxa3k")
 }, {
@@ -341,6 +361,23 @@ animations = [{
 "loop": false,
 "name": &"push",
 "speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("55_x8n5f")
+}, {
+"duration": 1.0,
+"texture": ExtResource("35_6p3d2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("55_x8n5f")
+}, {
+"duration": 1.0,
+"texture": ExtResource("35_6p3d2")
+}],
+"loop": false,
+"name": &"shrink",
+"speed": 3.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -937,7 +974,7 @@ position = Vector2(1.39999, -3)
 rotation = -0.000699009
 scale = Vector2(0.015, 0.015)
 sprite_frames = SubResource("SpriteFrames_25qyl")
-animation = &"push"
+animation = &"shrink"
 offset = Vector2(95, 39)
 
 [node name="ShrinkPortal" type="Area2D" parent="."]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=81 format=3 uid="uid://brot5iffhvc1r"]
+[gd_scene load_steps=84 format=3 uid="uid://brot5iffhvc1r"]
 
 [ext_resource type="Script" path="res://Scripts/garden_2.gd" id="1_iu0cq"]
 [ext_resource type="Script" path="res://Scripts/character_body_2d.gd" id="2_24upp"]
@@ -6,8 +6,10 @@
 [ext_resource type="Texture2D" uid="uid://cmq1vhmr7erlq" path="res://Assets/Background/Untitled 99.png" id="3_evbah"]
 [ext_resource type="Texture2D" uid="uid://cwvudphlmqmxu" path="res://Assets/Placeholders/mushroom2.png" id="3_ws5st"]
 [ext_resource type="Texture2D" uid="uid://bop8j7py8orur" path="res://Assets/Sprites/Character/Gjump (2).png" id="4_3npvo"]
+[ext_resource type="Texture2D" uid="uid://kwewpvv6a0dk" path="res://Assets/Sprites/Character/Grow.png" id="5_nifvt"]
 [ext_resource type="Texture2D" uid="uid://byypnkjc87sdb" path="res://Assets/Sprites/Character/Gjump (6).png" id="5_tifev"]
 [ext_resource type="Texture2D" uid="uid://c12k2h2j8vdjt" path="res://Assets/Sprites/Character/Gjump (5).png" id="6_70ifu"]
+[ext_resource type="Texture2D" uid="uid://cgxuhfktvlhg6" path="res://Assets/Sprites/Character/idle 1 53.PNG" id="6_o78mq"]
 [ext_resource type="Texture2D" uid="uid://dytxwri855i1v" path="res://Assets/Sprites/Character/Gjump (1).png" id="7_tageh"]
 [ext_resource type="Texture2D" uid="uid://cd0ymrrfi02vh" path="res://Assets/Sprites/Character/push-1.png" id="8_7qqyt"]
 [ext_resource type="Texture2D" uid="uid://d112q6ipvg3ur" path="res://Assets/Sprites/Character/push_3.png" id="9_6rown"]
@@ -20,6 +22,7 @@
 [ext_resource type="Texture2D" uid="uid://cpjbtyxusic6r" path="res://Assets/Sprites/Character/walk-2.png" id="16_6co2k"]
 [ext_resource type="Texture2D" uid="uid://dyg15lcss7s5k" path="res://Assets/Sprites/Character/walk_1.png" id="17_8ccmn"]
 [ext_resource type="AudioStream" uid="uid://c3iu4fh2kf3kk" path="res://Assets/Sound/jump.wav" id="18_864rk"]
+[ext_resource type="Texture2D" uid="uid://ds5h0pxykg3ry" path="res://Assets/Sprites/Character/shrink.png" id="19_3dyn3"]
 [ext_resource type="AudioStream" uid="uid://cm8n17onir64w" path="res://Assets/Sound/boxSound.wav" id="19_qn7o6"]
 [ext_resource type="AudioStream" uid="uid://dydis8421b2ou" path="res://Assets/Sound/walk.wav" id="20_8aqfy"]
 [ext_resource type="Texture2D" uid="uid://c2ntm40saxfwm" path="res://Assets/Menus/SpeechbarLighter1.png" id="21_6vvie"]
@@ -108,6 +111,23 @@ size = Vector2(13, 25.2)
 animations = [{
 "frames": [{
 "duration": 1.0,
+"texture": ExtResource("5_nifvt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_o78mq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_nifvt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_o78mq")
+}],
+"loop": false,
+"name": &"grow",
+"speed": 3.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": ExtResource("3_1d6s2")
 }, {
 "duration": 1.0,
@@ -177,6 +197,23 @@ animations = [{
 }],
 "loop": true,
 "name": &"pushPull",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("19_3dyn3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_o78mq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_3dyn3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_o78mq")
+}],
+"loop": true,
+"name": &"shrink",
 "speed": 5.0
 }, {
 "frames": [{
@@ -612,7 +649,7 @@ position = Vector2(1.39999, -3)
 rotation = -0.000699009
 scale = Vector2(0.015, 0.015)
 sprite_frames = SubResource("SpriteFrames_nenoi")
-animation = &"pushPull"
+animation = &"shrink"
 offset = Vector2(95, 39)
 flip_h = true
 

@@ -1,4 +1,4 @@
-[gd_scene load_steps=112 format=3 uid="uid://bbgxpud6segme"]
+[gd_scene load_steps=115 format=3 uid="uid://bbgxpud6segme"]
 
 [ext_resource type="Script" path="res://Scripts/walls_2.gd" id="1_b1sgd"]
 [ext_resource type="Texture2D" uid="uid://cd312uojm511g" path="res://Assets/Background/Untitled 91.png" id="2_in8h3"]
@@ -58,6 +58,8 @@
 [ext_resource type="Texture2D" uid="uid://bvotkbnkinptd" path="res://Assets/Sprites/Character/pull5.png" id="34_78cwh"]
 [ext_resource type="Script" path="res://Scenes/tutorial_w_3.gd" id="35_un5eh"]
 [ext_resource type="Script" path="res://Scenes/tutorial_w_4.gd" id="37_0f71x"]
+[ext_resource type="Texture2D" uid="uid://kwewpvv6a0dk" path="res://Assets/Sprites/Character/Grow.png" id="39_uydus"]
+[ext_resource type="Texture2D" uid="uid://cgxuhfktvlhg6" path="res://Assets/Sprites/Character/idle 1 53.PNG" id="40_co63b"]
 [ext_resource type="Texture2D" uid="uid://cdi47y8m6tqdn" path="res://Assets/Interactables/Untitled 55.PNG" id="45_2jhoa"]
 [ext_resource type="Script" path="res://Scripts/tutorial_canvas1.gd" id="47_m5br8"]
 [ext_resource type="Texture2D" uid="uid://cnbl2133psakv" path="res://Assets/Menus/SpeechbarLighter5.png" id="48_rpawl"]
@@ -69,6 +71,7 @@
 [ext_resource type="Texture2D" uid="uid://1x876ycnlyv7" path="res://Assets/Tutorial assets/3.png" id="54_6qoul"]
 [ext_resource type="Texture2D" uid="uid://br0c67qsy1doe" path="res://Assets/Interactables/springs-highlight.png" id="55_u80jy"]
 [ext_resource type="Texture2D" uid="uid://bx6qkedyjpohu" path="res://Assets/Interactables/speings.png" id="57_5midc"]
+[ext_resource type="Texture2D" uid="uid://ds5h0pxykg3ry" path="res://Assets/Sprites/Character/shrink.png" id="60_4iq07"]
 [ext_resource type="Texture2D" uid="uid://chhnhf52venbf" path="res://Assets/Interactables/nails.png" id="68_vrprk"]
 [ext_resource type="Texture2D" uid="uid://b1m54qwlk30rc" path="res://Assets/Interactables/nails-highlight.png" id="69_rqwhe"]
 
@@ -256,6 +259,23 @@ size = Vector2(13, 25.2)
 [sub_resource type="SpriteFrames" id="SpriteFrames_n7ggd"]
 animations = [{
 "frames": [{
+"duration": 1.0,
+"texture": ExtResource("39_uydus")
+}, {
+"duration": 1.0,
+"texture": ExtResource("40_co63b")
+}, {
+"duration": 1.0,
+"texture": ExtResource("39_uydus")
+}, {
+"duration": 1.0,
+"texture": ExtResource("40_co63b")
+}],
+"loop": false,
+"name": &"grow",
+"speed": 3.0
+}, {
+"frames": [{
 "duration": 2.0,
 "texture": ExtResource("22_ea7xr")
 }, {
@@ -358,6 +378,23 @@ animations = [{
 "loop": false,
 "name": &"push",
 "speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("60_4iq07")
+}, {
+"duration": 1.0,
+"texture": ExtResource("40_co63b")
+}, {
+"duration": 1.0,
+"texture": ExtResource("60_4iq07")
+}, {
+"duration": 1.0,
+"texture": ExtResource("40_co63b")
+}],
+"loop": false,
+"name": &"shrink",
+"speed": 3.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -913,7 +950,7 @@ position = Vector2(1.39999, -3)
 rotation = -0.000699009
 scale = Vector2(0.015, 0.015)
 sprite_frames = SubResource("SpriteFrames_n7ggd")
-animation = &"push"
+animation = &"shrink"
 offset = Vector2(95, 39)
 flip_h = true
 

@@ -1,4 +1,4 @@
-[gd_scene load_steps=103 format=3 uid="uid://dlv0ashhlgcqg"]
+[gd_scene load_steps=106 format=3 uid="uid://dlv0ashhlgcqg"]
 
 [ext_resource type="Script" path="res://Scripts/garden_2.gd" id="1_xvhm1"]
 [ext_resource type="Texture2D" uid="uid://cmq1vhmr7erlq" path="res://Assets/Background/Untitled 99.png" id="2_18k6u"]
@@ -23,7 +23,9 @@
 [ext_resource type="Script" path="res://Scripts/character_body_2d.gd" id="16_ck7kn"]
 [ext_resource type="Texture2D" uid="uid://byypnkjc87sdb" path="res://Assets/Sprites/Character/Gjump (6).png" id="19_u5dsf"]
 [ext_resource type="Texture2D" uid="uid://c12k2h2j8vdjt" path="res://Assets/Sprites/Character/Gjump (5).png" id="20_d4a0o"]
+[ext_resource type="Texture2D" uid="uid://kwewpvv6a0dk" path="res://Assets/Sprites/Character/Grow.png" id="21_3ayb3"]
 [ext_resource type="Texture2D" uid="uid://ch1intxq0cr18" path="res://Assets/Sprites/Character/idle 1.png" id="21_3mdhf"]
+[ext_resource type="Texture2D" uid="uid://cgxuhfktvlhg6" path="res://Assets/Sprites/Character/idle 1 53.PNG" id="22_mbqc2"]
 [ext_resource type="Texture2D" uid="uid://emqo2h4ltk2n" path="res://Assets/Sprites/Character/idle-2.png" id="22_pxy86"]
 [ext_resource type="Texture2D" uid="uid://d112q6ipvg3ur" path="res://Assets/Sprites/Character/push_3.png" id="23_jh3v3"]
 [ext_resource type="Texture2D" uid="uid://bv5vca3wykfry" path="res://Assets/Sprites/Character/Gjump (1.1).png" id="24_6r1ar"]
@@ -53,6 +55,7 @@
 [ext_resource type="Script" path="res://Scripts/shrink_portal.gd" id="39_1m415"]
 [ext_resource type="Texture2D" uid="uid://81vpbbt7xjmo" path="res://Assets/Placeholders/shrinkwisp.png" id="40_tdiw1"]
 [ext_resource type="Script" path="res://Scripts/death_zone.gd" id="41_0u8lk"]
+[ext_resource type="Texture2D" uid="uid://ds5h0pxykg3ry" path="res://Assets/Sprites/Character/shrink.png" id="42_0r5fh"]
 [ext_resource type="Script" path="res://Scripts/portal.gd" id="42_5q1nw"]
 [ext_resource type="Texture2D" uid="uid://ca1cms2y3p3co" path="res://Assets/Placeholders/growwisp.png" id="43_akhv3"]
 [ext_resource type="Script" path="res://Scripts/fade_out.gd" id="44_t8x1v"]
@@ -112,6 +115,23 @@ size = Vector2(13, 25.2)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_p58ry"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("21_3ayb3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_mbqc2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_3ayb3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_mbqc2")
+}],
+"loop": false,
+"name": &"grow",
+"speed": 3.0
+}, {
 "frames": [{
 "duration": 2.0,
 "texture": ExtResource("21_3mdhf")
@@ -215,6 +235,23 @@ animations = [{
 "loop": false,
 "name": &"push",
 "speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("42_0r5fh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_mbqc2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("42_0r5fh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_mbqc2")
+}],
+"loop": false,
+"name": &"shrink",
+"speed": 3.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -650,7 +687,7 @@ position = Vector2(1.39999, -3)
 rotation = -0.000699009
 scale = Vector2(0.015, 0.015)
 sprite_frames = SubResource("SpriteFrames_p58ry")
-animation = &"push"
+animation = &"shrink"
 offset = Vector2(95, 39)
 flip_h = true
 

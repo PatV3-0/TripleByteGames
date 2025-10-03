@@ -1,4 +1,4 @@
-[gd_scene load_steps=124 format=3 uid="uid://cxvd84y1wcrt3"]
+[gd_scene load_steps=130 format=3 uid="uid://cxvd84y1wcrt3"]
 
 [ext_resource type="Script" path="res://Scripts/character_body_2d.gd" id="1_3lcfs"]
 [ext_resource type="Script" path="res://Scripts/tutorial_scene.gd" id="1_22m25"]
@@ -60,7 +60,12 @@
 [ext_resource type="Script" path="res://Scripts/fade_out.gd" id="31_8l0nc"]
 [ext_resource type="Texture2D" uid="uid://b5xqjf6niqdpw" path="res://Assets/Sprites/Tutorials/Grow2.png" id="31_ye6qf"]
 [ext_resource type="Texture2D" uid="uid://di0p8u82vq7bt" path="res://Assets/Interactables/idle 1 42.PNG" id="39_5cojk"]
+[ext_resource type="Texture2D" uid="uid://behsw0hyskoeg" path="res://Assets/Sprites/Character/idle 1 61.PNG" id="43_30obn"]
 [ext_resource type="Texture2D" uid="uid://kwewpvv6a0dk" path="res://Assets/Sprites/Character/Grow.png" id="43_kn3sq"]
+[ext_resource type="Texture2D" uid="uid://cpl65y0vicoh5" path="res://Assets/Sprites/Character/idle 1 62.PNG" id="44_635u5"]
+[ext_resource type="Texture2D" uid="uid://cgxuhfktvlhg6" path="res://Assets/Sprites/Character/idle 1 53.PNG" id="44_mm2wu"]
+[ext_resource type="Texture2D" uid="uid://tcefj0asqvec" path="res://Assets/Sprites/Character/idle 1 63.PNG" id="45_fcwvj"]
+[ext_resource type="Texture2D" uid="uid://c70mun6u3qbpq" path="res://Assets/Sprites/Character/flat.png" id="46_xkckn"]
 [ext_resource type="Texture2D" uid="uid://ch1intxq0cr18" path="res://Assets/Sprites/Character/idle 1.png" id="53_6o28y"]
 [ext_resource type="Texture2D" uid="uid://emqo2h4ltk2n" path="res://Assets/Sprites/Character/idle-2.png" id="54_lt4aj"]
 [ext_resource type="Texture2D" uid="uid://bv5vca3wykfry" path="res://Assets/Sprites/Character/Gjump (1.1).png" id="56_2cfre"]
@@ -75,6 +80,7 @@
 [ext_resource type="Texture2D" uid="uid://cnbl2133psakv" path="res://Assets/Menus/SpeechbarLighter5.png" id="63_bwhie"]
 [ext_resource type="Texture2D" uid="uid://hdqf7n8ve8xb" path="res://Assets/Menus/SpeechbarLighter3.png" id="63_o0cew"]
 [ext_resource type="Texture2D" uid="uid://c5rkurno2ws1q" path="res://Assets/Interactables/pot-plant.png" id="63_odir0"]
+[ext_resource type="Texture2D" uid="uid://ds5h0pxykg3ry" path="res://Assets/Sprites/Character/shrink.png" id="64_4mcrq"]
 [ext_resource type="Texture2D" uid="uid://cay0c273362pd" path="res://Assets/Menus/SpeechbarLighter6.png" id="64_6a3jv"]
 [ext_resource type="Texture2D" uid="uid://lxblcan0e0gl" path="res://Assets/Menus/SpeechbarLighter4.png" id="64_n3at4"]
 [ext_resource type="Texture2D" uid="uid://cosrv7kcfja2h" path="res://Assets/Sprites/Character/pull4.png" id="64_utcbk"]
@@ -240,12 +246,38 @@ size = Vector2(13, 25.2)
 [sub_resource type="SpriteFrames" id="SpriteFrames_ecnqw"]
 animations = [{
 "frames": [{
+"duration": 1.0,
+"texture": ExtResource("43_30obn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("44_635u5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("45_fcwvj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("46_xkckn")
+}],
+"loop": false,
+"name": &"death",
+"speed": 5.0
+}, {
+"frames": [{
 "duration": 2.0,
 "texture": ExtResource("43_kn3sq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("44_mm2wu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("43_kn3sq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("44_mm2wu")
 }],
-"loop": true,
+"loop": false,
 "name": &"grow",
-"speed": 5.0
+"speed": 3.0
 }, {
 "frames": [{
 "duration": 2.0,
@@ -350,6 +382,23 @@ animations = [{
 "loop": false,
 "name": &"push",
 "speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("64_4mcrq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("53_6o28y")
+}, {
+"duration": 1.0,
+"texture": ExtResource("64_4mcrq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("53_6o28y")
+}],
+"loop": false,
+"name": &"shrink",
+"speed": 3.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -823,10 +872,11 @@ zoom = Vector2(1.2, 1.2)
 
 [node name="Sprite2D" type="AnimatedSprite2D" parent="CharacterBody2D"]
 position = Vector2(1.39999, -3)
-rotation = -0.000699009
 scale = Vector2(0.015, 0.015)
 sprite_frames = SubResource("SpriteFrames_ecnqw")
-animation = &"grow"
+animation = &"death"
+frame = 3
+frame_progress = 1.0
 offset = Vector2(95, 39)
 flip_h = true
 
