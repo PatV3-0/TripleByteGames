@@ -1,9 +1,7 @@
-[gd_scene load_steps=73 format=3 uid="uid://cf36lkrjd2vft"]
+[gd_scene load_steps=76 format=3 uid="uid://bvtt1e2sa34j7"]
 
 [ext_resource type="Script" path="res://Scripts/back_inside.gd" id="1_c2axg"]
 [ext_resource type="Texture2D" uid="uid://dy26qsmor8as1" path="res://Assets/Background/Untitled 83.png" id="2_7213e"]
-[ext_resource type="Texture2D" uid="uid://dqqj7x7cbx3xf" path="res://Assets/Background/Untitled 94.png" id="3_x8ovl"]
-[ext_resource type="Texture2D" uid="uid://d03my0bchkg5a" path="res://Assets/Background/Untitled 94 - Copy (2).png" id="4_jfnbr"]
 [ext_resource type="Texture2D" uid="uid://brwmyqhkpnu2u" path="res://Assets/Background/Untitled 92 - Copy (2).png" id="5_qkew7"]
 [ext_resource type="Texture2D" uid="uid://elnt2hklxc4m" path="res://Assets/Placeholders/blueberry.png" id="6_vwits"]
 [ext_resource type="Texture2D" uid="uid://uqnt1jolemgp" path="res://Assets/Placeholders/apple.png" id="7_ipgyx"]
@@ -12,8 +10,12 @@
 [ext_resource type="Texture2D" uid="uid://cwks4ur2vgq7r" path="res://Assets/Placeholders/melon.png" id="10_f8rrc"]
 [ext_resource type="Texture2D" uid="uid://lxrd3iv1h01e" path="res://Assets/Placeholders/box2.png" id="11_won8n"]
 [ext_resource type="Texture2D" uid="uid://cnlqq1p3ixqsi" path="res://Assets/Placeholders/grocerybag.png" id="12_epodr"]
+[ext_resource type="Texture2D" uid="uid://behsw0hyskoeg" path="res://Assets/Sprites/Character/idle 1 61.PNG" id="12_t3beo"]
+[ext_resource type="Texture2D" uid="uid://c70mun6u3qbpq" path="res://Assets/Sprites/Character/flat.png" id="13_e6li0"]
 [ext_resource type="Script" path="res://Scripts/character_body_2d.gd" id="13_kux3m"]
+[ext_resource type="Texture2D" uid="uid://kwewpvv6a0dk" path="res://Assets/Sprites/Character/Grow.png" id="14_85mn7"]
 [ext_resource type="Texture2D" uid="uid://ch1intxq0cr18" path="res://Assets/Sprites/Character/idle 1.png" id="14_i1k5b"]
+[ext_resource type="Texture2D" uid="uid://cgxuhfktvlhg6" path="res://Assets/Sprites/Character/idle 1 53.PNG" id="15_16hx1"]
 [ext_resource type="Texture2D" uid="uid://emqo2h4ltk2n" path="res://Assets/Sprites/Character/idle-2.png" id="15_awbwd"]
 [ext_resource type="Texture2D" uid="uid://c12k2h2j8vdjt" path="res://Assets/Sprites/Character/Gjump (5).png" id="16_abmku"]
 [ext_resource type="Texture2D" uid="uid://bv5vca3wykfry" path="res://Assets/Sprites/Character/Gjump (1.1).png" id="17_yxple"]
@@ -35,6 +37,7 @@
 [ext_resource type="Texture2D" uid="uid://cvutlp1cgta8b" path="res://Assets/Sprites/Character/walk-stop.png" id="33_cqqcb"]
 [ext_resource type="Texture2D" uid="uid://cpjbtyxusic6r" path="res://Assets/Sprites/Character/walk-2.png" id="34_owcox"]
 [ext_resource type="Texture2D" uid="uid://dyg15lcss7s5k" path="res://Assets/Sprites/Character/walk_1.png" id="35_4j7dn"]
+[ext_resource type="Texture2D" uid="uid://ds5h0pxykg3ry" path="res://Assets/Sprites/Character/shrink.png" id="35_d2lgp"]
 [ext_resource type="AudioStream" uid="uid://c3iu4fh2kf3kk" path="res://Assets/Sound/jump.wav" id="36_85xjn"]
 [ext_resource type="AudioStream" uid="uid://cm8n17onir64w" path="res://Assets/Sound/boxSound.wav" id="37_62g26"]
 [ext_resource type="AudioStream" uid="uid://dydis8421b2ou" path="res://Assets/Sound/walk.wav" id="38_i7b2k"]
@@ -96,6 +99,34 @@ size = Vector2(13, 25.2)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_aiwwa"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("12_t3beo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_e6li0")
+}],
+"loop": false,
+"name": &"die",
+"speed": 3.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("14_85mn7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_16hx1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_16hx1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_85mn7")
+}],
+"loop": false,
+"name": &"grow",
+"speed": 3.0
+}, {
 "frames": [{
 "duration": 2.0,
 "texture": ExtResource("14_i1k5b")
@@ -199,6 +230,23 @@ animations = [{
 "loop": false,
 "name": &"push",
 "speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("35_d2lgp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_16hx1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("35_d2lgp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_16hx1")
+}],
+"loop": false,
+"name": &"shrink",
+"speed": 3.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -381,40 +429,33 @@ position = Vector2(642, 147)
 scale = Vector2(2.16992, 2.16992)
 texture = ExtResource("2_7213e")
 
-[node name="Sprite2D3" type="Sprite2D" parent="."]
-position = Vector2(3721, -1532)
-texture = ExtResource("3_x8ovl")
-
-[node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(679, -1532)
-texture = ExtResource("4_jfnbr")
-
 [node name="Sprite2D5" type="Sprite2D" parent="."]
-position = Vector2(2936, -2550)
+position = Vector2(2061, -2533.64)
 scale = Vector2(1, 5.47495)
 texture = ExtResource("5_qkew7")
 flip_h = true
 flip_v = true
 
 [node name="Sprite2D4" type="Sprite2D" parent="."]
-position = Vector2(2625, -746)
+position = Vector2(1750, -729.642)
 scale = Vector2(1, 2.33986)
 texture = ExtResource("5_qkew7")
 
 [node name="ColorRect3" type="ColorRect" parent="."]
-offset_left = 2466.0
-offset_top = -1434.0
-offset_right = 2557.0
-offset_bottom = 600.0
+offset_left = 1589.0
+offset_top = -1418.0
+offset_right = 1680.0
+offset_bottom = 616.0
 color = Color(0.494118, 0.313726, 0.207843, 1)
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 
 [node name="CollisionShape2D15" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(2537, 14.75)
+position = Vector2(1662, 31.1084)
 shape = SubResource("RectangleShape2D_vt7q0")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+visible = false
 position = Vector2(667.5, 503)
 shape = SubResource("RectangleShape2D_j3c01")
 
@@ -551,7 +592,7 @@ scale = Vector2(1.28349, 0.850904)
 texture = ExtResource("12_epodr")
 
 [node name="CharacterBody2D" type="CharacterBody2D" parent="." groups=["Player"]]
-position = Vector2(-794, 474)
+position = Vector2(-416, 461)
 scale = Vector2(1.5, 1.5)
 script = ExtResource("13_kux3m")
 
@@ -564,7 +605,7 @@ position = Vector2(1.40002, -3)
 rotation = -0.000699009
 scale = Vector2(0.015, 0.015)
 sprite_frames = SubResource("SpriteFrames_aiwwa")
-animation = &"push"
+animation = &"die"
 offset = Vector2(95, 39)
 flip_h = true
 
@@ -649,7 +690,7 @@ position = Vector2(-3088, -254)
 script = ExtResource("51_1i0fg")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="FadeOut"]
-position = Vector2(2268, 474.625)
+position = Vector2(2558, 508)
 shape = SubResource("RectangleShape2D_gn3sw")
 debug_color = Color(0.411765, 0.407843, 0.172549, 1)
 
