@@ -1,4 +1,4 @@
-[gd_scene load_steps=92 format=3 uid="uid://bt4cdbkr6qe2n"]
+[gd_scene load_steps=94 format=3 uid="uid://bt4cdbkr6qe2n"]
 
 [ext_resource type="Script" path="res://Scenes/kitchen_3.gd" id="1_k4qw0"]
 [ext_resource type="Texture2D" uid="uid://b3p05wkj6axuq" path="res://Assets/Background/Untitled 97.png" id="2_er1oh"]
@@ -47,9 +47,11 @@
 [ext_resource type="Texture2D" uid="uid://hdqf7n8ve8xb" path="res://Assets/Menus/SpeechbarLighter3.png" id="26_0o1sh"]
 [ext_resource type="Texture2D" uid="uid://bv5vca3wykfry" path="res://Assets/Sprites/Character/Gjump (1.1).png" id="26_qqf6k"]
 [ext_resource type="Texture2D" uid="uid://kwewpvv6a0dk" path="res://Assets/Sprites/Character/Grow.png" id="27_lpqwy"]
+[ext_resource type="Texture2D" uid="uid://behsw0hyskoeg" path="res://Assets/Sprites/Character/idle 1 61.PNG" id="27_qinif"]
 [ext_resource type="Texture2D" uid="uid://lxblcan0e0gl" path="res://Assets/Menus/SpeechbarLighter4.png" id="27_us5jn"]
 [ext_resource type="Texture2D" uid="uid://cgxuhfktvlhg6" path="res://Assets/Sprites/Character/idle 1 53.PNG" id="28_aqva0"]
 [ext_resource type="Script" path="res://Scripts/fade_out.gd" id="28_e5q4b"]
+[ext_resource type="Texture2D" uid="uid://c70mun6u3qbpq" path="res://Assets/Sprites/Character/flat.png" id="28_ft2sg"]
 [ext_resource type="Texture2D" uid="uid://dyy7bp757jofl" path="res://Assets/Sprites/Character/Gjump (0).png" id="28_m6ryv"]
 [ext_resource type="Texture2D" uid="uid://dhl4ey5414ddw" path="res://Assets/Sprites/Character/Gjump (2.1).png" id="29_13k7l"]
 [ext_resource type="Texture2D" uid="uid://uv7p712dwm1x" path="res://Assets/Sprites/Character/pull1.png" id="30_64xti"]
@@ -124,6 +126,17 @@ size = Vector2(13, 25.2)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_rlqqp"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("27_qinif")
+}, {
+"duration": 1.0,
+"texture": ExtResource("28_ft2sg")
+}],
+"loop": false,
+"name": &"die",
+"speed": 3.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": ExtResource("27_lpqwy")
@@ -839,7 +852,7 @@ position = Vector2(1.39999, -3)
 rotation = -0.000699009
 scale = Vector2(0.015, 0.015)
 sprite_frames = SubResource("SpriteFrames_rlqqp")
-animation = &"shrink"
+animation = &"die"
 offset = Vector2(95, 39)
 flip_h = true
 

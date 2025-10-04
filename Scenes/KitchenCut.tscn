@@ -1,4 +1,4 @@
-[gd_scene load_steps=70 format=3 uid="uid://bdb66oeqaei7d"]
+[gd_scene load_steps=72 format=3 uid="uid://bdb66oeqaei7d"]
 
 [ext_resource type="Script" path="res://Scripts/kitchen_cut.gd" id="1_mfoaj"]
 [ext_resource type="Script" path="res://Scripts/character_body_2d.gd" id="2_orm1t"]
@@ -10,9 +10,11 @@
 [ext_resource type="Texture2D" uid="uid://byypnkjc87sdb" path="res://Assets/Sprites/Character/Gjump (6).png" id="5_m7wb6"]
 [ext_resource type="Texture2D" uid="uid://emqo2h4ltk2n" path="res://Assets/Sprites/Character/idle-2.png" id="6_2hpvl"]
 [ext_resource type="Texture2D" uid="uid://c12k2h2j8vdjt" path="res://Assets/Sprites/Character/Gjump (5).png" id="6_cvjfq"]
+[ext_resource type="Texture2D" uid="uid://behsw0hyskoeg" path="res://Assets/Sprites/Character/idle 1 61.PNG" id="7_qhwwq"]
 [ext_resource type="Texture2D" uid="uid://kwewpvv6a0dk" path="res://Assets/Sprites/Character/Grow.png" id="7_xiy3g"]
 [ext_resource type="Texture2D" uid="uid://cgxuhfktvlhg6" path="res://Assets/Sprites/Character/idle 1 53.PNG" id="8_3f5ca"]
 [ext_resource type="Texture2D" uid="uid://bv5vca3wykfry" path="res://Assets/Sprites/Character/Gjump (1.1).png" id="8_e5hh5"]
+[ext_resource type="Texture2D" uid="uid://c70mun6u3qbpq" path="res://Assets/Sprites/Character/flat.png" id="8_fnda8"]
 [ext_resource type="Texture2D" uid="uid://d112q6ipvg3ur" path="res://Assets/Sprites/Character/push_3.png" id="9_cxhh6"]
 [ext_resource type="Texture2D" uid="uid://dyy7bp757jofl" path="res://Assets/Sprites/Character/Gjump (0).png" id="10_cav28"]
 [ext_resource type="Texture2D" uid="uid://heuqru2dosrk" path="res://Assets/Sprites/Character/push_2.png" id="10_o45do"]
@@ -71,6 +73,17 @@ size = Vector2(13, 25.2)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_hcphe"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_qhwwq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_fnda8")
+}],
+"loop": false,
+"name": &"die",
+"speed": 3.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": ExtResource("7_xiy3g")
@@ -465,7 +478,7 @@ position = Vector2(1.39996, -3)
 rotation = -0.000699009
 scale = Vector2(0.015, 0.015)
 sprite_frames = SubResource("SpriteFrames_hcphe")
-animation = &"grow"
+animation = &"die"
 offset = Vector2(95, 39)
 
 [node name="Camera2D" type="Camera2D" parent="CharacterBody2D"]

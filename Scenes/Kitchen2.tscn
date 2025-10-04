@@ -1,4 +1,4 @@
-[gd_scene load_steps=131 format=3 uid="uid://duvfb6prmpxpu"]
+[gd_scene load_steps=133 format=3 uid="uid://duvfb6prmpxpu"]
 
 [ext_resource type="Script" path="res://Scripts/kitchen_2.gd" id="1_4in3w"]
 [ext_resource type="Texture2D" uid="uid://v6njha2nnja4" path="res://Assets/Background/Untitled 93.png" id="2_erwe7"]
@@ -49,8 +49,10 @@
 [ext_resource type="Texture2D" uid="uid://dhl4ey5414ddw" path="res://Assets/Sprites/Character/Gjump (2.1).png" id="24_wx5yx"]
 [ext_resource type="Texture2D" uid="uid://kwewpvv6a0dk" path="res://Assets/Sprites/Character/Grow.png" id="25_bf1s5"]
 [ext_resource type="Texture2D" uid="uid://uv7p712dwm1x" path="res://Assets/Sprites/Character/pull1.png" id="25_niy2h"]
+[ext_resource type="Texture2D" uid="uid://behsw0hyskoeg" path="res://Assets/Sprites/Character/idle 1 61.PNG" id="25_qkspb"]
 [ext_resource type="Script" path="res://Scripts/portal.gd" id="25_wifyc"]
 [ext_resource type="Texture2D" uid="uid://cgxuhfktvlhg6" path="res://Assets/Sprites/Character/idle 1 53.PNG" id="26_63sqk"]
+[ext_resource type="Texture2D" uid="uid://c70mun6u3qbpq" path="res://Assets/Sprites/Character/flat.png" id="26_atw8x"]
 [ext_resource type="Texture2D" uid="uid://qeqb7yadg5ns" path="res://Assets/Sprites/Character/pull2.png" id="26_hmero"]
 [ext_resource type="Script" path="res://Scripts/shrink_portal.gd" id="26_rnq5f"]
 [ext_resource type="Script" path="res://Scripts/fade_out.gd" id="27_e3m51"]
@@ -171,6 +173,17 @@ size = Vector2(13, 25.2)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_fm41i"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("25_qkspb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_atw8x")
+}],
+"loop": false,
+"name": &"die",
+"speed": 3.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": ExtResource("25_bf1s5")
@@ -933,7 +946,7 @@ position = Vector2(1.39996, -3)
 rotation = -0.000699009
 scale = Vector2(0.015, 0.015)
 sprite_frames = SubResource("SpriteFrames_fm41i")
-animation = &"shrink"
+animation = &"die"
 offset = Vector2(95, 39)
 
 [node name="Camera2D" type="Camera2D" parent="CharacterBody2D"]

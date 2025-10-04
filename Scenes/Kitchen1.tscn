@@ -1,4 +1,4 @@
-[gd_scene load_steps=146 format=3 uid="uid://drq3m40mvk8jp"]
+[gd_scene load_steps=148 format=3 uid="uid://drq3m40mvk8jp"]
 
 [ext_resource type="Script" path="res://Scripts/kitchen_1.gd" id="1_3weli"]
 [ext_resource type="Script" path="res://Scripts/character_body_2d.gd" id="2_jx67a"]
@@ -48,11 +48,13 @@
 [ext_resource type="Texture2D" uid="uid://eabpv0wv1gws" path="res://Assets/Sprites/Character/pull3.5.png" id="22_6vft4"]
 [ext_resource type="Texture2D" uid="uid://d33vnxb146pwg" path="res://Assets/Menus/SpeechbarLighter2.png" id="22_h21ha"]
 [ext_resource type="Texture2D" uid="uid://cosrv7kcfja2h" path="res://Assets/Sprites/Character/pull4.png" id="23_2k05r"]
+[ext_resource type="Texture2D" uid="uid://behsw0hyskoeg" path="res://Assets/Sprites/Character/idle 1 61.PNG" id="23_dtt22"]
 [ext_resource type="Texture2D" uid="uid://hdqf7n8ve8xb" path="res://Assets/Menus/SpeechbarLighter3.png" id="23_dyk1l"]
 [ext_resource type="Texture2D" uid="uid://kwewpvv6a0dk" path="res://Assets/Sprites/Character/Grow.png" id="23_no7ct"]
 [ext_resource type="Texture2D" uid="uid://lxblcan0e0gl" path="res://Assets/Menus/SpeechbarLighter4.png" id="24_1fqwv"]
 [ext_resource type="Texture2D" uid="uid://cgxuhfktvlhg6" path="res://Assets/Sprites/Character/idle 1 53.PNG" id="24_1ofbk"]
 [ext_resource type="Texture2D" uid="uid://bvotkbnkinptd" path="res://Assets/Sprites/Character/pull5.png" id="24_ltfwj"]
+[ext_resource type="Texture2D" uid="uid://c70mun6u3qbpq" path="res://Assets/Sprites/Character/flat.png" id="24_y7gtr"]
 [ext_resource type="Script" path="res://Scripts/portal.gd" id="25_3m61t"]
 [ext_resource type="Script" path="res://Scripts/shrink_portal.gd" id="26_phil5"]
 [ext_resource type="Script" path="res://Scripts/death_zone.gd" id="27_t5lql"]
@@ -177,6 +179,17 @@ size = Vector2(13, 25.2)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_5a7sy"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("23_dtt22")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_y7gtr")
+}],
+"loop": false,
+"name": &"die",
+"speed": 3.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": ExtResource("23_no7ct")
@@ -886,7 +899,7 @@ position = Vector2(1.39996, -3)
 rotation = -0.000699009
 scale = Vector2(0.015, 0.015)
 sprite_frames = SubResource("SpriteFrames_5a7sy")
-animation = &"shrink"
+animation = &"die"
 offset = Vector2(95, 39)
 
 [node name="Camera2D" type="Camera2D" parent="CharacterBody2D"]

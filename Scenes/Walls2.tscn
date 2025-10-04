@@ -1,4 +1,4 @@
-[gd_scene load_steps=115 format=3 uid="uid://bbgxpud6segme"]
+[gd_scene load_steps=117 format=3 uid="uid://bbgxpud6segme"]
 
 [ext_resource type="Script" path="res://Scripts/walls_2.gd" id="1_b1sgd"]
 [ext_resource type="Texture2D" uid="uid://cd312uojm511g" path="res://Assets/Background/Untitled 91.png" id="2_in8h3"]
@@ -58,8 +58,10 @@
 [ext_resource type="Texture2D" uid="uid://bvotkbnkinptd" path="res://Assets/Sprites/Character/pull5.png" id="34_78cwh"]
 [ext_resource type="Script" path="res://Scenes/tutorial_w_3.gd" id="35_un5eh"]
 [ext_resource type="Script" path="res://Scenes/tutorial_w_4.gd" id="37_0f71x"]
+[ext_resource type="Texture2D" uid="uid://behsw0hyskoeg" path="res://Assets/Sprites/Character/idle 1 61.PNG" id="39_pmd5u"]
 [ext_resource type="Texture2D" uid="uid://kwewpvv6a0dk" path="res://Assets/Sprites/Character/Grow.png" id="39_uydus"]
 [ext_resource type="Texture2D" uid="uid://cgxuhfktvlhg6" path="res://Assets/Sprites/Character/idle 1 53.PNG" id="40_co63b"]
+[ext_resource type="Texture2D" uid="uid://c70mun6u3qbpq" path="res://Assets/Sprites/Character/flat.png" id="40_hynhy"]
 [ext_resource type="Texture2D" uid="uid://cdi47y8m6tqdn" path="res://Assets/Interactables/Untitled 55.PNG" id="45_2jhoa"]
 [ext_resource type="Script" path="res://Scripts/tutorial_canvas1.gd" id="47_m5br8"]
 [ext_resource type="Texture2D" uid="uid://cnbl2133psakv" path="res://Assets/Menus/SpeechbarLighter5.png" id="48_rpawl"]
@@ -258,6 +260,17 @@ size = Vector2(13, 25.2)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_n7ggd"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("39_pmd5u")
+}, {
+"duration": 1.0,
+"texture": ExtResource("40_hynhy")
+}],
+"loop": false,
+"name": &"die",
+"speed": 3.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": ExtResource("39_uydus")
@@ -949,7 +962,7 @@ position = Vector2(1.39999, -3)
 rotation = -0.000699009
 scale = Vector2(0.015, 0.015)
 sprite_frames = SubResource("SpriteFrames_n7ggd")
-animation = &"shrink"
+animation = &"die"
 offset = Vector2(95, 39)
 flip_h = true
 

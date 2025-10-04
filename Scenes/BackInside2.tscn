@@ -1,4 +1,4 @@
-[gd_scene load_steps=119 format=3 uid="uid://bv4c1ivswho8g"]
+[gd_scene load_steps=121 format=3 uid="uid://bv4c1ivswho8g"]
 
 [ext_resource type="Script" path="res://Scripts/back_inside_2.gd" id="1_y41im"]
 [ext_resource type="Texture2D" uid="uid://dy26qsmor8as1" path="res://Assets/Background/Untitled 83.png" id="2_1a5ph"]
@@ -58,8 +58,10 @@
 [ext_resource type="Texture2D" uid="uid://cnbl2133psakv" path="res://Assets/Menus/SpeechbarLighter5.png" id="33_d0pjt"]
 [ext_resource type="Texture2D" uid="uid://ygego3qxiycn" path="res://Assets/Sprites/Character/pull3.png" id="33_kbvf5"]
 [ext_resource type="Texture2D" uid="uid://cay0c273362pd" path="res://Assets/Menus/SpeechbarLighter6.png" id="34_47mqw"]
+[ext_resource type="Texture2D" uid="uid://behsw0hyskoeg" path="res://Assets/Sprites/Character/idle 1 61.PNG" id="34_kqhup"]
 [ext_resource type="Texture2D" uid="uid://kwewpvv6a0dk" path="res://Assets/Sprites/Character/Grow.png" id="34_ni3uc"]
 [ext_resource type="Texture2D" uid="uid://eabpv0wv1gws" path="res://Assets/Sprites/Character/pull3.5.png" id="34_pbykk"]
+[ext_resource type="Texture2D" uid="uid://c70mun6u3qbpq" path="res://Assets/Sprites/Character/flat.png" id="35_1iv6a"]
 [ext_resource type="Texture2D" uid="uid://cgxuhfktvlhg6" path="res://Assets/Sprites/Character/idle 1 53.PNG" id="35_6p3d2"]
 [ext_resource type="Texture2D" uid="uid://cosrv7kcfja2h" path="res://Assets/Sprites/Character/pull4.png" id="35_epnb6"]
 [ext_resource type="Texture2D" uid="uid://e0b2aiq41mcl" path="res://Assets/Menus/SpeechbarLighter7.png" id="35_xee27"]
@@ -241,6 +243,17 @@ animations = [{
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_25qyl"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("34_kqhup")
+}, {
+"duration": 1.0,
+"texture": ExtResource("35_1iv6a")
+}],
+"loop": false,
+"name": &"die",
+"speed": 3.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": ExtResource("34_ni3uc")
@@ -974,7 +987,7 @@ position = Vector2(1.39999, -3)
 rotation = -0.000699009
 scale = Vector2(0.015, 0.015)
 sprite_frames = SubResource("SpriteFrames_25qyl")
-animation = &"shrink"
+animation = &"die"
 offset = Vector2(95, 39)
 
 [node name="ShrinkPortal" type="Area2D" parent="."]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=76 format=3 uid="uid://ce4tnhvdt8od4"]
+[gd_scene load_steps=78 format=3 uid="uid://ce4tnhvdt8od4"]
 
 [ext_resource type="Script" path="res://Scripts/back_inside.gd" id="1_11n2f"]
 [ext_resource type="Script" path="res://Scripts/character_body_2d.gd" id="2_8oqke"]
@@ -23,8 +23,10 @@
 [ext_resource type="Texture2D" uid="uid://dktlv8fcbb4lf" path="res://Assets/Sprites/Character/push_strain_breathe_out-1.png" id="12_08tvs"]
 [ext_resource type="Texture2D" uid="uid://b23akb18jrfgm" path="res://Assets/Sprites/Character/push_strain_breathe_in-2.png" id="13_p2thh"]
 [ext_resource type="Texture2D" uid="uid://bv5vca3wykfry" path="res://Assets/Sprites/Character/Gjump (1.1).png" id="13_x2d8q"]
+[ext_resource type="Texture2D" uid="uid://behsw0hyskoeg" path="res://Assets/Sprites/Character/idle 1 61.PNG" id="14_gl33y"]
 [ext_resource type="Texture2D" uid="uid://kwewpvv6a0dk" path="res://Assets/Sprites/Character/Grow.png" id="14_iy24t"]
 [ext_resource type="Texture2D" uid="uid://jsttnhfnypr" path="res://Assets/Sprites/Character/push_strain_breathe_out-2.png" id="14_lcc1x"]
+[ext_resource type="Texture2D" uid="uid://c70mun6u3qbpq" path="res://Assets/Sprites/Character/flat.png" id="15_7ngns"]
 [ext_resource type="Texture2D" uid="uid://cgxuhfktvlhg6" path="res://Assets/Sprites/Character/idle 1 53.PNG" id="15_20nhf"]
 [ext_resource type="Texture2D" uid="uid://cvutlp1cgta8b" path="res://Assets/Sprites/Character/walk-stop.png" id="15_ma6nj"]
 [ext_resource type="Texture2D" uid="uid://dyy7bp757jofl" path="res://Assets/Sprites/Character/Gjump (0).png" id="15_rxjp5"]
@@ -99,6 +101,17 @@ size = Vector2(13, 25.2)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_aiwwa"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("14_gl33y")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_7ngns")
+}],
+"loop": false,
+"name": &"die",
+"speed": 3.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": ExtResource("14_iy24t")
@@ -605,7 +618,7 @@ position = Vector2(1.40002, -3)
 rotation = -0.000699009
 scale = Vector2(0.015, 0.015)
 sprite_frames = SubResource("SpriteFrames_aiwwa")
-animation = &"shrink"
+animation = &"die"
 offset = Vector2(95, 39)
 
 [node name="Camera2D" type="Camera2D" parent="CharacterBody2D"]

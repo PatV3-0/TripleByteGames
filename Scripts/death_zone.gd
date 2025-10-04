@@ -18,14 +18,11 @@ func _on_body_entered(body):
 			tutorial.cancel_tutorial()
 		if body.has_method("play_death"):
 			body.play_death()
-			# Wait for animation before reloading
-		if body.has_signal("death_finished"):
-			body.connect("death_finished", Callable(self, "_on_player_death_finished"), CONNECT_ONE_SHOT)
-		else:
-			get_tree().create_timer(0.2).timeout.connect(_on_player_death_finished, CONNECT_ONE_SHOT)
+			if body.has_signal("death_finished"):
+				body.connect("death_finished", Callable(self, "_on_player_death_finished"), CONNECT_ONE_SHOT)
+			else:
+				get_tree().create_timer(0.5).timeout.connect(_on_player_death_finished, CONNECT_ONE_SHOT)
 
-		get_tree().reload_current_scene()
-		
 func _on_player_death_finished():
 	print("Reloading scene...")
 	get_tree().reload_current_scene()

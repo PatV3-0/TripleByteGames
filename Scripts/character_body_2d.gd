@@ -315,15 +315,23 @@ func shrink(offset):
 	return true  # Successfully grew
 	
 func play_death():
-	if $Sprite2D and "death" in $Sprite2D.sprite_frames.get_animation_names():
-		$Sprite2D.play("death")
-		$Sprite2D.animation_finished.connect(_on_death_animation_finished, CONNECT_ONE_SHOT)
-		set_physics_process(false)
+	transforming = true
+	if $Sprite2D and "die" in $Sprite2D.sprite_frames.get_animation_names():
+		print("Play dead!")
+		
+		if $Sprite2D.is_connected("animation_finished", Callable(self, "_on_death_animation_finished")):
+			$Sprite2D.animation_finished.disconnect(Callable(self, "_on_death_animation_finished"))
+			
+		$Sprite2D.animation_finished.connect(Callable(self, "_on_death_animation_finished"), CONNECT_ONE_SHOT)
+		$Sprite2D.play("die")
+		print("Playing")
 	else:
-		await get_tree().create_timer(1.0).timeout
+		print("No death animation")
+		await get_tree().create_timer(0.5).timeout
 		_on_death_animation_finished()
 		
 func _on_death_animation_finished():
+	print("Animation done!")
 	emit_signal("death_finished")
 
 func update_camera_zoom():

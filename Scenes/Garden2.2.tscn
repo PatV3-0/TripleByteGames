@@ -1,4 +1,4 @@
-[gd_scene load_steps=106 format=3 uid="uid://dlv0ashhlgcqg"]
+[gd_scene load_steps=115 format=3 uid="uid://dlv0ashhlgcqg"]
 
 [ext_resource type="Script" path="res://Scripts/garden_2.gd" id="1_xvhm1"]
 [ext_resource type="Texture2D" uid="uid://cmq1vhmr7erlq" path="res://Assets/Background/Untitled 99.png" id="2_18k6u"]
@@ -25,6 +25,8 @@
 [ext_resource type="Texture2D" uid="uid://c12k2h2j8vdjt" path="res://Assets/Sprites/Character/Gjump (5).png" id="20_d4a0o"]
 [ext_resource type="Texture2D" uid="uid://kwewpvv6a0dk" path="res://Assets/Sprites/Character/Grow.png" id="21_3ayb3"]
 [ext_resource type="Texture2D" uid="uid://ch1intxq0cr18" path="res://Assets/Sprites/Character/idle 1.png" id="21_3mdhf"]
+[ext_resource type="Texture2D" uid="uid://behsw0hyskoeg" path="res://Assets/Sprites/Character/idle 1 61.PNG" id="21_u4vu1"]
+[ext_resource type="Texture2D" uid="uid://c70mun6u3qbpq" path="res://Assets/Sprites/Character/flat.png" id="22_dc56i"]
 [ext_resource type="Texture2D" uid="uid://cgxuhfktvlhg6" path="res://Assets/Sprites/Character/idle 1 53.PNG" id="22_mbqc2"]
 [ext_resource type="Texture2D" uid="uid://emqo2h4ltk2n" path="res://Assets/Sprites/Character/idle-2.png" id="22_pxy86"]
 [ext_resource type="Texture2D" uid="uid://d112q6ipvg3ur" path="res://Assets/Sprites/Character/push_3.png" id="23_jh3v3"]
@@ -75,6 +77,12 @@
 [ext_resource type="Texture2D" uid="uid://nkmvddm2gdg8" path="res://Assets/Menus/torn-paper.png" id="58_fomx8"]
 [ext_resource type="Texture2D" uid="uid://bglqmusi88d3" path="res://Assets/Placeholders/Beetle-1.png" id="58_mqace"]
 [ext_resource type="Texture2D" uid="uid://bk0wv2eltfmhf" path="res://Assets/Menus/JB-paper.png" id="59_hmyjb"]
+[ext_resource type="Texture2D" uid="uid://drpuhgaotqpy4" path="res://Assets/Sprites/JewelBeetle/Beetle-1.png" id="73_ejp8j"]
+[ext_resource type="Texture2D" uid="uid://ctcskah48t3ef" path="res://Assets/Sprites/JewelBeetle/Beetle-2.png" id="74_2easg"]
+[ext_resource type="Texture2D" uid="uid://13hsvf4x1vge" path="res://Assets/Sprites/JewelBeetle/Beetle-3.png" id="75_sdsm7"]
+[ext_resource type="Texture2D" uid="uid://bq0hlcqnv4c4h" path="res://Assets/Sprites/JewelBeetle/Beetle-4.png" id="76_opmyw"]
+[ext_resource type="Texture2D" uid="uid://cdhl1gubkj80t" path="res://Assets/Sprites/JewelBeetle/Beetle-5.png" id="77_l04id"]
+[ext_resource type="Texture2D" uid="uid://buxt8vqh5250x" path="res://Assets/Sprites/JewelBeetle/Beetle-6.png" id="78_pocgl"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_s17ju"]
 size = Vector2(28.75, 39)
@@ -115,6 +123,17 @@ size = Vector2(13, 25.2)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_p58ry"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("21_u4vu1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_dc56i")
+}],
+"loop": false,
+"name": &"die",
+"speed": 3.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": ExtResource("21_3ayb3")
@@ -461,6 +480,32 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="SpriteFrames" id="SpriteFrames_hq30s"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("73_ejp8j")
+}, {
+"duration": 1.0,
+"texture": ExtResource("74_2easg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("75_sdsm7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("76_opmyw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("77_l04id")
+}, {
+"duration": 1.0,
+"texture": ExtResource("78_pocgl")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mri3u"]
 size = Vector2(53, 65)
 
@@ -687,7 +732,7 @@ position = Vector2(1.39999, -3)
 rotation = -0.000699009
 scale = Vector2(0.015, 0.015)
 sprite_frames = SubResource("SpriteFrames_p58ry")
-animation = &"shrink"
+animation = &"die"
 offset = Vector2(95, 39)
 flip_h = true
 
@@ -832,9 +877,9 @@ shape = SubResource("CircleShape2D_ogl02")
 debug_color = Color(0.666293, 0.511325, 0, 0.42)
 
 [node name="Sprite2D" type="Sprite2D" parent="MushroomLaunch3/CollisionShape2D"]
-position = Vector2(-3.71829, 35.763)
+position = Vector2(-2.21596, 24.4953)
 rotation = -3.14159
-scale = Vector2(2.37054, -6.31936)
+scale = Vector2(1.94493, -4.54979)
 texture = ExtResource("3_vqeex")
 
 [node name="Pushable" type="RigidBody2D" parent="." groups=["Pushable"]]
@@ -921,8 +966,11 @@ i_name = "beetle"
 [node name="Sprite2D" type="AnimatedSprite2D" parent="Ingredient"]
 position = Vector2(75, 627)
 scale = Vector2(0.0685989, 0.0685989)
+sprite_frames = SubResource("SpriteFrames_hq30s")
+frame_progress = 0.578776
 
 [node name="7Sprite2D" type="Sprite2D" parent="Ingredient"]
+visible = false
 position = Vector2(75, 627)
 scale = Vector2(0.0685989, 0.0685989)
 texture = ExtResource("58_mqace")
