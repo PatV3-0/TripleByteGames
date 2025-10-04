@@ -1,11 +1,10 @@
-[gd_scene load_steps=122 format=3 uid="uid://bv4c1ivswho8g"]
+[gd_scene load_steps=130 format=3 uid="uid://bv4c1ivswho8g"]
 
 [ext_resource type="Script" path="res://Scripts/back_inside_2.gd" id="1_y41im"]
 [ext_resource type="Texture2D" uid="uid://dy26qsmor8as1" path="res://Assets/Background/Untitled 83.png" id="2_1a5ph"]
 [ext_resource type="Script" path="res://Scripts/area_2d.gd" id="2_2vu8h"]
 [ext_resource type="Script" path="res://Scripts/highlight1.gd" id="3_8y280"]
 [ext_resource type="Texture2D" uid="uid://ieeg27jgl5nj" path="res://Assets/Background/Untitled 156.png" id="3_b158u"]
-[ext_resource type="Texture2D" uid="uid://bgkahs66psqf7" path="res://Assets/Interactables/Cat-1.png" id="3_jutxt"]
 [ext_resource type="Texture2D" uid="uid://cy4hm4tq5nmir" path="res://Assets/Background/Untitled 92.png" id="3_qcc13"]
 [ext_resource type="Script" path="res://Scripts/character_body_2d.gd" id="4_3a4g7"]
 [ext_resource type="Texture2D" uid="uid://2owtuts2lm5p" path="res://Assets/Placeholders/box6.png" id="4_mo4sf"]
@@ -13,16 +12,24 @@
 [ext_resource type="Texture2D" uid="uid://dgjswu2bww1xx" path="res://Assets/Interactables/books-4.png" id="4_rhijj"]
 [ext_resource type="Texture2D" uid="uid://c26xpm7c7e30n" path="res://Assets/Placeholders/box9.png" id="5_8ei7i"]
 [ext_resource type="Texture2D" uid="uid://b72e3jjp80nki" path="res://Assets/Placeholders/box8.png" id="6_4odxd"]
+[ext_resource type="Texture2D" uid="uid://dhhvx5huj7wwg" path="res://Assets/Sprites/Cat/Cat1.png" id="6_sp4vt"]
 [ext_resource type="Texture2D" uid="uid://byypnkjc87sdb" path="res://Assets/Sprites/Character/Gjump (6).png" id="7_e64ck"]
 [ext_resource type="Texture2D" uid="uid://n4x2g0nv6xwr" path="res://Assets/Placeholders/box1.png" id="7_fauau"]
+[ext_resource type="Texture2D" uid="uid://bv0i11lqeecdh" path="res://Assets/Sprites/Cat/Cat2.png" id="7_wn633"]
+[ext_resource type="Texture2D" uid="uid://buf0c0m7qa47l" path="res://Assets/Sprites/Cat/Cat3.png" id="8_4ydft"]
 [ext_resource type="Texture2D" uid="uid://c12k2h2j8vdjt" path="res://Assets/Sprites/Character/Gjump (5).png" id="8_l3cuj"]
 [ext_resource type="Texture2D" uid="uid://dpo0crtv78ntq" path="res://Assets/Placeholders/box5.png" id="8_lwxly"]
+[ext_resource type="Texture2D" uid="uid://dhgie8ksewvet" path="res://Assets/Sprites/Cat/Cat4.png" id="9_ddst7"]
 [ext_resource type="Texture2D" uid="uid://c75vvubjx4hyw" path="res://Assets/Placeholders/box4_1.png" id="9_neapm"]
+[ext_resource type="Texture2D" uid="uid://0ep0fp8a0oct" path="res://Assets/Sprites/Cat/Cat5.png" id="10_5nack"]
 [ext_resource type="Texture2D" uid="uid://dcgag38fj8sfp" path="res://Assets/Placeholders/box1_1.png" id="10_pnvpl"]
 [ext_resource type="Texture2D" uid="uid://d112q6ipvg3ur" path="res://Assets/Sprites/Character/push_3.png" id="11_jyj8c"]
 [ext_resource type="Texture2D" uid="uid://do7i43pb2o3ok" path="res://Assets/Placeholders/box2_1.png" id="11_oc2h6"]
+[ext_resource type="Texture2D" uid="uid://ba5whardm1ds1" path="res://Assets/Sprites/Cat/Cat6.png" id="11_y81lp"]
 [ext_resource type="Texture2D" uid="uid://heuqru2dosrk" path="res://Assets/Sprites/Character/push_2.png" id="12_c33yq"]
 [ext_resource type="Texture2D" uid="uid://bdpb2eqvdlclj" path="res://Assets/Placeholders/box3.png" id="12_qywec"]
+[ext_resource type="Texture2D" uid="uid://bblv72vdcmu1a" path="res://Assets/Sprites/Cat/Cat7.png" id="12_tee4w"]
+[ext_resource type="Texture2D" uid="uid://c41hdrbftylti" path="res://Assets/Sprites/Cat/Cat8.png" id="13_1q7se"]
 [ext_resource type="Texture2D" uid="uid://dvcqswowob53g" path="res://Assets/Placeholders/box3_1.png" id="13_awals"]
 [ext_resource type="Texture2D" uid="uid://brikmqy8ntt4f" path="res://Assets/Sprites/Character/push_strain_breathe_in-1.png" id="13_v7rn7"]
 [ext_resource type="Texture2D" uid="uid://bu7vo73dgcao1" path="res://Assets/Interactables/Untitled 162.png" id="13_yhx4e"]
@@ -74,6 +81,38 @@
 [ext_resource type="Texture2D" uid="uid://ca1cms2y3p3co" path="res://Assets/Placeholders/growwisp.png" id="42_2yceb"]
 [ext_resource type="Texture2D" uid="uid://ds5h0pxykg3ry" path="res://Assets/Sprites/Character/shrink.png" id="55_x8n5f"]
 [ext_resource type="Texture2D" uid="uid://brwmyqhkpnu2u" path="res://Assets/Background/Untitled 92 - Copy (2).png" id="74_6k7r5"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_kxu2y"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_sp4vt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_wn633")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_4ydft")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_ddst7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_5nack")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_y81lp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_tee4w")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_1q7se")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cs4f8"]
 size = Vector2(184.5, 1214)
@@ -561,11 +600,6 @@ scale = Vector2(0.448519, -0.419849)
 texture = ExtResource("3_b158u")
 flip_h = true
 
-[node name="Sprite2D2" type="Sprite2D" parent="."]
-position = Vector2(930.276, -52.3515)
-scale = Vector2(1.23254, 1.23254)
-texture = ExtResource("3_jutxt")
-
 [node name="Sprite2D3" type="Sprite2D" parent="."]
 position = Vector2(927.962, -19.5005)
 scale = Vector2(3.76233, 3.037)
@@ -593,6 +627,11 @@ offset_right = 108.0
 offset_bottom = 35.0
 pivot_offset = Vector2(1466, -319)
 color = Color(0.305882, 0.172549, 0.0705882, 1)
+
+[node name="Cat" type="AnimatedSprite2D" parent="."]
+position = Vector2(930, -42)
+scale = Vector2(0.182283, 0.182283)
+sprite_frames = SubResource("SpriteFrames_kxu2y")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 
