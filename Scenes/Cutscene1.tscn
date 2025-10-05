@@ -157,7 +157,6 @@ scale = Vector2(0.568479, 0.568479)
 sprite_frames = SubResource("SpriteFrames_2bfwy")
 
 [node name="FadeLayer" type="CanvasLayer" parent="."]
-visible = false
 
 [node name="FadeRect" type="ColorRect" parent="FadeLayer"]
 anchors_preset = -1
