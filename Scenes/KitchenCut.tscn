@@ -578,7 +578,7 @@ bod = NodePath("../CharacterBody2D")
 tutorial_canvas = NodePath("../TutorialCanvas")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="TutLayer"]
-position = Vector2(359, 387)
+position = Vector2(347, 388)
 shape = SubResource("RectangleShape2D_rmxrj")
 debug_color = Color(0.510884, 0.573227, 0.206706, 0.42)
 
@@ -596,7 +596,7 @@ position = Vector2(-1596, -143)
 script = ExtResource("27_q3hxr")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="FadeOut"]
-position = Vector2(1708, 507)
+position = Vector2(2021, 491)
 shape = SubResource("RectangleShape2D_p2p6t")
 debug_color = Color(0.411765, 0.407843, 0.172549, 1)
 

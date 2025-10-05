@@ -5,8 +5,7 @@ extends Area2D
 var triggered := false
 
 var tutorial_lines = [
-	["Finally! My Recipe Book!", 4.0],
-	["Now if I knock it down, then I can read it...", 4.0]
+	["Finally! My Recipe Book!", 4.0]
 ]
 
 func _ready():
