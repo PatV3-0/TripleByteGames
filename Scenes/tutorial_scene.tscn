@@ -1,4 +1,4 @@
-[gd_scene load_steps=128 format=3 uid="uid://cxvd84y1wcrt3"]
+[gd_scene load_steps=138 format=3 uid="uid://cxvd84y1wcrt3"]
 
 [ext_resource type="Script" path="res://Scripts/character_body_2d.gd" id="1_3lcfs"]
 [ext_resource type="Script" path="res://Scripts/tutorial_scene.gd" id="1_22m25"]
@@ -46,13 +46,17 @@
 [ext_resource type="Texture2D" uid="uid://b44abl6bkya2o" path="res://Assets/Interactables/books-3.png" id="21_pkxts"]
 [ext_resource type="Texture2D" uid="uid://e7va5nr1e5gf" path="res://Assets/Interactables/tissue-box.png" id="22_5c302"]
 [ext_resource type="Texture2D" uid="uid://bn6mi2e1o685b" path="res://Assets/Sprites/Tutorials/Spill2.png" id="22_5dhql"]
+[ext_resource type="Texture2D" uid="uid://q6d5msehs3k4" path="res://Assets/Sprites/Portal/purple-1.png" id="23_cvkqs"]
 [ext_resource type="Texture2D" uid="uid://cvh813shthtln" path="res://Assets/Sprites/Tutorials/Spill3.png" id="23_igv3g"]
 [ext_resource type="Texture2D" uid="uid://c1ikokololu8c" path="res://Assets/Interactables/plain-candle.png" id="23_vrme5"]
+[ext_resource type="Texture2D" uid="uid://c5dume610bjp0" path="res://Assets/Sprites/Portal/purple-2.png" id="24_8ec7r"]
 [ext_resource type="Texture2D" uid="uid://dgjswu2bww1xx" path="res://Assets/Interactables/books-4.png" id="24_84lq7"]
 [ext_resource type="AudioStream" uid="uid://x56n7xvd3676" path="res://Assets/GameMusic/BGM3.mp3" id="24_405jk"]
+[ext_resource type="Texture2D" uid="uid://b1nlorewy17g8" path="res://Assets/Sprites/Portal/purple-3.png" id="25_mq6pn"]
 [ext_resource type="Texture2D" uid="uid://7dg6i1jdrvu8" path="res://Assets/Sprites/Tutorials/Bed1.png" id="26_d0dnk"]
-[ext_resource type="Texture2D" uid="uid://ca1cms2y3p3co" path="res://Assets/Placeholders/growwisp.png" id="26_e48wr"]
+[ext_resource type="Texture2D" uid="uid://21eo3rls8vh2" path="res://Assets/Sprites/Portal/purple-4.png" id="26_vcxm5"]
 [ext_resource type="Texture2D" uid="uid://do4mvkpmbxeia" path="res://Assets/Tutorial assets/Tutorial assets/glasses.png" id="27_8se8u"]
+[ext_resource type="Texture2D" uid="uid://4lgg05cwk8l1" path="res://Assets/Sprites/Portal/purple-5.png" id="27_80p2w"]
 [ext_resource type="Texture2D" uid="uid://hcbqfblwqic3" path="res://Assets/Sprites/Tutorials/Bed2.png" id="27_kmvl7"]
 [ext_resource type="Texture2D" uid="uid://ds1igef8vn8v2" path="res://Assets/Sprites/Tutorials/Bed3.png" id="28_ufubc"]
 [ext_resource type="Script" path="res://Scripts/grow_tut.gd" id="29_igly4"]
@@ -91,7 +95,11 @@
 [ext_resource type="Texture2D" uid="uid://srercerjo0jg" path="res://Assets/Tutorial assets/1.png" id="82_0fo2e"]
 [ext_resource type="Script" path="res://Scripts/tutorial_canvas1.gd" id="82_pt6cx"]
 [ext_resource type="Texture2D" uid="uid://1x876ycnlyv7" path="res://Assets/Tutorial assets/3.png" id="83_74lfy"]
-[ext_resource type="Texture2D" uid="uid://81vpbbt7xjmo" path="res://Assets/Placeholders/shrinkwisp.png" id="90_p3bqw"]
+[ext_resource type="Texture2D" uid="uid://c44se8jy53aec" path="res://Assets/Sprites/Portal/yellow-1.png" id="95_4g6ju"]
+[ext_resource type="Texture2D" uid="uid://b3q1p4b4i02vu" path="res://Assets/Sprites/Portal/yellow-2.png" id="96_d4sok"]
+[ext_resource type="Texture2D" uid="uid://di6a0d4pse7gb" path="res://Assets/Sprites/Portal/yellow-3.png" id="97_yp0sg"]
+[ext_resource type="Texture2D" uid="uid://1eq0ttio08b" path="res://Assets/Sprites/Portal/yellow-4.png" id="98_v6bhf"]
+[ext_resource type="Texture2D" uid="uid://caxwr75h2ckjn" path="res://Assets/Sprites/Portal/yellow-5.png" id="99_7lyqi"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rwsn1"]
 size = Vector2(3471.33, 20)
@@ -134,6 +142,29 @@ size = Vector2(66.6664, 29)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_j7bkw"]
 size = Vector2(82.9994, 13.3334)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_4h4hs"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("23_cvkqs")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_8ec7r")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_mq6pn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_vcxm5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("27_80p2w")
+}],
+"loop": true,
+"name": &"default",
+"speed": 6.0
+}]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_5jcc0"]
 radius = 16.0
@@ -495,6 +526,29 @@ animations = [{
 "speed": 3.0
 }]
 
+[sub_resource type="SpriteFrames" id="SpriteFrames_t80xy"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("95_4g6ju")
+}, {
+"duration": 1.0,
+"texture": ExtResource("96_d4sok")
+}, {
+"duration": 1.0,
+"texture": ExtResource("97_yp0sg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("98_v6bhf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("99_7lyqi")
+}],
+"loop": true,
+"name": &"default",
+"speed": 6.0
+}]
+
 [sub_resource type="CircleShape2D" id="CircleShape2D_2pl4v"]
 radius = 15.0333
 
@@ -755,10 +809,11 @@ debug_color = Color(0.478765, 0.438134, 1, 0.42)
 position = Vector2(353.333, 372)
 script = ExtResource("7_gx4qd")
 
-[node name="Sprite2D" type="Sprite2D" parent="GrowPortal1"]
-position = Vector2(4.54439, 2.72705)
-scale = Vector2(0.921145, 0.740968)
-texture = ExtResource("26_e48wr")
+[node name="Sprite2D" type="AnimatedSprite2D" parent="GrowPortal1"]
+position = Vector2(3.78088, 4.49902)
+scale = Vector2(0.198358, 0.159559)
+sprite_frames = SubResource("SpriteFrames_4h4hs")
+frame_progress = 0.293116
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="GrowPortal1"]
 position = Vector2(3, 5)
@@ -1022,14 +1077,15 @@ sprite_frames = SubResource("SpriteFrames_m6cdt")
 position = Vector2(884, 460.667)
 script = ExtResource("81_tpgwp")
 
+[node name="Sprite2D" type="AnimatedSprite2D" parent="ShrinkPortal"]
+position = Vector2(-0.241455, -0.00708008)
+scale = Vector2(0.152313, 0.15205)
+sprite_frames = SubResource("SpriteFrames_t80xy")
+frame_progress = 0.617199
+
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ShrinkPortal"]
 shape = SubResource("CircleShape2D_2pl4v")
 debug_color = Color(0.748797, 0.455883, 0.179411, 0.42)
-
-[node name="Sprite2D" type="Sprite2D" parent="ShrinkPortal"]
-position = Vector2(1.33333, -2.66698)
-scale = Vector2(0.733661, 0.732391)
-texture = ExtResource("90_p3bqw")
 
 [node name="FadeOut" type="Area2D" parent="."]
 script = ExtResource("31_8l0nc")

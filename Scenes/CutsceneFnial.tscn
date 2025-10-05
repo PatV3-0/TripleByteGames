@@ -1,0 +1,179 @@
+[gd_scene load_steps=28 format=3 uid="uid://djq20nap8wa7v"]
+
+[ext_resource type="Texture2D" uid="uid://ccbth3bm1jw1p" path="res://Assets/CutscenePlaceholders/Untitled 317.png" id="1_j1id0"]
+[ext_resource type="Script" path="res://Scripts/cutscene_fnial.gd" id="1_m6vil"]
+[ext_resource type="Texture2D" uid="uid://cm74o4dornid2" path="res://Assets/Cutscenes/1-1.png" id="2_cyibq"]
+[ext_resource type="Texture2D" uid="uid://cchnuwxhi4fb3" path="res://Assets/Cutscenes/1-2.png" id="3_slc00"]
+[ext_resource type="Texture2D" uid="uid://rkmfhi2ark7v" path="res://Assets/Cutscenes/1-3.png" id="4_xwrh7"]
+[ext_resource type="Texture2D" uid="uid://b0sc3nqbhksqc" path="res://Assets/Cutscenes/1-4.png" id="5_715ia"]
+[ext_resource type="Texture2D" uid="uid://jqa7tsdiw3aj" path="res://Assets/Cutscenes/1-5.png" id="6_3wryo"]
+[ext_resource type="Texture2D" uid="uid://tf56iugef4x7" path="res://Assets/Cutscenes/1-6.png" id="7_1a215"]
+[ext_resource type="Texture2D" uid="uid://coixa7mfcmtnk" path="res://Assets/Cutscenes/1-7.png" id="8_p4pll"]
+[ext_resource type="Texture2D" uid="uid://c4yev23m2euih" path="res://Assets/Cutscenes/1-8.png" id="9_3f4tm"]
+[ext_resource type="Texture2D" uid="uid://c0n58vxfgbff8" path="res://Assets/Cutscenes/1-9.png" id="10_7ofwe"]
+[ext_resource type="Texture2D" uid="uid://k2krw4pma1lo" path="res://Assets/Cutscenes/1-10.png" id="11_g8jkr"]
+[ext_resource type="Texture2D" uid="uid://5dwbf0o8rq1m" path="res://Assets/Cutscenes/1-11.png" id="12_dfve1"]
+[ext_resource type="Texture2D" uid="uid://d0iqr440pumm4" path="res://Assets/Cutscenes/1-12.png" id="13_5kfyg"]
+[ext_resource type="Texture2D" uid="uid://cx2v7gi4sss36" path="res://Assets/Cutscenes/1-13.png" id="14_3h254"]
+[ext_resource type="Texture2D" uid="uid://b0hi8oqrgrfs8" path="res://Assets/Cutscenes/1-14.png" id="15_7vsg4"]
+[ext_resource type="Texture2D" uid="uid://tkrg4manx8xk" path="res://Assets/Cutscenes/1-15.png" id="16_6k0dt"]
+[ext_resource type="Texture2D" uid="uid://bfwp7wrt018et" path="res://Assets/Cutscenes/1-16.png" id="17_nm1n4"]
+[ext_resource type="Texture2D" uid="uid://bip3bw244m58k" path="res://Assets/Cutscenes/1-17.png" id="18_miiek"]
+[ext_resource type="Texture2D" uid="uid://vd2lwwumwkfp" path="res://Assets/Cutscenes/1-18.png" id="19_8rh0x"]
+[ext_resource type="Texture2D" uid="uid://dx8h2skaydovh" path="res://Assets/Cutscenes/1-19.png" id="20_rxirj"]
+[ext_resource type="Texture2D" uid="uid://0ux15i0y3qh2" path="res://Assets/Cutscenes/1-20.png" id="21_l35h7"]
+[ext_resource type="Texture2D" uid="uid://dbu08syjsh7ry" path="res://Assets/Cutscenes/1-21.png" id="22_du10m"]
+[ext_resource type="Texture2D" uid="uid://bfx334fxb85y4" path="res://Assets/Cutscenes/1-22.png" id="23_i3hjj"]
+[ext_resource type="Texture2D" uid="uid://c35vwl34rhcex" path="res://Assets/Cutscenes/1-23.png" id="24_4poyg"]
+[ext_resource type="Texture2D" uid="uid://we35mc4afy5x" path="res://Assets/Cutscenes/1-24.png" id="25_pfp1m"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_55xeh"]
+animations = [{
+"frames": [{
+"duration": 2.0,
+"texture": ExtResource("2_cyibq")
+}, {
+"duration": 2.0,
+"texture": ExtResource("2_cyibq")
+}, {
+"duration": 2.0,
+"texture": ExtResource("2_cyibq")
+}, {
+"duration": 2.0,
+"texture": ExtResource("2_cyibq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_slc00")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_slc00")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_xwrh7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_xwrh7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_xwrh7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_xwrh7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_715ia")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_3wryo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_1a215")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_p4pll")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_3f4tm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_7ofwe")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_g8jkr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_dfve1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_5kfyg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_5kfyg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_5kfyg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_3h254")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_7vsg4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_6k0dt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_nm1n4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_miiek")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_miiek")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_8rh0x")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_8rh0x")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_8rh0x")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_rxirj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_l35h7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_du10m")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_i3hjj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_4poyg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_pfp1m")
+}],
+"loop": false,
+"name": &"default",
+"speed": 2.0
+}]
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_m6vil")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(575, 344)
+scale = Vector2(0.579343, 0.579343)
+texture = ExtResource("1_j1id0")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+visible = false
+position = Vector2(579.544, 219.408)
+scale = Vector2(0.568479, 0.568479)
+sprite_frames = SubResource("SpriteFrames_55xeh")
+
+[node name="FadeLayer" type="CanvasLayer" parent="."]
+
+[node name="FadeRect" type="ColorRect" parent="FadeLayer"]
+visible = false
+anchors_preset = -1
+anchor_left = -0.530382
+anchor_top = -1.93981
+anchor_right = -0.530382
+anchor_bottom = -1.93981
+offset_left = -1700.0
+offset_top = -920.003
+offset_right = 8589.0
+offset_bottom = 3575.0
+mouse_filter = 2
+color = Color(0, 0, 0, 0)
+metadata/_edit_use_anchors_ = true
+
+[node name="Background" type="AudioStreamPlayer2D" parent="."]
+volume_db = 8.0
+max_distance = 1000.0

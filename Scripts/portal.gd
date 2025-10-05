@@ -6,18 +6,13 @@ extends Area2D
 @export var tutorial_area: Area2D  # Drag your tutorial Area2D here if needed
 
 func _ready():
-	#print(sprite)
+	$Sprite2D.play("default")
 	connect("body_entered", Callable(self, "_on_body_entered"))
-	#if sprite and sprite.has_signal("animation_finished"):
-		#sprite.animation_finished.connect(_on_animation_finished)
 
 var pending_hide := false
 
 func _on_body_entered(body):
 	if body.is_in_group("Player"):
-		#sprite.play("Pop")
-		#sprite2.play("Pop")
-
 		var grew = false
 		if body.has_method("grow"):
 			grew = await body.grow(105)

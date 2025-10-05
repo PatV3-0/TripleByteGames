@@ -1,4 +1,4 @@
-[gd_scene load_steps=182 format=3 uid="uid://c81s77xy1tild"]
+[gd_scene load_steps=187 format=3 uid="uid://c81s77xy1tild"]
 
 [ext_resource type="Script" path="res://Scripts/underground_1.gd" id="1_ens7f"]
 [ext_resource type="Texture2D" uid="uid://bbx8c0bj0uxe3" path="res://Assets/Background/Untitled 103.png" id="2_aloxv"]
@@ -15,18 +15,22 @@
 [ext_resource type="Texture2D" uid="uid://ch1intxq0cr18" path="res://Assets/Sprites/Character/idle 1.png" id="9_mwdfs"]
 [ext_resource type="Texture2D" uid="uid://emqo2h4ltk2n" path="res://Assets/Sprites/Character/idle-2.png" id="10_2pu1b"]
 [ext_resource type="Script" path="res://Scripts/portal.gd" id="10_e7h7c"]
-[ext_resource type="Texture2D" uid="uid://ca1cms2y3p3co" path="res://Assets/Placeholders/growwisp.png" id="11_jplu6"]
 [ext_resource type="Texture2D" uid="uid://c12k2h2j8vdjt" path="res://Assets/Sprites/Character/Gjump (5).png" id="11_vv7yy"]
 [ext_resource type="Texture2D" uid="uid://bhf0jkt6e2brg" path="res://Assets/Interactables/Untitled 142.png" id="12_g78dx"]
 [ext_resource type="Texture2D" uid="uid://bv5vca3wykfry" path="res://Assets/Sprites/Character/Gjump (1.1).png" id="12_pokbr"]
 [ext_resource type="Script" path="res://Scripts/area_2d.gd" id="13_21b6w"]
 [ext_resource type="Texture2D" uid="uid://byypnkjc87sdb" path="res://Assets/Sprites/Character/Gjump (6).png" id="13_cramj"]
+[ext_resource type="Texture2D" uid="uid://q6d5msehs3k4" path="res://Assets/Sprites/Portal/purple-1.png" id="13_troij"]
 [ext_resource type="Texture2D" uid="uid://bn5mjfsokmtc8" path="res://Assets/Interactables/Untitled 141.png" id="14_akabu"]
+[ext_resource type="Texture2D" uid="uid://c5dume610bjp0" path="res://Assets/Sprites/Portal/purple-2.png" id="14_lroci"]
 [ext_resource type="Texture2D" uid="uid://dyy7bp757jofl" path="res://Assets/Sprites/Character/Gjump (0).png" id="14_xgpn4"]
 [ext_resource type="Script" path="res://Scripts/highlight1.gd" id="15_ifhpi"]
 [ext_resource type="Texture2D" uid="uid://dhl4ey5414ddw" path="res://Assets/Sprites/Character/Gjump (2.1).png" id="15_tes3w"]
+[ext_resource type="Texture2D" uid="uid://b1nlorewy17g8" path="res://Assets/Sprites/Portal/purple-3.png" id="15_w4ptu"]
+[ext_resource type="Texture2D" uid="uid://21eo3rls8vh2" path="res://Assets/Sprites/Portal/purple-4.png" id="16_2h2y1"]
 [ext_resource type="Texture2D" uid="uid://uv7p712dwm1x" path="res://Assets/Sprites/Character/pull1.png" id="16_m3ijk"]
 [ext_resource type="Texture2D" uid="uid://qeqb7yadg5ns" path="res://Assets/Sprites/Character/pull2.png" id="17_j408i"]
+[ext_resource type="Texture2D" uid="uid://4lgg05cwk8l1" path="res://Assets/Sprites/Portal/purple-5.png" id="17_o7bcd"]
 [ext_resource type="Texture2D" uid="uid://ygego3qxiycn" path="res://Assets/Sprites/Character/pull3.png" id="18_mgguo"]
 [ext_resource type="Texture2D" uid="uid://behsw0hyskoeg" path="res://Assets/Sprites/Character/idle 1 61.PNG" id="19_7uriq"]
 [ext_resource type="Texture2D" uid="uid://eabpv0wv1gws" path="res://Assets/Sprites/Character/pull3.5.png" id="19_flrt1"]
@@ -376,6 +380,29 @@ size = Vector2(25, 968)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_jy72u"]
 radius = 12.0416
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_8wxaq"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("13_troij")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_lroci")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_w4ptu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_2h2y1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_o7bcd")
+}],
+"loop": true,
+"name": &"default",
+"speed": 6.0
+}]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_cc3ro"]
 radius = 33.1361
@@ -1318,12 +1345,10 @@ polygon = PackedVector2Array(86, 393, 89, 388, 93, 389, 92, 395, 89, 397)
 position = Vector2(-354, 732)
 script = ExtResource("8_u31wu")
 
-[node name="Sprite2D" type="Sprite2D" parent="ShrinkPortal3"]
-visible = false
+[node name="Sprite2D" type="AnimatedSprite2D" parent="ShrinkPortal3"]
 position = Vector2(-0.999969, -3)
 rotation = 3.14159
 scale = Vector2(0.625649, -0.549383)
-texture = ExtResource("9_5rj1o")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ShrinkPortal3"]
 shape = SubResource("CircleShape2D_jy72u")
@@ -1348,11 +1373,10 @@ debug_color = Color(0.748797, 0.455883, 0.179411, 0.42)
 position = Vector2(-999, 1017)
 script = ExtResource("10_e7h7c")
 
-[node name="Sprite2D" type="Sprite2D" parent="GrowPortal1"]
-visible = false
-position = Vector2(5, 2.99994)
-scale = Vector2(1.44115, 1.23972)
-texture = ExtResource("11_jplu6")
+[node name="Sprite2D" type="AnimatedSprite2D" parent="GrowPortal1"]
+position = Vector2(4.75671, 4.77734)
+scale = Vector2(0.352223, 0.302993)
+sprite_frames = SubResource("SpriteFrames_8wxaq")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="GrowPortal1"]
 position = Vector2(3, 5)
@@ -1478,6 +1502,7 @@ debug_color = Color(0.57197, 0.555292, 0, 0.42)
 [node name="FadeLayer" type="CanvasLayer" parent="."]
 
 [node name="FadeRect" type="ColorRect" parent="FadeLayer"]
+visible = false
 anchors_preset = -1
 anchor_left = -0.530382
 anchor_top = -1.93981

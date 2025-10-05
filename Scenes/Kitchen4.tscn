@@ -1,4 +1,4 @@
-[gd_scene load_steps=102 format=3 uid="uid://c38ppo2oxtnec"]
+[gd_scene load_steps=107 format=3 uid="uid://c38ppo2oxtnec"]
 
 [ext_resource type="Script" path="res://Scripts/kitchen_4.gd" id="1_b6566"]
 [ext_resource type="Script" path="res://Scripts/character_body_2d.gd" id="2_2dv4w"]
@@ -55,7 +55,6 @@
 [ext_resource type="Script" path="res://Scripts/tutorial_canvas1.gd" id="31_ok6uw"]
 [ext_resource type="Texture2D" uid="uid://cnbl2133psakv" path="res://Assets/Menus/SpeechbarLighter5.png" id="32_i64xa"]
 [ext_resource type="Texture2D" uid="uid://cay0c273362pd" path="res://Assets/Menus/SpeechbarLighter6.png" id="33_poe08"]
-[ext_resource type="Texture2D" uid="uid://81vpbbt7xjmo" path="res://Assets/Placeholders/shrinkwisp.png" id="34_1uj5a"]
 [ext_resource type="Texture2D" uid="uid://e0b2aiq41mcl" path="res://Assets/Menus/SpeechbarLighter7.png" id="34_lq64p"]
 [ext_resource type="Texture2D" uid="uid://blm0prikln4h1" path="res://Assets/Menus/SpeechbarLighter8.png" id="35_do2rt"]
 [ext_resource type="Texture2D" uid="uid://bicu3c3rbd1rn" path="res://Assets/Menus/SpeechbarLighter9.png" id="36_dfro5"]
@@ -66,6 +65,11 @@
 [ext_resource type="Texture2D" uid="uid://ds5h0pxykg3ry" path="res://Assets/Sprites/Character/shrink.png" id="41_b4q10"]
 [ext_resource type="Texture2D" uid="uid://kdwlsfvpgogg" path="res://Assets/Menus/GC-paper.png" id="41_frl0x"]
 [ext_resource type="Texture2D" uid="uid://ms8yox5h3kqx" path="res://Assets/Placeholders/garlic.png" id="48_mnphf"]
+[ext_resource type="Texture2D" uid="uid://c44se8jy53aec" path="res://Assets/Sprites/Portal/yellow-1.png" id="54_78bwp"]
+[ext_resource type="Texture2D" uid="uid://b3q1p4b4i02vu" path="res://Assets/Sprites/Portal/yellow-2.png" id="55_jyuuw"]
+[ext_resource type="Texture2D" uid="uid://di6a0d4pse7gb" path="res://Assets/Sprites/Portal/yellow-3.png" id="56_ob2qx"]
+[ext_resource type="Texture2D" uid="uid://1eq0ttio08b" path="res://Assets/Sprites/Portal/yellow-4.png" id="57_p0370"]
+[ext_resource type="Texture2D" uid="uid://caxwr75h2ckjn" path="res://Assets/Sprites/Portal/yellow-5.png" id="58_otcg3"]
 [ext_resource type="Script" path="res://Scripts/hole.gd" id="59_8vuwf"]
 [ext_resource type="Texture2D" uid="uid://cdi47y8m6tqdn" path="res://Assets/Interactables/Untitled 55.PNG" id="60_qeo7x"]
 [ext_resource type="Theme" uid="uid://bgkwmntp6xdn5" path="res://Font/Theme_Font.tres" id="63_0fi7j"]
@@ -349,6 +353,29 @@ animations = [{
 "loop": false,
 "name": &"retract",
 "speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_pltyw"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("54_78bwp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("55_jyuuw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("56_ob2qx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("57_p0370")
+}, {
+"duration": 1.0,
+"texture": ExtResource("58_otcg3")
+}],
+"loop": true,
+"name": &"default",
+"speed": 6.0
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_e81oh"]
@@ -787,6 +814,9 @@ shape = SubResource("RectangleShape2D_d7wia")
 [node name="CollisionPolygon2D7" type="CollisionPolygon2D" parent="StaticBody2D"]
 polygon = PackedVector2Array(766, 89, 760, 89, 756, 89, 753, 89, 748, 89, 744, 87, 740, 87, 737, 84, 733, 79, 730, 75, 728, 73, 724, 70, 717, 66, 716, 62, 715, 56, 713, 49, 713, 46, 714, 35, 717, 30, 720, 27, 725, 24, 728, 21, 729, 17, 730, 12, 733, 9, 737, 7, 741, 6, 734, -3, 734, 0, 733, 1, 730, 1, 724, 1, 717, 1, 713, 1, 707, -5, 704, -10, 701, -11, 699, -13, 697, -13, 693, -20, 690, -25, 684, -33, 682, -37, 683, -44, 683, -50, 683, -55, 684, -59, 686, -64, 690, -69, 691, -70, 692, -72, 689, -73, 688, -76, 687, -77, 683, -77, 680, -79, 674, -86, 669, -93, 666, -99, 666, -106, 664, -111, 663, -117, 664, -121, 666, -123, 668, -124, 670, -132, 670, -135, 670, -142, 672, -148, 676, -154, 680, -158, 686, -161, 691, -164, 695, -166, 700, -168, 705, -169, 710, -169, 714, -168, 718, -169, 723, -172, 726, -174, 733, -175, 737, -174, 741, -172, 745, -171, 750, -172, 755, -171, 756, -168, 760, -162, 761, -160, 764, -155, 766, -150, 766, -146, 766, -142, 768, -138, 771, -135, 774, -129, 773, -126, 774, -121, 773, -113, 771, -108, 767, -103, 765, -101, 763, -100, 763, -96, 762, -92, 760, -90, 759, -88, 758, -86, 761, -84, 765, -82, 769, -78, 773, -74, 776, -72, 779, -69, 781, -66, 782, -63, 785, -62, 790, -64, 794, -67, 798, -71, 803, -75, 809, -76, 812, -76, 818, -77, 821, -75, 824, -71, 825, -69, 827, -63, 828, -60, 831, -58, 834, -53, 837, -49, 839, -46, 839, -44, 841, -41, 842, -39, 845, -38, 850, -38, 853, -37, 855, -36, 856, -32, 857, -28, 858, -22, 858, -21, 855, -12, 852, -9, 847, -7, 844, -4, 843, 0, 841, 3, 840, 6, 838, 10, 839, 10, 846, 10, 851, 11, 854, 12, 859, 15, 866, 20, 868, 22, 871, 26, 873, 33, 875, 39, 875, 43, 875, 48, 877, 50, 879, 54, 880, 59, 879, 64, 878, 68, 875, 74, 872, 77, 867, 82, 866, 85, 865, 89, 862, 92, 853, 97, 850, 98, 844, 98, 840, 98, 836, 100, 832, 100, 829, 99, 827, 98, 822, 95, 819, 91, 816, 88, 814, 85, 812, 90, 811, 90)
 
+[node name="CollisionPolygon2D15" type="CollisionPolygon2D" parent="StaticBody2D"]
+polygon = PackedVector2Array(556, 224, 556, 220, 557, 214, 559, 209, 564, 204, 570, 201, 577, 201, 584, 202, 589, 206, 593, 210, 595, 215, 595, 220, 595, 224, 594, 230, 594, 233, 594, 237, 593, 264, 593, 293, 591, 297, 589, 298, 585, 298, 577, 297, 572, 296, 569, 293, 566, 291, 560, 287, 555, 282, 552, 278, 550, 277, 546, 274, 541, 270, 536, 266, 536, 263, 539, 256, 549, 237)
+
 [node name="Hole" type="Area2D" parent="."]
 position = Vector2(-565, 91)
 rotation = -0.692896
@@ -867,10 +897,10 @@ metadata/_edit_use_anchors_ = true
 position = Vector2(122, 202)
 script = ExtResource("25_dvl14")
 
-[node name="Sprite2D" type="Sprite2D" parent="ShrinkPortal"]
-position = Vector2(1, -6)
-scale = Vector2(0.696078, 0.696078)
-texture = ExtResource("34_1uj5a")
+[node name="Sprite2D" type="AnimatedSprite2D" parent="ShrinkPortal"]
+position = Vector2(0.385437, 0.1521)
+scale = Vector2(0.121769, 0.121769)
+sprite_frames = SubResource("SpriteFrames_pltyw")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ShrinkPortal"]
 shape = SubResource("CircleShape2D_e81oh")

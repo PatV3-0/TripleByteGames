@@ -1,4 +1,4 @@
-[gd_scene load_steps=143 format=3 uid="uid://duvfb6prmpxpu"]
+[gd_scene load_steps=157 format=3 uid="uid://duvfb6prmpxpu"]
 
 [ext_resource type="Script" path="res://Scripts/kitchen_2.gd" id="1_4in3w"]
 [ext_resource type="Texture2D" uid="uid://v6njha2nnja4" path="res://Assets/Background/Untitled 93.png" id="2_erwe7"]
@@ -72,11 +72,9 @@
 [ext_resource type="Texture2D" uid="uid://blm0prikln4h1" path="res://Assets/Menus/SpeechbarLighter8.png" id="35_yf2l0"]
 [ext_resource type="Texture2D" uid="uid://bicu3c3rbd1rn" path="res://Assets/Menus/SpeechbarLighter9.png" id="36_8e7cg"]
 [ext_resource type="Texture2D" uid="uid://srercerjo0jg" path="res://Assets/Tutorial assets/1.png" id="37_jetq8"]
-[ext_resource type="Texture2D" uid="uid://ca1cms2y3p3co" path="res://Assets/Placeholders/growwisp.png" id="38_77v4g"]
 [ext_resource type="Texture2D" uid="uid://1x876ycnlyv7" path="res://Assets/Tutorial assets/3.png" id="38_efv0f"]
 [ext_resource type="Script" path="res://Scripts/ingredient.gd" id="39_cbs2x"]
 [ext_resource type="Script" path="res://Scripts/tutorial_salt.gd" id="40_dhuft"]
-[ext_resource type="Texture2D" uid="uid://81vpbbt7xjmo" path="res://Assets/Placeholders/shrinkwisp.png" id="40_r0f4m"]
 [ext_resource type="Texture2D" uid="uid://o1lj7wqwqnij" path="res://Assets/Menus/HC-paper.png" id="41_lapyt"]
 [ext_resource type="Texture2D" uid="uid://nkmvddm2gdg8" path="res://Assets/Menus/torn-paper.png" id="41_v5jm2"]
 [ext_resource type="Texture2D" uid="uid://ds5h0pxykg3ry" path="res://Assets/Sprites/Character/shrink.png" id="46_gxr55"]
@@ -90,7 +88,17 @@
 [ext_resource type="Texture2D" uid="uid://c1nui4ftmpph0" path="res://Assets/Interactables/Untitled 247.png" id="66_jqsdn"]
 [ext_resource type="Texture2D" uid="uid://cgu8kxq1df1kx" path="res://Assets/Interactables/Untitled 244.png" id="67_icanj"]
 [ext_resource type="Texture2D" uid="uid://dqkrd0hts32mt" path="res://Assets/Interactables/Untitled 245.png" id="68_tdso1"]
+[ext_resource type="Texture2D" uid="uid://q6d5msehs3k4" path="res://Assets/Sprites/Portal/purple-1.png" id="74_tioi6"]
+[ext_resource type="Texture2D" uid="uid://c5dume610bjp0" path="res://Assets/Sprites/Portal/purple-2.png" id="75_w1nkx"]
+[ext_resource type="Texture2D" uid="uid://b1nlorewy17g8" path="res://Assets/Sprites/Portal/purple-3.png" id="76_gnkux"]
+[ext_resource type="Texture2D" uid="uid://21eo3rls8vh2" path="res://Assets/Sprites/Portal/purple-4.png" id="77_gbr2x"]
+[ext_resource type="Texture2D" uid="uid://4lgg05cwk8l1" path="res://Assets/Sprites/Portal/purple-5.png" id="78_rao1y"]
+[ext_resource type="Texture2D" uid="uid://c44se8jy53aec" path="res://Assets/Sprites/Portal/yellow-1.png" id="80_puyj7"]
+[ext_resource type="Texture2D" uid="uid://b3q1p4b4i02vu" path="res://Assets/Sprites/Portal/yellow-2.png" id="81_fbod4"]
+[ext_resource type="Texture2D" uid="uid://di6a0d4pse7gb" path="res://Assets/Sprites/Portal/yellow-3.png" id="82_170ih"]
 [ext_resource type="AudioStream" uid="uid://511gq7d1dtj8" path="res://Assets/GameMusic/BGM7.mp3" id="83_5e8kw"]
+[ext_resource type="Texture2D" uid="uid://1eq0ttio08b" path="res://Assets/Sprites/Portal/yellow-4.png" id="83_r13nq"]
+[ext_resource type="Texture2D" uid="uid://caxwr75h2ckjn" path="res://Assets/Sprites/Portal/yellow-5.png" id="84_4dx1e"]
 [ext_resource type="Theme" uid="uid://bgkwmntp6xdn5" path="res://Font/Theme_Font.tres" id="87_thtfy"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6kbt8"]
@@ -183,7 +191,7 @@ size = Vector2(158, 198)
 size = Vector2(78, 79)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dpwkd"]
-size = Vector2(1775, 20)
+size = Vector2(2397, 20)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qoxr1"]
 size = Vector2(1121, 1891)
@@ -436,11 +444,149 @@ size = Vector2(13.3333, 13.3333)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fh1k8"]
 size = Vector2(113.633, 5.39423)
 
+[sub_resource type="SpriteFrames" id="SpriteFrames_a2c51"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("74_tioi6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("75_w1nkx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("76_gnkux")
+}, {
+"duration": 1.0,
+"texture": ExtResource("77_gbr2x")
+}, {
+"duration": 1.0,
+"texture": ExtResource("78_rao1y")
+}],
+"loop": true,
+"name": &"default",
+"speed": 6.0
+}]
+
 [sub_resource type="CircleShape2D" id="CircleShape2D_3bjgf"]
 radius = 16.0
 
+[sub_resource type="SpriteFrames" id="SpriteFrames_eihdw"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("74_tioi6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("75_w1nkx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("76_gnkux")
+}, {
+"duration": 1.0,
+"texture": ExtResource("77_gbr2x")
+}, {
+"duration": 1.0,
+"texture": ExtResource("78_rao1y")
+}],
+"loop": true,
+"name": &"default",
+"speed": 6.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_o6bd0"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("74_tioi6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("75_w1nkx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("76_gnkux")
+}, {
+"duration": 1.0,
+"texture": ExtResource("77_gbr2x")
+}, {
+"duration": 1.0,
+"texture": ExtResource("78_rao1y")
+}],
+"loop": true,
+"name": &"default",
+"speed": 6.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_fxtkt"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("80_puyj7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("81_fbod4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("82_170ih")
+}, {
+"duration": 1.0,
+"texture": ExtResource("83_r13nq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("84_4dx1e")
+}],
+"loop": true,
+"name": &"default",
+"speed": 6.0
+}]
+
 [sub_resource type="CircleShape2D" id="CircleShape2D_ytawt"]
 radius = 15.0333
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_4sb83"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("80_puyj7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("81_fbod4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("82_170ih")
+}, {
+"duration": 1.0,
+"texture": ExtResource("83_r13nq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("84_4dx1e")
+}],
+"loop": true,
+"name": &"default",
+"speed": 6.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_2hdhp"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("80_puyj7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("81_fbod4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("82_170ih")
+}, {
+"duration": 1.0,
+"texture": ExtResource("83_r13nq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("84_4dx1e")
+}],
+"loop": true,
+"name": &"default",
+"speed": 6.0
+}]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bx0os"]
 size = Vector2(5.66663, 510.5)
@@ -975,8 +1121,7 @@ position = Vector2(977, 1020.5)
 shape = SubResource("RectangleShape2D_wh8nk")
 
 [node name="CollisionShape2D33" type="CollisionShape2D" parent="StaticBody2D"]
-visible = false
-position = Vector2(913.5, 1060)
+position = Vector2(1224.5, 1060)
 shape = SubResource("RectangleShape2D_dpwkd")
 
 [node name="Sprite2D13" type="Sprite2D" parent="StaticBody2D"]
@@ -1220,10 +1365,10 @@ debug_color = Color(0.956871, 0.119971, 0.43239, 0.42)
 position = Vector2(677, -10)
 script = ExtResource("25_wifyc")
 
-[node name="Sprite2D" type="Sprite2D" parent="GrowPortal1"]
-position = Vector2(3.78125, 3.8906)
-scale = Vector2(0.832109, 0.709332)
-texture = ExtResource("38_77v4g")
+[node name="Sprite2D" type="AnimatedSprite2D" parent="GrowPortal1"]
+position = Vector2(4.45825, 4.0934)
+scale = Vector2(0.177869, 0.151625)
+sprite_frames = SubResource("SpriteFrames_a2c51")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="GrowPortal1"]
 position = Vector2(3, 5)
@@ -1234,10 +1379,10 @@ debug_color = Color(0.52549, 0.239216, 0.862745, 0.419608)
 position = Vector2(810, 718)
 script = ExtResource("25_wifyc")
 
-[node name="Sprite2D" type="Sprite2D" parent="GrowPortal3"]
-position = Vector2(5, 6)
-scale = Vector2(0.735295, 0.657534)
-texture = ExtResource("38_77v4g")
+[node name="Sprite2D" type="AnimatedSprite2D" parent="GrowPortal3"]
+position = Vector2(3.8457, 4.21265)
+scale = Vector2(0.170383, 0.152364)
+sprite_frames = SubResource("SpriteFrames_eihdw")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="GrowPortal3"]
 position = Vector2(3, 5)
@@ -1248,10 +1393,10 @@ debug_color = Color(0.52549, 0.239216, 0.862745, 0.419608)
 position = Vector2(363, 818)
 script = ExtResource("25_wifyc")
 
-[node name="Sprite2D" type="Sprite2D" parent="GrowPortal2"]
-position = Vector2(5, 6)
-scale = Vector2(0.735295, 0.657534)
-texture = ExtResource("38_77v4g")
+[node name="Sprite2D" type="AnimatedSprite2D" parent="GrowPortal2"]
+position = Vector2(3.90442, 3.56104)
+scale = Vector2(0.183824, 0.164384)
+sprite_frames = SubResource("SpriteFrames_o6bd0")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="GrowPortal2"]
 position = Vector2(3, 5)
@@ -1262,10 +1407,10 @@ debug_color = Color(0.52549, 0.239216, 0.862745, 0.419608)
 position = Vector2(513, 223)
 script = ExtResource("26_rnq5f")
 
-[node name="Sprite2D" type="Sprite2D" parent="ShrinkPortal2"]
-position = Vector2(1, 1.52588e-05)
-scale = Vector2(0.642157, 0.591549)
-texture = ExtResource("40_r0f4m")
+[node name="Sprite2D" type="AnimatedSprite2D" parent="ShrinkPortal2"]
+position = Vector2(-0.239502, 0.508423)
+scale = Vector2(0.168561, 0.155276)
+sprite_frames = SubResource("SpriteFrames_fxtkt")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ShrinkPortal2"]
 shape = SubResource("CircleShape2D_ytawt")
@@ -1275,10 +1420,10 @@ debug_color = Color(0.748797, 0.455883, 0.179411, 0.42)
 position = Vector2(692, 522)
 script = ExtResource("26_rnq5f")
 
-[node name="Sprite2D" type="Sprite2D" parent="ShrinkPortal3"]
-position = Vector2(1, -1.00003)
-scale = Vector2(0.745098, 0.635563)
-texture = ExtResource("40_r0f4m")
+[node name="Sprite2D" type="AnimatedSprite2D" parent="ShrinkPortal3"]
+position = Vector2(0.416748, -0.156006)
+scale = Vector2(0.186274, 0.158891)
+sprite_frames = SubResource("SpriteFrames_4sb83")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ShrinkPortal3"]
 shape = SubResource("CircleShape2D_ytawt")
@@ -1288,10 +1433,10 @@ debug_color = Color(0.748797, 0.455883, 0.179411, 0.42)
 position = Vector2(691, 1031)
 script = ExtResource("26_rnq5f")
 
-[node name="Sprite2D" type="Sprite2D" parent="ShrinkPortal4"]
-position = Vector2(1, -1)
-scale = Vector2(0.745098, 0.635563)
-texture = ExtResource("40_r0f4m")
+[node name="Sprite2D" type="AnimatedSprite2D" parent="ShrinkPortal4"]
+position = Vector2(0.583496, 0.333008)
+scale = Vector2(0.166667, 0.142165)
+sprite_frames = SubResource("SpriteFrames_2hdhp")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ShrinkPortal4"]
 shape = SubResource("CircleShape2D_ytawt")
@@ -1309,7 +1454,6 @@ debug_color = Color(0.411765, 0.407843, 0.172549, 1)
 [node name="FadeLayer" type="CanvasLayer" parent="."]
 
 [node name="FadeRect" type="ColorRect" parent="FadeLayer"]
-visible = false
 anchors_preset = -1
 anchor_left = -0.530382
 anchor_top = -1.93981

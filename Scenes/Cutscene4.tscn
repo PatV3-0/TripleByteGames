@@ -1,7 +1,51 @@
-[gd_scene load_steps=3 format=3 uid="uid://bw3na42mtegkm"]
+[gd_scene load_steps=13 format=3 uid="uid://bw3na42mtegkm"]
 
 [ext_resource type="Script" path="res://Scripts/cutscene_4.gd" id="1_slj03"]
 [ext_resource type="Texture2D" uid="uid://dv880uev0ximk" path="res://Assets/CutscenePlaceholders/Cutscene4.png" id="2_6032h"]
+[ext_resource type="Texture2D" uid="uid://bi4xud3ij8o8d" path="res://Assets/Cutscenes/4-1.png" id="3_tio8e"]
+[ext_resource type="Texture2D" uid="uid://3j72jqu6j7qd" path="res://Assets/Cutscenes/4-2.png" id="4_wbm8w"]
+[ext_resource type="Texture2D" uid="uid://dbdkwxj32rg4x" path="res://Assets/Cutscenes/4-3.png" id="5_nujjx"]
+[ext_resource type="Texture2D" uid="uid://dr3uykn1hyu6s" path="res://Assets/Cutscenes/4-4.png" id="6_mhe2f"]
+[ext_resource type="Texture2D" uid="uid://dlg6difky85od" path="res://Assets/Cutscenes/4-5.png" id="7_6ll5m"]
+[ext_resource type="Texture2D" uid="uid://bs4ryeoqc3fi5" path="res://Assets/Cutscenes/4-6.png" id="8_se2xx"]
+[ext_resource type="Texture2D" uid="uid://bionrikum7jiu" path="res://Assets/Cutscenes/4-7.png" id="9_g6pum"]
+[ext_resource type="Texture2D" uid="uid://bnbgtiugqbpsa" path="res://Assets/Cutscenes/4-8.png" id="10_k8gi5"]
+[ext_resource type="Texture2D" uid="uid://b4smvo46gfd7n" path="res://Assets/Cutscenes/4-9.png" id="11_36y3r"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_d2lbt"]
+animations = [{
+"frames": [{
+"duration": 2.0,
+"texture": ExtResource("3_tio8e")
+}, {
+"duration": 2.0,
+"texture": ExtResource("4_wbm8w")
+}, {
+"duration": 2.0,
+"texture": ExtResource("5_nujjx")
+}, {
+"duration": 2.0,
+"texture": ExtResource("6_mhe2f")
+}, {
+"duration": 2.0,
+"texture": ExtResource("7_6ll5m")
+}, {
+"duration": 2.0,
+"texture": ExtResource("8_se2xx")
+}, {
+"duration": 2.0,
+"texture": ExtResource("9_g6pum")
+}, {
+"duration": 2.0,
+"texture": ExtResource("10_k8gi5")
+}, {
+"duration": 2.0,
+"texture": ExtResource("11_36y3r")
+}],
+"loop": false,
+"name": &"default",
+"speed": 2.0
+}]
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_slj03")
@@ -11,9 +55,15 @@ position = Vector2(550, 302)
 scale = Vector2(1.21019, 1.21019)
 texture = ExtResource("2_6032h")
 
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(575, 412)
+scale = Vector2(0.577148, 0.577148)
+sprite_frames = SubResource("SpriteFrames_d2lbt")
+
 [node name="FadeLayer" type="CanvasLayer" parent="."]
 
 [node name="FadeRect" type="ColorRect" parent="FadeLayer"]
+visible = false
 anchors_preset = -1
 anchor_left = -0.530382
 anchor_top = -1.93981

@@ -1,8 +1,36 @@
-[gd_scene load_steps=4 format=3 uid="uid://c46a2ndj4byd4"]
+[gd_scene load_steps=10 format=3 uid="uid://c46a2ndj4byd4"]
 
 [ext_resource type="Texture2D" uid="uid://bf6s8lawv2pps" path="res://Assets/CutscenePlaceholders/Cutscene2.png" id="1_r4vq6"]
 [ext_resource type="Script" path="res://Scripts/cutscene_2.gd" id="1_snleq"]
+[ext_resource type="Texture2D" uid="uid://b7infoqb0dqa6" path="res://Assets/Cutscenes/2-1.png" id="3_8r6pq"]
 [ext_resource type="AudioStream" uid="uid://d3ceif3nnox15" path="res://Assets/GameMusic/BGM5.mp3" id="3_y0q3x"]
+[ext_resource type="Texture2D" uid="uid://cw3gexjsfjhd6" path="res://Assets/Cutscenes/2-2.png" id="4_yad52"]
+[ext_resource type="Texture2D" uid="uid://b6rabg81pmx4q" path="res://Assets/Cutscenes/2-3.png" id="5_k36t1"]
+[ext_resource type="Texture2D" uid="uid://oh5pgykbptb4" path="res://Assets/Cutscenes/2-4.png" id="6_00gow"]
+[ext_resource type="Texture2D" uid="uid://b5mw5m683torl" path="res://Assets/Cutscenes/2-5.png" id="7_njnye"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_qhah1"]
+animations = [{
+"frames": [{
+"duration": 4.0,
+"texture": ExtResource("3_8r6pq")
+}, {
+"duration": 6.0,
+"texture": ExtResource("4_yad52")
+}, {
+"duration": 3.0,
+"texture": ExtResource("5_k36t1")
+}, {
+"duration": 3.0,
+"texture": ExtResource("6_00gow")
+}, {
+"duration": 3.0,
+"texture": ExtResource("7_njnye")
+}],
+"loop": false,
+"name": &"default",
+"speed": 2.0
+}]
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_snleq")
@@ -12,7 +40,15 @@ position = Vector2(582, 344)
 scale = Vector2(1.26111, 1.26111)
 texture = ExtResource("1_r4vq6")
 
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(574, 277)
+scale = Vector2(0.760916, 0.760916)
+sprite_frames = SubResource("SpriteFrames_qhah1")
+frame = 4
+frame_progress = 1.0
+
 [node name="FadeLayer" type="CanvasLayer" parent="."]
+visible = false
 
 [node name="FadeRect" type="ColorRect" parent="FadeLayer"]
 anchors_preset = -1
