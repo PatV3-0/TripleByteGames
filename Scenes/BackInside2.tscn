@@ -1,4 +1,4 @@
-[gd_scene load_steps=129 format=3 uid="uid://bv4c1ivswho8g"]
+[gd_scene load_steps=130 format=3 uid="uid://bv4c1ivswho8g"]
 
 [ext_resource type="Script" path="res://Scripts/back_inside_2.gd" id="1_y41im"]
 [ext_resource type="Texture2D" uid="uid://dy26qsmor8as1" path="res://Assets/Background/Untitled 83.png" id="2_1a5ph"]
@@ -80,6 +80,7 @@
 [ext_resource type="Texture2D" uid="uid://ca1cms2y3p3co" path="res://Assets/Placeholders/growwisp.png" id="42_2yceb"]
 [ext_resource type="Texture2D" uid="uid://ds5h0pxykg3ry" path="res://Assets/Sprites/Character/shrink.png" id="55_x8n5f"]
 [ext_resource type="Texture2D" uid="uid://brwmyqhkpnu2u" path="res://Assets/Background/Untitled 92 - Copy (2).png" id="74_6k7r5"]
+[ext_resource type="AudioStream" uid="uid://cxsuv03yct6y3" path="res://Assets/GameMusic/BGM13.mp3" id="79_dnbi2"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_kxu2y"]
 animations = [{
@@ -1131,6 +1132,7 @@ position = Vector2(-177.2, 971)
 sprite_frames = SubResource("SpriteFrames_nphf0")
 
 [node name="Background" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("79_dnbi2")
 volume_db = 8.0
 max_distance = 1000.0
 

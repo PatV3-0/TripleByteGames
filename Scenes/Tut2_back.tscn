@@ -15,7 +15,6 @@
 [ext_resource type="Texture2D" uid="uid://dy26qsmor8as1" path="res://Assets/Background/Untitled 83.png" id="6_xwrf3"]
 [ext_resource type="Script" path="res://Scripts/area_2d.gd" id="7_1qcp5"]
 [ext_resource type="Texture2D" uid="uid://cel1vf16j5fvi" path="res://Assets/Interactables/Untitled 51.PNG" id="7_k70k0"]
-[ext_resource type="AudioStream" uid="uid://b6doo86qtq6g6" path="res://Assets/Sound/VeryGentle.wav" id="7_lndga"]
 [ext_resource type="Texture2D" uid="uid://brm0qxxd31vp8" path="res://Assets/Interactables/tall-plant.png" id="8_4315k"]
 [ext_resource type="Texture2D" uid="uid://cdi47y8m6tqdn" path="res://Assets/Interactables/Untitled 55.PNG" id="8_f1s1k"]
 [ext_resource type="Texture2D" uid="uid://d112q6ipvg3ur" path="res://Assets/Sprites/Character/push_3.png" id="9_bi0jp"]
@@ -62,6 +61,7 @@
 [ext_resource type="Texture2D" uid="uid://srercerjo0jg" path="res://Assets/Tutorial assets/1.png" id="46_vnxut"]
 [ext_resource type="Texture2D" uid="uid://1x876ycnlyv7" path="res://Assets/Tutorial assets/3.png" id="47_hm4lq"]
 [ext_resource type="Texture2D" uid="uid://de11a1nljkcu8" path="res://Assets/Sprites/Tutorials/W1.png" id="57_chka8"]
+[ext_resource type="AudioStream" uid="uid://x56n7xvd3676" path="res://Assets/GameMusic/BGM3.mp3" id="59_i2yhq"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_di3c4"]
 size = Vector2(4433, 26.7)
@@ -723,8 +723,8 @@ sprite_frames = SubResource("SpriteFrames_ukp3g")
 [node name="UILayer" type="CanvasLayer" parent="."]
 
 [node name="Background" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("7_lndga")
-volume_db = 8.0
+stream = ExtResource("59_i2yhq")
+volume_db = 10.0
 max_distance = 10000.0
 
 [node name="FadeLayer" type="CanvasLayer" parent="."]

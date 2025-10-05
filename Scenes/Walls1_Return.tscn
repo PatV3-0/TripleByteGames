@@ -1,4 +1,4 @@
-[gd_scene load_steps=100 format=3 uid="uid://c2rkbup1lthha"]
+[gd_scene load_steps=101 format=3 uid="uid://c2rkbup1lthha"]
 
 [ext_resource type="Script" path="res://Scenes/walls_1_return.gd" id="1_6esrk"]
 [ext_resource type="Texture2D" uid="uid://cd312uojm511g" path="res://Assets/Background/Untitled 91.png" id="2_v2qrf"]
@@ -67,6 +67,7 @@
 [ext_resource type="Texture2D" uid="uid://bicu3c3rbd1rn" path="res://Assets/Menus/SpeechbarLighter9.png" id="61_3gj5v"]
 [ext_resource type="Texture2D" uid="uid://srercerjo0jg" path="res://Assets/Tutorial assets/1.png" id="62_7l43d"]
 [ext_resource type="Texture2D" uid="uid://1x876ycnlyv7" path="res://Assets/Tutorial assets/3.png" id="63_1u24d"]
+[ext_resource type="AudioStream" uid="uid://coqwwprvypgeo" path="res://Assets/GameMusic/BGM4.mp3" id="68_ypqrl"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hmpn8"]
 size = Vector2(1479, 20)
@@ -956,8 +957,9 @@ sprite_frames = SubResource("SpriteFrames_kvl1u")
 [node name="UILayer" type="CanvasLayer" parent="."]
 
 [node name="Background" type="AudioStreamPlayer2D" parent="."]
-volume_db = 8.0
-max_distance = 10000.0
+stream = ExtResource("68_ypqrl")
+volume_db = 10.0
+max_distance = 50000.0
 
 [connection signal="body_entered" from="Hole" to="Hole" method="_on_body_entered"]
 [connection signal="body_exited" from="Hole" to="Hole" method="_on_body_exited"]

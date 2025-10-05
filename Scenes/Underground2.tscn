@@ -1,4 +1,4 @@
-[gd_scene load_steps=166 format=3 uid="uid://d1j5vjuj8a5sa"]
+[gd_scene load_steps=167 format=3 uid="uid://d1j5vjuj8a5sa"]
 
 [ext_resource type="Script" path="res://Scripts/underground_2.gd" id="1_4r3nq"]
 [ext_resource type="Texture2D" uid="uid://bi4bwr4jdr45s" path="res://Assets/Background/Untitled 113.png" id="2_88yj5"]
@@ -59,6 +59,7 @@
 [ext_resource type="Texture2D" uid="uid://nkmvddm2gdg8" path="res://Assets/Menus/torn-paper.png" id="36_nsxfs"]
 [ext_resource type="Texture2D" uid="uid://b50uoh3pd65yh" path="res://Assets/Menus/WCM-paper.png" id="37_jaxve"]
 [ext_resource type="Texture2D" uid="uid://olt8wt64rdvp" path="res://Assets/Placeholders/shroom-ing.png" id="43_j86eb"]
+[ext_resource type="AudioStream" uid="uid://cl7ihrb5yytav" path="res://Assets/GameMusic/BGM23.mp3" id="56_o34u0"]
 [ext_resource type="Script" path="res://Scripts/death_zone.gd" id="57_vb4g4"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jbgqo"]
@@ -215,7 +216,7 @@ size = Vector2(20, 102)
 size = Vector2(92, 20)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_i3phj"]
-size = Vector2(20, 109)
+size = Vector2(20, 102)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3shbm"]
 size = Vector2(215, 20)
@@ -925,7 +926,7 @@ position = Vector2(-755, -171)
 shape = SubResource("RectangleShape2D_f644t")
 
 [node name="CollisionShape2D53" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(-800, -208.5)
+position = Vector2(-800, -212)
 shape = SubResource("RectangleShape2D_i3phj")
 
 [node name="CollisionShape2D54" type="CollisionShape2D" parent="StaticBody2D"]
@@ -1361,6 +1362,7 @@ position = Vector2(-177.2, 971)
 sprite_frames = SubResource("SpriteFrames_86jeu")
 
 [node name="FadeLayer" type="CanvasLayer" parent="."]
+visible = false
 
 [node name="FadeRect" type="ColorRect" parent="FadeLayer"]
 anchors_preset = -1
@@ -1377,8 +1379,9 @@ color = Color(0, 0, 0, 0)
 metadata/_edit_use_anchors_ = true
 
 [node name="Background" type="AudioStreamPlayer2D" parent="."]
-volume_db = 8.0
-max_distance = 1000.0
+stream = ExtResource("56_o34u0")
+volume_db = 10.0
+max_distance = 50000.0
 
 [node name="Ingredient" type="Area2D" parent="."]
 position = Vector2(-1189, 180)

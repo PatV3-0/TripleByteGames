@@ -31,6 +31,7 @@ var levels = [
 	"res://Scenes/Final.tscn"
 ]
 func _ready() -> void:
+	$Background.play()
 	_update_sprite_for_checklist()
 	if resumeButton:
 		resumeButton.pressed.connect(self._on_resume_pressed)
@@ -83,22 +84,27 @@ func _auto_select_size():
 		1: size_option.select(1)
 			
 func _on_resume_pressed():
+	$Background.stop()
 	get_tree().paused = false
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	self.visible = false
 
 func onMainMenuPressed():
+	$Background.stop()
 	get_tree().paused = false
 	get_tree().change_scene_to_file("res://Scenes/main_menu.tscn")
 
 func onRestartPressed():
+	$Background.stop()
 	get_tree(). paused = false
 	get_tree().reload_current_scene()
 	
 func _on_level_select_button_pressed():
+	$Background.stop()
 	levelSelectPanel.visible = not levelSelectPanel.visible
 	
 func _on_level_button_pressed(level_index):
+	$Background.stop()
 	get_tree().paused = false
 	get_tree().change_scene_to_file(levels[level_index])
 	

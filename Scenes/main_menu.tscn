@@ -29,7 +29,7 @@
 [ext_resource type="Texture2D" uid="uid://ud3rpd41ga1k" path="res://Assets/Menus/Buttons/MutedSound.png" id="24_yilic"]
 [ext_resource type="Texture2D" uid="uid://bhfxwvdpx3ama" path="res://Assets/Menus/Sound.png" id="28_2pkol"]
 [ext_resource type="Texture2D" uid="uid://coipgmqoi2eo5" path="res://Assets/Menus/Music.png" id="29_frl4s"]
-[ext_resource type="AudioStream" uid="uid://d0bil2smyn14a" path="res://Assets/GameMusic/BGM1.mp3" id="30_odl2t"]
+[ext_resource type="AudioStream" uid="uid://c02xdccnu54wx" path="res://Assets/GameMusic/BGM9.mp3" id="30_v5np4"]
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -275,6 +275,6 @@ texture = ExtResource("29_frl4s")
 
 [node name="BackgroundSound" type="AudioStreamPlayer2D" parent="."]
 visible = false
-stream = ExtResource("30_odl2t")
+stream = ExtResource("30_v5np4")
 volume_db = 10.0
 autoplay = true

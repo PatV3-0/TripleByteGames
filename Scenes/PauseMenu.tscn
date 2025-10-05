@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://cmivsg2fyn6pg"]
+[gd_scene load_steps=23 format=3 uid="uid://cmivsg2fyn6pg"]
 
 [ext_resource type="Script" path="res://Scripts/PauseMenu.gd" id="1_vybmh"]
 [ext_resource type="Texture2D" uid="uid://dbrhe5p7qqq7y" path="res://Assets/Menus/PauseMenu.png" id="2_dp6yt"]
@@ -21,6 +21,7 @@
 [ext_resource type="Texture2D" uid="uid://bfjfr2cjd1sp0" path="res://Assets/Sprites/Buttons/ResetD.png" id="17_xfuad"]
 [ext_resource type="Texture2D" uid="uid://ca1cms2y3p3co" path="res://Assets/Placeholders/growwisp.png" id="18_gp57m"]
 [ext_resource type="Texture2D" uid="uid://81vpbbt7xjmo" path="res://Assets/Placeholders/shrinkwisp.png" id="19_vq3nx"]
+[ext_resource type="AudioStream" uid="uid://dtilchtalwuh7" path="res://Assets/GameMusic/BGM19.mp3" id="22_rqege"]
 
 [node name="Node2D" type="Control"]
 process_mode = 2
@@ -209,3 +210,7 @@ text = "Inside Lvl 2"
 [node name="Final" type="Button" parent="PanelHolder/LvlSelectPanel/VBoxContainer"]
 layout_mode = 2
 text = "Final Lvl"
+
+[node name="Background" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("22_rqege")
+volume_db = 10.0

@@ -1,4 +1,4 @@
-[gd_scene load_steps=68 format=3 uid="uid://dgf7o3kb8qq1j"]
+[gd_scene load_steps=69 format=3 uid="uid://dgf7o3kb8qq1j"]
 
 [ext_resource type="Script" path="res://Scripts/stairs.gd" id="1_xa0l1"]
 [ext_resource type="PackedScene" uid="uid://csy8yhjpcrlg8" path="res://Scenes/Beetle.tscn" id="2_qyl28"]
@@ -53,6 +53,7 @@
 [ext_resource type="Texture2D" uid="uid://srercerjo0jg" path="res://Assets/Tutorial assets/1.png" id="34_yq0il"]
 [ext_resource type="Texture2D" uid="uid://1x876ycnlyv7" path="res://Assets/Tutorial assets/3.png" id="35_8pcpn"]
 [ext_resource type="Script" path="res://Scenes/tutorial_stairs.gd" id="39_m0cfo"]
+[ext_resource type="AudioStream" uid="uid://e3y83qwnoiap" path="res://Assets/GameMusic/BGM2.mp3" id="54_ugial"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wuhrc"]
 size = Vector2(346.25, 44)
@@ -614,7 +615,9 @@ color = Color(0, 0, 0, 0)
 metadata/_edit_use_anchors_ = true
 
 [node name="Background" type="AudioStreamPlayer2D" parent="."]
-volume_db = 8.0
-max_distance = 1000.0
+stream = ExtResource("54_ugial")
+volume_db = 10.0
+autoplay = true
+max_distance = 10000.0
 
 [node name="UILayer" type="CanvasLayer" parent="."]

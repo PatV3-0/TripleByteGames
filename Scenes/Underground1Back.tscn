@@ -1,4 +1,4 @@
-[gd_scene load_steps=180 format=3 uid="uid://c81s77xy1tild"]
+[gd_scene load_steps=181 format=3 uid="uid://c81s77xy1tild"]
 
 [ext_resource type="Script" path="res://Scripts/underground_1.gd" id="1_ens7f"]
 [ext_resource type="Texture2D" uid="uid://bbx8c0bj0uxe3" path="res://Assets/Background/Untitled 103.png" id="2_aloxv"]
@@ -62,6 +62,7 @@
 [ext_resource type="Texture2D" uid="uid://1x876ycnlyv7" path="res://Assets/Tutorial assets/3.png" id="46_xxpbj"]
 [ext_resource type="Script" path="res://Scripts/death_zone.gd" id="47_kl4y2"]
 [ext_resource type="Script" path="res://Scenes/tutorial_ug.gd" id="49_k1ytv"]
+[ext_resource type="AudioStream" uid="uid://cl7ihrb5yytav" path="res://Assets/GameMusic/BGM23.mp3" id="62_pgb4i"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0tq3j"]
 size = Vector2(1539, 160)
@@ -1523,8 +1524,9 @@ position = Vector2(-177.2, 971)
 sprite_frames = SubResource("SpriteFrames_6lp08")
 
 [node name="Background" type="AudioStreamPlayer2D" parent="."]
-volume_db = 8.0
-max_distance = 1000.0
+stream = ExtResource("62_pgb4i")
+volume_db = 10.0
+max_distance = 50000.0
 
 [node name="UILayer" type="CanvasLayer" parent="."]
 

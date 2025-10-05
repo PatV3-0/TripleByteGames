@@ -11,7 +11,6 @@
 [ext_resource type="Texture2D" uid="uid://dy26qsmor8as1" path="res://Assets/Background/Untitled 83.png" id="5_oo2xg"]
 [ext_resource type="Texture2D" uid="uid://wtlriu13ih1o" path="res://Assets/Interactables/floor-lamp.png" id="6_m14r6"]
 [ext_resource type="Texture2D" uid="uid://cvutlp1cgta8b" path="res://Assets/Sprites/Character/walk-stop.png" id="7_1y7i5"]
-[ext_resource type="AudioStream" uid="uid://b6doo86qtq6g6" path="res://Assets/Sound/VeryGentle.wav" id="7_e286j"]
 [ext_resource type="Script" path="res://Scripts/portal.gd" id="7_gx4qd"]
 [ext_resource type="Texture2D" uid="uid://cwqf3884jrrx7" path="res://Assets/Interactables/snek-plant.png" id="7_ml4um"]
 [ext_resource type="Texture2D" uid="uid://byypnkjc87sdb" path="res://Assets/Sprites/Character/Gjump (6).png" id="8_57op4"]
@@ -50,6 +49,7 @@
 [ext_resource type="Texture2D" uid="uid://cvh813shthtln" path="res://Assets/Sprites/Tutorials/Spill3.png" id="23_igv3g"]
 [ext_resource type="Texture2D" uid="uid://c1ikokololu8c" path="res://Assets/Interactables/plain-candle.png" id="23_vrme5"]
 [ext_resource type="Texture2D" uid="uid://dgjswu2bww1xx" path="res://Assets/Interactables/books-4.png" id="24_84lq7"]
+[ext_resource type="AudioStream" uid="uid://x56n7xvd3676" path="res://Assets/GameMusic/BGM3.mp3" id="24_405jk"]
 [ext_resource type="Texture2D" uid="uid://7dg6i1jdrvu8" path="res://Assets/Sprites/Tutorials/Bed1.png" id="26_d0dnk"]
 [ext_resource type="Texture2D" uid="uid://ca1cms2y3p3co" path="res://Assets/Placeholders/growwisp.png" id="26_e48wr"]
 [ext_resource type="Texture2D" uid="uid://do4mvkpmbxeia" path="res://Assets/Tutorial assets/Tutorial assets/glasses.png" id="27_8se8u"]
@@ -766,8 +766,8 @@ debug_color = Color(0.52549, 0.239216, 0.862745, 0.419608)
 
 [node name="Background" type="AudioStreamPlayer2D" parent="."]
 position = Vector2(0, 1)
-stream = ExtResource("7_e286j")
-volume_db = 8.0
+stream = ExtResource("24_405jk")
+volume_db = 10.0
 max_distance = 10000.0
 
 [node name="AKey" type="Sprite2D" parent="."]

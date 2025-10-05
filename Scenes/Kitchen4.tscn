@@ -1,4 +1,4 @@
-[gd_scene load_steps=105 format=3 uid="uid://c38ppo2oxtnec"]
+[gd_scene load_steps=106 format=3 uid="uid://c38ppo2oxtnec"]
 
 [ext_resource type="Script" path="res://Scripts/kitchen_4.gd" id="1_b6566"]
 [ext_resource type="Script" path="res://Scripts/character_body_2d.gd" id="2_2dv4w"]
@@ -68,6 +68,7 @@
 [ext_resource type="Texture2D" uid="uid://ms8yox5h3kqx" path="res://Assets/Placeholders/garlic.png" id="48_mnphf"]
 [ext_resource type="Script" path="res://Scripts/hole.gd" id="59_8vuwf"]
 [ext_resource type="Texture2D" uid="uid://cdi47y8m6tqdn" path="res://Assets/Interactables/Untitled 55.PNG" id="60_qeo7x"]
+[ext_resource type="AudioStream" uid="uid://dwnfkwcf1qxtu" path="res://Assets/GameMusic/BGM15.mp3" id="65_gm0f1"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cd4vr"]
 size = Vector2(2844, 24.5)
@@ -993,6 +994,7 @@ position = Vector2(-177.2, 971)
 sprite_frames = SubResource("SpriteFrames_fs5r3")
 
 [node name="Background" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("65_gm0f1")
 volume_db = 8.0
 max_distance = 1000.0
 

@@ -1,4 +1,4 @@
-[gd_scene load_steps=180 format=3 uid="uid://bnp2npmm6vg2g"]
+[gd_scene load_steps=181 format=3 uid="uid://bnp2npmm6vg2g"]
 
 [ext_resource type="Script" path="res://Scripts/underground_1.gd" id="1_2c2qv"]
 [ext_resource type="Script" path="res://Scripts/character_body_2d.gd" id="2_15omn"]
@@ -62,6 +62,7 @@
 [ext_resource type="Texture2D" uid="uid://1x876ycnlyv7" path="res://Assets/Tutorial assets/3.png" id="35_s4046"]
 [ext_resource type="Texture2D" uid="uid://ds5h0pxykg3ry" path="res://Assets/Sprites/Character/shrink.png" id="40_darow"]
 [ext_resource type="Script" path="res://Scenes/tutorial_ug.gd" id="48_q6ij4"]
+[ext_resource type="AudioStream" uid="uid://cl7ihrb5yytav" path="res://Assets/GameMusic/BGM23.mp3" id="62_6vbsr"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0tq3j"]
 size = Vector2(1539, 160)
@@ -205,7 +206,7 @@ size = Vector2(510.5, 20)
 size = Vector2(190, 20)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2opmx"]
-size = Vector2(20, 202)
+size = Vector2(20, 203)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_327hq"]
 size = Vector2(435, 20)
@@ -798,7 +799,7 @@ position = Vector2(522.5, 315)
 shape = SubResource("RectangleShape2D_sm0yh")
 
 [node name="CollisionShape2D18" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(612, 391.5)
+position = Vector2(618, 391.5)
 shape = SubResource("RectangleShape2D_o0h5o")
 
 [node name="CollisionShape2D19" type="CollisionShape2D" parent="StaticBody2D"]
@@ -930,7 +931,7 @@ position = Vector2(-746, 860)
 shape = SubResource("RectangleShape2D_6ep78")
 
 [node name="CollisionShape2D46" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(-578, 959)
+position = Vector2(-578, 958.5)
 shape = SubResource("RectangleShape2D_2opmx")
 
 [node name="CollisionShape2D47" type="CollisionShape2D" parent="StaticBody2D"]
@@ -1520,8 +1521,9 @@ position = Vector2(-177.2, 971)
 sprite_frames = SubResource("SpriteFrames_6lp08")
 
 [node name="Background" type="AudioStreamPlayer2D" parent="."]
-volume_db = 8.0
-max_distance = 1000.0
+stream = ExtResource("62_6vbsr")
+volume_db = 10.0
+max_distance = 50000.0
 
 [node name="UILayer" type="CanvasLayer" parent="."]
 

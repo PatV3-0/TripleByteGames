@@ -1,4 +1,4 @@
-[gd_scene load_steps=147 format=3 uid="uid://drq3m40mvk8jp"]
+[gd_scene load_steps=148 format=3 uid="uid://drq3m40mvk8jp"]
 
 [ext_resource type="Script" path="res://Scripts/kitchen_1.gd" id="1_3weli"]
 [ext_resource type="Script" path="res://Scripts/character_body_2d.gd" id="2_jx67a"]
@@ -86,6 +86,7 @@
 [ext_resource type="Texture2D" uid="uid://c46dvaw5vmgoa" path="res://Assets/Interactables/Untitled 174.png" id="80_l325v"]
 [ext_resource type="Texture2D" uid="uid://cfbnuigemtgm8" path="res://Assets/Interactables/pasta.png" id="80_xyb5h"]
 [ext_resource type="Texture2D" uid="uid://dsf540vs3igi5" path="res://Assets/Interactables/Untitled 150.png" id="81_p1tb1"]
+[ext_resource type="AudioStream" uid="uid://511gq7d1dtj8" path="res://Assets/GameMusic/BGM7.mp3" id="87_nimlc"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6o5dc"]
 size = Vector2(658, 75)
@@ -1258,8 +1259,9 @@ shape = SubResource("RectangleShape2D_wh1wu")
 debug_color = Color(0.956871, 0.119971, 0.43239, 0.42)
 
 [node name="Background" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("87_nimlc")
 volume_db = 8.0
-max_distance = 1000.0
+max_distance = 100000.0
 
 [node name="UILayer" type="CanvasLayer" parent="."]
 

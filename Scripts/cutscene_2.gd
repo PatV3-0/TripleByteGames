@@ -3,6 +3,7 @@ extends Node2D
 @export var next_scene_path: String = "res://Scenes/Kitchen1.tscn"
 
 func _ready() -> void:
+	$Background.play()
 	await get_tree().create_timer(5.0).timeout  
 	
 	var fade_rect = $FadeLayer/FadeRect

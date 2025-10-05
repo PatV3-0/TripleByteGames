@@ -1,4 +1,4 @@
-[gd_scene load_steps=79 format=3 uid="uid://bd6xyhu0p2ne"]
+[gd_scene load_steps=80 format=3 uid="uid://bd6xyhu0p2ne"]
 
 [ext_resource type="Script" path="res://Scripts/garden_1.gd" id="1_k1ame"]
 [ext_resource type="Texture2D" uid="uid://cmq1vhmr7erlq" path="res://Assets/Background/Untitled 99.png" id="2_4s7k6"]
@@ -59,6 +59,7 @@
 [ext_resource type="Texture2D" uid="uid://nkmvddm2gdg8" path="res://Assets/Menus/torn-paper.png" id="38_1d7t3"]
 [ext_resource type="Texture2D" uid="uid://bde2keawpfur0" path="res://Assets/Menus/MG-paper.png" id="39_q3sc0"]
 [ext_resource type="Texture2D" uid="uid://cawepachxw88q" path="res://Assets/Placeholders/Morning Glory.png" id="48_0cvgs"]
+[ext_resource type="AudioStream" uid="uid://8adwpgnwqhko" path="res://Assets/GameMusic/BGM6.mp3" id="56_m84mw"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4cgmb"]
 size = Vector2(354.5, 273.5)
@@ -774,8 +775,9 @@ position = Vector2(-177.2, 971)
 sprite_frames = SubResource("SpriteFrames_3avw2")
 
 [node name="Background" type="AudioStreamPlayer2D" parent="."]
-volume_db = 8.0
-max_distance = 1000.0
+stream = ExtResource("56_m84mw")
+volume_db = 10.0
+max_distance = 10000.0
 
 [node name="Ingredient" type="Area2D" parent="."]
 position = Vector2(858, -387)

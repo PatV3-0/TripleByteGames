@@ -1,4 +1,4 @@
-[gd_scene load_steps=100 format=3 uid="uid://ci5endn4fr8ds"]
+[gd_scene load_steps=101 format=3 uid="uid://ci5endn4fr8ds"]
 
 [ext_resource type="Script" path="res://Scripts/portal.gd" id="1_d0m4j"]
 [ext_resource type="Script" path="res://Scripts/walls_1.gd" id="1_v4uno"]
@@ -67,6 +67,7 @@
 [ext_resource type="Texture2D" uid="uid://gwj5l37mj7mt" path="res://Assets/Interactables/moth_balls_highlight.png" id="52_bb0mu"]
 [ext_resource type="Texture2D" uid="uid://1x876ycnlyv7" path="res://Assets/Tutorial assets/3.png" id="52_yon3c"]
 [ext_resource type="Texture2D" uid="uid://bkcxjpdlj7dl1" path="res://Assets/Interactables/moth_balls.png" id="54_0km8l"]
+[ext_resource type="AudioStream" uid="uid://coqwwprvypgeo" path="res://Assets/GameMusic/BGM4.mp3" id="68_b4gov"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hmpn8"]
 size = Vector2(1479, 20)
@@ -955,7 +956,8 @@ sprite_frames = SubResource("SpriteFrames_kvl1u")
 [node name="UILayer" type="CanvasLayer" parent="."]
 
 [node name="Background" type="AudioStreamPlayer2D" parent="."]
-volume_db = 8.0
+stream = ExtResource("68_b4gov")
+volume_db = 10.0
 max_distance = 10000.0
 
 [connection signal="body_entered" from="Hole" to="Hole" method="_on_body_entered"]

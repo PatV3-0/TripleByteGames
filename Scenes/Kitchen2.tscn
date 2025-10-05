@@ -1,4 +1,4 @@
-[gd_scene load_steps=134 format=3 uid="uid://duvfb6prmpxpu"]
+[gd_scene load_steps=135 format=3 uid="uid://duvfb6prmpxpu"]
 
 [ext_resource type="Script" path="res://Scripts/kitchen_2.gd" id="1_4in3w"]
 [ext_resource type="Texture2D" uid="uid://v6njha2nnja4" path="res://Assets/Background/Untitled 93.png" id="2_erwe7"]
@@ -84,6 +84,7 @@
 [ext_resource type="Texture2D" uid="uid://b1m54qwlk30rc" path="res://Assets/Interactables/nails-highlight.png" id="52_mgoo7"]
 [ext_resource type="Texture2D" uid="uid://cxutn61xomsig" path="res://Assets/Interactables/Untitled 239.png" id="62_4n1o0"]
 [ext_resource type="Texture2D" uid="uid://j2i8gvv28edl" path="res://Assets/Interactables/Untitled 238.png" id="64_rc5pr"]
+[ext_resource type="AudioStream" uid="uid://511gq7d1dtj8" path="res://Assets/GameMusic/BGM7.mp3" id="83_5e8kw"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6kbt8"]
 size = Vector2(360.25, 16)
@@ -1308,8 +1309,9 @@ position = Vector2(-177.2, 971)
 sprite_frames = SubResource("SpriteFrames_7hgcl")
 
 [node name="Background" type="AudioStreamPlayer2D" parent="."]
-volume_db = 8.0
-max_distance = 1000.0
+stream = ExtResource("83_5e8kw")
+volume_db = 10.0
+max_distance = 10000.0
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
