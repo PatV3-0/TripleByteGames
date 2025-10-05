@@ -356,7 +356,7 @@ animations = [{
 "speed": 5.0
 }, {
 "frames": [{
-"duration": 1.0,
+"duration": 2.0,
 "texture": ExtResource("55_x8n5f")
 }, {
 "duration": 1.0,
@@ -1177,3 +1177,5 @@ metadata/_edit_use_anchors_ = true
 position = Vector2(1996, -778)
 scale = Vector2(1, 2.33986)
 texture = ExtResource("74_6k7r5")
+
+[connection signal="animation_finished" from="CharacterBody2D/Sprite2D" to="CharacterBody2D" method="_on_death_animation_finished"]

@@ -9,8 +9,7 @@ var pauseMenu = null
 #@onready var portalSprite2 = $"Portal/Purple"
 
 func _ready() -> void:
-	$CharacterBody2D.play("idle")
-	#$CharacterBody2D.grow(105)
+	$CharacterBody2D/Sprite2D.play("idle")
 	Global.current_checklist_type = "ingredient"
 	$CharacterBody2D.fade_out_triggered.connect(_on_player_fade_out_triggered)
 	add_child(checklist)

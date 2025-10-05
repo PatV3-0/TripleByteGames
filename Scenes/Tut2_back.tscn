@@ -1,4 +1,4 @@
-[gd_scene load_steps=83 format=3 uid="uid://batso50ntelgm"]
+[gd_scene load_steps=84 format=3 uid="uid://batso50ntelgm"]
 
 [ext_resource type="Script" path="res://Scripts/character_body_2d.gd" id="1_a08j2"]
 [ext_resource type="Script" path="res://Scenes/tut_2_back.gd" id="1_wjvc5"]
@@ -26,9 +26,10 @@
 [ext_resource type="Texture2D" uid="uid://b23akb18jrfgm" path="res://Assets/Sprites/Character/push_strain_breathe_in-2.png" id="13_ut3nm"]
 [ext_resource type="Texture2D" uid="uid://jsttnhfnypr" path="res://Assets/Sprites/Character/push_strain_breathe_out-2.png" id="14_b0c07"]
 [ext_resource type="Texture2D" uid="uid://bss1wxmidlvw4" path="res://Assets/Interactables/3d-rubix.png" id="15_15glj"]
+[ext_resource type="Texture2D" uid="uid://behsw0hyskoeg" path="res://Assets/Sprites/Character/idle 1 61.PNG" id="15_eh6o7"]
 [ext_resource type="Texture2D" uid="uid://kwewpvv6a0dk" path="res://Assets/Sprites/Character/Grow.png" id="15_oidsi"]
 [ext_resource type="Texture2D" uid="uid://cvutlp1cgta8b" path="res://Assets/Sprites/Character/walk-stop.png" id="15_q4frm"]
-[ext_resource type="Texture2D" uid="uid://cgxuhfktvlhg6" path="res://Assets/Sprites/Character/idle 1 53.PNG" id="16_eq14e"]
+[ext_resource type="Texture2D" uid="uid://c70mun6u3qbpq" path="res://Assets/Sprites/Character/flat.png" id="16_5sitx"]
 [ext_resource type="Texture2D" uid="uid://cpjbtyxusic6r" path="res://Assets/Sprites/Character/walk-2.png" id="16_l30oj"]
 [ext_resource type="Texture2D" uid="uid://dyg15lcss7s5k" path="res://Assets/Sprites/Character/walk_1.png" id="17_nnkhe"]
 [ext_resource type="Texture2D" uid="uid://ch1intxq0cr18" path="res://Assets/Sprites/Character/idle 1.png" id="18_07fs3"]
@@ -99,20 +100,25 @@ size = Vector2(38.6667, 39.8333)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_asjyo"]
 size = Vector2(13, 25.2)
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_ldp02"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_1ag7l"]
 animations = [{
 "frames": [{
 "duration": 1.0,
+"texture": ExtResource("15_eh6o7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_5sitx")
+}],
+"loop": false,
+"name": &"die",
+"speed": 3.0
+}, {
+"frames": [{
+"duration": 2.0,
 "texture": ExtResource("15_oidsi")
 }, {
 "duration": 1.0,
-"texture": ExtResource("16_eq14e")
-}, {
-"duration": 1.0,
 "texture": ExtResource("15_oidsi")
-}, {
-"duration": 1.0,
-"texture": ExtResource("16_eq14e")
 }],
 "loop": false,
 "name": &"grow",
@@ -223,17 +229,11 @@ animations = [{
 "speed": 5.0
 }, {
 "frames": [{
-"duration": 1.0,
+"duration": 2.0,
 "texture": ExtResource("36_gxj5j")
 }, {
 "duration": 1.0,
-"texture": ExtResource("16_eq14e")
-}, {
-"duration": 1.0,
 "texture": ExtResource("36_gxj5j")
-}, {
-"duration": 1.0,
-"texture": ExtResource("16_eq14e")
 }],
 "loop": false,
 "name": &"shrink",
@@ -608,12 +608,10 @@ shape = SubResource("RectangleShape2D_asjyo")
 
 [node name="Sprite2D" type="AnimatedSprite2D" parent="CharacterBody2D"]
 position = Vector2(1.39999, -3)
-rotation = -0.000699009
 scale = Vector2(0.015, 0.015)
-sprite_frames = SubResource("SpriteFrames_ldp02")
+sprite_frames = SubResource("SpriteFrames_1ag7l")
 animation = &"shrink"
 offset = Vector2(95, 39)
-flip_h = true
 
 [node name="Camera2D" type="Camera2D" parent="CharacterBody2D"]
 offset = Vector2(0, -70)
@@ -730,7 +728,6 @@ max_distance = 10000.0
 [node name="FadeLayer" type="CanvasLayer" parent="."]
 
 [node name="FadeRect" type="ColorRect" parent="FadeLayer"]
-visible = false
 offset_left = -2232.0
 offset_top = -1068.0
 offset_right = 8057.0
@@ -742,7 +739,6 @@ metadata/_edit_use_anchors_ = true
 [node name="FadeLayer2" type="CanvasLayer" parent="."]
 
 [node name="FadeRect" type="ColorRect" parent="FadeLayer2"]
-visible = false
 offset_left = -2232.0
 offset_top = -1068.0
 offset_right = 8057.0

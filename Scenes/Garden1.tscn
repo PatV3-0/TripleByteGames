@@ -220,7 +220,7 @@ animations = [{
 "speed": 5.0
 }, {
 "frames": [{
-"duration": 1.0,
+"duration": 2.0,
 "texture": ExtResource("34_q77wj")
 }, {
 "duration": 1.0,
@@ -728,7 +728,6 @@ debug_color = Color(0.411765, 0.407843, 0.172549, 1)
 [node name="FadeLayer" type="CanvasLayer" parent="."]
 
 [node name="FadeRect" type="ColorRect" parent="FadeLayer"]
-visible = false
 anchors_preset = -1
 anchor_left = -0.530382
 anchor_top = -1.93981
@@ -815,5 +814,6 @@ texture = ExtResource("39_q3sc0")
 
 [node name="UILayer" type="CanvasLayer" parent="."]
 
+[connection signal="animation_finished" from="CharacterBody2D/Sprite2D" to="CharacterBody2D" method="_on_death_animation_finished"]
 [connection signal="body_entered" from="MushroomLaunch" to="CharacterBody2D" method="_on_mushroom_launch_body_entered"]
 [connection signal="body_entered" from="FadeOut" to="CharacterBody2D" method="_on_fade_out_body_entered"]

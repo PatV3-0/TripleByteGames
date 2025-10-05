@@ -258,7 +258,7 @@ size = Vector2(11.4167, 254.25)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3om3v"]
 size = Vector2(13, 25.2)
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_inyyf"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_otmlg"]
 animations = [{
 "frames": [{
 "duration": 1.0,
@@ -387,7 +387,7 @@ animations = [{
 "speed": 5.0
 }, {
 "frames": [{
-"duration": 1.0,
+"duration": 2.0,
 "texture": ExtResource("60_4iq07")
 }, {
 "duration": 1.0,
@@ -944,7 +944,7 @@ shape = SubResource("RectangleShape2D_3om3v")
 [node name="Sprite2D" type="AnimatedSprite2D" parent="CharacterBody2D"]
 position = Vector2(1.39998, -3)
 scale = Vector2(0.015, 0.015)
-sprite_frames = SubResource("SpriteFrames_inyyf")
+sprite_frames = SubResource("SpriteFrames_otmlg")
 animation = &"shrink"
 offset = Vector2(95, 39)
 flip_h = true
@@ -1160,7 +1160,6 @@ debug_color = Color(0.411765, 0.407843, 0.172549, 1)
 [node name="FadeLayer" type="CanvasLayer" parent="."]
 
 [node name="FadeRect" type="ColorRect" parent="FadeLayer"]
-visible = false
 anchors_preset = -1
 anchor_left = -0.530382
 anchor_top = -1.93981
@@ -1201,6 +1200,7 @@ debug_color = Color(0.411765, 0.407843, 0.172549, 1)
 
 [connection signal="body_entered" from="Hole" to="Hole" method="_on_body_entered"]
 [connection signal="body_exited" from="Hole" to="Hole" method="_on_body_exited"]
+[connection signal="animation_finished" from="CharacterBody2D/Sprite2D" to="CharacterBody2D" method="_on_death_animation_finished"]
 [connection signal="body_entered" from="Pushable3/MushroomLaunch2" to="CharacterBody2D" method="_on_mushroom_launch_body_entered"]
 [connection signal="body_entered" from="Pushable4/MushroomLaunch2" to="CharacterBody2D" method="_on_mushroom_launch_body_entered"]
 [connection signal="body_entered" from="FadeOut" to="CharacterBody2D" method="_on_fade_back_body_entered"]

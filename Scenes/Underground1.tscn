@@ -523,7 +523,7 @@ animations = [{
 "speed": 5.0
 }, {
 "frames": [{
-"duration": 1.0,
+"duration": 2.0,
 "texture": ExtResource("40_darow")
 }, {
 "duration": 1.0,
@@ -1474,7 +1474,6 @@ debug_color = Color(0.57197, 0.555292, 0, 0.42)
 [node name="FadeLayer" type="CanvasLayer" parent="."]
 
 [node name="FadeRect" type="ColorRect" parent="FadeLayer"]
-visible = false
 anchors_preset = -1
 anchor_left = -0.530382
 anchor_top = -1.93981
@@ -1553,3 +1552,5 @@ polygon = PackedVector2Array(-4123, 835, -4114, 834, -4120, 824, -4120, 815, -41
 [node name="CollisionPolygon2D6" type="CollisionPolygon2D" parent="DeathZone"]
 position = Vector2(-34, 15)
 polygon = PackedVector2Array(-4330, 311, -4335, 317, -4335, 321, -4337, 329, -4339, 337, -4341, 344, -4344, 352, -4345, 359, -4346, 365, -4346, 372, -4346, 378, -4346, 382, -4344, 388, -4342, 395, -4341, 398, -4347, 397, -4348, 389, -4349, 372, -4349, 362, -4348, 347, -4355, 335, -4343, 326, -4341, 319, -4340, 313, -4330, 294, -4324, 285, -4315, 275, -4319, 288, -4328, 300)
+
+[connection signal="animation_finished" from="CharacterBody2D/Sprite2D" to="CharacterBody2D" method="_on_death_animation_finished"]

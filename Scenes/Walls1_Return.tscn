@@ -138,7 +138,7 @@ size = Vector2(38.6667, 39.8333)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1xsty"]
 size = Vector2(13, 25.9939)
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_qm3qv"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_n76he"]
 animations = [{
 "frames": [{
 "duration": 1.0,
@@ -267,7 +267,7 @@ animations = [{
 "speed": 5.0
 }, {
 "frames": [{
-"duration": 1.0,
+"duration": 2.0,
 "texture": ExtResource("45_xnw03")
 }, {
 "duration": 1.0,
@@ -460,7 +460,6 @@ animations = [{
 }]
 
 [node name="Node2D" type="Node2D"]
-visible = false
 scale = Vector2(1.1, 1.1)
 script = ExtResource("1_6esrk")
 
@@ -476,7 +475,6 @@ scale = Vector2(1.00647, 1.00647)
 texture = ExtResource("2_v2qrf")
 
 [node name="Sprite2D" type="Sprite2D" parent="Sprite2D"]
-visible = false
 position = Vector2(-742.469, 161.682)
 texture = ExtResource("3_gskia")
 
@@ -796,22 +794,6 @@ position = Vector2(1792.33, 585.088)
 shape = SubResource("RectangleShape2D_t8awm")
 debug_color = Color(0.411765, 0.407843, 0.172549, 1)
 
-[node name="FadeLayer" type="CanvasLayer" parent="."]
-
-[node name="FadeRect" type="ColorRect" parent="FadeLayer"]
-anchors_preset = -1
-anchor_left = -0.530382
-anchor_top = -1.93981
-anchor_right = -0.530382
-anchor_bottom = -1.93981
-offset_left = -2188.0
-offset_top = -1009.0
-offset_right = 8101.0
-offset_bottom = 3486.0
-mouse_filter = 2
-color = Color(0, 0, 0, 0)
-metadata/_edit_use_anchors_ = true
-
 [node name="Hole" type="Area2D" parent="."]
 position = Vector2(-375.455, 309.091)
 script = ExtResource("21_i7stg")
@@ -838,7 +820,7 @@ shape = SubResource("RectangleShape2D_1xsty")
 [node name="Sprite2D" type="AnimatedSprite2D" parent="CharacterBody2D"]
 position = Vector2(1.3999, -3)
 scale = Vector2(0.015, 0.015)
-sprite_frames = SubResource("SpriteFrames_qm3qv")
+sprite_frames = SubResource("SpriteFrames_n76he")
 animation = &"shrink"
 offset = Vector2(95, 39)
 
@@ -955,6 +937,22 @@ metadata/_edit_use_anchors_ = true
 position = Vector2(-177.2, 971)
 sprite_frames = SubResource("SpriteFrames_kvl1u")
 
+[node name="FadeLayer" type="CanvasLayer" parent="."]
+
+[node name="FadeRect" type="ColorRect" parent="FadeLayer"]
+anchors_preset = -1
+anchor_left = -0.530382
+anchor_top = -1.93981
+anchor_right = -0.530382
+anchor_bottom = -1.93981
+offset_left = -2188.0
+offset_top = -1009.0
+offset_right = 8101.0
+offset_bottom = 3486.0
+mouse_filter = 2
+color = Color(0, 0, 0, 0)
+metadata/_edit_use_anchors_ = true
+
 [node name="UILayer" type="CanvasLayer" parent="."]
 
 [node name="Background" type="AudioStreamPlayer2D" parent="."]
@@ -964,3 +962,4 @@ max_distance = 50000.0
 
 [connection signal="body_entered" from="Hole" to="Hole" method="_on_body_entered"]
 [connection signal="body_exited" from="Hole" to="Hole" method="_on_body_exited"]
+[connection signal="animation_finished" from="CharacterBody2D/Sprite2D" to="CharacterBody2D" method="_on_death_animation_finished"]

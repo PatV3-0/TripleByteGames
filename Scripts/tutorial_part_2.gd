@@ -22,7 +22,7 @@ var hide_timer_started = false
 
 @onready var checklist = preload("res://Scenes/ObjectiveCanvas.tscn").instantiate()
 func _ready() -> void:
-	$CharacterBody2D.play("idle")
+	$CharacterBody2D/Sprite2D.play("idle")
 	Global.current_checklist_type = "objective"
 	add_child(checklist)
 	

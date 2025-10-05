@@ -4,14 +4,15 @@ extends Node2D
 var pauseMenu = null
 @onready var pauseMenuScene = preload("res://Scenes/PauseMenu.tscn")
 @onready var ui_layer = $UILayer  
+@onready var fade_rect = $"FadeLayer/FadeRect"
 @onready var checklist = preload("res://Scenes/IngredientsCanvas.tscn").instantiate()
 #@onready var portalSprite1 = $"Portal/Violet"
 #@onready var portalSprite2 = $"Portal/Purple"
 
 func _ready() -> void:
-	$CharacterBody2D.play("idle")
-	Global.current_checklist_type = "ingredient"
+	$CharacterBody2D/Sprite2D.play("idle")
 	$CharacterBody2D.fade_out_triggered.connect(_on_player_fade_out_triggered)
+	Global.current_checklist_type = "ingredient"
 	add_child(checklist)
 	var stream = $Background
 	if stream is AudioStreamWAV:

@@ -103,7 +103,7 @@ size = Vector2(25.6664, 20.8336)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_asjyo"]
 size = Vector2(13, 25.2)
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_osyix"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_1qoui"]
 animations = [{
 "frames": [{
 "duration": 1.0,
@@ -232,7 +232,7 @@ animations = [{
 "speed": 5.0
 }, {
 "frames": [{
-"duration": 1.0,
+"duration": 2.0,
 "texture": ExtResource("36_sauis")
 }, {
 "duration": 1.0,
@@ -626,17 +626,17 @@ script = ExtResource("1_a08j2")
 position = Vector2(1.39999, -3)
 shape = SubResource("RectangleShape2D_asjyo")
 
-[node name="Camera2D" type="Camera2D" parent="CharacterBody2D"]
-offset = Vector2(0, -70)
-zoom = Vector2(1.5, 1.5)
-
 [node name="Sprite2D" type="AnimatedSprite2D" parent="CharacterBody2D"]
 position = Vector2(1.39999, -3)
 scale = Vector2(0.015, 0.015)
-sprite_frames = SubResource("SpriteFrames_osyix")
+sprite_frames = SubResource("SpriteFrames_1qoui")
 animation = &"shrink"
 offset = Vector2(95, 39)
 flip_h = true
+
+[node name="Camera2D" type="Camera2D" parent="CharacterBody2D"]
+offset = Vector2(0, -70)
+zoom = Vector2(1.5, 1.5)
 
 [node name="JumpSound" type="AudioStreamPlayer2D" parent="CharacterBody2D"]
 stream = ExtResource("3_v712t")
@@ -766,7 +766,6 @@ debug_color = Color(0.510884, 0.573227, 0.206706, 0.42)
 [node name="FadeLayer" type="CanvasLayer" parent="."]
 
 [node name="FadeRect" type="ColorRect" parent="FadeLayer"]
-visible = false
 offset_left = -2232.0
 offset_top = -1068.0
 offset_right = 8057.0
@@ -796,7 +795,6 @@ texture = ExtResource("53_rpqk6")
 [node name="FadeLayer2" type="CanvasLayer" parent="."]
 
 [node name="FadeRect" type="ColorRect" parent="FadeLayer2"]
-visible = false
 offset_left = -2232.0
 offset_top = -1068.0
 offset_right = 8057.0
@@ -817,3 +815,4 @@ shape = SubResource("RectangleShape2D_udmf7")
 
 [connection signal="body_entered" from="Hole" to="Hole" method="_on_body_entered"]
 [connection signal="body_exited" from="Hole" to="Hole" method="_on_body_exited"]
+[connection signal="animation_finished" from="CharacterBody2D/Sprite2D" to="CharacterBody2D" method="_on_death_animation_finished"]

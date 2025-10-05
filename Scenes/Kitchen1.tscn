@@ -306,7 +306,7 @@ animations = [{
 "speed": 5.0
 }, {
 "frames": [{
-"duration": 1.0,
+"duration": 2.0,
 "texture": ExtResource("44_64vmw")
 }, {
 "duration": 1.0,
@@ -899,7 +899,7 @@ shape = SubResource("RectangleShape2D_w0kqr")
 position = Vector2(1.40002, -3)
 scale = Vector2(0.015, 0.015)
 sprite_frames = SubResource("SpriteFrames_rts8i")
-animation = &"shrink"
+animation = &"grow"
 offset = Vector2(95, 39)
 
 [node name="Camera2D" type="Camera2D" parent="CharacterBody2D"]
@@ -1156,7 +1156,6 @@ texture = ExtResource("81_p1tb1")
 [node name="FadeLayer" type="CanvasLayer" parent="."]
 
 [node name="FadeRect" type="ColorRect" parent="FadeLayer"]
-visible = false
 anchors_preset = -1
 anchor_left = -0.530382
 anchor_top = -1.93981
@@ -1265,4 +1264,5 @@ max_distance = 100000.0
 
 [node name="UILayer" type="CanvasLayer" parent="."]
 
+[connection signal="animation_finished" from="CharacterBody2D/Sprite2D" to="CharacterBody2D" method="_on_death_animation_finished"]
 [connection signal="body_entered" from="Fade" to="CharacterBody2D" method="_on_fade_out_body_entered"]

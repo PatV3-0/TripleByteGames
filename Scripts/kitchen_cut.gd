@@ -8,7 +8,7 @@ var pauseMenu = null
 @onready var checklist = preload("res://Scenes/ObjectiveCanvas.tscn").instantiate()
 
 func _ready() -> void:
-	$CharacterBody2D.play("idle")
+	$CharacterBody2D/Sprite2D.play("idle")
 	$CharacterBody2D.fade_out_triggered.connect(_on_player_fade_out_triggered)
 	Global.current_checklist_type = "objective"
 	add_child(checklist)
