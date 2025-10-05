@@ -10,8 +10,9 @@ func _physics_process(_delta: float) -> void:
 	if player_inside and not transitioning:
 		# Wait for player to press W (or your "enter_door" action)
 		if Input.is_action_just_pressed("enter_door"):
-			transitioning = true
-			transition_to_next_scene()
+			if player_inside.size == 0:
+				transitioning = true
+				transition_to_next_scene()
 
 func _on_body_entered(body: Node) -> void:
 	if body.is_in_group("Player"):
@@ -24,6 +25,9 @@ func _on_body_exited(body: Node) -> void:
 		transitioning = false
 
 func transition_to_next_scene():
+	var tutorial = get_tree().current_scene.get_node("TutorialCanvas")
+	if is_instance_valid(tutorial):
+		tutorial.cancel_tutorial()
 	var tween = create_tween()
 	tween.tween_property(fade_rect, "color:a", 1.0, 1.5).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_IN_OUT)
 	await tween.finished

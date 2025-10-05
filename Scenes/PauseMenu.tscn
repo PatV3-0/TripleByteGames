@@ -1,8 +1,10 @@
-[gd_scene load_steps=18 format=3 uid="uid://cmivsg2fyn6pg"]
+[gd_scene load_steps=23 format=3 uid="uid://cmivsg2fyn6pg"]
 
 [ext_resource type="Script" path="res://Scripts/PauseMenu.gd" id="1_vybmh"]
 [ext_resource type="Texture2D" uid="uid://dbrhe5p7qqq7y" path="res://Assets/Menus/PauseMenu.png" id="2_dp6yt"]
 [ext_resource type="Texture2D" uid="uid://b7c1g2ikp26gk" path="res://Assets/Sprites/Buttons/Resume.png" id="3_3o3kn"]
+[ext_resource type="Texture2D" uid="uid://bsi6nnpfnm3as" path="res://Assets/Menus/Untitled 186.png" id="3_j73cf"]
+[ext_resource type="Texture2D" uid="uid://bukytry747gs7" path="res://Assets/Menus/Untitled 187.png" id="4_qv07h"]
 [ext_resource type="Texture2D" uid="uid://p24dtag7xlxs" path="res://Assets/Sprites/Buttons/ResumeH.png" id="4_vrk46"]
 [ext_resource type="Texture2D" uid="uid://dnm8dxor6wr5s" path="res://Assets/Sprites/Buttons/ResumeD.png" id="5_p7wcp"]
 [ext_resource type="Texture2D" uid="uid://dlehdjxkmt3o6" path="res://Assets/Sprites/Buttons/Save.png" id="6_tkoch"]
@@ -17,6 +19,9 @@
 [ext_resource type="Texture2D" uid="uid://c7wwq44tg451a" path="res://Assets/Sprites/Buttons/Reset.png" id="15_sjn36"]
 [ext_resource type="Texture2D" uid="uid://cssvh0xyqhkcg" path="res://Assets/Sprites/Buttons/ResetH.png" id="16_lep0a"]
 [ext_resource type="Texture2D" uid="uid://bfjfr2cjd1sp0" path="res://Assets/Sprites/Buttons/ResetD.png" id="17_xfuad"]
+[ext_resource type="Texture2D" uid="uid://ca1cms2y3p3co" path="res://Assets/Placeholders/growwisp.png" id="18_gp57m"]
+[ext_resource type="Texture2D" uid="uid://81vpbbt7xjmo" path="res://Assets/Placeholders/shrinkwisp.png" id="19_vq3nx"]
+[ext_resource type="AudioStream" uid="uid://dtilchtalwuh7" path="res://Assets/GameMusic/BGM19.mp3" id="22_rqege"]
 
 [node name="Node2D" type="Control"]
 process_mode = 2
@@ -28,6 +33,16 @@ script = ExtResource("1_vybmh")
 position = Vector2(584, 304)
 scale = Vector2(0.775, 0.775)
 texture = ExtResource("2_dp6yt")
+
+[node name="IngredientSprite" type="Sprite2D" parent="."]
+position = Vector2(470, 574)
+scale = Vector2(0.16416, 0.146997)
+texture = ExtResource("3_j73cf")
+
+[node name="ObjectiveSprite" type="Sprite2D" parent="."]
+position = Vector2(469, 575)
+scale = Vector2(0.167025, 0.140723)
+texture = ExtResource("4_qv07h")
 
 [node name="PanelHolder" type="Control" parent="."]
 anchors_preset = 0
@@ -81,3 +96,121 @@ texture_normal = ExtResource("15_sjn36")
 texture_pressed = ExtResource("16_lep0a")
 texture_hover = ExtResource("16_lep0a")
 texture_disabled = ExtResource("17_xfuad")
+
+[node name="LvlSelectPanel" type="Panel" parent="PanelHolder"]
+layout_mode = 2
+offset_left = 350.0
+offset_top = -161.0
+offset_right = 524.0
+offset_bottom = -117.0
+
+[node name="CheckButton2" type="CheckButton" parent="PanelHolder/LvlSelectPanel"]
+layout_mode = 0
+offset_left = 1.0
+offset_top = 15.0
+offset_right = 187.0
+offset_bottom = 46.0
+scale = Vector2(0.90725, 1.05731)
+text = "Masterchef"
+
+[node name="CheckButton" type="CheckButton" parent="PanelHolder/LvlSelectPanel"]
+layout_mode = 2
+offset_left = 1.0
+offset_top = -3.0
+offset_right = 172.0
+offset_bottom = 28.0
+text = "God Mode"
+
+[node name="OptionButton" type="OptionButton" parent="PanelHolder/LvlSelectPanel"]
+layout_mode = 0
+offset_left = -143.0
+offset_right = -6.0
+offset_bottom = 81.0
+autowrap_mode = 2
+fit_to_longest_item = false
+allow_reselect = true
+item_count = 2
+popup/item_0/text = "Grow"
+popup/item_0/icon = ExtResource("18_gp57m")
+popup/item_1/text = "Shrink"
+popup/item_1/icon = ExtResource("19_vq3nx")
+popup/item_1/id = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelHolder/LvlSelectPanel"]
+layout_mode = 0
+offset_left = 2.0
+offset_top = 49.0
+offset_right = 173.0
+offset_bottom = 640.0
+
+[node name="Tut1" type="Button" parent="PanelHolder/LvlSelectPanel/VBoxContainer"]
+layout_mode = 2
+text = "Tutorial Lvl 1"
+
+[node name="Tut2" type="Button" parent="PanelHolder/LvlSelectPanel/VBoxContainer"]
+layout_mode = 2
+text = "Tutorial Lvl 2"
+
+[node name="W1" type="Button" parent="PanelHolder/LvlSelectPanel/VBoxContainer"]
+layout_mode = 2
+text = "Walls Lvl 1"
+
+[node name="W2" type="Button" parent="PanelHolder/LvlSelectPanel/VBoxContainer"]
+layout_mode = 2
+text = "Walls Lvl 2"
+
+[node name="K0" type="Button" parent="PanelHolder/LvlSelectPanel/VBoxContainer"]
+layout_mode = 2
+text = "Kitchen Lvl 0"
+
+[node name="K1" type="Button" parent="PanelHolder/LvlSelectPanel/VBoxContainer"]
+layout_mode = 2
+text = "Kitchen Lvl 1"
+
+[node name="K2" type="Button" parent="PanelHolder/LvlSelectPanel/VBoxContainer"]
+layout_mode = 2
+text = "Kitchen Lvl 2"
+
+[node name="K3" type="Button" parent="PanelHolder/LvlSelectPanel/VBoxContainer"]
+layout_mode = 2
+text = "Kitchen Lvl 3"
+
+[node name="K4" type="Button" parent="PanelHolder/LvlSelectPanel/VBoxContainer"]
+layout_mode = 2
+text = "Kitchen Lvl 4"
+
+[node name="G1" type="Button" parent="PanelHolder/LvlSelectPanel/VBoxContainer"]
+layout_mode = 2
+text = "Garden Lvl 1"
+
+[node name="G2" type="Button" parent="PanelHolder/LvlSelectPanel/VBoxContainer"]
+layout_mode = 2
+text = "Garden Lvl 2"
+
+[node name="U1" type="Button" parent="PanelHolder/LvlSelectPanel/VBoxContainer"]
+layout_mode = 2
+text = "Underground Lvl 1"
+
+[node name="U2" type="Button" parent="PanelHolder/LvlSelectPanel/VBoxContainer"]
+layout_mode = 2
+text = "Underground Lvl 2"
+
+[node name="S" type="Button" parent="PanelHolder/LvlSelectPanel/VBoxContainer"]
+layout_mode = 2
+text = "Stairs Lvl"
+
+[node name="BI1" type="Button" parent="PanelHolder/LvlSelectPanel/VBoxContainer"]
+layout_mode = 2
+text = "Inside Lvl 1"
+
+[node name="BI2" type="Button" parent="PanelHolder/LvlSelectPanel/VBoxContainer"]
+layout_mode = 2
+text = "Inside Lvl 2"
+
+[node name="Final" type="Button" parent="PanelHolder/LvlSelectPanel/VBoxContainer"]
+layout_mode = 2
+text = "Final Lvl"
+
+[node name="Background" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("22_rqege")
+volume_db = 10.0
