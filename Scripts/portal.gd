@@ -1,8 +1,6 @@
 extends Area2D
 
 @onready var collision_shape = $CollisionShape2D
-#@onready var sprite = $Purple
-#@onready var sprite2 = $Violet
 
 @export var trigger_tutorial_on_growth: bool = false
 @export var tutorial_area: Area2D  # Drag your tutorial Area2D here if needed
@@ -22,8 +20,9 @@ func _on_body_entered(body):
 
 		var grew = false
 		if body.has_method("grow"):
-			grew = body.grow(105)
-
+			grew = await body.grow(105)
+			if grew:
+				$Sprite2D.visible = false
 		# Trigger tutorial only if player actually grew
 		if trigger_tutorial_on_growth and grew and tutorial_area:
 			if tutorial_area.has_method("_on_body_entered"):

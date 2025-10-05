@@ -1,17 +1,23 @@
 extends Area2D
 
-@export var next_scene_path: String = "res://Scenes/Walls1.tscn"
+@export var next_scene_path: String #= "res://Scenes/Walls1.tscn"
 @onready var fade_rect = $"../FadeLayer/FadeRect"
 
 var player_inside: Node = null
 var transitioning := false
 
+
 func _physics_process(_delta: float) -> void:
 	if player_inside and not transitioning:
 		# Wait for player to press W (or your "enter_door" action)
 		if Input.is_action_just_pressed("enter_door"):
-			transitioning = true
-			transition_to_next_scene()
+			print("cancel")
+			var tutorial = get_tree().current_scene.get_node("TutorialCanvas")
+			if is_instance_valid(tutorial):
+				tutorial.cancel_tutorial()
+			if player_inside.size == 0:
+				transitioning = true
+				transition_to_next_scene()
 
 func _on_body_entered(body: Node) -> void:
 	if body.is_in_group("Player"):

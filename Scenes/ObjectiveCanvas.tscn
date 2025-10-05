@@ -1,0 +1,33 @@
+[gd_scene load_steps=3 format=3 uid="uid://c2d2c1ber16pu"]
+
+[ext_resource type="Script" path="res://Scenes/ingredients_canvas.gd" id="1_pws6c"]
+[ext_resource type="Texture2D" uid="uid://cxa22mpaau64e" path="res://Assets/Menus/Unfolded.png" id="2_j7d38"]
+
+[node name="IngredientsCanvas" type="CanvasLayer"]
+script = ExtResource("1_pws6c")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(103, 129)
+scale = Vector2(0.381161, 0.307726)
+texture = ExtResource("2_j7d38")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_left = 37.0
+offset_top = 8.0
+offset_right = 173.0
+offset_bottom = 50.0
+color = Color(0.909804, 0.862745, 0.768627, 1)
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+position = Vector2(103, 129)
+scale = Vector2(0.381161, 0.307726)
+
+[node name="Panel" type="Panel" parent="."]
+offset_left = 21.0
+offset_top = 4.0
+offset_right = 21.0
+offset_bottom = 4.0
+scale = Vector2(0.65925, 0.949498)
+size_flags_horizontal = 3
+
+[node name="Sprite2D" type="Sprite2D" parent="Panel"]

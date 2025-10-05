@@ -3,6 +3,7 @@ extends Node2D
 @export var next_scene_path: String = "res://Scenes/BackInside.tscn"
 var pauseMenu = null
 @onready var pauseMenuScene = preload("res://Scenes/PauseMenu.tscn")
+@onready var checklist = preload("res://Scenes/IngredientsCanvas.tscn").instantiate()
 @onready var ui_layer = $UILayer  
 #@onready var portalSprite1 = $"Portal/Violet"
 #@onready var portalSprite2 = $"Portal/Purple"
@@ -10,12 +11,18 @@ var pauseMenu = null
 @export var min_spawn_interval: float = 2.0
 @export var max_spawn_interval: float = 5.0
 @export var min_beetles: int = 3
-@export var max_beetles: int = 7
-@export var spawn_area_top_left: Vector2 = Vector2(-630, -290)
-@export var spawn_area_bottom_right: Vector2 = Vector2(-660, -290)
+@export var max_beetles: int = 5
+@export var spawn_area_top_left: Vector2 = Vector2(-230, -1090)
+@export var spawn_area_bottom_right: Vector2 = Vector2(-660, -690)
+#@export var spawn_offset: Vector2 = Vector2(-200, -400) 
+@export var spawn_area_size: Vector2 = Vector2(300, 300) # size of spawn area
+@export var spawn_area_offset: Vector2 = Vector2(0, 0) 
+@onready var camera = $"Camera2D"
 
 func _ready() -> void:
+	$CharacterBody2D.grow(105)
 	$CharacterBody2D.fade_out_triggered.connect(_on_player_fade_out_triggered)
+	add_child(checklist)
 	var stream = $Background
 	if stream is AudioStreamWAV:
 		stream.set_loop(true)
@@ -36,11 +43,18 @@ func _ready() -> void:
 	pauseMenu.visible = false
 
 func _process(delta: float) -> void:
-	pass
+	#pass
+	if camera:
+		var camera_top_left = camera.global_position - (get_viewport().size / 2) / camera.zoom
+		spawn_area_top_left = camera_top_left + spawn_area_offset
+		spawn_area_bottom_right = spawn_area_top_left + spawn_area_size
 	if $Background and not $Background.playing:
 		$Background.play()
 
 func _on_player_fade_out_triggered():
+	var tutorial = get_tree().current_scene.get_node("TutorialCanvas")
+	if is_instance_valid(tutorial):
+		tutorial.cancel_tutorial()
 	print("Called Transition")
 	var fade_rect = $FadeLayer/FadeRect
 	var tween = create_tween()
@@ -55,7 +69,14 @@ func _unhandled_input(event):
 		else:
 			hidePauseMenu()
 
+func _input(event):
+	if event.is_action_pressed("i_tab"): #"i_tab" is mapped to Tab in Input Map
+		checklist.visible = !checklist.visible
+		
 func showPauseMenu():
+	var tutorial = get_tree().current_scene.get_node("TutorialCanvas")
+	if is_instance_valid(tutorial):
+		tutorial.cancel_tutorial()
 	get_tree().paused = true
 	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 	pauseMenu.visible = true

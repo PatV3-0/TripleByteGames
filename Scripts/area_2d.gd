@@ -9,7 +9,6 @@ func _on_body_entered(body):
 		# Enable push on player
 		body.can_push = true
 		body.push_target = get_parent()  # The RigidBody2D
-		
 		# Enable pull on player
 		body.can_pull = true
 		body.pull_target = get_parent()

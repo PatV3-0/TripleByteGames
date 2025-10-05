@@ -1,22 +1,24 @@
 extends Node2D
 
 @export var next_scene_path: String = "res://Scenes/KitchenCut.tscn"
-@export var previous_scene_path: String = "res://Scenes/Walls1_back.tscn"
+@export var previous_scene_path: String = "res://Scenes/Walls1_Return.tscn"
 var pauseMenu = null
 @onready var pauseMenuScene = preload("res://Scenes/PauseMenu.tscn")
 @onready var ui_layer = $UILayer  
+@onready var checklist = preload("res://Scenes/ObjectiveCanvas.tscn").instantiate()
 #@onready var portalSprite1 = $"Portal/Violet"
 #@onready var portalSprite2 = $"Portal/Purple"
 
 func _ready() -> void:
+	Global.current_checklist_type = "objective"
+	add_child(checklist)
+	$CharacterBody2D.grow(105)
 	$CharacterBody2D.fade_out_triggered.connect(_on_player_fade_out_triggered)
 	$CharacterBody2D.fade_back_triggered.connect(_on_player_fade_back_triggered)
 	var stream = $Background
 	if stream is AudioStreamWAV:
 		stream.set_loop(true)
 		
-	#portalSprite1.play("Swirl")
-	#portalSprite2.play("Swirl")
 	$Background.play()
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	pauseMenu = pauseMenuScene.instantiate()
@@ -51,7 +53,14 @@ func _unhandled_input(event):
 		else:
 			hidePauseMenu()
 
+func _input(event):
+	if event.is_action_pressed("i_tab"): #"i_tab" is mapped to Tab in Input Map
+		checklist.visible = !checklist.visible
+		
 func showPauseMenu():
+	var tutorial = get_tree().current_scene.get_node("TutorialCanvas")
+	if is_instance_valid(tutorial):
+		tutorial.cancel_tutorial()
 	get_tree().paused = true
 	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 	pauseMenu.visible = true

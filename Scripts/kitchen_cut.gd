@@ -4,22 +4,27 @@ extends Node2D
 var pauseMenu = null
 @onready var pauseMenuScene = preload("res://Scenes/PauseMenu.tscn")
 @onready var ui_layer = $UILayer  
-#@onready var portalSprite1 = $"Portal/Violet"
-#@onready var portalSprite2 = $"Portal/Purple"
+@onready var fade_rect = $"FadeLayer/FadeRect"
+@onready var checklist = preload("res://Scenes/ObjectiveCanvas.tscn").instantiate()
 
 func _ready() -> void:
 	$CharacterBody2D.fade_out_triggered.connect(_on_player_fade_out_triggered)
+	Global.current_checklist_type = "objective"
+	add_child(checklist)
 	var stream = $Background
 	if stream is AudioStreamWAV:
 		stream.set_loop(true)
 		
-	#portalSprite1.play("Swirl")
-	#portalSprite2.play("Swirl")
 	$Background.play()
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	pauseMenu = pauseMenuScene.instantiate()
 	ui_layer.add_child(pauseMenu)  
 	pauseMenu.visible = false
+	if fade_rect:
+		
+		var tutorial = get_tree().current_scene.get_node("TutorialCanvas")
+		if is_instance_valid(tutorial):
+			tutorial.cancel_tutorial()
 
 func _process(delta: float) -> void:
 	pass
@@ -27,6 +32,9 @@ func _process(delta: float) -> void:
 		$Background.play()
 
 func _on_player_fade_out_triggered():
+	var tutorial = get_tree().current_scene.get_node("TutorialCanvas")
+	if is_instance_valid(tutorial):
+		tutorial.cancel_tutorial()
 	print("Called Transition")
 	var fade_rect = $FadeLayer/FadeRect
 	var tween = create_tween()
@@ -41,7 +49,15 @@ func _unhandled_input(event):
 		else:
 			hidePauseMenu()
 
+func _input(event):
+	if event.is_action_pressed("i_tab"): #"i_tab" is mapped to Tab in Input Map
+		checklist.visible = !checklist.visible
+		
+		
 func showPauseMenu():
+	var tutorial = get_tree().current_scene.get_node("TutorialCanvas")
+	if is_instance_valid(tutorial):
+		tutorial.cancel_tutorial()
 	get_tree().paused = true
 	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 	pauseMenu.visible = true

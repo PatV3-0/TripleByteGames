@@ -20,7 +20,11 @@ var p_pressed = false
 var o_pressed = false
 var hide_timer_started = false
 
+@onready var checklist = preload("res://Scenes/ObjectiveCanvas.tscn").instantiate()
 func _ready() -> void:
+	Global.current_checklist_type = "objective"
+	add_child(checklist)
+	
 	var stream = $Background
 	if stream is AudioStreamWAV:
 		stream.set_loop(true)
@@ -28,18 +32,26 @@ func _ready() -> void:
 	$Background.play()
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 
-	var tutorial_area = $Area2D
-	tutorial_area.connect("show_w_key", Callable(self, "_on_show_w_key"))
+	var tutorial_area = get_node_or_null("Hole_Tut")
+	if tutorial_area:
+		tutorial_area.connect("show_w_key", Callable(self, "_on_show_w_key"))
 	pauseMenu = pauseMenuScene.instantiate()
 	ui_layer.add_child(pauseMenu)  
 	pauseMenu.visible = false
 	
 	if fade_rect:
+		
+		var tutorial = get_tree().current_scene.get_node("TutorialCanvas")
+		if is_instance_valid(tutorial):
+			tutorial.cancel_tutorial()
 		fade_rect.color.a = 1.0
 		var tween = get_tree().create_tween()
 		tween.tween_property(fade_rect, "color:a", 0.0, 1.5).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_OUT)
 
 func _input(event):
+	if event.is_action_pressed("i_tab"): #"i_tab" is mapped to Tab in Input Map
+		checklist.visible = !checklist.visible
+		
 	if event.is_action_pressed("toggle_push") and not p_pressed:
 		p_pressed = true
 		if p_key_sprite and p_green_texture:
@@ -77,6 +89,9 @@ func _unhandled_input(event):
 			hidePauseMenu()
 
 func showPauseMenu():
+	var tutorial = get_tree().current_scene.get_node("TutorialCanvas")
+	if is_instance_valid(tutorial):
+		tutorial.cancel_tutorial()
 	get_tree().paused = true
 	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 	pauseMenu.visible = true

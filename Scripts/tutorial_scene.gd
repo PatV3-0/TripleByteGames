@@ -3,8 +3,6 @@ extends Node2D
 var pauseMenu = null
 @onready var pauseMenuScene = preload("res://Scenes/PauseMenu.tscn")
 @onready var ui_layer = $UILayer  
-@onready var portalSprite1 = $"Portal/Violet"
-@onready var portalSprite2 = $"Portal/Purple"
 
 @onready var a_key_sprite = $AKey
 @onready var d_key_sprite = $DKey
@@ -21,14 +19,16 @@ var tutorial_done = false
 var p_pressed = false
 var o_pressed = false
 
+@onready var checklist = preload("res://Scenes/ObjectiveCanvas.tscn").instantiate()
+
 func _ready() -> void:
+	add_child(checklist)
+	Global.current_checklist_type = "objective"
 	$CharacterBody2D.fade_out_triggered.connect(_on_player_fade_out_triggered)
 	var stream = $Background
 	if stream is AudioStreamWAV:
 		stream.set_loop(true)
 		
-	portalSprite1.play("Swirl")
-	portalSprite2.play("Swirl")
 	$Background.play()
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	spacebar_sprite.visible = false
@@ -43,7 +43,15 @@ func _unhandled_input(event):
 		else:
 			hidePauseMenu()
 
+func _input(event):
+	if event.is_action_pressed("i_tab"): #"i_tab" is mapped to Tab in Input Map
+		checklist.visible = !checklist.visible
+		
 func showPauseMenu():
+	var tutorial = get_tree().current_scene.get_node("TutorialCanvas")
+	if is_instance_valid(tutorial):
+		tutorial.cancel_tutorial()
+		#print("cancelled")
 	get_tree().paused = true
 	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 	pauseMenu.visible = true
@@ -89,6 +97,9 @@ func _process(_delta: float) -> void:
 		spacebar_sprite.visible = false
 		
 func _on_player_fade_out_triggered():
+	var tutorial = get_tree().current_scene.get_node("TutorialCanvas")
+	if is_instance_valid(tutorial):
+		tutorial.cancel_tutorial()
 	# Handle the fade + scene change here
 	var fade_rect = $FadeLayer/FadeRect
 	var tween = create_tween()
