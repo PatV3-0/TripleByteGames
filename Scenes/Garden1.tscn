@@ -9,7 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://byypnkjc87sdb" path="res://Assets/Sprites/Character/Gjump (6).png" id="5_x81p8"]
 [ext_resource type="Texture2D" uid="uid://c12k2h2j8vdjt" path="res://Assets/Sprites/Character/Gjump (5).png" id="6_hcxwi"]
 [ext_resource type="Texture2D" uid="uid://dbuo5e8oi75y5" path="res://Assets/Placeholders/plant2.png" id="6_wx02u"]
-[ext_resource type="Texture2D" uid="uid://dpg4b83fucoht" path="res://Assets/Placeholders/mushroom1.png" id="7_gg6kc"]
+[ext_resource type="Texture2D" uid="uid://bi5jcgqcj0qq8" path="res://Assets/Interactables/Untitled 233.png" id="7_4ny2q"]
 [ext_resource type="Texture2D" uid="uid://hjqan8d7d88d" path="res://Assets/Garden/Trellies.png" id="8_kh8yf"]
 [ext_resource type="Texture2D" uid="uid://d112q6ipvg3ur" path="res://Assets/Sprites/Character/push_3.png" id="9_iy0h4"]
 [ext_resource type="Texture2D" uid="uid://d1e7628hadom6" path="res://Assets/Placeholders/bucket.png" id="9_nb1f4"]
@@ -71,7 +71,7 @@ size = Vector2(265, 145)
 radius = 34.4819
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yjpte"]
-size = Vector2(68, 80)
+size = Vector2(69, 80)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_e11ma"]
 radius = 34.0
@@ -474,20 +474,20 @@ texture = ExtResource("6_wx02u")
 flip_h = true
 
 [node name="CollisionPolygon2D4" type="CollisionPolygon2D" parent="StaticBody2D"]
-polygon = PackedVector2Array(329, 519, 330, 528, 331, 535, 330, 542, 327, 550, 324, 555, 318, 560, 357, 560, 352, 556, 349, 551, 345, 544, 344, 537, 344, 530, 344, 522, 346, 517)
+polygon = PackedVector2Array(311, 521, 315, 522, 320, 522, 318, 528, 318, 534, 318, 544, 319, 553, 323, 559, 341, 562, 357, 560, 360, 558, 362, 554, 363, 548, 363, 539, 363, 532, 362, 522, 370, 520, 376, 515, 377, 509, 376, 500, 374, 489, 305, 490, 302, 503, 303, 518)
 
 [node name="Sprite2D" type="Sprite2D" parent="StaticBody2D/CollisionPolygon2D4"]
-position = Vector2(335, 521)
-scale = Vector2(1.67568, 2.04532)
-texture = ExtResource("7_gg6kc")
+position = Vector2(341, 523.637)
+scale = Vector2(0.0673828, 0.0746912)
+texture = ExtResource("7_4ny2q")
 
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(339, 511)
+position = Vector2(340, 514)
 scale = Vector2(1, 0.3)
 shape = SubResource("CircleShape2D_r0dlq")
 
 [node name="CollisionShape2D4" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(339, 499)
+position = Vector2(339.5, 499)
 scale = Vector2(1, 0.3)
 shape = SubResource("RectangleShape2D_yjpte")
 
@@ -741,6 +741,7 @@ debug_color = Color(0.411765, 0.407843, 0.172549, 1)
 [node name="FadeLayer" type="CanvasLayer" parent="."]
 
 [node name="FadeRect" type="ColorRect" parent="FadeLayer"]
+visible = false
 anchors_preset = -1
 anchor_left = -0.530382
 anchor_top = -1.93981

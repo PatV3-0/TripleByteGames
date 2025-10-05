@@ -1,8 +1,7 @@
-[gd_scene load_steps=115 format=3 uid="uid://dlv0ashhlgcqg"]
+[gd_scene load_steps=112 format=3 uid="uid://dlv0ashhlgcqg"]
 
 [ext_resource type="Script" path="res://Scripts/garden_2.gd" id="1_xvhm1"]
 [ext_resource type="Texture2D" uid="uid://cmq1vhmr7erlq" path="res://Assets/Background/Untitled 99.png" id="2_18k6u"]
-[ext_resource type="Texture2D" uid="uid://cwvudphlmqmxu" path="res://Assets/Placeholders/mushroom2.png" id="3_vqeex"]
 [ext_resource type="Texture2D" uid="uid://ccyfjclvbwov" path="res://Assets/Garden/Untitled 118.png" id="3_yajl6"]
 [ext_resource type="Texture2D" uid="uid://chkn57naegryf" path="res://Assets/Placeholders/lettuce.png" id="4_tymoi"]
 [ext_resource type="Texture2D" uid="uid://dy8dl1d6t1kat" path="res://Assets/Garden/Untitled 121.png" id="4_wd6x3"]
@@ -77,6 +76,7 @@
 [ext_resource type="Texture2D" uid="uid://nkmvddm2gdg8" path="res://Assets/Menus/torn-paper.png" id="58_fomx8"]
 [ext_resource type="Texture2D" uid="uid://bglqmusi88d3" path="res://Assets/Placeholders/Beetle-1.png" id="58_mqace"]
 [ext_resource type="Texture2D" uid="uid://bk0wv2eltfmhf" path="res://Assets/Menus/JB-paper.png" id="59_hmyjb"]
+[ext_resource type="Texture2D" uid="uid://bi5jcgqcj0qq8" path="res://Assets/Interactables/Untitled 233.png" id="62_sl0lj"]
 [ext_resource type="Texture2D" uid="uid://drpuhgaotqpy4" path="res://Assets/Sprites/JewelBeetle/Beetle-1.png" id="73_ejp8j"]
 [ext_resource type="Texture2D" uid="uid://ctcskah48t3ef" path="res://Assets/Sprites/JewelBeetle/Beetle-2.png" id="74_2easg"]
 [ext_resource type="Texture2D" uid="uid://13hsvf4x1vge" path="res://Assets/Sprites/JewelBeetle/Beetle-3.png" id="75_sdsm7"]
@@ -112,11 +112,8 @@ height = 105.274
 radius = 11.7931
 height = 82.1799
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_fm7gk"]
-radius = 21.0238
-
 [sub_resource type="CircleShape2D" id="CircleShape2D_e7uqw"]
-radius = 21.0
+radius = 13.8882
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_50vub"]
 size = Vector2(13, 25.2)
@@ -357,17 +354,11 @@ size = Vector2(423.1, 17.667)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vgm66"]
 size = Vector2(5.66663, 510.5)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_bntl3"]
-size = Vector2(20, 65)
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_kfx02"]
-radius = 35.0
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_56vc3"]
 size = Vector2(121.833, 7)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ogl02"]
-radius = 35.0
+radius = 24.8264
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_vo2lh"]
 friction = 2.0
@@ -698,22 +689,17 @@ polygon = PackedVector2Array(549, 329, 555, 322, 562, 319, 571, 317, 578, 316, 5
 polygon = PackedVector2Array(653, 225, 656, 207, 668, 200, 684, 194, 690, 193, 708, 193, 720, 194, 699, 211, 691, 216, 681, 220, 673, 223, 664, 225)
 
 [node name="CollisionPolygon2D12" type="CollisionPolygon2D" parent="StaticBody2D"]
+position = Vector2(0, -19.5)
 polygon = PackedVector2Array(741, 330, 736, 321, 741, 305, 756, 298, 771, 296, 784, 295, 780, 305, 774, 314, 765, 317, 756, 322, 751, 325)
 
 [node name="CollisionPolygon2D45" type="CollisionPolygon2D" parent="StaticBody2D"]
-position = Vector2(1235, -630.625)
+position = Vector2(1234, -650)
 rotation = 3.14159
 scale = Vector2(1.27098, -1.37237)
-polygon = PackedVector2Array(1080, 915, 1080, 921, 1079, 927, 1077, 933, 1074, 940, 1071, 944, 1065, 950, 1113, 950, 1108, 944, 1102, 937, 1099, 930, 1096, 918, 1097, 911)
-
-[node name="CollisionShape2D10" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(-153, 630)
-rotation = 3.14159
-scale = Vector2(2.37612, -0.872946)
-shape = SubResource("CircleShape2D_fm7gk")
+polygon = PackedVector2Array(1080.27, 905.457, 1066.9, 909.1, 1061.39, 917.844, 1060.6, 924.402, 1062.18, 929.503, 1067.68, 930.96, 1074.76, 932.417, 1074, 940, 1074.76, 944.076, 1076.34, 950.634, 1090.5, 954.277, 1107.02, 952.091, 1109.38, 944.805, 1109.38, 936.789, 1109.38, 931.689, 1114.89, 930.231, 1118.04, 928.774, 1120.4, 925.131, 1119.61, 917.115, 1116.46, 909.1, 1097, 911)
 
 [node name="CollisionPolygon2D46" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(-152, 627)
+position = Vector2(-153, 620)
 rotation = 3.14159
 scale = Vector2(2.37612, -0.872946)
 shape = SubResource("CircleShape2D_e7uqw")
@@ -820,26 +806,6 @@ position = Vector2(1800.17, 435.25)
 shape = SubResource("RectangleShape2D_vgm66")
 debug_color = Color(0.411765, 0.407843, 0.172549, 1)
 
-[node name="MushroomLaunch2" type="Area2D" parent="."]
-visible = false
-position = Vector2(-163, 607)
-
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="MushroomLaunch2"]
-position = Vector2(24, 30)
-scale = Vector2(1, 0.4)
-shape = SubResource("RectangleShape2D_bntl3")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="MushroomLaunch2"]
-position = Vector2(24, 21)
-scale = Vector2(1, 0.4)
-shape = SubResource("CircleShape2D_kfx02")
-debug_color = Color(0.666293, 0.511325, 0, 0.42)
-
-[node name="Sprite2D" type="Sprite2D" parent="MushroomLaunch2/CollisionShape2D"]
-position = Vector2(-3.50162, 20)
-scale = Vector2(-1.78488, 4.09834)
-texture = ExtResource("3_vqeex")
-
 [node name="FadeLayer" type="CanvasLayer" parent="."]
 
 [node name="FadeRect" type="ColorRect" parent="FadeLayer"]
@@ -867,20 +833,20 @@ rotation = 1.5708
 shape = SubResource("RectangleShape2D_56vc3")
 
 [node name="MushroomLaunch3" type="Area2D" parent="."]
-position = Vector2(-187, 599)
+position = Vector2(-187, 579.5)
 scale = Vector2(1.33125, 1.33125)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="MushroomLaunch3"]
-position = Vector2(24, 21)
+position = Vector2(25.5399, 15.7747)
 scale = Vector2(1, 0.4)
 shape = SubResource("CircleShape2D_ogl02")
 debug_color = Color(0.666293, 0.511325, 0, 0.42)
 
 [node name="Sprite2D" type="Sprite2D" parent="MushroomLaunch3/CollisionShape2D"]
-position = Vector2(-2.21596, 24.4953)
+position = Vector2(0, 54.4601)
 rotation = -3.14159
-scale = Vector2(1.94493, -4.54979)
-texture = ExtResource("3_vqeex")
+scale = Vector2(0.0513022, -0.107687)
+texture = ExtResource("62_sl0lj")
 
 [node name="Pushable" type="RigidBody2D" parent="." groups=["Pushable"]]
 position = Vector2(1378, 446)
