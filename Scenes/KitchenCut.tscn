@@ -1,4 +1,4 @@
-[gd_scene load_steps=74 format=3 uid="uid://bdb66oeqaei7d"]
+[gd_scene load_steps=73 format=3 uid="uid://bdb66oeqaei7d"]
 
 [ext_resource type="Script" path="res://Scripts/kitchen_cut.gd" id="1_mfoaj"]
 [ext_resource type="Script" path="res://Scripts/character_body_2d.gd" id="2_orm1t"]
@@ -52,9 +52,8 @@
 [ext_resource type="Texture2D" uid="uid://bicu3c3rbd1rn" path="res://Assets/Menus/SpeechbarLighter9.png" id="37_gb2q2"]
 [ext_resource type="Script" path="res://Scripts/kc_tut.gd" id="38_fk2a2"]
 [ext_resource type="Texture2D" uid="uid://srercerjo0jg" path="res://Assets/Tutorial assets/1.png" id="38_fpuc8"]
-[ext_resource type="Texture2D" uid="uid://p2sa6rnhme77" path="res://sink1.jpg" id="38_sa7d7"]
 [ext_resource type="Texture2D" uid="uid://1x876ycnlyv7" path="res://Assets/Tutorial assets/3.png" id="39_emuj7"]
-[ext_resource type="Texture2D" uid="uid://ddg57a3y5utgh" path="res://Assets/Interactables/idle 1 41.PNG" id="40_vq7pd"]
+[ext_resource type="Texture2D" uid="uid://cdd7072ook6fy" path="res://Assets/Interactables/recipe book side.png" id="43_0qslw"]
 [ext_resource type="Theme" uid="uid://bgkwmntp6xdn5" path="res://Font/Theme_Font.tres" id="54_ysg6w"]
 [ext_resource type="AudioStream" uid="uid://d3ceif3nnox15" path="res://Assets/GameMusic/BGM5.mp3" id="56_q7a0k"]
 
@@ -534,22 +533,21 @@ shape = SubResource("RectangleShape2D_f5gsn")
 debug_color = Color(0.143349, 0.519412, 1, 0.42)
 
 [node name="Sprite2D" type="Sprite2D" parent="Pushable/CollisionShape2D"]
-visible = false
 position = Vector2(-0.166669, 0.674236)
 rotation = 3.12414
 scale = Vector2(0.0278881, 0.0750946)
-texture = ExtResource("38_sa7d7")
 
 [node name="Area2D" type="Area2D" parent="Pushable"]
 position = Vector2(29.0946, -0.909188)
 script = ExtResource("29_yx7xk")
 
 [node name="Sprite2D" type="Sprite2D" parent="Pushable/Area2D"]
-position = Vector2(131.905, -114.091)
-scale = Vector2(0.386667, 0.362081)
-texture = ExtResource("40_vq7pd")
+position = Vector2(-40.0946, -30.0908)
+scale = Vector2(0.326818, 0.306038)
+texture = ExtResource("43_0qslw")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Pushable/Area2D"]
+visible = false
 position = Vector2(-33.0946, -32.5908)
 scale = Vector2(3, 3)
 shape = SubResource("RectangleShape2D_pa8ib")
