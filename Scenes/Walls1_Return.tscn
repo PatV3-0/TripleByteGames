@@ -460,6 +460,7 @@ animations = [{
 }]
 
 [node name="Node2D" type="Node2D"]
+visible = false
 scale = Vector2(1.1, 1.1)
 script = ExtResource("1_6esrk")
 

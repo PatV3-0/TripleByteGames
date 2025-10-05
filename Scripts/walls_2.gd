@@ -10,6 +10,7 @@ var pauseMenu = null
 #@onready var portalSprite2 = $"Portal/Purple"
 
 func _ready() -> void:
+	$CharacterBody2D.play("idle")
 	Global.current_checklist_type = "objective"
 	add_child(checklist)
 	$CharacterBody2D.grow(105)
