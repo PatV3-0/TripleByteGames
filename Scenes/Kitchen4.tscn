@@ -1,4 +1,4 @@
-[gd_scene load_steps=106 format=3 uid="uid://c38ppo2oxtnec"]
+[gd_scene load_steps=105 format=3 uid="uid://c38ppo2oxtnec"]
 
 [ext_resource type="Script" path="res://Scripts/kitchen_4.gd" id="1_b6566"]
 [ext_resource type="Script" path="res://Scripts/character_body_2d.gd" id="2_2dv4w"]
@@ -36,7 +36,6 @@
 [ext_resource type="Texture2D" uid="uid://kwewpvv6a0dk" path="res://Assets/Sprites/Character/Grow.png" id="20_cb43f"]
 [ext_resource type="Texture2D" uid="uid://behsw0hyskoeg" path="res://Assets/Sprites/Character/idle 1 61.PNG" id="20_s2nfr"]
 [ext_resource type="Texture2D" uid="uid://c2ntm40saxfwm" path="res://Assets/Menus/SpeechbarLighter1.png" id="21_btdj7"]
-[ext_resource type="Texture2D" uid="uid://cgxuhfktvlhg6" path="res://Assets/Sprites/Character/idle 1 53.PNG" id="21_nwx70"]
 [ext_resource type="Texture2D" uid="uid://c70mun6u3qbpq" path="res://Assets/Sprites/Character/flat.png" id="21_s2eq6"]
 [ext_resource type="Texture2D" uid="uid://bv5vca3wykfry" path="res://Assets/Sprites/Character/Gjump (1.1).png" id="21_x4jgw"]
 [ext_resource type="Texture2D" uid="uid://d33vnxb146pwg" path="res://Assets/Menus/SpeechbarLighter2.png" id="22_mgg8p"]
@@ -153,7 +152,7 @@ size = Vector2(38.6667, 39.8333)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5itm5"]
 size = Vector2(13, 25.2)
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_d8e1u"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_1bddt"]
 animations = [{
 "frames": [{
 "duration": 1.0,
@@ -167,17 +166,11 @@ animations = [{
 "speed": 3.0
 }, {
 "frames": [{
-"duration": 1.0,
+"duration": 2.0,
 "texture": ExtResource("20_cb43f")
 }, {
 "duration": 1.0,
-"texture": ExtResource("21_nwx70")
-}, {
-"duration": 1.0,
 "texture": ExtResource("20_cb43f")
-}, {
-"duration": 1.0,
-"texture": ExtResource("21_nwx70")
 }],
 "loop": false,
 "name": &"grow",
@@ -292,13 +285,7 @@ animations = [{
 "texture": ExtResource("41_b4q10")
 }, {
 "duration": 1.0,
-"texture": ExtResource("21_nwx70")
-}, {
-"duration": 1.0,
 "texture": ExtResource("41_b4q10")
-}, {
-"duration": 1.0,
-"texture": ExtResource("21_nwx70")
 }],
 "loop": false,
 "name": &"shrink",
@@ -870,11 +857,10 @@ position = Vector2(1.39999, -3)
 shape = SubResource("RectangleShape2D_5itm5")
 
 [node name="Sprite2D" type="AnimatedSprite2D" parent="CharacterBody2D"]
-position = Vector2(1.39999, -3)
-rotation = -0.000699009
+position = Vector2(1.39998, -3)
 scale = Vector2(0.015, 0.015)
-sprite_frames = SubResource("SpriteFrames_d8e1u")
-animation = &"die"
+sprite_frames = SubResource("SpriteFrames_1bddt")
+animation = &"shrink"
 offset = Vector2(95, 39)
 flip_h = true
 

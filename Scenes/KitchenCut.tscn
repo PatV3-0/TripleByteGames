@@ -1,4 +1,4 @@
-[gd_scene load_steps=73 format=3 uid="uid://bdb66oeqaei7d"]
+[gd_scene load_steps=72 format=3 uid="uid://bdb66oeqaei7d"]
 
 [ext_resource type="Script" path="res://Scripts/kitchen_cut.gd" id="1_mfoaj"]
 [ext_resource type="Script" path="res://Scripts/character_body_2d.gd" id="2_orm1t"]
@@ -13,7 +13,6 @@
 [ext_resource type="Texture2D" uid="uid://brwmyqhkpnu2u" path="res://Assets/Background/Untitled 92 - Copy (2).png" id="6_sx4u7"]
 [ext_resource type="Texture2D" uid="uid://behsw0hyskoeg" path="res://Assets/Sprites/Character/idle 1 61.PNG" id="7_qhwwq"]
 [ext_resource type="Texture2D" uid="uid://kwewpvv6a0dk" path="res://Assets/Sprites/Character/Grow.png" id="7_xiy3g"]
-[ext_resource type="Texture2D" uid="uid://cgxuhfktvlhg6" path="res://Assets/Sprites/Character/idle 1 53.PNG" id="8_3f5ca"]
 [ext_resource type="Texture2D" uid="uid://bv5vca3wykfry" path="res://Assets/Sprites/Character/Gjump (1.1).png" id="8_e5hh5"]
 [ext_resource type="Texture2D" uid="uid://c70mun6u3qbpq" path="res://Assets/Sprites/Character/flat.png" id="8_fnda8"]
 [ext_resource type="Texture2D" uid="uid://d112q6ipvg3ur" path="res://Assets/Sprites/Character/push_3.png" id="9_cxhh6"]
@@ -57,6 +56,9 @@
 [ext_resource type="Texture2D" uid="uid://1x876ycnlyv7" path="res://Assets/Tutorial assets/3.png" id="39_emuj7"]
 [ext_resource type="Texture2D" uid="uid://ddg57a3y5utgh" path="res://Assets/Interactables/idle 1 41.PNG" id="40_vq7pd"]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_67qvx"]
+size = Vector2(26, 1798.25)
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_h78fv"]
 size = Vector2(8014, 17.667)
 
@@ -69,7 +71,7 @@ size = Vector2(769, 402.5)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xyegn"]
 size = Vector2(13, 25.2)
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_hcphe"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_cbqkl"]
 animations = [{
 "frames": [{
 "duration": 1.0,
@@ -83,17 +85,11 @@ animations = [{
 "speed": 3.0
 }, {
 "frames": [{
-"duration": 1.0,
+"duration": 2.0,
 "texture": ExtResource("7_xiy3g")
 }, {
 "duration": 1.0,
-"texture": ExtResource("8_3f5ca")
-}, {
-"duration": 1.0,
 "texture": ExtResource("7_xiy3g")
-}, {
-"duration": 1.0,
-"texture": ExtResource("8_3f5ca")
 }],
 "loop": false,
 "name": &"grow",
@@ -208,13 +204,7 @@ animations = [{
 "texture": ExtResource("28_oljcd")
 }, {
 "duration": 1.0,
-"texture": ExtResource("8_3f5ca")
-}, {
-"duration": 1.0,
 "texture": ExtResource("28_oljcd")
-}, {
-"duration": 1.0,
-"texture": ExtResource("8_3f5ca")
 }],
 "loop": false,
 "name": &"shrink",
@@ -408,9 +398,6 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_67qvx"]
-size = Vector2(26, 1798.25)
-
 [node name="Node2D2" type="Node2D"]
 script = ExtResource("1_mfoaj")
 
@@ -461,6 +448,10 @@ texture = ExtResource("6_sx4u7")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(3010, 72)
+shape = SubResource("RectangleShape2D_67qvx")
+
 [node name="CollisionShape2D4" type="CollisionShape2D" parent="StaticBody2D"]
 position = Vector2(-984, 820)
 shape = SubResource("RectangleShape2D_h78fv")
@@ -485,10 +476,9 @@ shape = SubResource("RectangleShape2D_xyegn")
 
 [node name="Sprite2D" type="AnimatedSprite2D" parent="CharacterBody2D"]
 position = Vector2(1.39996, -3)
-rotation = -0.000699009
 scale = Vector2(0.015, 0.015)
-sprite_frames = SubResource("SpriteFrames_hcphe")
-animation = &"die"
+sprite_frames = SubResource("SpriteFrames_cbqkl")
+animation = &"shrink"
 offset = Vector2(95, 39)
 
 [node name="Camera2D" type="Camera2D" parent="CharacterBody2D"]
@@ -653,7 +643,3 @@ volume_db = 8.0
 max_distance = 1000.0
 
 [node name="UILayer" type="CanvasLayer" parent="."]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(3010, 72)
-shape = SubResource("RectangleShape2D_67qvx")

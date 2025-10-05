@@ -1,4 +1,4 @@
-[gd_scene load_steps=135 format=3 uid="uid://duvfb6prmpxpu"]
+[gd_scene load_steps=134 format=3 uid="uid://duvfb6prmpxpu"]
 
 [ext_resource type="Script" path="res://Scripts/kitchen_2.gd" id="1_4in3w"]
 [ext_resource type="Texture2D" uid="uid://v6njha2nnja4" path="res://Assets/Background/Untitled 93.png" id="2_erwe7"]
@@ -53,7 +53,6 @@
 [ext_resource type="Texture2D" uid="uid://mkrpvt0rbd3m" path="res://Assets/Interactables/Untitled 237.png" id="25_o2biw"]
 [ext_resource type="Texture2D" uid="uid://behsw0hyskoeg" path="res://Assets/Sprites/Character/idle 1 61.PNG" id="25_qkspb"]
 [ext_resource type="Script" path="res://Scripts/portal.gd" id="25_wifyc"]
-[ext_resource type="Texture2D" uid="uid://cgxuhfktvlhg6" path="res://Assets/Sprites/Character/idle 1 53.PNG" id="26_63sqk"]
 [ext_resource type="Texture2D" uid="uid://c70mun6u3qbpq" path="res://Assets/Sprites/Character/flat.png" id="26_atw8x"]
 [ext_resource type="Texture2D" uid="uid://qeqb7yadg5ns" path="res://Assets/Sprites/Character/pull2.png" id="26_hmero"]
 [ext_resource type="Script" path="res://Scripts/shrink_portal.gd" id="26_rnq5f"]
@@ -173,7 +172,7 @@ size = Vector2(1121, 1891)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8yi2s"]
 size = Vector2(13, 25.2)
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_fm41i"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_r4mgx"]
 animations = [{
 "frames": [{
 "duration": 1.0,
@@ -187,17 +186,11 @@ animations = [{
 "speed": 3.0
 }, {
 "frames": [{
-"duration": 1.0,
+"duration": 2.0,
 "texture": ExtResource("25_bf1s5")
 }, {
 "duration": 1.0,
-"texture": ExtResource("26_63sqk")
-}, {
-"duration": 1.0,
 "texture": ExtResource("25_bf1s5")
-}, {
-"duration": 1.0,
-"texture": ExtResource("26_63sqk")
 }],
 "loop": false,
 "name": &"grow",
@@ -312,13 +305,7 @@ animations = [{
 "texture": ExtResource("46_gxr55")
 }, {
 "duration": 1.0,
-"texture": ExtResource("18_gi6jy")
-}, {
-"duration": 1.0,
 "texture": ExtResource("46_gxr55")
-}, {
-"duration": 1.0,
-"texture": ExtResource("26_63sqk")
 }],
 "loop": false,
 "name": &"shrink",
@@ -410,10 +397,10 @@ size = Vector2(7, 5.33333)
 size = Vector2(7.66666, 5.99999)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nnlb8"]
-size = Vector2(113.633, 5.39423)
+size = Vector2(54, 5.39423)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_h68om"]
-radius = 3.33333
+radius = 3.66666
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_xuce1"]
 friction = 2.0
@@ -937,7 +924,7 @@ texture = ExtResource("25_o2biw")
 
 [node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="StaticBody2D"]
 position = Vector2(-191, 341)
-polygon = PackedVector2Array(782, 259, 773, 261, 769, 262, 757, 262, 745, 263, 738, 265, 725, 266, 722.574, 265.697, 717, 265, 711, 263, 709, 263, 709, 265, 711, 273, 713.5, 286.5, 715, 308, 711, 336, 707, 350, 704, 358, 703, 363, 704, 365, 710, 367, 757, 369, 774, 371, 782, 370, 784, 368, 788, 362, 789, 357, 789, 352, 786, 344, 783, 329, 785, 290, 795, 256, 793, 255, 790, 254)
+polygon = PackedVector2Array(782, 259, 773, 261, 769, 262, 757, 262, 745, 263, 729, 264, 717, 264, 712, 268, 711, 273, 713.5, 286.5, 715, 308, 711, 336, 707, 350, 704, 358, 703, 363, 704, 365, 710, 367, 757, 369, 774, 371, 782, 370, 784, 368, 788, 362, 789, 357, 789, 352, 786, 344, 783, 329, 785, 290, 795, 256, 793, 255, 790, 254)
 
 [node name="CollisionShape2D34" type="CollisionShape2D" parent="StaticBody2D"]
 visible = false
@@ -955,10 +942,9 @@ shape = SubResource("RectangleShape2D_8yi2s")
 
 [node name="Sprite2D" type="AnimatedSprite2D" parent="CharacterBody2D"]
 position = Vector2(1.39996, -3)
-rotation = -0.000699009
 scale = Vector2(0.015, 0.015)
-sprite_frames = SubResource("SpriteFrames_fm41i")
-animation = &"die"
+sprite_frames = SubResource("SpriteFrames_r4mgx")
+animation = &"shrink"
 offset = Vector2(95, 39)
 
 [node name="Camera2D" type="Camera2D" parent="CharacterBody2D"]
@@ -1053,8 +1039,7 @@ position = Vector2(-414, -470)
 script = ExtResource("50_ejcm7")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Pushable3/Highlight"]
-visible = false
-position = Vector2(389.911, 530.03)
+position = Vector2(403, 528)
 shape = SubResource("RectangleShape2D_nnlb8")
 debug_color = Color(0.956871, 0.119971, 0.43239, 0.42)
 
@@ -1063,7 +1048,7 @@ position = Vector2(3155.91, 2748.5)
 scale = Vector2(3, 3)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Pushable3/MushroomLaunch2"]
-position = Vector2(-1054.97, -902.833)
+position = Vector2(-1054.97, -902.5)
 scale = Vector2(1, 0.4)
 shape = SubResource("CircleShape2D_h68om")
 debug_color = Color(0.666293, 0.511325, 0, 0.42)

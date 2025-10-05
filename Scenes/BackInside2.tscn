@@ -1,4 +1,4 @@
-[gd_scene load_steps=130 format=3 uid="uid://bv4c1ivswho8g"]
+[gd_scene load_steps=129 format=3 uid="uid://bv4c1ivswho8g"]
 
 [ext_resource type="Script" path="res://Scripts/back_inside_2.gd" id="1_y41im"]
 [ext_resource type="Texture2D" uid="uid://dy26qsmor8as1" path="res://Assets/Background/Untitled 83.png" id="2_1a5ph"]
@@ -69,7 +69,6 @@
 [ext_resource type="Texture2D" uid="uid://kwewpvv6a0dk" path="res://Assets/Sprites/Character/Grow.png" id="34_ni3uc"]
 [ext_resource type="Texture2D" uid="uid://eabpv0wv1gws" path="res://Assets/Sprites/Character/pull3.5.png" id="34_pbykk"]
 [ext_resource type="Texture2D" uid="uid://c70mun6u3qbpq" path="res://Assets/Sprites/Character/flat.png" id="35_1iv6a"]
-[ext_resource type="Texture2D" uid="uid://cgxuhfktvlhg6" path="res://Assets/Sprites/Character/idle 1 53.PNG" id="35_6p3d2"]
 [ext_resource type="Texture2D" uid="uid://cosrv7kcfja2h" path="res://Assets/Sprites/Character/pull4.png" id="35_epnb6"]
 [ext_resource type="Texture2D" uid="uid://e0b2aiq41mcl" path="res://Assets/Menus/SpeechbarLighter7.png" id="35_xee27"]
 [ext_resource type="Texture2D" uid="uid://blm0prikln4h1" path="res://Assets/Menus/SpeechbarLighter8.png" id="36_dtkf1"]
@@ -227,62 +226,7 @@ size = Vector2(224, 5.39423)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_e0hv6"]
 size = Vector2(13, 25.2)
 
-[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_x0lh1"]
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_ctxdf"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("23_b2oge")
-}],
-"loop": false,
-"name": &"default",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("23_b2oge")
-}, {
-"duration": 1.0,
-"texture": ExtResource("24_gqckm")
-}, {
-"duration": 1.0,
-"texture": ExtResource("25_p0rnw")
-}, {
-"duration": 1.0,
-"texture": ExtResource("26_0v5po")
-}],
-"loop": false,
-"name": &"expand",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("26_0v5po")
-}],
-"loop": false,
-"name": &"hover",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("26_0v5po")
-}, {
-"duration": 1.0,
-"texture": ExtResource("25_p0rnw")
-}, {
-"duration": 1.0,
-"texture": ExtResource("24_gqckm")
-}, {
-"duration": 1.0,
-"texture": ExtResource("23_b2oge")
-}],
-"loop": false,
-"name": &"retract",
-"speed": 5.0
-}]
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_25qyl"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_yuvs4"]
 animations = [{
 "frames": [{
 "duration": 1.0,
@@ -296,17 +240,11 @@ animations = [{
 "speed": 3.0
 }, {
 "frames": [{
-"duration": 1.0,
+"duration": 2.0,
 "texture": ExtResource("34_ni3uc")
 }, {
 "duration": 1.0,
-"texture": ExtResource("35_6p3d2")
-}, {
-"duration": 1.0,
 "texture": ExtResource("34_ni3uc")
-}, {
-"duration": 1.0,
-"texture": ExtResource("35_6p3d2")
 }],
 "loop": false,
 "name": &"grow",
@@ -421,13 +359,7 @@ animations = [{
 "texture": ExtResource("55_x8n5f")
 }, {
 "duration": 1.0,
-"texture": ExtResource("35_6p3d2")
-}, {
-"duration": 1.0,
 "texture": ExtResource("55_x8n5f")
-}, {
-"duration": 1.0,
-"texture": ExtResource("35_6p3d2")
 }],
 "loop": false,
 "name": &"shrink",
@@ -448,6 +380,61 @@ animations = [{
 }],
 "loop": true,
 "name": &"walk",
+"speed": 5.0
+}]
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_x0lh1"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ctxdf"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("23_b2oge")
+}],
+"loop": false,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("23_b2oge")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_gqckm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_p0rnw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_0v5po")
+}],
+"loop": false,
+"name": &"expand",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("26_0v5po")
+}],
+"loop": false,
+"name": &"hover",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("26_0v5po")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_p0rnw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_gqckm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_b2oge")
+}],
+"loop": false,
+"name": &"retract",
 "speed": 5.0
 }]
 
@@ -979,6 +966,13 @@ script = ExtResource("4_3a4g7")
 position = Vector2(1.39999, -3)
 shape = SubResource("RectangleShape2D_e0hv6")
 
+[node name="Sprite2D" type="AnimatedSprite2D" parent="CharacterBody2D"]
+position = Vector2(1.40002, -3)
+scale = Vector2(0.015, 0.015)
+sprite_frames = SubResource("SpriteFrames_yuvs4")
+animation = &"shrink"
+offset = Vector2(95, 39)
+
 [node name="Camera2D" type="Camera2D" parent="CharacterBody2D"]
 offset = Vector2(0, -32)
 zoom = Vector2(1.5, 1.5)
@@ -1016,14 +1010,6 @@ offset_top = 93.121
 offset_right = -172.414
 offset_bottom = 116.121
 metadata/_edit_use_anchors_ = true
-
-[node name="Sprite2D" type="AnimatedSprite2D" parent="CharacterBody2D"]
-position = Vector2(1.39999, -3)
-rotation = -0.000699009
-scale = Vector2(0.015, 0.015)
-sprite_frames = SubResource("SpriteFrames_25qyl")
-animation = &"die"
-offset = Vector2(95, 39)
 
 [node name="ShrinkPortal" type="Area2D" parent="."]
 position = Vector2(575, 217)

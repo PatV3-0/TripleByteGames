@@ -1,4 +1,4 @@
-[gd_scene load_steps=67 format=3 uid="uid://dgf7o3kb8qq1j"]
+[gd_scene load_steps=68 format=3 uid="uid://dgf7o3kb8qq1j"]
 
 [ext_resource type="Script" path="res://Scripts/stairs.gd" id="1_xa0l1"]
 [ext_resource type="PackedScene" uid="uid://csy8yhjpcrlg8" path="res://Scenes/Beetle.tscn" id="2_qyl28"]
@@ -19,10 +19,11 @@
 [ext_resource type="Texture2D" uid="uid://dyy7bp757jofl" path="res://Assets/Sprites/Character/Gjump (0).png" id="9_t3cnl"]
 [ext_resource type="Texture2D" uid="uid://dhl4ey5414ddw" path="res://Assets/Sprites/Character/Gjump (2.1).png" id="10_0m2kg"]
 [ext_resource type="Texture2D" uid="uid://kwewpvv6a0dk" path="res://Assets/Sprites/Character/Grow.png" id="10_1bryg"]
+[ext_resource type="Texture2D" uid="uid://behsw0hyskoeg" path="res://Assets/Sprites/Character/idle 1 61.PNG" id="10_d3lw7"]
 [ext_resource type="Texture2D" uid="uid://heuqru2dosrk" path="res://Assets/Sprites/Character/push_2.png" id="10_y58xc"]
+[ext_resource type="Texture2D" uid="uid://c70mun6u3qbpq" path="res://Assets/Sprites/Character/flat.png" id="11_are12"]
 [ext_resource type="Texture2D" uid="uid://uv7p712dwm1x" path="res://Assets/Sprites/Character/pull1.png" id="11_b0wgw"]
 [ext_resource type="Texture2D" uid="uid://brikmqy8ntt4f" path="res://Assets/Sprites/Character/push_strain_breathe_in-1.png" id="11_jpkpr"]
-[ext_resource type="Texture2D" uid="uid://cgxuhfktvlhg6" path="res://Assets/Sprites/Character/idle 1 53.PNG" id="11_qwtbk"]
 [ext_resource type="Texture2D" uid="uid://dktlv8fcbb4lf" path="res://Assets/Sprites/Character/push_strain_breathe_out-1.png" id="12_2fbf4"]
 [ext_resource type="Texture2D" uid="uid://qeqb7yadg5ns" path="res://Assets/Sprites/Character/pull2.png" id="12_gfmxx"]
 [ext_resource type="Texture2D" uid="uid://ygego3qxiycn" path="res://Assets/Sprites/Character/pull3.png" id="13_ehq5i"]
@@ -74,20 +75,25 @@ size = Vector2(1349.45, 62.8077)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jjcbq"]
 size = Vector2(13, 25.2)
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_o145j"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_kibq8"]
 animations = [{
 "frames": [{
 "duration": 1.0,
+"texture": ExtResource("10_d3lw7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_are12")
+}],
+"loop": false,
+"name": &"die",
+"speed": 3.0
+}, {
+"frames": [{
+"duration": 2.0,
 "texture": ExtResource("10_1bryg")
 }, {
 "duration": 1.0,
-"texture": ExtResource("11_qwtbk")
-}, {
-"duration": 1.0,
 "texture": ExtResource("10_1bryg")
-}, {
-"duration": 1.0,
-"texture": ExtResource("11_qwtbk")
 }],
 "loop": false,
 "name": &"grow",
@@ -202,17 +208,11 @@ animations = [{
 "texture": ExtResource("31_oor5o")
 }, {
 "duration": 1.0,
-"texture": ExtResource("11_qwtbk")
-}, {
-"duration": 1.0,
 "texture": ExtResource("31_oor5o")
-}, {
-"duration": 1.0,
-"texture": ExtResource("11_qwtbk")
 }],
-"loop": true,
+"loop": false,
 "name": &"shrink",
-"speed": 5.0
+"speed": 3.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -495,10 +495,9 @@ position = Vector2(1.39999, -3)
 shape = SubResource("RectangleShape2D_jjcbq")
 
 [node name="Sprite2D" type="AnimatedSprite2D" parent="CharacterBody2D"]
-position = Vector2(1.39996, -3)
-rotation = -0.000699009
+position = Vector2(1.40002, -3)
 scale = Vector2(0.015, 0.015)
-sprite_frames = SubResource("SpriteFrames_o145j")
+sprite_frames = SubResource("SpriteFrames_kibq8")
 animation = &"shrink"
 offset = Vector2(95, 39)
 

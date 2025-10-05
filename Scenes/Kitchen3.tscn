@@ -1,4 +1,4 @@
-[gd_scene load_steps=94 format=3 uid="uid://bt4cdbkr6qe2n"]
+[gd_scene load_steps=93 format=3 uid="uid://bt4cdbkr6qe2n"]
 
 [ext_resource type="Script" path="res://Scenes/kitchen_3.gd" id="1_k4qw0"]
 [ext_resource type="Texture2D" uid="uid://b3p05wkj6axuq" path="res://Assets/Background/Untitled 97.png" id="2_er1oh"]
@@ -49,7 +49,6 @@
 [ext_resource type="Texture2D" uid="uid://kwewpvv6a0dk" path="res://Assets/Sprites/Character/Grow.png" id="27_lpqwy"]
 [ext_resource type="Texture2D" uid="uid://behsw0hyskoeg" path="res://Assets/Sprites/Character/idle 1 61.PNG" id="27_qinif"]
 [ext_resource type="Texture2D" uid="uid://lxblcan0e0gl" path="res://Assets/Menus/SpeechbarLighter4.png" id="27_us5jn"]
-[ext_resource type="Texture2D" uid="uid://cgxuhfktvlhg6" path="res://Assets/Sprites/Character/idle 1 53.PNG" id="28_aqva0"]
 [ext_resource type="Script" path="res://Scripts/fade_out.gd" id="28_e5q4b"]
 [ext_resource type="Texture2D" uid="uid://c70mun6u3qbpq" path="res://Assets/Sprites/Character/flat.png" id="28_ft2sg"]
 [ext_resource type="Texture2D" uid="uid://dyy7bp757jofl" path="res://Assets/Sprites/Character/Gjump (0).png" id="28_m6ryv"]
@@ -124,7 +123,7 @@ radius = 15.0333
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xy8yh"]
 size = Vector2(13, 25.2)
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_rlqqp"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_wumtd"]
 animations = [{
 "frames": [{
 "duration": 1.0,
@@ -138,17 +137,11 @@ animations = [{
 "speed": 3.0
 }, {
 "frames": [{
-"duration": 1.0,
+"duration": 2.0,
 "texture": ExtResource("27_lpqwy")
 }, {
 "duration": 1.0,
-"texture": ExtResource("28_aqva0")
-}, {
-"duration": 1.0,
 "texture": ExtResource("27_lpqwy")
-}, {
-"duration": 1.0,
-"texture": ExtResource("28_aqva0")
 }],
 "loop": false,
 "name": &"grow",
@@ -263,13 +256,7 @@ animations = [{
 "texture": ExtResource("48_y1011")
 }, {
 "duration": 1.0,
-"texture": ExtResource("28_aqva0")
-}, {
-"duration": 1.0,
 "texture": ExtResource("48_y1011")
-}, {
-"duration": 1.0,
-"texture": ExtResource("28_aqva0")
 }],
 "loop": false,
 "name": &"shrink",
@@ -843,18 +830,17 @@ script = ExtResource("5_raxun")
 position = Vector2(1.39999, -3)
 shape = SubResource("RectangleShape2D_xy8yh")
 
+[node name="Sprite2D" type="AnimatedSprite2D" parent="CharacterBody2D"]
+position = Vector2(1.39999, -3)
+scale = Vector2(0.015, 0.015)
+sprite_frames = SubResource("SpriteFrames_wumtd")
+animation = &"shrink"
+offset = Vector2(95, 39)
+flip_h = true
+
 [node name="Camera2D" type="Camera2D" parent="CharacterBody2D"]
 offset = Vector2(0, -32)
 zoom = Vector2(1.5, 1.5)
-
-[node name="Sprite2D" type="AnimatedSprite2D" parent="CharacterBody2D"]
-position = Vector2(1.39999, -3)
-rotation = -0.000699009
-scale = Vector2(0.015, 0.015)
-sprite_frames = SubResource("SpriteFrames_rlqqp")
-animation = &"die"
-offset = Vector2(95, 39)
-flip_h = true
 
 [node name="JumpSound" type="AudioStreamPlayer2D" parent="CharacterBody2D"]
 stream = ExtResource("21_djkik")

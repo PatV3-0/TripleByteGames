@@ -1,4 +1,4 @@
-[gd_scene load_steps=86 format=3 uid="uid://cdvx6u2g3elbv"]
+[gd_scene load_steps=90 format=3 uid="uid://cdvx6u2g3elbv"]
 
 [ext_resource type="Script" path="res://Scenes/kitchen_3.gd" id="1_e1cc3"]
 [ext_resource type="Texture2D" uid="uid://v6njha2nnja4" path="res://Assets/Background/Untitled 93.png" id="2_i2inc"]
@@ -23,8 +23,11 @@
 [ext_resource type="Script" path="res://Scripts/shrink_portal.gd" id="21_qb3cr"]
 [ext_resource type="Texture2D" uid="uid://81vpbbt7xjmo" path="res://Assets/Placeholders/shrinkwisp.png" id="22_cw2m2"]
 [ext_resource type="Script" path="res://Scripts/character_body_2d.gd" id="23_tys5e"]
+[ext_resource type="Texture2D" uid="uid://behsw0hyskoeg" path="res://Assets/Sprites/Character/idle 1 61.PNG" id="24_io28r"]
 [ext_resource type="Texture2D" uid="uid://ch1intxq0cr18" path="res://Assets/Sprites/Character/idle 1.png" id="24_kh4u7"]
+[ext_resource type="Texture2D" uid="uid://c70mun6u3qbpq" path="res://Assets/Sprites/Character/flat.png" id="25_h8coi"]
 [ext_resource type="Texture2D" uid="uid://emqo2h4ltk2n" path="res://Assets/Sprites/Character/idle-2.png" id="25_ox6xi"]
+[ext_resource type="Texture2D" uid="uid://kwewpvv6a0dk" path="res://Assets/Sprites/Character/Grow.png" id="26_0x4es"]
 [ext_resource type="Texture2D" uid="uid://c12k2h2j8vdjt" path="res://Assets/Sprites/Character/Gjump (5).png" id="26_35dwm"]
 [ext_resource type="Texture2D" uid="uid://bv5vca3wykfry" path="res://Assets/Sprites/Character/Gjump (1.1).png" id="27_ugy8u"]
 [ext_resource type="Texture2D" uid="uid://byypnkjc87sdb" path="res://Assets/Sprites/Character/Gjump (6).png" id="28_psmlo"]
@@ -46,6 +49,7 @@
 [ext_resource type="Texture2D" uid="uid://cpjbtyxusic6r" path="res://Assets/Sprites/Character/walk-2.png" id="44_4lhyv"]
 [ext_resource type="Texture2D" uid="uid://dyg15lcss7s5k" path="res://Assets/Sprites/Character/walk_1.png" id="45_3wow2"]
 [ext_resource type="AudioStream" uid="uid://c3iu4fh2kf3kk" path="res://Assets/Sound/jump.wav" id="46_2i3nb"]
+[ext_resource type="Texture2D" uid="uid://ds5h0pxykg3ry" path="res://Assets/Sprites/Character/shrink.png" id="46_nqy30"]
 [ext_resource type="AudioStream" uid="uid://cm8n17onir64w" path="res://Assets/Sound/boxSound.wav" id="47_745kv"]
 [ext_resource type="AudioStream" uid="uid://dydis8421b2ou" path="res://Assets/Sound/walk.wav" id="48_gs3dq"]
 [ext_resource type="Texture2D" uid="uid://c2ntm40saxfwm" path="res://Assets/Menus/SpeechbarLighter1.png" id="49_hm4mu"]
@@ -116,8 +120,30 @@ radius = 15.0333
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xy8yh"]
 size = Vector2(13, 25.2)
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_rlqqp"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_p5bgl"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("24_io28r")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_h8coi")
+}],
+"loop": false,
+"name": &"die",
+"speed": 3.0
+}, {
+"frames": [{
+"duration": 2.0,
+"texture": ExtResource("26_0x4es")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_0x4es")
+}],
+"loop": false,
+"name": &"grow",
+"speed": 3.0
+}, {
 "frames": [{
 "duration": 2.0,
 "texture": ExtResource("24_kh4u7")
@@ -221,6 +247,17 @@ animations = [{
 "loop": false,
 "name": &"push",
 "speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("46_nqy30")
+}, {
+"duration": 1.0,
+"texture": ExtResource("46_nqy30")
+}],
+"loop": false,
+"name": &"shrink",
+"speed": 3.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -757,17 +794,16 @@ script = ExtResource("23_tys5e")
 position = Vector2(1.39999, -3)
 shape = SubResource("RectangleShape2D_xy8yh")
 
+[node name="Sprite2D" type="AnimatedSprite2D" parent="CharacterBody2D"]
+position = Vector2(1.40015, -3)
+scale = Vector2(0.015, 0.015)
+sprite_frames = SubResource("SpriteFrames_p5bgl")
+animation = &"shrink"
+offset = Vector2(95, 39)
+
 [node name="Camera2D" type="Camera2D" parent="CharacterBody2D"]
 offset = Vector2(0, -32)
 zoom = Vector2(1.5, 1.5)
-
-[node name="Sprite2D" type="AnimatedSprite2D" parent="CharacterBody2D"]
-position = Vector2(1.39999, -3)
-rotation = -0.000699009
-scale = Vector2(0.015, 0.015)
-sprite_frames = SubResource("SpriteFrames_rlqqp")
-animation = &"push"
-offset = Vector2(95, 39)
 
 [node name="JumpSound" type="AudioStreamPlayer2D" parent="CharacterBody2D"]
 stream = ExtResource("46_2i3nb")

@@ -1,4 +1,4 @@
-[gd_scene load_steps=128 format=3 uid="uid://cxvd84y1wcrt3"]
+[gd_scene load_steps=127 format=3 uid="uid://cxvd84y1wcrt3"]
 
 [ext_resource type="Script" path="res://Scripts/character_body_2d.gd" id="1_3lcfs"]
 [ext_resource type="Script" path="res://Scripts/tutorial_scene.gd" id="1_22m25"]
@@ -62,7 +62,6 @@
 [ext_resource type="Texture2D" uid="uid://di0p8u82vq7bt" path="res://Assets/Interactables/idle 1 42.PNG" id="39_5cojk"]
 [ext_resource type="Texture2D" uid="uid://behsw0hyskoeg" path="res://Assets/Sprites/Character/idle 1 61.PNG" id="43_30obn"]
 [ext_resource type="Texture2D" uid="uid://kwewpvv6a0dk" path="res://Assets/Sprites/Character/Grow.png" id="43_kn3sq"]
-[ext_resource type="Texture2D" uid="uid://cgxuhfktvlhg6" path="res://Assets/Sprites/Character/idle 1 53.PNG" id="44_mm2wu"]
 [ext_resource type="Texture2D" uid="uid://c70mun6u3qbpq" path="res://Assets/Sprites/Character/flat.png" id="46_xkckn"]
 [ext_resource type="Texture2D" uid="uid://ch1intxq0cr18" path="res://Assets/Sprites/Character/idle 1.png" id="53_6o28y"]
 [ext_resource type="Texture2D" uid="uid://emqo2h4ltk2n" path="res://Assets/Sprites/Character/idle-2.png" id="54_lt4aj"]
@@ -259,13 +258,7 @@ animations = [{
 "texture": ExtResource("43_kn3sq")
 }, {
 "duration": 1.0,
-"texture": ExtResource("44_mm2wu")
-}, {
-"duration": 1.0,
 "texture": ExtResource("43_kn3sq")
-}, {
-"duration": 1.0,
-"texture": ExtResource("44_mm2wu")
 }],
 "loop": false,
 "name": &"grow",
@@ -380,13 +373,7 @@ animations = [{
 "texture": ExtResource("64_4mcrq")
 }, {
 "duration": 1.0,
-"texture": ExtResource("53_6o28y")
-}, {
-"duration": 1.0,
 "texture": ExtResource("64_4mcrq")
-}, {
-"duration": 1.0,
-"texture": ExtResource("53_6o28y")
 }],
 "loop": false,
 "name": &"shrink",
@@ -866,7 +853,7 @@ zoom = Vector2(1.2, 1.2)
 position = Vector2(1.39999, -3)
 scale = Vector2(0.015, 0.015)
 sprite_frames = SubResource("SpriteFrames_ecnqw")
-animation = &"die"
+animation = &"shrink"
 offset = Vector2(95, 39)
 flip_h = true
 
