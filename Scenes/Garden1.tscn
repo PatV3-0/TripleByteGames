@@ -1,4 +1,4 @@
-[gd_scene load_steps=80 format=3 uid="uid://bd6xyhu0p2ne"]
+[gd_scene load_steps=81 format=3 uid="uid://bd6xyhu0p2ne"]
 
 [ext_resource type="Script" path="res://Scripts/garden_1.gd" id="1_k1ame"]
 [ext_resource type="Texture2D" uid="uid://cmq1vhmr7erlq" path="res://Assets/Background/Untitled 99.png" id="2_4s7k6"]
@@ -59,6 +59,7 @@
 [ext_resource type="Texture2D" uid="uid://nkmvddm2gdg8" path="res://Assets/Menus/torn-paper.png" id="38_1d7t3"]
 [ext_resource type="Texture2D" uid="uid://bde2keawpfur0" path="res://Assets/Menus/MG-paper.png" id="39_q3sc0"]
 [ext_resource type="Texture2D" uid="uid://cawepachxw88q" path="res://Assets/Placeholders/Morning Glory.png" id="48_0cvgs"]
+[ext_resource type="Theme" uid="uid://bgkwmntp6xdn5" path="res://Font/Theme_Font.tres" id="54_qemub"]
 [ext_resource type="AudioStream" uid="uid://8adwpgnwqhko" path="res://Assets/GameMusic/BGM6.mp3" id="56_m84mw"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4cgmb"]
@@ -761,6 +762,7 @@ offset_left = 384.0
 offset_top = -902.0
 offset_right = 426.0
 offset_bottom = -879.0
+theme = ExtResource("54_qemub")
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 30

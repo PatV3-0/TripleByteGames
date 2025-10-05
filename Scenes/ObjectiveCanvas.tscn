@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://c2d2c1ber16pu"]
 
-[ext_resource type="Script" path="res://Scenes/ingredients_canvas.gd" id="1_pws6c"]
+[ext_resource type="Script" path="res://Scripts/ingredients_canvas.gd" id="1_pws6c"]
 [ext_resource type="Texture2D" uid="uid://cxa22mpaau64e" path="res://Assets/Menus/Unfolded.png" id="2_j7d38"]
 
 [node name="IngredientsCanvas" type="CanvasLayer"]

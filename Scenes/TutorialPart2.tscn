@@ -1,4 +1,4 @@
-[gd_scene load_steps=90 format=3 uid="uid://dgx04jl33om3w"]
+[gd_scene load_steps=91 format=3 uid="uid://dgx04jl33om3w"]
 
 [ext_resource type="Script" path="res://Scripts/character_body_2d.gd" id="1_a08j2"]
 [ext_resource type="Script" path="res://Scripts/tutorial_part_2.gd" id="1_on0m7"]
@@ -65,6 +65,7 @@
 [ext_resource type="Texture2D" uid="uid://1x876ycnlyv7" path="res://Assets/Tutorial assets/3.png" id="52_17kwp"]
 [ext_resource type="Script" path="res://Scripts/hole_tut.gd" id="53_7xhr6"]
 [ext_resource type="Texture2D" uid="uid://de11a1nljkcu8" path="res://Assets/Sprites/Tutorials/W1.png" id="53_rpqk6"]
+[ext_resource type="Theme" uid="uid://bgkwmntp6xdn5" path="res://Font/Theme_Font.tres" id="58_a1ybr"]
 [ext_resource type="AudioStream" uid="uid://x56n7xvd3676" path="res://Assets/GameMusic/BGM3.mp3" id="60_e8uf7"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_di3c4"]
@@ -727,6 +728,7 @@ offset_left = 384.0
 offset_top = -902.0
 offset_right = 426.0
 offset_bottom = -879.0
+theme = ExtResource("58_a1ybr")
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 30

@@ -1,4 +1,4 @@
-[gd_scene load_steps=181 format=3 uid="uid://bnp2npmm6vg2g"]
+[gd_scene load_steps=182 format=3 uid="uid://bnp2npmm6vg2g"]
 
 [ext_resource type="Script" path="res://Scripts/underground_1.gd" id="1_2c2qv"]
 [ext_resource type="Script" path="res://Scripts/character_body_2d.gd" id="2_15omn"]
@@ -61,7 +61,8 @@
 [ext_resource type="Texture2D" uid="uid://srercerjo0jg" path="res://Assets/Tutorial assets/1.png" id="34_k1yvb"]
 [ext_resource type="Texture2D" uid="uid://1x876ycnlyv7" path="res://Assets/Tutorial assets/3.png" id="35_s4046"]
 [ext_resource type="Texture2D" uid="uid://ds5h0pxykg3ry" path="res://Assets/Sprites/Character/shrink.png" id="40_darow"]
-[ext_resource type="Script" path="res://Scenes/tutorial_ug.gd" id="48_q6ij4"]
+[ext_resource type="Script" path="res://Scripts/tutorial_ug.gd" id="48_q6ij4"]
+[ext_resource type="Theme" uid="uid://bgkwmntp6xdn5" path="res://Font/Theme_Font.tres" id="60_40xff"]
 [ext_resource type="AudioStream" uid="uid://cl7ihrb5yytav" path="res://Assets/GameMusic/BGM23.mp3" id="62_6vbsr"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0tq3j"]
@@ -1507,6 +1508,7 @@ offset_left = 384.0
 offset_top = -902.0
 offset_right = 426.0
 offset_bottom = -879.0
+theme = ExtResource("60_40xff")
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 30

@@ -1,0 +1,6 @@
+[gd_resource type="Theme" load_steps=2 format=3 uid="uid://bgkwmntp6xdn5"]
+
+[ext_resource type="FontFile" uid="uid://jmdux21jy1vy" path="res://Font/CalligraphyFLF.ttf" id="1_1j6rj"]
+
+[resource]
+default_font = ExtResource("1_1j6rj")

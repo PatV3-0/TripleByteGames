@@ -1,4 +1,4 @@
-[gd_scene load_steps=101 format=3 uid="uid://ci5endn4fr8ds"]
+[gd_scene load_steps=102 format=3 uid="uid://ci5endn4fr8ds"]
 
 [ext_resource type="Script" path="res://Scripts/portal.gd" id="1_d0m4j"]
 [ext_resource type="Script" path="res://Scripts/walls_1.gd" id="1_v4uno"]
@@ -67,6 +67,7 @@
 [ext_resource type="Texture2D" uid="uid://gwj5l37mj7mt" path="res://Assets/Interactables/moth_balls_highlight.png" id="52_bb0mu"]
 [ext_resource type="Texture2D" uid="uid://1x876ycnlyv7" path="res://Assets/Tutorial assets/3.png" id="52_yon3c"]
 [ext_resource type="Texture2D" uid="uid://bkcxjpdlj7dl1" path="res://Assets/Interactables/moth_balls.png" id="54_0km8l"]
+[ext_resource type="Theme" uid="uid://bgkwmntp6xdn5" path="res://Font/Theme_Font.tres" id="66_a3m31"]
 [ext_resource type="AudioStream" uid="uid://coqwwprvypgeo" path="res://Assets/GameMusic/BGM4.mp3" id="68_b4gov"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hmpn8"]
@@ -925,6 +926,7 @@ offset_left = 384.0
 offset_top = -902.0
 offset_right = 426.0
 offset_bottom = -879.0
+theme = ExtResource("66_a3m31")
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 30

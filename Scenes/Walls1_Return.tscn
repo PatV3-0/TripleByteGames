@@ -1,6 +1,6 @@
-[gd_scene load_steps=101 format=3 uid="uid://c2rkbup1lthha"]
+[gd_scene load_steps=102 format=3 uid="uid://c2rkbup1lthha"]
 
-[ext_resource type="Script" path="res://Scenes/walls_1_return.gd" id="1_6esrk"]
+[ext_resource type="Script" path="res://Scripts/walls_1_return.gd" id="1_6esrk"]
 [ext_resource type="Texture2D" uid="uid://cd312uojm511g" path="res://Assets/Background/Untitled 91.png" id="2_v2qrf"]
 [ext_resource type="Texture2D" uid="uid://cdi47y8m6tqdn" path="res://Assets/Interactables/Untitled 55.PNG" id="3_gskia"]
 [ext_resource type="Texture2D" uid="uid://xw4jw30iqlyy" path="res://Assets/Interactables/wood2.png" id="4_h3oin"]
@@ -67,6 +67,7 @@
 [ext_resource type="Texture2D" uid="uid://bicu3c3rbd1rn" path="res://Assets/Menus/SpeechbarLighter9.png" id="61_3gj5v"]
 [ext_resource type="Texture2D" uid="uid://srercerjo0jg" path="res://Assets/Tutorial assets/1.png" id="62_7l43d"]
 [ext_resource type="Texture2D" uid="uid://1x876ycnlyv7" path="res://Assets/Tutorial assets/3.png" id="63_1u24d"]
+[ext_resource type="Theme" uid="uid://bgkwmntp6xdn5" path="res://Font/Theme_Font.tres" id="66_51qv7"]
 [ext_resource type="AudioStream" uid="uid://coqwwprvypgeo" path="res://Assets/GameMusic/BGM4.mp3" id="68_ypqrl"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hmpn8"]
@@ -925,6 +926,7 @@ offset_left = 384.0
 offset_top = -902.0
 offset_right = 426.0
 offset_bottom = -879.0
+theme = ExtResource("66_51qv7")
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 30

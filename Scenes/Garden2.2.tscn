@@ -1,4 +1,4 @@
-[gd_scene load_steps=112 format=3 uid="uid://dlv0ashhlgcqg"]
+[gd_scene load_steps=113 format=3 uid="uid://dlv0ashhlgcqg"]
 
 [ext_resource type="Script" path="res://Scripts/garden_2.gd" id="1_xvhm1"]
 [ext_resource type="Texture2D" uid="uid://cmq1vhmr7erlq" path="res://Assets/Background/Untitled 99.png" id="2_18k6u"]
@@ -76,6 +76,7 @@
 [ext_resource type="Texture2D" uid="uid://bglqmusi88d3" path="res://Assets/Placeholders/Beetle-1.png" id="58_mqace"]
 [ext_resource type="Texture2D" uid="uid://bk0wv2eltfmhf" path="res://Assets/Menus/JB-paper.png" id="59_hmyjb"]
 [ext_resource type="Texture2D" uid="uid://bi5jcgqcj0qq8" path="res://Assets/Interactables/Untitled 233.png" id="62_sl0lj"]
+[ext_resource type="Theme" uid="uid://bgkwmntp6xdn5" path="res://Font/Theme_Font.tres" id="71_0xftp"]
 [ext_resource type="Texture2D" uid="uid://drpuhgaotqpy4" path="res://Assets/Sprites/JewelBeetle/Beetle-1.png" id="73_ejp8j"]
 [ext_resource type="AudioStream" uid="uid://8adwpgnwqhko" path="res://Assets/GameMusic/BGM6.mp3" id="73_xomgt"]
 [ext_resource type="Texture2D" uid="uid://ctcskah48t3ef" path="res://Assets/Sprites/JewelBeetle/Beetle-2.png" id="74_2easg"]
@@ -894,6 +895,7 @@ offset_left = 340.0
 offset_top = -764.0
 offset_right = 382.0
 offset_bottom = -741.0
+theme = ExtResource("71_0xftp")
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 30

@@ -1,10 +1,10 @@
 [gd_scene load_steps=14 format=3 uid="uid://bx02m7uho1ddl"]
 
 [ext_resource type="Texture2D" uid="uid://cxa22mpaau64e" path="res://Assets/Menus/Unfolded.png" id="1_3msne"]
-[ext_resource type="Script" path="res://Scenes/ingredients_canvas.gd" id="1_463q6"]
+[ext_resource type="Script" path="res://Scripts/ingredients_canvas.gd" id="1_463q6"]
 [ext_resource type="Texture2D" uid="uid://e87tdme3rp6h" path="res://Assets/Menus/garlic.png" id="2_w1px7"]
 [ext_resource type="Texture2D" uid="uid://cuo35uu5gtx23" path="res://Assets/Menus/garlic-check.png" id="3_a67sc"]
-[ext_resource type="Script" path="res://Scenes/ingredient_button.gd" id="3_kl8po"]
+[ext_resource type="Script" path="res://Scripts/ingredient_button.gd" id="3_kl8po"]
 [ext_resource type="Texture2D" uid="uid://bcorajc714ive" path="res://Assets/Menus/mush-check.png" id="3_q01t7"]
 [ext_resource type="Texture2D" uid="uid://cmxg6tmnx6tq5" path="res://Assets/Menus/Jewel-Beetle.png" id="4_hpgh7"]
 [ext_resource type="Texture2D" uid="uid://b02077w4d2g3e" path="res://Assets/Menus/Himalayan-crystal.png" id="4_i67xj"]

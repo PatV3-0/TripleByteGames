@@ -1,4 +1,4 @@
-[gd_scene load_steps=73 format=3 uid="uid://bdb66oeqaei7d"]
+[gd_scene load_steps=74 format=3 uid="uid://bdb66oeqaei7d"]
 
 [ext_resource type="Script" path="res://Scripts/kitchen_cut.gd" id="1_mfoaj"]
 [ext_resource type="Script" path="res://Scripts/character_body_2d.gd" id="2_orm1t"]
@@ -50,11 +50,12 @@
 [ext_resource type="Texture2D" uid="uid://e0b2aiq41mcl" path="res://Assets/Menus/SpeechbarLighter7.png" id="35_n1wou"]
 [ext_resource type="Texture2D" uid="uid://blm0prikln4h1" path="res://Assets/Menus/SpeechbarLighter8.png" id="36_1mi86"]
 [ext_resource type="Texture2D" uid="uid://bicu3c3rbd1rn" path="res://Assets/Menus/SpeechbarLighter9.png" id="37_gb2q2"]
-[ext_resource type="Script" path="res://Scenes/kc_tut.gd" id="38_fk2a2"]
+[ext_resource type="Script" path="res://Scripts/kc_tut.gd" id="38_fk2a2"]
 [ext_resource type="Texture2D" uid="uid://srercerjo0jg" path="res://Assets/Tutorial assets/1.png" id="38_fpuc8"]
 [ext_resource type="Texture2D" uid="uid://p2sa6rnhme77" path="res://sink1.jpg" id="38_sa7d7"]
 [ext_resource type="Texture2D" uid="uid://1x876ycnlyv7" path="res://Assets/Tutorial assets/3.png" id="39_emuj7"]
 [ext_resource type="Texture2D" uid="uid://ddg57a3y5utgh" path="res://Assets/Interactables/idle 1 41.PNG" id="40_vq7pd"]
+[ext_resource type="Theme" uid="uid://bgkwmntp6xdn5" path="res://Font/Theme_Font.tres" id="54_ysg6w"]
 [ext_resource type="AudioStream" uid="uid://d3ceif3nnox15" path="res://Assets/GameMusic/BGM5.mp3" id="56_q7a0k"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_67qvx"]
@@ -627,6 +628,7 @@ offset_left = 992.199
 offset_top = -552.765
 offset_right = 1034.2
 offset_bottom = -529.765
+theme = ExtResource("54_ysg6w")
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 30

@@ -1,4 +1,4 @@
-[gd_scene load_steps=117 format=3 uid="uid://bbgxpud6segme"]
+[gd_scene load_steps=118 format=3 uid="uid://bbgxpud6segme"]
 
 [ext_resource type="Script" path="res://Scripts/walls_2.gd" id="1_b1sgd"]
 [ext_resource type="Texture2D" uid="uid://cd312uojm511g" path="res://Assets/Background/Untitled 91.png" id="2_in8h3"]
@@ -38,7 +38,7 @@
 [ext_resource type="Script" path="res://Scripts/hole.gd" id="21_nndc7"]
 [ext_resource type="Texture2D" uid="uid://c2ntm40saxfwm" path="res://Assets/Menus/SpeechbarLighter1.png" id="22_cqr1c"]
 [ext_resource type="Texture2D" uid="uid://ch1intxq0cr18" path="res://Assets/Sprites/Character/idle 1.png" id="22_ea7xr"]
-[ext_resource type="Script" path="res://Scenes/tutorial_w2.gd" id="23_2o55q"]
+[ext_resource type="Script" path="res://Scripts/tutorial_w2.gd" id="23_2o55q"]
 [ext_resource type="Texture2D" uid="uid://d33vnxb146pwg" path="res://Assets/Menus/SpeechbarLighter2.png" id="23_7wcvp"]
 [ext_resource type="Texture2D" uid="uid://emqo2h4ltk2n" path="res://Assets/Sprites/Character/idle-2.png" id="23_ngqnx"]
 [ext_resource type="Texture2D" uid="uid://hdqf7n8ve8xb" path="res://Assets/Menus/SpeechbarLighter3.png" id="24_aoha6"]
@@ -55,9 +55,10 @@
 [ext_resource type="Texture2D" uid="uid://ygego3qxiycn" path="res://Assets/Sprites/Character/pull3.png" id="31_og3un"]
 [ext_resource type="Texture2D" uid="uid://eabpv0wv1gws" path="res://Assets/Sprites/Character/pull3.5.png" id="32_6thre"]
 [ext_resource type="Texture2D" uid="uid://cosrv7kcfja2h" path="res://Assets/Sprites/Character/pull4.png" id="33_3wa86"]
+[ext_resource type="Theme" uid="uid://bgkwmntp6xdn5" path="res://Font/Theme_Font.tres" id="33_gt3ex"]
 [ext_resource type="Texture2D" uid="uid://bvotkbnkinptd" path="res://Assets/Sprites/Character/pull5.png" id="34_78cwh"]
-[ext_resource type="Script" path="res://Scenes/tutorial_w_3.gd" id="35_un5eh"]
-[ext_resource type="Script" path="res://Scenes/tutorial_w_4.gd" id="37_0f71x"]
+[ext_resource type="Script" path="res://Scripts/tutorial_w_3.gd" id="35_un5eh"]
+[ext_resource type="Script" path="res://Scripts/tutorial_w_4.gd" id="37_0f71x"]
 [ext_resource type="Texture2D" uid="uid://behsw0hyskoeg" path="res://Assets/Sprites/Character/idle 1 61.PNG" id="39_pmd5u"]
 [ext_resource type="Texture2D" uid="uid://kwewpvv6a0dk" path="res://Assets/Sprites/Character/Grow.png" id="39_uydus"]
 [ext_resource type="Texture2D" uid="uid://c70mun6u3qbpq" path="res://Assets/Sprites/Character/flat.png" id="40_hynhy"]
@@ -886,6 +887,7 @@ offset_left = 384.0
 offset_top = -902.0
 offset_right = 426.0
 offset_bottom = -879.0
+theme = ExtResource("33_gt3ex")
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 30

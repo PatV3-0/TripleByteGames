@@ -1,4 +1,4 @@
-[gd_scene load_steps=127 format=3 uid="uid://cxvd84y1wcrt3"]
+[gd_scene load_steps=128 format=3 uid="uid://cxvd84y1wcrt3"]
 
 [ext_resource type="Script" path="res://Scripts/character_body_2d.gd" id="1_3lcfs"]
 [ext_resource type="Script" path="res://Scripts/tutorial_scene.gd" id="1_22m25"]
@@ -59,6 +59,7 @@
 [ext_resource type="Texture2D" uid="uid://nmg5s1taplv2" path="res://Assets/Sprites/Tutorials/Grow1.png" id="30_a6nqu"]
 [ext_resource type="Script" path="res://Scripts/fade_out.gd" id="31_8l0nc"]
 [ext_resource type="Texture2D" uid="uid://b5xqjf6niqdpw" path="res://Assets/Sprites/Tutorials/Grow2.png" id="31_ye6qf"]
+[ext_resource type="Theme" uid="uid://bgkwmntp6xdn5" path="res://Font/Theme_Font.tres" id="38_il8fc"]
 [ext_resource type="Texture2D" uid="uid://di0p8u82vq7bt" path="res://Assets/Interactables/idle 1 42.PNG" id="39_5cojk"]
 [ext_resource type="Texture2D" uid="uid://behsw0hyskoeg" path="res://Assets/Sprites/Character/idle 1 61.PNG" id="43_30obn"]
 [ext_resource type="Texture2D" uid="uid://kwewpvv6a0dk" path="res://Assets/Sprites/Character/Grow.png" id="43_kn3sq"]
@@ -806,6 +807,7 @@ offset_left = 384.0
 offset_top = -902.0
 offset_right = 426.0
 offset_bottom = -879.0
+theme = ExtResource("38_il8fc")
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 30

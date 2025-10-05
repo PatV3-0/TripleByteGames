@@ -331,8 +331,11 @@ func play_death():
 		_on_death_animation_finished()
 		
 func _on_death_animation_finished():
-	print("Animation done!")
-	emit_signal("death_finished")
+	if $Sprite2D.animation == "die":
+		print("Death animation finished — emitting signal")
+		emit_signal("death_finished")
+	else:
+		print("Animation finished, but not 'die' — ignoring")
 
 func update_camera_zoom():
 	var cam = $Camera2D

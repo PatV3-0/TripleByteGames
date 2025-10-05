@@ -1,4 +1,4 @@
-[gd_scene load_steps=142 format=3 uid="uid://duvfb6prmpxpu"]
+[gd_scene load_steps=143 format=3 uid="uid://duvfb6prmpxpu"]
 
 [ext_resource type="Script" path="res://Scripts/kitchen_2.gd" id="1_4in3w"]
 [ext_resource type="Texture2D" uid="uid://v6njha2nnja4" path="res://Assets/Background/Untitled 93.png" id="2_erwe7"]
@@ -91,6 +91,7 @@
 [ext_resource type="Texture2D" uid="uid://cgu8kxq1df1kx" path="res://Assets/Interactables/Untitled 244.png" id="67_icanj"]
 [ext_resource type="Texture2D" uid="uid://dqkrd0hts32mt" path="res://Assets/Interactables/Untitled 245.png" id="68_tdso1"]
 [ext_resource type="AudioStream" uid="uid://511gq7d1dtj8" path="res://Assets/GameMusic/BGM7.mp3" id="83_5e8kw"]
+[ext_resource type="Theme" uid="uid://bgkwmntp6xdn5" path="res://Font/Theme_Font.tres" id="87_thtfy"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6kbt8"]
 size = Vector2(360.25, 16)
@@ -1301,22 +1302,23 @@ position = Vector2(-933, 379)
 script = ExtResource("27_e3m51")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="FadeOut"]
-position = Vector2(2133, 462)
+position = Vector2(2757, 415)
 shape = SubResource("RectangleShape2D_bx0os")
 debug_color = Color(0.411765, 0.407843, 0.172549, 1)
 
 [node name="FadeLayer" type="CanvasLayer" parent="."]
 
 [node name="FadeRect" type="ColorRect" parent="FadeLayer"]
+visible = false
 anchors_preset = -1
 anchor_left = -0.530382
 anchor_top = -1.93981
 anchor_right = -0.530382
 anchor_bottom = -1.93981
-offset_left = -4894.0
-offset_top = -1284.0
-offset_right = 5395.0
-offset_bottom = 3211.0
+offset_left = -4243.0
+offset_top = -1283.0
+offset_right = 6046.0
+offset_bottom = 3212.0
 mouse_filter = 2
 color = Color(0, 0, 0, 0)
 metadata/_edit_use_anchors_ = true
@@ -1368,6 +1370,7 @@ offset_left = 384.0
 offset_top = -902.0
 offset_right = 426.0
 offset_bottom = -879.0
+theme = ExtResource("87_thtfy")
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 30

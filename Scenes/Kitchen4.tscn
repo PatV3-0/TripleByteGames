@@ -1,4 +1,4 @@
-[gd_scene load_steps=101 format=3 uid="uid://c38ppo2oxtnec"]
+[gd_scene load_steps=102 format=3 uid="uid://c38ppo2oxtnec"]
 
 [ext_resource type="Script" path="res://Scripts/kitchen_4.gd" id="1_b6566"]
 [ext_resource type="Script" path="res://Scripts/character_body_2d.gd" id="2_2dv4w"]
@@ -68,6 +68,7 @@
 [ext_resource type="Texture2D" uid="uid://ms8yox5h3kqx" path="res://Assets/Placeholders/garlic.png" id="48_mnphf"]
 [ext_resource type="Script" path="res://Scripts/hole.gd" id="59_8vuwf"]
 [ext_resource type="Texture2D" uid="uid://cdi47y8m6tqdn" path="res://Assets/Interactables/Untitled 55.PNG" id="60_qeo7x"]
+[ext_resource type="Theme" uid="uid://bgkwmntp6xdn5" path="res://Font/Theme_Font.tres" id="63_0fi7j"]
 [ext_resource type="AudioStream" uid="uid://dwnfkwcf1qxtu" path="res://Assets/GameMusic/BGM15.mp3" id="65_gm0f1"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cd4vr"]
@@ -939,6 +940,7 @@ offset_left = 384.0
 offset_top = -902.0
 offset_right = 426.0
 offset_bottom = -879.0
+theme = ExtResource("63_0fi7j")
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 30

@@ -1,4 +1,4 @@
-[gd_scene load_steps=148 format=3 uid="uid://drq3m40mvk8jp"]
+[gd_scene load_steps=149 format=3 uid="uid://drq3m40mvk8jp"]
 
 [ext_resource type="Script" path="res://Scripts/kitchen_1.gd" id="1_3weli"]
 [ext_resource type="Script" path="res://Scripts/character_body_2d.gd" id="2_jx67a"]
@@ -25,13 +25,13 @@
 [ext_resource type="Texture2D" uid="uid://b23akb18jrfgm" path="res://Assets/Sprites/Character/push_strain_breathe_in-2.png" id="13_tbw8i"]
 [ext_resource type="Texture2D" uid="uid://bbqoh0hwqf8ga" path="res://Assets/Interactables/Untitled 153.png" id="14_1ouhj"]
 [ext_resource type="Texture2D" uid="uid://jsttnhfnypr" path="res://Assets/Sprites/Character/push_strain_breathe_out-2.png" id="14_batii"]
-[ext_resource type="Script" path="res://Scenes/k1_tut.gd" id="14_dbavd"]
-[ext_resource type="Script" path="res://Scenes/paintings.gd" id="14_gtdrd"]
+[ext_resource type="Script" path="res://Scripts/k1_tut.gd" id="14_dbavd"]
+[ext_resource type="Script" path="res://Scripts/paintings.gd" id="14_gtdrd"]
 [ext_resource type="Texture2D" uid="uid://bv5vca3wykfry" path="res://Assets/Sprites/Character/Gjump (1.1).png" id="15_41bqs"]
 [ext_resource type="Script" path="res://Scripts/swining_paint.gd" id="15_hbsbf"]
 [ext_resource type="Texture2D" uid="uid://cvutlp1cgta8b" path="res://Assets/Sprites/Character/walk-stop.png" id="15_iufds"]
 [ext_resource type="Texture2D" uid="uid://b0y1mi4qbgfwl" path="res://Assets/Interactables/Untitled 152.png" id="15_r1f20"]
-[ext_resource type="Script" path="res://Scenes/paint_4.gd" id="15_t1nob"]
+[ext_resource type="Script" path="res://Scripts/paint_4.gd" id="15_t1nob"]
 [ext_resource type="Texture2D" uid="uid://y26yv6o6hewq" path="res://Assets/Interactables/Untitled 155.png" id="16_b5ose"]
 [ext_resource type="Texture2D" uid="uid://cpjbtyxusic6r" path="res://Assets/Sprites/Character/walk-2.png" id="16_l8dr4"]
 [ext_resource type="Texture2D" uid="uid://dyg15lcss7s5k" path="res://Assets/Sprites/Character/walk_1.png" id="17_5slmy"]
@@ -71,6 +71,7 @@
 [ext_resource type="Texture2D" uid="uid://1x876ycnlyv7" path="res://Assets/Tutorial assets/3.png" id="39_ouqhe"]
 [ext_resource type="Texture2D" uid="uid://ca1cms2y3p3co" path="res://Assets/Placeholders/growwisp.png" id="39_t1dv1"]
 [ext_resource type="Texture2D" uid="uid://ds5h0pxykg3ry" path="res://Assets/Sprites/Character/shrink.png" id="44_64vmw"]
+[ext_resource type="Theme" uid="uid://bgkwmntp6xdn5" path="res://Font/Theme_Font.tres" id="62_spak6"]
 [ext_resource type="Texture2D" uid="uid://c1wpadra0akf2" path="res://Assets/Interactables/Untitled 179.png" id="66_d11cm"]
 [ext_resource type="Texture2D" uid="uid://f2kygtaeh48x" path="res://Assets/Interactables/Untitled 177.png" id="67_sunki"]
 [ext_resource type="Texture2D" uid="uid://dtuy76gj2aeyc" path="res://Assets/Interactables/Untitled 190.png" id="68_mostt"]
@@ -960,6 +961,7 @@ offset_left = 384.0
 offset_top = -902.0
 offset_right = 426.0
 offset_bottom = -879.0
+theme = ExtResource("62_spak6")
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 30

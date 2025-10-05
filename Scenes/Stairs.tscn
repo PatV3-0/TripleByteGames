@@ -1,4 +1,4 @@
-[gd_scene load_steps=69 format=3 uid="uid://dgf7o3kb8qq1j"]
+[gd_scene load_steps=70 format=3 uid="uid://dgf7o3kb8qq1j"]
 
 [ext_resource type="Script" path="res://Scripts/stairs.gd" id="1_xa0l1"]
 [ext_resource type="PackedScene" uid="uid://csy8yhjpcrlg8" path="res://Scenes/Beetle.tscn" id="2_qyl28"]
@@ -52,7 +52,8 @@
 [ext_resource type="Texture2D" uid="uid://bicu3c3rbd1rn" path="res://Assets/Menus/SpeechbarLighter9.png" id="33_xabum"]
 [ext_resource type="Texture2D" uid="uid://srercerjo0jg" path="res://Assets/Tutorial assets/1.png" id="34_yq0il"]
 [ext_resource type="Texture2D" uid="uid://1x876ycnlyv7" path="res://Assets/Tutorial assets/3.png" id="35_8pcpn"]
-[ext_resource type="Script" path="res://Scenes/tutorial_stairs.gd" id="39_m0cfo"]
+[ext_resource type="Script" path="res://Scripts/tutorial_stairs.gd" id="39_m0cfo"]
+[ext_resource type="Theme" uid="uid://bgkwmntp6xdn5" path="res://Font/Theme_Font.tres" id="51_harg6"]
 [ext_resource type="AudioStream" uid="uid://e3y83qwnoiap" path="res://Assets/GameMusic/BGM2.mp3" id="54_ugial"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wuhrc"]
@@ -576,6 +577,7 @@ offset_left = 384.0
 offset_top = -902.0
 offset_right = 426.0
 offset_bottom = -879.0
+theme = ExtResource("51_harg6")
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 30

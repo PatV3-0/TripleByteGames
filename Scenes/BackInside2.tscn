@@ -1,4 +1,4 @@
-[gd_scene load_steps=130 format=3 uid="uid://bv4c1ivswho8g"]
+[gd_scene load_steps=131 format=3 uid="uid://bv4c1ivswho8g"]
 
 [ext_resource type="Script" path="res://Scripts/back_inside_2.gd" id="1_y41im"]
 [ext_resource type="Texture2D" uid="uid://dy26qsmor8as1" path="res://Assets/Background/Untitled 83.png" id="2_1a5ph"]
@@ -80,6 +80,7 @@
 [ext_resource type="Texture2D" uid="uid://ca1cms2y3p3co" path="res://Assets/Placeholders/growwisp.png" id="42_2yceb"]
 [ext_resource type="Texture2D" uid="uid://ds5h0pxykg3ry" path="res://Assets/Sprites/Character/shrink.png" id="55_x8n5f"]
 [ext_resource type="Texture2D" uid="uid://brwmyqhkpnu2u" path="res://Assets/Background/Untitled 92 - Copy (2).png" id="74_6k7r5"]
+[ext_resource type="Theme" uid="uid://bgkwmntp6xdn5" path="res://Font/Theme_Font.tres" id="79_5x5oq"]
 [ext_resource type="AudioStream" uid="uid://cxsuv03yct6y3" path="res://Assets/GameMusic/BGM13.mp3" id="79_dnbi2"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_kxu2y"]
@@ -1109,16 +1110,21 @@ scale = Vector2(0.397911, 0.471736)
 sprite_frames = SubResource("SpriteFrames_rir0d")
 animation = &"retract"
 
+[node name="Text" type="AnimatedSprite2D" parent="TutorialCanvas"]
+position = Vector2(-177.2, 971)
+sprite_frames = SubResource("SpriteFrames_nphf0")
+
 [node name="TutLabel" type="Label" parent="TutorialCanvas"]
 anchors_preset = -1
 anchor_left = -0.451389
 anchor_top = 1.62037
 anchor_right = 0.506944
 anchor_bottom = 1.66975
-offset_left = 384.0
-offset_top = -902.0
-offset_right = 426.0
-offset_bottom = -879.0
+offset_left = 992.199
+offset_top = -552.765
+offset_right = 1034.2
+offset_bottom = -522.765
+theme = ExtResource("79_5x5oq")
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 30
@@ -1126,10 +1132,6 @@ vertical_alignment = 1
 autowrap_mode = 2
 justification_flags = 162
 metadata/_edit_use_anchors_ = true
-
-[node name="Text" type="AnimatedSprite2D" parent="TutorialCanvas"]
-position = Vector2(-177.2, 971)
-sprite_frames = SubResource("SpriteFrames_nphf0")
 
 [node name="Background" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("79_dnbi2")
